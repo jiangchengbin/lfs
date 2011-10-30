@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.25.&nbsp;Bison-2.4.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="m4.html" title="M4-1.4.13">&#21518;&#36864;</a>
+          <p>
+            M4-1.4.13
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="procps.html" title="Procps-3.2.8">&#21069;&#36827;</a>
+          <p>
+            Procps-3.2.8
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-bison" name="ch-system-bison"></a>6.25. Bison-2.4.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Bison &#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#20010;&#35821;&#27861;&#20998;&#26512;&#31243;&#24207;&#29983;&#25104;&#22120;&#12290; </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">1.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">19.2 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.25.1. &#23433;&#35013; Bison
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Bison &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr</kbd></pre>
+        <p>
+          &#22914;&#26524; <span class=
+          "command"><strong>bison</strong></span><strong><strong> </strong></strong> &#31243;&#24207;&#19981;&#22312; $PATH   &#20013;&#30340;&#35805;&#65292; &#32534;&#35793;&#26102;&#23558;&#20250;&#20986;&#29616;&#32570;&#20047;&#22269;&#38469;&#21270;&#25903;&#25345;&#30340;&#38169;&#35823;&#20449;&#24687;&#12290; &#19979;&#38754;&#22788;&#29702;&#21487;&#20197;&#35299;&#20915;&#36825;&#20010;&#38382;&#39064;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">echo '#define YYENABLE_NLS 1' &gt;&gt; lib/config.h</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>&#35201;&#27979;&#35797;&#32467;&#26524; (&#22823;&#32422; 0.5 SBU)&#65292;&#35831;&#25191;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-bison" name="contents-bison"></a>6.25.2. Bison &#30340;&#20869;&#23481;
+        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">bison and yacc</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;:</strong>
+              <span class="segbody">liby.a</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="bison" name="bison"></a><span class=
+                    "term"><span class=
+                    "command"><strong>bison</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#26681;&#25454;&#19968;&#31995;&#21015;&#35268;&#21017;&#26469;&#29983;&#25104;&#19968;&#20010;&#21487;&#20197;&#20998;&#26512;&#25991;&#26412;&#25991;&#20214;&#30340;&#32467;&#26500;&#30340;&#31243;&#24207;&#65292;Bison &#26159;&#19968;&#20010; &#26367;&#20195; Yacc (Yet Another Compiler Compiler)   &#30340;&#35821;&#27861;&#20998;&#26512;&#31243;&#24207;&#29983;&#25104;&#22120;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="yacc" name="yacc"></a><span class=
+                    "term"><span class=
+                    "command"><strong>yacc</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#19968;&#20010; <span class=
+                    "command"><strong>bison</strong></span><strong> </strong> &#30340;&#21253;&#35013;&#65292;&#24847;&#24605;&#26159;&#31243;&#24207;&#20173;&#28982;&#35843;&#29992; <strong><span class=
+                    "command"><strong>yacc</strong></span> </strong> &#32780;&#19981;&#26159; <strong><span class="command"><strong>bison</strong></span></strong>&#65292;&#23427;&#29992; <em class="parameter"><code>-y</code></em><em> </em> &#36873;&#39033;&#35843;&#29992; <strong><span class="command"><strong>bison</strong></span></strong></p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="liby.a" name="liby.a"></a><span class=
+                    "term"><code class="filename">liby.a</code></span>                  </p>                </td>
+                <td>
+                  <p>Yacc &#24211;&#21253;&#21547;&#19982; Yacc &#20860;&#23481;&#30340; <code class="function">yyerror</code>&#21644;                    <code class="function">main</code> &#20989;&#25968;&#65292; &#36825;&#20010;&#24211;&#36890;&#24120;&#19981;&#26159;&#24456;&#26377;&#29992;&#65292; &#20294;&#26159; POSIX &#38656;&#35201;&#23427;&#12290;</p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="m4.html" title="M4-1.4.13">&#21518;&#36864;</a>
+          <p>
+            M4-1.4.13
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="procps.html" title="Procps-3.2.8">&#21069;&#36827;</a>
+          <p>
+            Procps-3.2.8
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

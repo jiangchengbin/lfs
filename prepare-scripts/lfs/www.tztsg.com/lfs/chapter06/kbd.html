@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.46.&nbsp;Kbd-1.15.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="iproute2.html" title=
+          "IPRoute2-2.6.31">&#21518;&#36864;</a>
+          <p>
+            IPRoute2-2.6.31
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="less.html" title="Less-436">&#21069;&#36827;</a>
+          <p>
+            Less-436
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-kbd" name="ch-system-kbd"></a>6.46. Kbd-1.15.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Kbd &#21253;&#21547;&#38190;&#30424;&#26144;&#23556;&#34920;&#21644;&#38190;&#30424;&#24037;&#20855;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">&#23569;&#20110; 0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">16.0 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.46.1. &#23433;&#35013; Kbd
+        </h2>
+        <p>
+        Kbd &#36719;&#20214;&#21253;&#27809;&#26377;&#38543;&#24102;&#26631;&#20934;&#30340;&#37197;&#32622;&#33050;&#26412;&#65292;&#22240;&#27492;&#29616;&#22312;&#29983;&#25104;&#23427;&#20204;&#65306;</p>
+        <pre class="userinput"><kbd class="command">autoreconf</kbd></pre>
+        <p>Backspace &#38190;&#21644; Delete &#38190;&#30340;&#21151;&#33021;&#22312; kbd &#21253;&#30340;&#38190;&#30424;&#26144;&#23556;&#20013;&#26159;&#19981;&#19968;&#26679;&#30340;&#12290;&#19979;&#38754;&#30340; patch &#20462;&#27491;&#20102; i386   &#30340;&#38190;&#30424;&#26144;&#23556;&#20013;&#30340;&#36825;&#20010;&#38382;&#39064;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../kbd-1.15.1-backspace-1.patch</kbd></pre>
+        <p>
+          &#25171;&#23436; patch &#20043;&#21518;&#65292;Backspace &#38190;&#20250;&#20135;&#29983;&#23383;&#31526;&#32534;&#30721; 127&#65292;Delete &#38190;&#20250;&#20135;&#29983;&#19968;&#20010;&#33879;&#21517;&#30340;&#36867;&#33073;&#24207;&#21015;&#12290;</p>
+        <p>
+          &#20026;&#32534;&#35793; Kbd &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --datadir=/lib/kbd</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--datadir=/lib/kbd</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#36873;&#39033;&#25226;&#38190;&#30424;&#24067;&#23616;&#20449;&#24687;&#23384;&#25918;&#21040;&#26681;&#20998;&#21306;&#20869;&#65292;&#32780;&#19981;&#26159;&#23384;&#25918;&#22312;&#40664;&#35748;&#30340; <code class="filename">/usr/share/kbd</code>.              </p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>
+            &#23545;&#20110;&#19968;&#20123;&#35821;&#35328;&#65288;&#20363;&#22914;&#65292;&#30333;&#20420;&#32599;&#26031;&#25991;&#65289;&#65292;&#22312; Kbd &#21253;&#20013;&#27809;&#26377;&#25552;&#20379;&#30456;&#24212;&#30340;&#38190;&#30424;&#26144;&#23556; &#12290; &#31995;&#32479;&#20551;&#23450;&#20351;&#29992; ISO-8859-5 &#32534;&#30721;&#65292;&#36890;&#24120;&#20351;&#29992; CP1251 &#38190;&#30424;&#26144;&#23556;&#12290;   &#36825;&#20123;&#35821;&#31181;&#30340;&#29992;&#25143;&#38656;&#35201;&#21333;&#29420;&#19979;&#36733;&#30456;&#24212;&#30340;&#38190;&#30424;&#26144;&#23556;&#12290;</p>
+        </div>
+        <p>
+          LFS-Bootscripts &#21253;&#20013;&#30340;&#19968;&#20123;&#33050;&#26412;&#20381;&#36182;&#20110; <strong>kbd_mode</strong>&#65292;<strong>loadkeys</strong>&#65292;<strong>openvt</strong> &#21644; <strong>setfont</strong>&#12290; &#22240;&#20026;/usr&#22312;&#21551;&#21160;&#30340;&#26089;&#20123;&#26102;&#20505;&#26159;&#26080;&#27861;&#35775;&#38382;&#30340;&#65288;&#27809;&#26377;&#25346;&#36733;&#65289;&#12290;&#37027;&#20123;&#20108;&#36827;&#21046;&#25991;&#20214;&#38656;&#35201;&#25918;&#22312;&#26681;&#20998;&#21306;&#19978;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mv -v /usr/bin/{kbd_mode,loadkeys,openvt,setfont} /bin</kbd></pre>
+        <p>
+          &#22914;&#26524;&#24895;&#24847;&#65292;&#21487;&#20197;&#23433;&#35013;&#36719;&#20214;&#25991;&#26723;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mkdir -v /usr/share/doc/kbd-1.15.1
+cp -R -v doc/* \
+         /usr/share/doc/kbd-1.15.1</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-kbd" name="contents-kbd"></a>6.46.2.  
+          Kbd
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">chvt, deallocvt, dumpkeys, fgconsole,
+              getkeycodes, kbd_mode, kbdrate, loadkeys, loadunimap, mapscrn,
+              openvt, psfaddtable (link to psfxtable), psfgettable (link to
+              psfxtable), psfstriptable (link to psfxtable), psfxtable,
+              resizecons, setfont, setkeycodes, setleds, setmetamode,
+              showconsolefont, showkey, unicode_start, and
+              unicode_stop</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="chvt" name="chvt"></a><span class=
+                    "term"><span class=
+                    "command"><strong>chvt</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25913;&#21464;&#21069;&#21488;&#34394;&#25311;&#32456;&#31471;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="deallocvt" name="deallocvt"></a><span class=
+                    "term"><span class=
+                    "command"><strong>deallocvt</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#37325;&#26032;&#20998;&#37197;&#19981;&#29992;&#30340;&#34394;&#25311;&#32456;&#31471;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="dumpkeys" name="dumpkeys"></a><span class=
+                    "term"><span class=
+                    "command"><strong>dumpkeys</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#38190;&#30424;&#36716;&#25442;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="fgconsole" name="fgconsole"></a><span class=
+                    "term"><span class=
+                    "command"><strong>fgconsole</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#27963;&#21160;&#34394;&#25311;&#25511;&#21046;&#21488;&#30340;&#25968;&#37327;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="getkeycodes" name="getkeycodes"></a><span class=
+                    "term"><span class=
+                    "command"><strong>getkeycodes</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#20869;&#26680;&#20013;&#25195;&#25551;&#30721;&#19982;&#38190;&#30424;&#30721;&#30340;&#36716;&#25442;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="kbd_mode" name="kbd_mode"></a><span class=
+                    "term"><span class=
+                    "command"><strong>kbd_mode</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#35774;&#32622;&#25110;&#26174;&#31034;&#38190;&#30424;&#27169;&#24335;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="kbdrate" name="kbdrate"></a><span class=
+                    "term"><span class=
+                    "command"><strong>kbdrate</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#35774;&#32622;&#25110;&#26174;&#31034;&#38190;&#30424;&#37325;&#22797;&#21644;&#24310;&#36831;&#30340;&#36895;&#24230;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="loadkeys" name="loadkeys"></a><span class=
+                    "term"><span class=
+                    "command"><strong>loadkeys</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21152;&#36733;&#38190;&#30424;&#36716;&#25442;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="loadunimap" name="loadunimap"></a><span class=
+                    "term"><span class=
+                    "command"><strong>loadunimap</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21152;&#36733;&#20869;&#26680;&#30340; Unicode &#21040;&#23383;&#20307;(unicode-to-font)&#20043;&#38388;&#30340;&#24433;&#23556;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mapscrn" name="mapscrn"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mapscrn</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25226;&#29992;&#25143;&#23450;&#20041;&#30340;&#36755;&#20986;&#23383;&#31526;&#24433;&#23556;&#34920;&#21152;&#36733;&#21040;&#25511;&#21046;&#21488;&#39537;&#21160;&#22120;&#20013;&#12290; &#27880;&#24847;&#36825;&#20010;&#31243;&#24207;&#24050;&#32463;&#36807;&#26102;&#65292; &#23427;&#23454;&#29616;&#30340;&#21151;&#33021;&#24050;&#32463;&#24182;&#20837;<strong><strong>setfont</strong></strong> &#31243;&#24207;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="openvt" name="openvt"></a><span class=
+                    "term"><span class=
+                    "command"><strong>openvt</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22312;&#19968;&#20010;&#26032;&#34394;&#25311;&#32456;&#31471; (VT) &#21551;&#21160;&#19968;&#20010;&#31243;&#24207;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="psfaddtable" name="psfaddtable"></a><span class=
+                    "term"><span class=
+                    "command"><strong>psfaddtable</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#38142;&#25509;&#21040;<span class=
+                    "command"><strong>psfxtable</strong></span>                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="psfgettable" name="psfgettable"></a><span class=
+                    "term"><span class=
+                    "command"><strong>psfgettable</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#38142;&#25509;&#21040;<span class=
+                    "command"><strong>psfxtable</strong></span>                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="psfstriptable" name=
+                    "psfstriptable"></a><span class="term"><span class=
+                    "command"><strong>psfstriptable</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#38142;&#25509;&#21040;<span class=
+                    "command"><strong>psfxtable</strong></span>                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="psfxtable" name="psfxtable"></a><span class=
+                    "term"><span class=
+                    "command"><strong>psfxtable</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22788;&#29702;&#25511;&#21046;&#21488;&#23383;&#20307;&#30340; Unicode &#23383;&#31526;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="resizecons" name="resizecons"></a><span class=
+                    "term"><span class=
+                    "command"><strong>resizecons</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#35753;&#20869;&#26680;&#25913;&#21464;&#25511;&#21046;&#21488;&#30340;&#22823;&#23567;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="setfont" name="setfont"></a><span class=
+                    "term"><span class=
+                    "command"><strong>setfont</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25913;&#21464;&#25511;&#21046;&#21488;&#30340;&#22686;&#24378;&#22411;&#22270;&#24418;&#36866;&#37197;&#22120; (EGA) &#21644; &#35270;&#39057;&#22270;&#24418;&#38453;&#21015; (VGA) &#23383;&#20307;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="setkeycodes" name="setkeycodes"></a><span class=
+                    "term"><span class=
+                    "command"><strong>setkeycodes</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21578;&#35785;&#20869;&#26680;&#30340;&#38190;&#30424;&#39537;&#21160;&#31243;&#24207;&#22312;&#25195;&#25551;&#30721;/&#38190;&#30721;(scancode-to-keycode) &#24433;&#23556;&#34920;&#20013;&#21152;&#20837;&#26032;&#30340;&#24433;&#23556;&#65292;   &#24403;&#20320;&#30340;&#38190;&#30424;&#19978;&#26377;&#26576;&#20123;&#29305;&#27530;&#24314;&#30340;&#26102;&#20505;&#36825;&#20010;&#23601;&#24456;&#26377;&#29992;&#20102;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="setleds" name="setleds"></a><span class=
+                    "term"><span class=
+                    "command"><strong>setleds</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    &#35774;&#32622;&#38190;&#30424;&#26631;&#24535;&#21644;&#21457;&#20809;&#20108;&#26497;&#31649; (LEDs)                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="setmetamode" name="setmetamode"></a><span class=
+                    "term"><span class=
+                    "command"><strong>setmetamode</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    &#35774;&#32622;&#38190;&#30424;&#30340;&#20803;&#38190; &#65288; meta-key&#65289;                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="showconsolefont" name=
+                    "showconsolefont"></a><span class="term"><span class=
+                    "command"><strong>showconsolefont</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#24403;&#21069; EGA/VGA &#32456;&#31471;&#23631;&#24149;&#23383;&#20307; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="showkey" name="showkey"></a><span class=
+                    "term"><span class=
+                    "command"><strong>showkey</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#38190;&#30424;&#19978;&#25353;&#19979;&#30340;&#38190;&#30340;&#25195;&#25551;&#30721;&#65292;&#38190;&#30721;&#21644;ASCII &#30721; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="unicode_start" name=
+                    "unicode_start"></a><span class="term"><span class=
+                    "command"><strong>unicode_start</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20351;&#38190;&#30424;&#21644;&#25511;&#21046;&#21488;&#36827;&#20837; UNICODE &#27169;&#24335;&#12290; &#38500;&#38750;&#20320;&#30340;&#38190;&#30424;&#26144;&#23556;&#25991;&#20214;&#26159;ISO-8859-1   &#32534;&#30721;&#65292; &#21542;&#21017;&#19981;&#35201;&#20351;&#29992;&#36825;&#20010;&#31243;&#24207;&#12290; &#23545;&#20110;&#20854;&#20182;&#32534;&#30721;&#65292;&#36825;&#20010;&#24037;&#20855;&#20250;&#20135;&#29983;&#38169;&#35823;&#30340;&#32467;&#26524;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="unicode_stop" name="unicode_stop"></a><span class=
+                    "term"><span class=
+                    "command"><strong>unicode_stop</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25226;&#38190;&#30424;&#21644;&#25511;&#21046;&#21488;&#20174;UNICODE &#27169;&#24335;&#36824;&#21407;&#22238;&#26469;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="iproute2.html" title=
+          "IPRoute2-2.6.31">&#21518;&#36864;</a>
+          <p>
+            IPRoute2-2.6.31
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="less.html" title="Less-436">&#21069;&#36827;</a>
+          <p>
+            Less-436
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

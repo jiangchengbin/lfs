@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.14.&nbsp;Ncurses-5.7
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="dejagnu.html" title="DejaGNU-1.4.4">&#21518;&#36864;</a>
+          <p>
+            DejaGNU-1.4.4
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="bash.html" title="Bash-4.1">&#21069;&#36827;</a>
+          <p>
+            Bash-4.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-ncurses" name="ch-tools-ncurses"></a>5.14.
+        Ncurses-5.7
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Ncurses &#25552;&#20379;&#29420;&#31435;&#20110;&#32456;&#31471;&#30340;&#23383;&#31526;&#32456;&#31471;&#22788;&#29702;&#24211;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.7 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">30 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.14.1. &#23433;&#35013; Ncurses
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Ncurses &#20570;&#20934;&#22791;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/tools --with-shared \
+    --without-debug --without-ada --enable-overwrite</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--without-ada</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#36873;&#39033;&#35753; Ncurses &#22312;&#21363;&#20351;&#23487;&#20027;&#31995;&#32479;&#19978;&#23433;&#35013;&#20102; Ada &#32534;&#35793;&#22120;&#30340;&#24773;&#20917;&#19979;&#20063;&#19981;&#35201;&#32534;&#35793;&#20854; Ada &#32465;&#23450;&#12290;&#38656;&#35201;&#36825;&#26679;&#20570;&#30340;&#21407;&#22240;&#26159;&#19968;&#26086;&#25105;&#20204;&#36827;&#20837; <strong><span class=
+                "command"><strong>chroot</strong></span> </strong> &#29615;&#22659;&#65292;Ada &#23601;&#19981;&#33021;&#20351;&#29992;&#20102;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--enable-overwrite</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#36873;&#39033;&#35753; Ncurses &#25226;&#23427;&#30340;&#22836;&#25991;&#20214;&#23433;&#35013;&#21040; <code class="filename">/tools/include</code> &#30446;&#24405;&#65292;&#32780;&#19981;&#26159; <code class="filename">/tools/include/ncurses</code> &#30446;&#24405;&#65292;&#20197;&#30830;&#20445;&#20854;&#23427;&#36719;&#20214;&#21253;&#21487;&#20197;&#25104;&#21151;&#30340;&#25214;&#21040;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#26377;&#19968;&#20010;&#27979;&#35797;&#24037;&#20855;&#65292;&#20294;&#26159;&#21482;&#33021;&#22312;&#35813;&#36719;&#20214;&#21253;&#23433;&#35013;&#20043;&#21518;&#25165;&#33021;&#36816;&#34892;&#12290;&#27979;&#35797;&#24037;&#20855;&#20301;&#20110;    <code class=
+          "filename">test/</code> &#30446;&#24405;&#12290;&#26356;&#22810;&#30340;&#32454;&#33410;&#65292;&#35831;&#21442;&#32771;&#35813;&#30446;&#24405;&#30340; <code class=
+          "filename">README</code> &#25991;&#20214;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#30340;&#35814;&#32454;&#20869;&#23481;&#20301;&#20110;  <a class="xref" href=
+          "../chapter06/ncurses.html#contents-ncurses" title=
+          "6.19.2.&nbsp;Contents of Ncurses">Section&nbsp;6.19.2,
+          &ldquo; Ncurses &#30340;&#20869;&#23481; &rdquo;</a>        </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="dejagnu.html" title="DejaGNU-1.4.4">&#21518;&#36864;</a>
+          <p>
+            DejaGNU-1.4.4
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="bash.html" title="Bash-4.1">&#21069;&#36827;</a>
+          <p>
+            Bash-4.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

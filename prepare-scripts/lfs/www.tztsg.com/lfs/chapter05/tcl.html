@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.11.&nbsp;Tcl-8.5.8
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gcc-pass2.html" title=
+          "GCC-4.4.3 - Pass 2">&#21518;&#36864;</a>
+          <p>
+            GCC-4.4.3 - &#31532;&#20108;&#36941;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="expect.html" title="Expect-5.43.0">&#21069;&#36827;</a>
+          <p>
+            Expect-5.43.0
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-tcl" name="ch-tools-tcl"></a>5.11. Tcl-8.5.8
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Tcl &#36719;&#20214;&#21253;&#21253;&#21547;&#24037;&#20855;&#21629;&#20196;&#35821;&#35328;(Tool Command Language)&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.5 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">32 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.11.1. &#23433;&#35013; Tcl
+        </h2>
+        <p>&#36825;&#20010;&#36719;&#20214;&#21253;&#21644;&#25509;&#19979;&#26469;&#23433;&#35013;&#30340;&#20004;&#20010;&#36719;&#20214;&#21253;(Expect &#21644; DejaGNU)&#26159;&#20026;&#20102;&#32473;&#36816;&#34892; GCC &#21644; Binutils &#30340;&#27979;&#35797;&#31243;&#24207;&#25552;&#20379;&#25903;&#25345;&#12290;   &#20165;&#20026;&#20102;&#27979;&#35797;&#32780;&#23433;&#35013;&#19977;&#20010;&#36719;&#20214;&#21253;&#65292; &#30475;&#36215;&#26469;&#20284;&#20046;&#26377;&#28857;&#22810;&#20313;&#65292; &#20294;&#26159;&#30475;&#21040;&#37027;&#20123;&#26368;&#37325;&#35201;&#30340;&#24037;&#20855;&#27491;&#24120;&#24037;&#20316;&#65292; &#24515;&#29702;&#19978;&#20250;&#27604;&#36739;&#36367;&#23454;&#12290; &#21363;&#20351;&#27809;&#26377;&#36816;&#34892;&#26412;&#31456;&#20013;&#27979;&#35797;&#31243;&#24207;(&#19981;&#26159;&#24517;&#38656;&#30340;)&#65292; &#36816;&#34892; <a class="xref" href=
+          "../chapter06/chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">Chapter
+          6</a> &#20013;&#30340;&#27979;&#35797;&#26102;&#20063;&#38656;&#35201;&#36825;&#20123;&#36719;&#20214;&#21253;&#12290;</p>
+        <p>
+          &#20934;&#22791;&#32534;&#35793; Tcl&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">cd unix
+./configure --prefix=/tools</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#29616;&#22312;&#32534;&#35793;&#23436;&#25104;&#20102;&#65292;&#21644;&#21069;&#38754;&#35752;&#35770;&#30340;&#19968;&#26679;&#65292;&#22312;&#26412;&#31456;&#65292;&#22240;&#20026;&#26159;&#20020;&#26102;&#24037;&#20855;&#65292;&#25105;&#20204;&#19981;&#24378;&#21046;&#24744;&#36816;&#34892;&#27979;&#35797;&#32452;&#20214;&#12290; &#22914;&#26524;&#19968;&#23450;&#35201;&#36816;&#34892;Tcl&#27979;&#35797;&#31995;&#32479;&#65292;&#21487;&#25191;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">TZ=UTC make test</kbd></pre>
+        <p>&#24050;&#30693;Tcl&#30340;&#27979;&#35797;&#31243;&#24207;&#20250;&#22312;&#26576;&#20123;&#36824;&#26410;&#23436;&#20840;&#20102;&#35299;&#30340;&#23487;&#20027;&#31995;&#32479;&#19979;&#20986;&#29616;&#27979;&#35797;&#22833;&#36133;&#30340;&#24773;&#20917;&#65292; &#22240;&#27492;&#65292; &#22914;&#26524;&#36825;&#37324;&#30340;&#27979;&#35797;&#22833;&#36133;&#20102;&#65292;&#19981;&#35201;&#32039;&#65292; &#22240;&#20026;&#36825;&#24182;&#19981;&#20851;&#38190;&#12290;<em class="parameter"><code>TZ=UTC</code></em> &#21442;&#25968;&#23558;&#26102;&#21306;&#35774;&#32622;&#20026;&#21327;&#35843; &#19990;&#30028;&#26102;(UTC)&#65292; &#20063;&#23601;&#26159;&#26684;&#26519;&#23612;&#27835;&#26102;&#38388;(GMT)&#65292; &#20294;&#21482;&#26159;&#22312;&#36816;&#34892;&#27979;&#35797;&#31243;&#24207;&#30340;&#26102;&#20505;&#25165;&#36825;&#26679;&#35774;&#32622;&#65292; &#36825;&#23558;&#30830;&#20445;&#26102;&#38047;&#27979;&#35797;&#27491;&#30830;&#12290; &#20851;&#20110;TZ&#29615;&#22659;&#21464;&#37327;&#30340;&#35814;&#32454;&#36164;&#26009;&#20301;&#20110;  <a class="xref" href=
+          "../chapter07/chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">Chapter 7</a>.        </p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>&#20026;&#20102;&#20197;&#21518;&#21024;&#38500;&#35843;&#35797;&#31526;&#65292;&#23558;&#23433;&#35013;&#30340;&#24211;&#25991;&#20214;&#35774;&#32622;&#20026;&#21487;&#20889;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">chmod -v u+w /tools/lib/libtcl8.5.so</kbd></pre>
+        <p>
+          &#23433;&#35013;Tcl&#30340;&#22836;&#25991;&#20214;&#12290;&#32534;&#35793;&#19979;&#19968;&#20010;&#36719;&#20214;&#21253; &ldquo;Expect&rdquo; &#26102;&#38656;&#35201;&#23427;&#20204;&#12290;</p>
+        <pre class="userinput"><kbd class=
+        "command">make install-private-headers</kbd></pre>
+        <p>&#29616;&#22312;&#35774;&#32622;&#19968;&#20010;&#24517;&#35201;&#30340;&#31526;&#21495;&#38142;&#25509;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">ln -sv tclsh8.5 /tools/bin/tclsh</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-tcl" name="contents-tcl"></a>5.11.2. 
+          Tcl&#30340;&#20869;&#23481;        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">tclsh (link to tclsh8.5) and
+              tclsh8.5</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;:</strong>
+              <span class="segbody">libtcl8.5.so, libtclstub8.5.a</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tclsh8.5" name="tclsh8.5"></a><span class=
+                    "term"><span class=
+                    "command"><strong>tclsh8.5</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Tcl command shell
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tclsh" name="tclsh"></a><span class=
+                    "term"><span class=
+                    "command"><strong>tclsh</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    A link to tclsh8.5
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libtcl8.5.so" name="libtcl8.5.so"></a><span class=
+                    "term"><code class="filename">libtcl8.5.so</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Tcl library
+                  </p>
+    

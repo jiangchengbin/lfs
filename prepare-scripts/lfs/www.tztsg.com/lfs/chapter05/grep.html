@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.22.&nbsp;Grep-2.5.4
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gettext.html" title="Gettext-0.17">&#21518;&#36864;</a>
+          <p>
+            Gettext-0.17
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gzip.html" title="Gzip-1.4">&#21069;&#36827;</a>
+          <p>
+            Gzip-1.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-grep" name="ch-tools-grep"></a>5.22. Grep-2.5.4
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Grep &#21253;&#21547;&#26597;&#25214;&#25991;&#20214;&#20013;&#20869;&#23481;&#30340;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">6.7 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.22.1. &#23433;&#35013; Grep
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Grep &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/tools \
+    --disable-perl-regexp \
+    --without-included-regex</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-perl-regexp</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#36873;&#39033;&#30830;&#20445; <span class=
+                "command"><strong>grep</strong></span> &#31243;&#24207;&#19981;&#38142;&#25509;&#21040;&#21487;&#33021;&#22312;&#23487;&#20027;&#31995;&#32479;&#19978;&#23384;&#22312;&#30340;Perl &#20860;&#23481;&#27491;&#21017;&#34920;&#36798;&#24335; (PCRE)&#24211;&#65292;
+                &#22240;&#20026;&#36827;&#20837; <strong><span class=
+                "command"><strong>chroot</strong></span> </strong> &#29615;&#22659;&#21518;&#65292;&#23427;&#23601;&#19981;&#33021;&#20351;&#29992;&#20102;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--without-included-regex</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#21442;&#25968;&#26816;&#26597;&#22312;&#32534;&#35793;Glibc-2.11.1&#26102;&#30772;&#22351;&#30340; Glibc &#30340;&#27491;&#21017;&#34920;&#36798;&#24335;&#24211;&#12290;&#23427;&#24378;&#21046;&#20351;&#29992;Glibc &#30340;&#27491;&#21017;&#34920;&#36798;&#24335;&#24211;&#12290;              </p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#29616;&#22312;&#32534;&#35793;&#23436;&#25104;&#20102; &#21644;&#21069;&#38754;&#35752;&#35770;&#30340;&#19968;&#26679;&#65292;&#22312;&#26412;&#31456;&#65292;&#22240;&#20026;&#26159;&#20020;&#26102;&#24037;&#20855;&#65292;&#25105;&#20204;&#19981;&#24378;&#21046;&#24744;&#36816;&#34892;&#27979;&#35797;&#32452;&#20214;&#12290; &#22914;&#26524;&#19968;&#23450;&#35201;&#36816;&#34892;  Grep &#27979;&#35797;&#31995;&#32479;&#65292;&#21487;&#25191;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#30340;&#35814;&#32454;&#20869;&#23481;&#20301;&#20110;  <a class="xref" href=
+          "../chapter06/grep.html#contents-grep" title=
+          "6.27.2.&nbsp;Contents of Grep">Section&nbsp;6.27.2,
+          &ldquo;Contents of Grep.&rdquo;</a>
+        </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gettext.html" title="Gettext-0.17">&#21518;&#36864;</a>
+          <p>
+            Gettext-0.17
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gzip.html" title="Gzip-1.4">&#21069;&#36827;</a>
+          <p>
+            Gzip-1.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

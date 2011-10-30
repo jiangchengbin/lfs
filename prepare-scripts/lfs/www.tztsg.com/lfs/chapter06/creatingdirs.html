@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.5.&nbsp;Creating Directories
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="chroot.html" title=
+          "Entering the Chroot Environment">&#21518;&#36864;</a>
+          <p>
+            &#36827;&#20837; Chroot &#29615;&#22659;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="createfiles.html" title=
+          "Creating Essential Files and Symlinks">&#21069;&#36827;</a>
+          <p>
+            &#21019;&#24314;&#24517;&#38656;&#30340;&#25991;&#20214;&#19982;&#31526;&#21495;&#36830;&#25509; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-creatingdirs" name="ch-system-creatingdirs"></a>6.5.
+        &#21019;&#24314;&#31995;&#32479;&#30446;&#24405;&#32467;&#26500; 
+      </h1>
+      <p>
+        &#29616;&#22312;&#65292;&#25105;&#20204;&#22312;LFS&#25991;&#20214;&#31995;&#32479;&#37324;&#21019;&#24314;&#19968;&#20123;&#30446;&#24405;&#32467;&#26500;&#12290;&#36890;&#36807;&#25191;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#65292;&#26469;&#21019;&#24314;&#26631;&#20934;&#30340;&#30446;&#24405;&#26641;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">mkdir -pv /{bin,boot,etc/opt,home,lib,mnt,opt}
+mkdir -pv /{media/{floppy,cdrom},sbin,srv,var}
+install -dv -m 0750 /root
+install -dv -m 1777 /tmp /var/tmp
+mkdir -pv /usr/{,local/}{bin,include,lib,sbin,src}
+mkdir -pv /usr/{,local/}share/{doc,info,locale,man}
+mkdir -v  /usr/{,local/}share/{misc,terminfo,zoneinfo}
+mkdir -pv /usr/{,local/}share/man/man{1..8}
+for dir in /usr /usr/local; do
+  ln -sv share/{man,doc,info} $dir
+done
+case $(uname -m) in
+ x86_64) ln -sv lib /lib64 &amp;&amp; ln -sv lib /usr/lib64 ;;
+esac
+mkdir -v /var/{lock,log,mail,run,spool}
+mkdir -pv /var/{opt,cache,lib/{misc,locate},local}</kbd></pre>
+      <p>
+        &#32570;&#30465;&#30340;&#21019;&#24314;&#30446;&#24405;&#30340;&#26435;&#38480;&#27169;&#24335;&#20026; 755&#65292; &#20294;&#20063;&#24182;&#38750;&#25152;&#26377;&#30340;&#30446;&#24405;&#37117;&#22914;&#27492;&#12290; &#20197;&#19978;&#30340;&#21629;&#20196;&#26377;&#20004;&#22788;&#26377;&#25152;&#19981;&#21516;&#65306; &#19968;&#20010;&#26159; <code class=
+        "systemitem">root</code>  &#29992;&#25143;&#30340;&#20027;&#30446;&#24405;&#65292;&#21478;&#22806;&#20004;&#20010;&#26159;&#20020;&#26102;&#25991;&#20214;&#30446;&#24405;&#12290;</p>
+      <p>&#31532;&#19968;&#20010;&#26435;&#38480;&#27169;&#24335;&#30340;&#25913;&#21464;&#26159;&#30830;&#20445;&#20854;&#20182;&#20154;&#19981;&#33021;&#36827;&#20837;&#21040; <code class="filename">/root</code>  &#30446;&#24405;&#20013;&mdash;&mdash;&#21516;&#26679;&#30340;&#65292;   &#36825;&#20010;&#27169;&#24335;&#20063;&#36866;&#29992;&#20110;&#35753;&#20854;&#23427;&#30340;&#26222;&#36890;&#29992;&#25143;&#21487;&#20197;&#24037;&#20316;&#22312;&#33258;&#24049;&#30340;&#30446;&#24405;&#20013;&#12290;&#31532;&#20108;&#20010;&#26435;&#38480;&#27169;&#24335;&#30340;&#25913;&#21464;&#65292; &#30830;&#20445;&#20219;&#20309;&#29992;&#25143;&#37117;&#21487;&#20197;&#20889; <code class=
+        "filename">/tmp</code>  &#21644; <code class="filename">/var/tmp</code>  &#30446;&#24405;&#65292;   &#20294;&#19981;&#33021;&#20174;&#20013;&#21024;&#38500;&#20854;&#23427;&#29992;&#25143;&#30340;&#25991;&#20214;&#65292; &#36825;&#26159;&#30001;&quot;sticky&#20301;&quot;&#65292; &#20063;&#23601;&#26159;&quot;1777&quot;&#20013;&#30340;&#26368;&#39640;&#20301;&quot;1&quot;&#26469;&#35774;&#23450;&#30340;&#12290;</p>
+      <div class="sect2" lang="en" xml:lang="en">
+        <h2 class="sect2">
+        6.5.1. FHS&#20860;&#23481;&#24615;&#35828;&#26126;        </h2>
+        <p>&#25105;&#20204;&#30340;&#30446;&#24405;&#26641;&#26159;&#25353;&#29031;&#25991;&#20214;&#31995;&#32479;&#23618;&#27425;&#26631;&#20934; (FHS) &#65288;&#35831;&#21442;&#32771; <a class="ulink" href=
+          "http://www.pathname.com/fhs/">http://www.pathname.com/fhs/</a>)&#12290; 
+          &#38500;&#20102; FHS&#22806;&#65292;&#25105;&#20204;&#36824;&#20026;          <code class="filename">man</code>, <code class=
+          "filename">doc</code>, &#21644; <code class="filename">info</code>&#30446;&#24405;&#24314;&#31435;&#20102;&#20860;&#23481;&#24615;&#30340;&#31526;&#21495;&#38142;&#25509;&#65292; &#22240;&#20026;&#24456;&#22810;&#36719;&#20214;&#21253;&#36824;&#20250;&#35797;&#22270;&#23558;&#23427;&#20204;&#30340;&#24110;&#21161;&#25991;&#26723;&#23433;&#35013;&#21040; <code class=
+          "filename">/usr/&lt;directory&gt;</code> &#25110; <code class=
+          "filename">/usr/local/&lt;directory&gt;</code> &#32780;&#19981;&#26159;
+          <code class="filename">/usr/share/&lt;directory&gt;</code> &#25110;
+          <code class="filename">/usr/local/share/&lt;directory&gt;</code>&#30446;&#24405;&#12290;
+          FHS &#36824;&#35268;&#23450;&#24517;&#39035;&#26377; <code class=
+          "filename">/usr/local/games</code> &#21644; <code class=
+          "filename">/usr/share/games</code> &#20004;&#20010;&#30446;&#24405;&#65292; &#20294;&#26159;&#20316;&#20026;&#19968;&#20010;&#22522;&#26412;&#31995;&#32479;&#65292; &#25105;&#20204;&#24182;&#19981;&#38656;&#35201;&#36825;&#20123;&#12290; &#22914;&#26524;&#20320;&#35201;&#23436;&#20840;&#30340;&#36981;&#23432; FHS &#26631;&#20934;&#30340;&#35805;&#65292;&#23601;&#33258;&#24049;&#24314;&#31435;&#36825;&#20004;&#20010;&#30446;&#24405;&#12290;&#33267;&#20110; <code class="filename">/usr/local/share</code>   &#30446;&#24405;&#19979;&#30340;&#23376;&#30446;&#24405;&#65292;FHS &#26631;&#20934;&#35268;&#23450;&#24471;&#24182;&#19981;&#20005;&#26684;&#65292; &#25152;&#20197;&#25105;&#20204;&#23601;&#21019;&#24314;&#20102;(&#22312;&#25105;&#20204;&#30475;&#26469;)&#38656;&#35201;&#30340;&#23376;&#30446;&#24405;&#12290;</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="chroot.html" title=
+          "Entering the Chroot Environment">&#21518;&#36864;</a>
+          <p>
+            &#36827;&#20837; Chroot &#29615;&#22659;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="createfiles.html" title=
+          "Creating Essential Files and Symlinks">&#21069;&#36827;</a>
+          <p>
+            &#21019;&#24314;&#24517;&#38656;&#30340;&#25991;&#20214;&#19982;&#31526;&#21495;&#36830;&#25509; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

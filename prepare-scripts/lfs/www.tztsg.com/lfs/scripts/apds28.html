@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      D.28.&nbsp;/etc/sysconfig/network-devices/services/ipv4-static-route
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Appendix&nbsp;D.&nbsp;&#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds27.html" title=
+          "/etc/sysconfig/network-devices/services/ipv4-static">&#21518;&#36864;</a>
+          <p>
+            /etc/sysconfig/network-devices/services/ipv4-static
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="udev-rules.html" title=
+          "Udev configuration rules">&#21069;&#36827;</a>
+          <p>
+            Udev &#37197;&#32622;&#35268;&#21017;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ipv4route" name="ipv4route"></a>D.28.
+        /etc/sysconfig/network-devices/services/ipv4-static-route
+      </h1>
+      <pre class="screen">#!/bin/sh
+########################################################################
+# Begin $network_devices/services/ipv4-static-route
+#
+# Description : IPV4 Static Route Script
+#
+# Authors     : Kevin P. Fleming - kpfleming@linuxfromscratch.org
+#
+# Version     : 00.00
+#
+# Notes       :
+#
+########################################################################
+
+. /etc/sysconfig/rc 
+. ${rc_functions} 
+. ${IFCONFIG}
+
+case "${TYPE}" in
+    ("" | "network")
+        need_ip=1
+        need_gateway=1
+    ;;
+
+    ("default")
+        need_gateway=1
+        args="${args} default"
+        desc="default"
+    ;;
+
+    ("host")
+        need_ip=1
+    ;;
+
+    ("unreachable")
+        need_ip=1
+        args="${args} unreachable"
+        desc="unreachable "
+    ;;
+
+    (*)
+        boot_mesg "Unknown route type (${TYPE}) in ${IFCONFIG}, cannot continue." ${FAILURE}
+        echo_failure
+        exit 1
+    ;;
+esac
+
+if [ -n "${need_ip}" ]; then
+    if [ -z "${IP}" ]; then
+        boot_mesg "IP variable missing from ${IFCONFIG}, cannot continue." ${FAILURE}
+        echo_failure
+        exit 1
+    fi
+
+    if [ -z "${PREFIX}" ]; then
+        boot_mesg "PREFIX variable missing from ${IFCONFIG}, cannot continue." ${FAILURE}
+        echo_failure
+        exit 1
+    fi
+    
+    args="${args} ${IP}/${PREFIX}"
+    desc="${desc}${IP}/${PREFIX}"
+fi
+
+if [ -n "${need_gateway}" ]; then
+    if [ -z "${GATEWAY}" ]; then
+        boot_mesg "GATEWAY variable missing from ${IFCONFIG}, cannot continue." ${FAILURE}
+        echo_failure
+        exit 1
+    fi
+    args="${args} via ${GATEWAY}"
+fi
+
+if [ -n "${SOURCE}" ]; then
+        args="${args} src ${SOURCE}"
+fi
+
+case "${2}" in
+    up)
+        boot_mesg "Adding '${desc}' route to the ${1} interface..."
+        ip route add ${args} dev ${1}
+        evaluate_retval
+    ;;
+    
+    down)
+        boot_mesg "Removing '${desc}' route from the ${1} interface..."
+        ip route del ${args} dev ${1}
+        evaluate_retval
+    ;;
+    
+    *)
+        echo "Usage: ${0} [interface] {up|down}"
+        exit 1
+    ;;
+esac
+
+# End $network_devices/services/ipv4-static-route
+</pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds27.html" title=
+          "/etc/sysconfig/network-devices/services/ipv4-static">&#21518;&#36864;</a>
+          <p>
+            /etc/sysconfig/network-devices/services/ipv4-static
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="udev-rules.html" title=
+          "Udev configuration rules">&#21069;&#36827;</a>
+          <p>
+            Udev &#37197;&#32622;&#35268;&#21017;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

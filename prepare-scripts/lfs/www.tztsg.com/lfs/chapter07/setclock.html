@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      7.4.&nbsp;Configuring the setclock Script
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;7.&nbsp;&#37197;&#32622;&#31995;&#32479;&#21551;&#21160;&#33050;&#26412;</h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="usage.html" title=
+          "How Do These Bootscripts Work?">&#21518;&#36864;</a>
+          <p>
+            &#21551;&#21160;&#33050;&#26412;&#26159;&#22914;&#20309;&#24037;&#20316;&#30340;?
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="console.html" title=
+          "Configuring the Linux Console">&#21069;&#36827;</a>
+          <p>
+            &#37197;&#32622; Linux &#25511;&#21046;&#21488;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-scripts-setclock" name="ch-scripts-setclock"></a>7.4.
+        &#37197;&#32622; setclock &#33050;&#26412; 
+      </h1>
+      <p><span class="command"><strong>setclock</strong></span>&#33050;&#26412;&#20174;&#30828;&#20214;&#26102;&#38047;&#65292;&#20063;&#23601;&#26159; BIOS &#25110; CMOS &#26102;&#38047;&#35835;&#21462;&#26102;&#38388;&#12290;&#22914;&#26524;&#30828;&#20214;&#26102;&#38047;&#35774;&#32622;&#20026;UTC&#65292; &#36825;&#20010;&#33050;&#26412;&#20250;&#20351;&#29992; <code class=
+        "filename">/etc/localtime</code> &#25991;&#20214;(&#36825;&#20010;&#25991;&#20214;&#25226;&#29992;&#25143;&#25152;&#22312;&#30340;&#26102;&#21306;&#21578;&#35785; <span class=
+        "command"><strong>hwclock </strong></span>&#31243;&#24207;) &#23558;&#30828;&#20214;&#26102;&#38047;&#30340;&#26102;&#38388;&#36716;&#25442;&#20026;&#26412;&#22320;&#26102;&#38388;&#12290;&#27809;&#26377;&#21150;&#27861;&#33258;&#21160;&#26816;&#27979;&#30828;&#20214;&#26102;&#38047;&#26159;&#21542;&#35774;&#32622;&#20026; UTC &#26102;&#38388;&#65292; &#22240;&#27492;&#38656;&#35201;&#25163;&#21160;&#35774;&#32622;&#12290;</p>
+      <p>&#24403;&#20869;&#26680;&#26816;&#27979;&#30828;&#20214;&#24615;&#33021;&#30340;&#26102;&#20505;&#65292;<span class="command"><strong>setclock</strong></span> &#30001;udev&#36816;&#34892;&#12290; &#23427;&#36824;&#21487;&#20197;&#20351;&#29992;stop&#21442;&#25968;&#25163;&#21160;&#36816;&#34892;&#65292; &#26469;&#23558;&#31995;&#32479;&#26102;&#38388;&#20445;&#23384;&#21040;CMOS&#26102;&#38047;&#12290;</p>
+      <p>&#22914;&#26524;&#24744;&#24536;&#20102;&#30828;&#20214;&#26102;&#38047;&#26159;&#19981;&#26159;&#35774;&#32622;&#20026; UTC &#26102;&#38388;&#20102;&#65292;&#21487;&#20197;&#36816;&#34892; <strong class="userinput"><code>hwclock
+        --localtime --show</code></strong>&#21629;&#20196;&#65292; &#36825;&#23558;&#26174;&#31034;&#30828;&#20214;&#26102;&#38047;&#24403;&#21069;&#30340;&#26102;&#38388;&#12290;&#26174;&#31034;&#30340;&#26102;&#38388;&#31526;&#21512;&#24744;&#30340;&#25163;&#34920;&#30340;&#26102;&#38388;&#65292;&#37027;&#20040;&#30828;&#20214;&#26102;&#38047;&#35774;&#32622;&#30340;&#26159;&#26412;&#22320;&#26102;&#38388;&#65307; &#22914;&#26524; <span class=
+        "command"><strong>hwclock </strong></span>&#26174;&#31034;&#30340;&#19981;&#26159;&#26412;&#22320;&#26102;&#38388;&#65292;&#23601;&#26377;&#21487;&#33021;&#35774;&#32622;&#30340;&#26159; UTC &#26102;&#38388;&#65292; &#21487;&#20197;&#36890;&#36807;&#22312;&#25152;&#26174;&#31034;&#30340;<span class="command"><strong> hwclock </strong></span>&#26102;&#38388;&#21152;&#19978;&#25110;&#20943;&#21435;&#24744;&#25152;&#22312;&#26102;&#21306;&#30340;&#23567;&#26102;&#25968;&#26469;&#39564;&#35777;&#12290;&#20363;&#22914;&#65292;&#22914;&#26524;&#24744;&#25152;&#22312;&#30340;&#26102;&#21306;&#26159; MST (&#32654;&#22269;&#23665;&#21306;&#26102;&#21306;)&#65292; &#24050;&#30693;&#26159; GMT -0700&#65292;&#22312;&#26412;&#22320;&#26102;&#38388;&#19978;&#21152; 7 &#23567;&#26102;&#12290;</p>
+      <p>&#22914;&#26524;&#20320;&#30340;&#30828;&#20214;&#20351;&#29992;&#30340;<em>&#19981;&#26159;</em> UTC &#26102;&#38388;&#65292; &#23601;&#24517;&#39035;&#23558;&#19979;&#38754;&#30340; UTC &#21464;&#37327;&#20540;&#35774;&#20026; <em>0</em> (&#38646;)&#12290;</p>
+      <p>&#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#26032;&#24314;&#19968;&#20010; <code class="filename">/etc/sysconfig/clock</code>
+        &#25991;&#20214;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">cat &gt; /etc/sysconfig/clock &lt;&lt; "EOF"
+<code class="literal"># Begin /etc/sysconfig/clock
+
+UTC=1
+
+# Set this to any options you might need to give to hwclock, 
+# such as machine hardware clock type for Alphas.
+CLOCKPARAMS=
+
+# End /etc/sysconfig/clock</code>
+EOF</kbd></pre>
+      <p>
+        &#22312; <a class="ulink" href=
+        "http://www.linuxfromscratch.org/hints/downloads/files/time.txt">http://www.linuxfromscratch.org/hints/downloads/files/time.txt</a> &#26377;&#19968;&#20010;&#24456;&#22909;&#30340;&#20851;&#20110;&#22914;&#20309;&#22788;&#29702; LFS &#26102;&#38388;&#30340;&#25552;&#31034;&#65292;&#35828;&#26126;&#20102;&#20363;&#22914;&#26102;&#21306;&#12289;UTC&#12289;TZ &#29615;&#22659;&#21464;&#37327;&#31561;&#31561;&#38382;&#39064;&#12290;</p>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="usage.html" title=
+          "How Do These Bootscripts Work?">&#21518;&#36864;</a>
+          <p>
+            &#21551;&#21160;&#33050;&#26412;&#26159;&#22914;&#20309;&#24037;&#20316;&#30340;?
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="console.html" title=
+          "Configuring the Linux Console">&#21069;&#36827;</a>
+          <p>
+            &#37197;&#32622; Linux &#25511;&#21046;&#21488;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

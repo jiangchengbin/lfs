@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.27.&nbsp;Grep-2.5.4
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="procps.html" title="Procps-3.2.8">&#21518;&#36864;</a>
+          <p>
+            Procps-3.2.8
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="readline.html" title="Readline-6.1">&#21069;&#36827;</a>
+          <p>
+            Readline-6.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-grep" name="ch-system-grep"></a>6.27. Grep-2.5.4
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Grep &#21487;&#20197;&#25628;&#32034;&#25991;&#20214;&#20013;&#31526;&#21512;&#25351;&#23450;&#21305;&#37197;&#27169;&#24335;&#30340;&#34892;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">7.3 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.27.1. &#23433;&#35013; Grep
+        </h2>
+        <p>&#24403;&#21069;&#30340; Grep &#21253;&#26377;&#24456;&#22810;bug,&#23588;&#20854;&#26159;&#23545;&#22810;&#23383;&#33410;&#30340;loacles&#30340;&#25903;&#25345;&#12290; Debian &#37319;&#29992;&#19979;&#38754;&#30340;&#36825;&#20010; patch &#26469;&#35299;&#20915;&#37096;&#20998;&#38382;&#39064;&#65292;   &#21487;&#20197;&#36890;&#36807;&#19968;&#20123;&#21333;&#29420;&#30340;&#27979;&#35797;&#65292;&#24182;&#19988;&#22823;&#24133;&#25913;&#21892;&#20102;&#22312;UTF-8 locale&#20013;&#30340;&#36895;&#24230;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../grep-2.5.4-debian_fixes-1.patch</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Grep &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr \
+    --bindir=/bin \
+    --without-included-regex</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--without-included-regex</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#37197;&#32622;&#26816;&#26597;Glibc&#30340;&#27491;&#21017;&#34920;&#36798;&#24335;&#24211;&#22312;&#20877;&#27425;&#32534;&#35793;Glibc-2.10.1&#26102;&#65292; &#26159;&#21542;&#34987;&#30772;&#22351;&#12290; &#36825;&#20010;&#36873;&#39033;&#24378;&#21046;&#20351;&#29992;Glibc&#30340;&#27491;&#21017;&#34920;&#36798;&#24335;&#24211;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make check || true</kbd></pre>
+        <p>
+          &#22312;<strong><span class=
+          "command"><strong>fmbtest.sh</strong></span> </strong>&#27979;&#35797;&#20013;&#26377;&#19968;&#20010;&#24050;&#30693;&#30340;&#38169;&#35823;&#12290; &quot;|| true&quot;   &#32467;&#26500;&#29992;&#26469;&#33258;&#21160;&#36991;&#20813;&#30001;&#20110;&#27492;&#27425;&#35797;&#39564;&#22833;&#36133;&#36896;&#25104;&#32534;&#35793;&#33050;&#26412;&#22833;&#36133;&#12290; &#34429;&#28982;&#27979;&#35797;&#22833;&#36133;&#20250;&#24341;&#36215;2&#27425;&#23376;&#27979;&#35797;&#38169;&#35823;&#65292; &#20294;&#26159;&#65292; &#25191;&#34892;&#27491;&#24120;&#30340;&#35805;&#65292; &#21482;&#20250;&#22312;14&#20010;&#27979;&#35797;&#20013;&#30475;&#21040;1&#20010;&#38169;&#35823;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-grep" name="contents-grep"></a>6.27.2.  
+          Grep
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">egrep, fgrep, and grep</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="egrep" name="egrep"></a><span class=
+                    "term"><span class=
+                    "command"><strong>egrep</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25171;&#21360;&#20986;&#21305;&#37197;&#25193;&#23637;&#27491;&#21017;&#34920;&#36798;&#24335;&#27169;&#24335;&#30340;&#34892;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="fgrep" name="fgrep"></a><span class=
+                    "term"><span class=
+                    "command"><strong>fgrep</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23545;&#22266;&#23450;&#23383;&#31526;&#20018;&#21015;&#34920;&#36827;&#34892;&#21305;&#37197;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grep" name="grep"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grep</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23545;&#22522;&#26412;&#27491;&#21017;&#34920;&#36798;&#24335;&#36827;&#34892;&#21305;&#37197; </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="procps.html" title="Procps-3.2.8">&#21518;&#36864;</a>
+          <p>
+            Procps-3.2.8
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="readline.html" title="Readline-6.1">&#21069;&#36827;</a>
+          <p>
+            Readline-6.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

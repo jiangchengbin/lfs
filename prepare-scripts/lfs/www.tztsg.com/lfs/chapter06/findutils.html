@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.39.&nbsp;Findutils-4.4.2
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gawk.html" title="Gawk-3.1.7">&#21518;&#36864;</a>
+          <p>
+            Gawk-3.1.7
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="flex.html" title="Flex-2.5.35">&#21069;&#36827;</a>
+          <p>
+            Flex-2.5.35
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-findutils" name="ch-system-findutils"></a>6.39.
+        Findutils-4.4.2
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Findutils &#21253;&#21547;&#26597;&#25214;&#25991;&#20214;&#30340;&#24037;&#20855;&#65292; &#26082;&#33021;&#21363;&#26102;&#26597;&#25214;(&#36882;&#24402;&#30340;&#25628;&#32034;&#30446;&#24405;&#65292; &#24182;&#21487;&#20197;&#26174;&#31034;&#12289; &#21019;&#24314;&#21644;&#32500;&#25252;&#25991;&#20214;)&#65292;    &#20063;&#33021;&#22312;&#25968;&#25454;&#24211;&#37324;&#26597;&#25214; (&#36890;&#24120;&#27604;&#36882;&#24402;&#26597;&#25214;&#24555;&#20294;&#26159;&#22312;&#25968;&#25454;&#24211;&#27809;&#26377;&#21450;&#26102;&#26356;&#26032;&#30340;&#24773;&#20917;&#19979;&#65292; &#32467;&#26524;&#24182;&#19981;&#21487;&#38752;)&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.5 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">22 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.39.1. &#23433;&#35013; Findutils
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Findutils &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --libexecdir=/usr/lib/findutils \
+    --localstatedir=/var/lib/locate</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--localstatedir</code></em></span>            </dt>
+            <dd>
+              <p>&#23558; <strong>locate</strong>&#25968;&#25454;&#24211;&#30340;&#20301;&#32622;&#25351;&#23450;&#20026; /var/lib/locate   &#65292;&#20197;&#31526;&#21512; FHS &#26631;&#20934;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+           LFS-Bootscripts&#21253;&#20013;&#30340;&#19968;&#20123;&#33050;&#26412;&#20381;&#36182;&#20110;          <span class="command"><strong>find</strong></span>&#12290; &#22240;&#20026;&#22312;&#31995;&#32479;&#21551;&#21160;&#30340;&#21069;&#26399;&#65292; /usr&#30446;&#24405;&#36824;&#26159;&#26080;&#27861;&#35775;&#38382;&#30340;&#65288;&#27604;&#22914;&#36824;&#27809;&#26377;&#25346;&#36733;&#19978;&#65289;&#65292;&#22240;&#27492;&#36825;&#20010;&#31243;&#24207;&#38656;&#35201;&#25918;&#22312;&#26681;&#20998;&#21306;&#19978;&#12290; <strong><strong>updatedb</strong></strong> &#33050;&#26412;&#20063;&#38656;&#35201;&#29992;&#23436;&#20840;&#36335;&#24452;&#26469;&#20462;&#27491;&#65306;</p>
+        <pre class="userinput"><kbd class="command">mv -v /usr/bin/find /bin
+sed -i 's/find:=${BINDIR}/find:=\/bin/' /usr/bin/updatedb</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-findutils" name="contents-findutils"></a>6.39.2.
+          Findutils &#30340;&#20869;&#23481;
+        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">bigram, code, find, frcode, locate,
+              oldfind, updatedb, and xargs</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="bigram" name="bigram"></a><span class=
+                    "term"><span class=
+                    "command"><strong>bigram</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20197;&#21069;&#29992;&#26469;&#21019;&#24314; <strong><strong>locate</strong></strong> &#25968;&#25454;&#24211;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="code" name="code"></a><span class=
+                    "term"><span class=
+                    "command"><strong>code</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20197;&#21069;&#29992;&#26469;&#21019;&#24314; <strong>locate</strong>&#25968;&#25454;&#24211;&#12290;&#23427;&#26159; <strong>frcode</strong>&#30340;&#21069;&#36523;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="find" name="find"></a><span class=
+                    "term"><span class=
+                    "command"><strong>find</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22312;&#32473;&#23450;&#30340;&#30446;&#24405;&#21450;&#20854;&#23376;&#30446;&#24405;&#37324;&#38754;&#25214;&#31526;&#21512;&#26465;&#20214;&#30340;&#25991;&#20214;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="frcode" name="frcode"></a><span class=
+                    "term"><span class=
+                    "command"><strong>frcode</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#34987; <strong>updatedb</strong> &#35843;&#29992;&#26469;&#21387;&#32553;&#25991;&#20214;&#21517;&#21015;&#34920;&#65292;&#23427;&#20351;&#29992;&#30340;&#26159;&#21069;&#31471;&#21387;&#32553;(front-compression)&#65292;&#21487;&#20197;&#20943;&#23567;&#25968;&#25454;&#24211;4&#21040;5&#20493;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="locate" name="locate"></a><span class=
+                    "term"><span class=
+                    "command"><strong>locate</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25195;&#25551;&#19968;&#20010;&#25991;&#20214;&#21517;&#31216;&#25968;&#25454;&#24211;&#65292; &#21487;&#20197;&#21015;&#20986;&#22312;&#25968;&#25454;&#24211;&#20013;&#21253;&#21547;&#32473;&#23450;&#23383;&#31526;&#20018;&#25110;&#31526;&#21512;&#32473;&#23450;&#26465;&#20214;&#30340;&#25991;&#20214;&#25110;&#32773;&#30446;&#24405;&#21517;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="oldfind" name="oldfind"></a><span class=
+                    "term"><span class=
+                    "command"><strong>oldfind</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>find&#30340;&#26087;&#29256;&#26412;&#65292;&#23427;&#20351;&#29992;&#19981;&#21516;&#30340;&#31639;&#27861;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="updatedb" name="updatedb"></a><span class=
+                    "term"><span class=
+                    "command"><strong>updatedb</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26356;&#26032;<strong>locate</strong>&#25968;&#25454;&#24211;&#12290; &#23427;&#20250;&#25195;&#25551;&#25972;&#20010;&#25991;&#20214;&#31995;&#32479;&#65292;   &#21253;&#25324;&#25152;&#26377;&#25346;&#36733;&#30340;&#25991;&#20214;&#31995;&#32479;(&#38500;&#38750;&#35774;&#23450;&#21442;&#25968;&#31105;&#27490;)&#65292; &#24182;&#19988;&#25226;&#27599;&#19968;&#20010;&#25214;&#21040;&#30340;&#25991;&#20214;&#21644;&#30446;&#24405;&#25918;&#21040; <strong>locate</strong> &#25968;&#25454;&#24211;&#37324;&#38754;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="xargs" name="xargs"></a><span class=
+                    "term"><span class=
+                    "command"><strong>xargs</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21487;&#20197;&#29992;&#26469;&#23558;&#19968;&#20010;&#32473;&#23450;&#30340;&#21629;&#20196;&#24212;&#29992;&#21040;&#19968;&#20010;&#25991;&#20214;&#21015;&#34920;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gawk.html" title="Gawk-3.1.7">&#21518;&#36864;</a>
+          <p>
+            Gawk-3.1.7
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="flex.html" title="Flex-2.5.35">&#21069;&#36827;</a>
+          <p>
+            Flex-2.5.35
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

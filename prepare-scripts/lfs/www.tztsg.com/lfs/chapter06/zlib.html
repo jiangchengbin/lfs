@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.11.&nbsp;Zlib-1.2.3
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="readjusting.html" title=
+          "Re-adjusting the Toolchain">&#21518;&#36864;</a>
+          <p>
+            &#20877;&#27425;&#35843;&#25972;&#24037;&#20855;&#38142;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="binutils.html" title=
+          "Binutils-2.20">&#21069;&#36827;</a>
+          <p>
+            Binutils-2.20
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-zlib" name="ch-system-zlib"></a>6.11. Zlib-1.2.3
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           Zlib  &#21253;&#21547;&#20102;&#19968;&#20123;&#31243;&#24207;&#20250;&#29992;&#21040;&#30340;&#21387;&#32553;&#21644;&#35299;&#21387;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">&#23569;&#20110; 0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">2.8 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.11.1. &#23433;&#35013; Zlib
+        </h2>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>
+            &#22914;&#26524;&#22312;&#29615;&#22659;&#21464;&#37327;&#20013;&#25351;&#23450;&#20102;<code class="envar">CFLAGS</code> &#30340;&#35805;&#65292; Zlib &#23601;&#19981;&#33021;&#27491;&#24120;&#32534;&#35793;&#23427;&#30340;&#20849;&#20139;&#24211;&#12290; &#22914;&#26524;&#20320;&#20351;&#29992;&#20102;&#25351;&#23450;&#30340; <code class=
+            "envar">CFLAGS</code> &#21464;&#37327;&#65292; &#35831;&#22312;&#19979;&#36848;&#25972;&#20010; configure &#21629;&#20196;&#30340;&#36807;&#31243;&#20013;&#65292;&#19968;&#23450;&#35201;&#25226;<em class=
+            "parameter"><code>-fPIC</code></em><em> </em><em> </em>&#25351;&#20196;&#21152;&#22312;<code class=
+            "envar">CFLAGS</code> &#21464;&#37327;&#19978;&#65292; &#28982;&#21518;&#65292;&#22312;&#32534;&#35793;&#38745;&#24577;&#24211;&#26102;&#21024;&#38500;&#23427;&#12290;</p>
+        </div>
+        <p>
+          &#20026;&#32534;&#35793; Zlib &#21160;&#24577;&#38142;&#25509;&#24211;&#20570;&#20934;&#22791;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --shared --libdir=/lib</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#20849;&#20139;&#24211;:
+        </p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#19978;&#38754;&#30340;&#21629;&#20196;&#23558;&#20250;&#22312;  <code class="filename">/lib</code> &#30446;&#24405;&#19979;&#23433;&#35013;&#19968;&#20010; <code class="filename">.so</code>&#25991;&#20214;&#12290;&#25105;&#20204;&#35201;&#31227;&#38500;&#23427;&#65292;&#24182;&#23558;&#20854;&#37325;&#26032;&#36830;&#25509;&#21040; <code class="filename">/usr/lib</code> &#30446;&#24405;&#19979;&#65306;</p>
+        <pre class="userinput"><kbd class="command">rm -v /lib/libz.so
+ln -sfv ../../lib/libz.so.1.2.3 /usr/lib/libz.so</kbd></pre>
+        <p>
+          &#32534;&#35793;&#38745;&#24577;&#24211;&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">make clean
+./configure --prefix=/usr
+make</kbd></pre>
+        <p>
+          &#20026;&#20102;&#20877;&#27425;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#25191;&#34892;&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#38745;&#24577;&#24211;&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>&#20462;&#27491;&#38745;&#24577;&#24211;&#30340;&#26435;&#38480;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">chmod -v 644 /usr/lib/libz.a</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-zlib" name="contents-zlib"></a>6.11.2.  
+          Zlib
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libz.{a,so}</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libz" name="libz"></a><span class=
+                    "term"><code class="filename">libz</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#20102;&#19968;&#20123;&#31243;&#24207;&#20250;&#29992;&#21040;&#30340;&#21387;&#32553;&#21644;&#35299;&#21387;&#31243;&#24207;&#12290;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="readjusting.html" title=
+          "Re-adjusting the Toolchain">&#21518;&#36864;</a>
+          <p>
+            &#20877;&#27425;&#35843;&#25972;&#24037;&#20855;&#38142;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="binutils.html" title=
+          "Binutils-2.20">&#21069;&#36827;</a>
+          <p>
+            Binutils-2.20
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

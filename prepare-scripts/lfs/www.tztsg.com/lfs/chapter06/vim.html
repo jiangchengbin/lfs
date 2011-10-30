@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.59.&nbsp;Vim-7.2
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="udev.html" title="Udev-151">&#21518;&#36864;</a>
+          <p>
+            Udev-151
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="aboutdebug.html" title=
+          "About Debugging Symbols">&#21069;&#36827;</a>
+          <p>
+            &#20851;&#20110;&#35843;&#35797;&#31526;&#21495; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-vim" name="ch-system-vim"></a>6.59. Vim-7.2
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Vim &#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#20010;&#24378;&#22823;&#30340;&#25991;&#26412;&#32534;&#36753;&#22120;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">1.0 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">79 MB</span>
+            </div>
+          </div>
+        </div>
+        <div class="admon tip">
+          <img alt="[Tip]" src="../images/tip.png" />
+          <h3>
+            &#26367;&#20195; Vim
+          </h3>
+          <p>&#22914;&#26524;&#20320;&#26356;&#21916;&#27426;&#20854;&#20182;&#30340;&#32534;&#36753;&#22120;&mdash;&#27604;&#22914; Emacs&#65292; Joe&#65292; &#25110; Nano&mdash;&#35831;&#21442;&#32771;<a class="ulink" href=
+            "http://www.linuxfromscratch.org/blfs/view/svn/postlfs/editors.html">
+            http://www.linuxfromscratch.org/blfs/view/svn/postlfs/editors.html</a>&#33719;&#21462;&#23433;&#35013;&#26041;&#27861;&#12290;</p>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.59.1. &#23433;&#35013; Vim
+        </h2>
+        <p>&#39318;&#20808;&#65292;&#23558; vim-7.2.tar.bz2 &#21644; (&#21487;&#36873;) vim-7.2-lang.tar.gz &#21387;&#32553;&#21253;&#23637;&#24320;&#21040;&#21516;&#19968;&#20010;&#30446;&#24405;&#19979;&#12290;</p>
+        <p>&#24212;&#29992;&#19968;&#20010; patch&#65292;&#23427;&#20462;&#22797;&#20102;&#20174;Vim-7.2&#29256;&#21457;&#34892;&#20197;&#26469;&#65292;&#19968;&#20123;&#24050;&#32463;&#21457;&#29616;&#24182;&#34987;&#19978;&#28216;&#32500;&#25252;&#32773;&#20462;&#22797;&#30340;&#38382;&#39064;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../vim-7.2-fixes-5.patch</kbd></pre>
+        <p>&#25226;&#37197;&#32622;&#25991;&#20214; vimrc &#30340;&#40664;&#35748;&#20301;&#32622;&#20462;&#25913;&#21040; /etc &#30446;&#24405;&#20013;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">echo '#define SYS_VIMRC_FILE "/etc/vimrc"' &gt;&gt; src/feature.h</kbd></pre>
+        <p>
+          &#29616;&#22312;&#65292;&#20026;&#32534;&#35793; Vim &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --enable-multibyte</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--enable-multibyte</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#36873;&#39033;&#20351;&#24471; Vim &#21487;&#20197;&#25903;&#25345;&#20351;&#29992;&#22810;&#23383;&#33410;&#23383;&#31526;&#32534;&#30721;&#30340;&#25991;&#20214;&#65292;&#22312;&#19968;&#20010;&#20351;&#29992;&#22810;&#23383;&#33410;&#23383;&#31526;&#38598;&#30340; locale &#19978;&#65292;&#36825;&#26159;&#24517;&#38656;&#30340;&#12290;&#21478;&#22806;&#35813;&#36873;&#39033;&#36824;&#26377;&#21161;&#20110;&#32534;&#36753;&#22312;&#40664;&#35748;&#20351;&#29992;   UTF-8 &#23383;&#31526;&#38598;&#30340;&#20854;&#23427; Linux &#21457;&#34892;&#29256;(&#22914; Fedora )&#19978;&#21019;&#24314;&#30340;&#25991;&#26412;&#25991;&#20214;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make test</kbd></pre>
+        <p>&#28982;&#32780;&#65292;Vim &#30340;&#27979;&#35797;&#22871;&#20214;&#20250;&#36755;&#20986;&#22823;&#37327;&#30340;&#20108;&#36827;&#21046;&#23383;&#31526;&#21040;&#23631;&#24149;&#19978;&#65292; &#26377;&#26102;&#20250;&#25226;&#24403;&#21069;&#30340;&#32456;&#31471;&#35774;&#32622;&#25630;&#20081;&#65292; &#25152;&#20197;&#21487;&#20197;&#32771;&#34385;&#23558;&#20854;&#36755;&#20986;&#37325;&#23450;&#21521;&#21040;&#19968;&#20010;&#26085;&#24535;&#25991;&#20214;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>&#35768;&#22810;&#29992;&#25143;&#20064;&#24815;&#20110;&#20351;&#29992; <strong>vi</strong> &#32780;&#19981;&#26159; <strong>vim</strong> &#65292;   &#19979;&#38754;&#30340;&#21629;&#20196;&#20026;&#36866;&#24212;&#36825;&#31181;&#20064;&#24815;&#21019;&#24314;&#19968;&#20010;&#20108;&#36827;&#21046;&#25991;&#20214;&#20197;&#21450;&#25152;&#25552;&#20379;&#35821;&#35328;&#30340;man&#25991;&#26723;&#30340;&#31526;&#21495;&#38142;&#25509;&#65306;</p>
+        <pre class="userinput"><kbd class="command">ln -sv vim /usr/bin/vi
+for L in  /usr/share/man/{,*/}man1/vim.1; do
+    ln -sv vim.1 $(dirname $L)/vi.1
+done</kbd></pre>
+        <p>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292; Vim&#30340;&#25991;&#26723;&#34987;&#23433;&#35013;&#22312; /usr/share/vim&#30446;&#24405;&#19979;&#12290;&#19979;&#38754;&#30340;&#31526;&#21495;&#38142;&#25509;&#20801;&#35768;&#36890;&#36807;   /usr/share/doc/vim-7.2&#26469;&#35775;&#38382;&#65292;&#20351;&#20854;&#19982;&#20854;&#20182;&#36719;&#20214;&#21253;&#30340;&#25991;&#26723;&#20445;&#25345;&#19968;&#33268;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">ln -sv ../vim/vim72/doc /usr/share/doc/vim-7.2</kbd></pre>
+        <p>&#22914;&#26524;&#24744;&#35745;&#21010;&#22312;&#24744;&#30340; LFS &#31995;&#32479;&#19978;&#23433;&#35013; X Window &#31995;&#32479;&#65292;&#37027;&#20040;&#24744;&#21487;&#33021;&#24517;&#39035;&#22312;&#23433;&#35013; X &#20043;&#21518;&#37325;&#26032;&#32534;&#35793; Vim &#12290;Vim &#26377;&#24102;&#26377;&#22270;&#24418;&#29992;&#25143;&#25509;&#21475;&#30340;&#29256;&#26412;&#65292;&#20294;&#38656;&#35201;&#23433;&#35013; X   &#21644;&#20854;&#23427;&#19968;&#20123;&#24211;&#12290; &#35201;&#20102;&#35299;&#26356;&#22810;&#20851;&#20110;&#36825;&#26041;&#38754;&#30340;&#20449;&#24687;&#35831;&#21442;&#32771; Vim &#30340;&#23433;&#35013;&#25163;&#20876;&#21644; BLFS &#20013;&#26377;&#20851; Vim &#23433;&#35013;&#25351;&#23548;&#30340;&#39029;&#38754;&#65306;<a class="ulink" href=
+          "http://www.linuxfromscratch.org/blfs/view/svn/postlfs/editors.html#postlfs-editors-vim">
+          http://www.linuxfromscratch.org/blfs/view/svn/postlfs/editors.html#postlfs-editors-vim</a>.        </p>
+      </div>
+      <div class="configuration" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="conf-vim" name="conf-vim"></a>6.59.2. &#37197;&#32622; Vim
+        </h2>
+        <p>&#22312;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;<strong>vim</strong>&#26159;&#20197;&#19982; vi &#20860;&#23481;&#30340;&#27169;&#24335;&#36816;&#34892;&#65292;   &#36825;&#21487;&#33021;&#23545;&#20351;&#29992;&#36807;&#20854;&#23427;&#25991;&#26412;&#32534;&#36753;&#22120;&#30340;&#20154;&#26469;&#35828;&#24863;&#21040;&#38476;&#29983;&#12290; &#19979;&#38754;&#30340;&#37197;&#32622;&#25991;&#20214;&#26126;&#30830;&#30340;&#35774;&#32622;&#20102;&quot;nocompatible&quot;&#27169;&#24335;(&#20063;&#21487;&#20197;&#25913;&#29992;&quot;compatible&quot;&#27169;&#24335;)&#65292;   &#36825;&#26159;&#24517;&#35201;&#30340;&#65292; &#22240;&#20026;&#22914;&#26524;&#35201;&#25913;&#21464;&#25110;&#35206;&#30422;&#20854;&#23427;&#35774;&#32622;&#65292; &#24517;&#39035;&#35201;&#22312;&#36825;&#20010;&#35774;&#32622;&#20043;&#21518;&#12290; &#20351;&#29992;&#19979;&#38754;&#30340;&#21629;&#20196;&#21019;&#24314;&#19968;&#20010;&#40664;&#35748;&#30340;<strong>vim</strong>&#37197;&#32622;&#25991;&#20214;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">cat &gt; /etc/vimrc &lt;&lt; "EOF"
+<code class="literal">" Begin /etc/vimrc
+
+set nocompatible
+set backspace=2
+syntax on
+if (&amp;term == "iterm") || (&amp;term == "putty")
+  set background=dark
+endif
+
+" End /etc/vimrc</code>
+EOF</kbd></pre>
+        <p><em class="parameter"><code>set nocompatible</code></em>&#23558;&#20351; <strong><strong>vim</strong></strong> &#20197;&#27604;&#40664;&#35748;&#30340; vi   &#20860;&#23481;&#27169;&#24335;&#21151;&#33021;&#26356;&#24378;&#30340;&#26041;&#24335;&#36816;&#34892;&#12290;&#20320;&#21487;&#20197;&#21435;&#25481;&ldquo;no&rdquo; &#26469;&#20445;&#25345;&#40664;&#35748;&#30340; <strong><strong>vi</strong></strong> &#27169;&#24335; &#12290;<em>set backspace=2</em> &#35753;&#36864;&#26684;&#38190;&#33021;&#36328;&#34892;&#12289;&#33258;&#21160;&#32553;&#36827;&#12289;&#25554;&#20837;&#12290; <em>syntax on</em> &#36873;&#39033;&#25171;&#24320;&#20102; vim &#30340;&#35821;&#27861;&#39640;&#20142;&#21151;&#33021;&#12290;&#26368;&#21518;&#65292;&#24102;&#26377;<em>set background=dark</em> &#30340; <em>if</em> &#35821;&#21477;&#32416;&#27491;&#20102; <strong>vim</strong>&#23545;&#20110;&#32456;&#31471;&#32972;&#26223;&#39068;&#33394;&#30340;&#29468;&#27979;&#12290;&#23545;&#20110;&#37027;&#20123;&#20351;&#29992;&#40657;&#33394;&#32972;&#26223;&#30340;&#29992;&#25143;&#36825;&#26159;&#19968;&#20010;&#36739;&#22909;&#30340;&#37197;&#33394;&#26041;&#26696;&#12290;</p>
+        <p>&#20351;&#29992;&#19979;&#38754;&#30340;&#21629;&#20196;&#21487;&#20197;&#24471;&#21040;&#20854;&#23427;&#21487;&#29992;&#30340;&#36873;&#39033;&#30340;&#35828;&#26126;&#25991;&#26723;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">vim -c ':options'</kbd></pre>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;Vim&#20165;&#20250;&#23433;&#35013;&#33521;&#25991;&#30340;&#25340;&#20889;&#26816;&#26597;&#25991;&#20214;&#12290;&#35201;&#23433;&#35013;&#20320;&#29087;&#24713;&#30340;&#35821;&#35328;&#30340;&#25340;&#20889;&#26816;&#26597;&#25991;&#20214;&#65292;&#20174; <a class="ulink" href=
+            "ftp://ftp.vim.org/pub/vim/runtime/spell/">ftp://ftp.vim.org/pub/vim/runtime/spell/</a>&#19979;&#36733;&#19982;&#20320;&#30340;&#35821;&#35328;&#30456;&#20851;&#30340;*.spl &#25991;&#20214;&#21644; *.sug&#25991;&#20214;&#65288;&#21487;&#36873;&#65289;&#65292;&#20197;&#21450;&#23383;&#31526;&#35299;&#30721;&#22120;&#12290;&#25226;&#23427;&#20204;&#20445;&#23384;&#21040;/usr/share/vim/vim72/spell/&#30446;&#24405;&#19979;&#12290;</p>
+          <p>
+            To use these spell files, some configuration in <code class=
+            "filename">/etc/vimrc</code> is needed, e.g.:
+          </p>
+          <pre class="screen"><code class="literal">set spelllang=en,ru
+set spell</code></pre>
+          <p>&#26356;&#22810;&#20449;&#24687;&#65292;&#35831;&#26597;&#30475;&#19978;&#38754;URL&#19978;&#30456;&#24212;&#30340; README &#25991;&#20214;&#12290;</p>
+        </div>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-vim" name="contents-vim"></a>6.59.3.  
+          Vim
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">ex (link to vim), rview (link to vim),
+              rvim (link to vim), vi (link to vim), view (link to vim), vim,
+              vimdiff (link to vim), vimtutor, and xxd</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ex" name="ex"></a><span class="term"><span class=
+                    "command"><strong>ex</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20197;ex&#27169;&#24335;&#21551;&#21160; <span class="command"><strong>vim</strong></span>
+                    </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rview" name="rview"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rview</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#19968;&#20010; <strong>view</strong>&#30340;&#38480;&#21046;&#29256;&#65292;&#23427;&#19981;&#33021;&#21551;&#21160;&#20219;&#20309; shell   &#21629;&#20196;&#24182;&#19988;<strong>view</strong>&#19981;&#33021;&#34987;&#25346;&#36215;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rvim" name="rvim"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rvim</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#19968;&#20010;<strong>vim</strong>&#30340;&#38480;&#21046;&#29256;&#65292;&#23427;&#19981;&#33021;&#21551;&#21160;&#20219;&#20309; shell &#21629;&#20196;&#65292;&#24182;&#19988;<strong>vim</strong> &#19981;&#33021;&#34987;&#25346;&#36215;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="vi" name="vi"></a><span class="term"><span class=
+                    "command"><strong>vi</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#38142;&#25509;&#21040; <span class="command"><strong>vim</strong></span>                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="view" name="view"></a><span class=
+                    "term"><span class=
+                    "command"><strong>view</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20197;&#21482;&#35835;&#27169;&#24335;&#21551;&#21160; <span class="command"><strong>vim</strong></span></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="vim" name="vim"></a><span class=
+                    "term"><span class="command"><strong>vim</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23601;&#26159;&#36825;&#20010;&#32534;&#36753;&#22120;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="vimdiff" name="vimdiff"></a><span class=
+                    "term"><span class=
+                    "command"><strong>vimdiff</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20351;&#29992; <strong>vim</strong>&#21516;&#26102;&#32534;&#36753;&#19968;&#20010;&#25991;&#26723;&#30340; 2 &#25110; 3   &#20010;&#29256;&#26412;&#24182;&#26174;&#31034;&#20182;&#20204;&#30340;&#21306;&#21035;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="vimtutor" name="vimtutor"></a><span class=
+                    "term"><span class=
+                    "command"><strong>vimtutor</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25945;&#20320;&#20351;&#29992; <strong>vim</strong>&#30340;&#22522;&#26412;&#25805;&#20316;&#21644;&#21629;&#20196;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="xxd" name="xxd"></a><span class=
+                    "term"><span class="command"><strong>xxd</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#29983;&#25104;&#21313;&#20845;&#36827;&#21046;&#36716;&#20648;&#25110;&#32773;&#20570;&#30456;&#21453;&#30340;&#24037;&#20316;&#65292;&#22240;&#27492;&#23427;&#33021;&#32473;&#20108;&#36827;&#21046;&#25991;&#20214;&#25171;&#34917;&#19969;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="udev.html" title="Udev-151">&#21518;&#36864;</a>
+          <p>
+            Udev-151
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="aboutdebug.html" title=
+          "About Debugging Symbols">&#21069;&#36827;</a>
+          <p>
+            &#20851;&#20110;&#35843;&#35797;&#31526;&#21495; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

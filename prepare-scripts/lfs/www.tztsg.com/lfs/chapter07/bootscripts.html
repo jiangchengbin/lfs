@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      7.2.&nbsp;LFS-Bootscripts-20100124
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;7.&nbsp;&#37197;&#32622;&#31995;&#32479;&#21551;&#21160;&#33050;&#26412;</h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">&#21518;&#36864;</a>
+          <p>
+            &#20171;&#32461;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="usage.html" title=
+          "How Do These Bootscripts Work?">&#21069;&#36827;</a>
+          <p>
+            &#21551;&#21160;&#33050;&#26412;&#26159;&#22914;&#20309;&#24037;&#20316;&#30340;?
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-scripts-bootscripts" name="ch-scripts-bootscripts"></a>7.2.
+        LFS-Bootscripts-20100124
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          LFS-Bootscripts &#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#22871;&#22312; LFS &#31995;&#32479;&#24320;&#26426;&#21644;&#20851;&#38381;&#26102;&#30340;&#21551;&#21160;&#21644;&#20572;&#27490;&#33050;&#26412;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">&#23569;&#20110; 0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">468 KB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          7.2.1. &#23433;&#35013; LFS-Bootscripts
+        </h2>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-bootscripts" name="contents-bootscripts"></a>7.2.2.
+          Contents of LFS-Bootscripts
+        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">Installed scripts:</strong>
+              <span class="segbody">checkfs, cleanfs, console, consolelog,
+              functions, halt, ifdown, ifup, localnet, modules, mountfs,
+              mountkernfs, network, rc, reboot, sendsignals, setclock,
+              static, swap, sysctl, sysklogd, template, udev, and
+              udev_retry</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="checkfs-bootscripts" name=
+                    "checkfs-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>checkfs</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22312;&#25346;&#36733;&#20043;&#21069;&#26816;&#26597;&#25991;&#20214;&#31995;&#32479;&#23436;&#25972;&#24615;(&#26085;&#24535;&#25991;&#20214;&#31995;&#32479;&#21644;&#22522;&#20110;&#32593;&#32476;&#30340;&#25991;&#20214;&#31995;&#32479;&#38500;&#22806;)</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="cleanfs-bootscripts" name=
+                    "cleanfs-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>cleanfs</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21024;&#38500;&#31995;&#32479;&#37325;&#21551;&#21518;&#23601;&#19981;&#38656;&#35201;&#20445;&#23384;&#20102;&#30340;&#25991;&#20214;&#65292; &#20363;&#22914;&#22312; /var/run/&#21644;/var/lock/&#30446;&#24405;&#19979;&#30340;&#25991;&#20214;&#65307; &#37325;&#26032;&#21019;&#24314; /var/run/utmp&#25991;&#20214;&#24182;&#21024;&#38500;&#21487;&#33021;&#23384;&#22312;&#30340; /etc/nologin, /fastboot, /forcefsck &#25991;&#20214;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="console-bootscripts" name=
+                    "console-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>console</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20026;&#25351;&#23450;&#30340;&#38190;&#30424;&#24067;&#23616;&#35835;&#20837;&#27491;&#30830;&#30340;&#38190;&#30424;&#26144;&#23556;&#34920;&#65292;&#24182;&#35774;&#32622;&#23631;&#24149;&#23383;&#20307;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="consolelog-bootscripts" name=
+                    "consolelog-bootscripts"></a><span class=
+                    "term"><span class=
+                    "command"><strong>consolelog</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#35774;&#32622;&#20869;&#26680;&#26085;&#24535;&#32423;&#21035;&#26469;&#25511;&#21046;&#20449;&#24687;&#21040;&#36798;&#25511;&#21046;&#21488;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="functions-bootscripts" name=
+                    "functions-bootscripts"></a><span class=
+                    "term"><span class=
+                    "command"><strong>functions</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#22312;&#19981;&#21516;&#33050;&#26412;&#20013;&#20849;&#29992;&#30340;&#19968;&#20123;&#20989;&#25968;&#65292;&#20363;&#22914;&#38169;&#35823;&#21644;&#29366;&#24577;&#26816;&#26597;&#20989;&#25968;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="halt-bootscripts" name=
+                    "halt-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>halt</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20851;&#38381;&#31995;&#32479;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ifdown-bootscripts" name=
+                    "ifdown-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>ifdown</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21327;&#21161; network &#33050;&#26412;&#20572;&#27490;&#32593;&#32476;&#35774;&#22791;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ifup-bootscripts" name=
+                    "ifup-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>ifup</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21327;&#21161; network &#33050;&#26412;&#21551;&#21160;&#32593;&#32476;&#35774;&#22791;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="localnet-bootscripts" name=
+                    "localnet-bootscripts"></a><span class=
+                    "term"><span class="command"><strong>localnet</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#35774;&#32622;&#31995;&#32479;&#20027;&#26426;&#21517;&#21644;&#26412;&#22320;&#22238;&#29615;(loopback)&#35774;&#22791; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="modules-bootscripts" name=
+                    "modules-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>modules</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21152;&#36733;/etc/sysconfig/modules&#30446;&#24405;&#21015;&#20986;&#30340;&#20869;&#26680;&#27169;&#22359;&#65292; &#20351;&#29992;&#30340;&#21442;&#25968;&#20063;&#20250;&#22312;&#36825;&#20010;&#30446;&#24405;&#32473;&#20986;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mountfs-bootscripts" name=
+                    "mountfs-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>mountfs</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25346;&#36733;&#25152;&#26377;&#25991;&#20214;&#31995;&#32479;&#65292;&#26377; <em><em>noauto</em></em> &#26631;&#35760;&#25110;&#32773;&#22522;&#20110;&#32593;&#32476;&#30340;&#25991;&#20214;&#31995;&#32479;&#38500;&#22806;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mountkernfs-bootscripts" name=
+                    "mountkernfs-bootscripts"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mountkernfs</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21152;&#36733;&#34394;&#25311;&#20869;&#26680;&#25991;&#20214;&#31995;&#32479;&#65292;&#27604;&#22914;proc </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="network-bootscripts" name=
+                    "network-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>network</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#37197;&#32622;&#32593;&#32476;&#25509;&#21475;&#65292;&#22914;&#32593;&#21345;&#65292;&#24182;&#35774;&#32622;&#40664;&#35748;&#32593;&#20851;&#65288;&#22914;&#26524;&#21487;&#29992;&#65289;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rc-bootscripts" name=
+                    "rc-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>rc</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20027;&#35201;&#30340;&#36816;&#34892;&#32423;&#25511;&#21046;&#33050;&#26412;&#65292;&#36127;&#36131;&#35753;&#25152;&#26377;&#20854;&#23427;&#33050;&#26412;&#25353;&#31526;&#21495;&#38142;&#25509;&#21517;&#30830;&#23450;&#30340;&#39034;&#24207; &#19968;&#20010;&#25509;&#19968;&#20010;&#30340;&#36816;&#34892;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="reboot-bootscripts" name=
+                    "reboot-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>reboot</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#37325;&#21551;&#31995;&#32479;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sendsignals-bootscripts" name=
+                    "sendsignals-bootscripts"></a><span class=
+                    "term"><span class=
+                    "command"><strong>sendsignals</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22312;&#31995;&#32479;&#37325;&#21551;&#25110;&#20851;&#38381;&#31995;&#32479;&#20043;&#21069;&#65292;&#30830;&#20445;&#27599;&#19968;&#20010;&#36827;&#31243;&#37117;&#24050;&#32463;&#32456;&#27490;&#20102;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="setclock-bootscripts" name=
+                    "setclock-bootscripts"></a><span class=
+                    "term"><span class="command"><strong>setclock</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22914;&#26524;&#30828;&#20214;&#26102;&#38047;&#27809;&#26377;&#35774;&#32622;&#20026; UTC &#26102;&#38388;&#65292;&#23558;&#20869;&#26680;&#26102;&#38047;&#37325;&#32622;&#20026;&#26412;&#22320;&#26102;&#38388;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="static-bootscripts" name=
+                    "static-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>static</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25552;&#20379;&#20026;&#32593;&#32476;&#25509;&#21475;&#25351;&#27966;&#38745;&#24577; IP &#22320;&#22336;&#30340;&#21151;&#33021;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="swap-bootscripts" name=
+                    "swap-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>swap</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21551;&#29992;&#25110;&#31105;&#29992;&#20132;&#25442;&#25991;&#20214;&#21644;&#20132;&#25442;&#20998;&#21306;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sysctl-bootscripts" name=
+                    "sysctl-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>sysctl</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22914;&#26524;/etc/sysctl.conf&#23384;&#22312;&#65292;&#23558;&#35813;&#25991;&#20214;&#30340;&#31995;&#32479;&#37197;&#32622;&#25968;&#25454;&#21152;&#36733;&#21040;&#36816;&#34892;&#30340;&#20869;&#26680;&#20013;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sysklogd-bootscripts" name=
+                    "sysklogd-bootscripts"></a><span class=
+                    "term"><span class="command"><strong>sysklogd</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21551;&#21160;&#25110;&#20572;&#27490;&#31995;&#32479;&#21644;&#20869;&#26680;&#26085;&#24535;&#23432;&#25252;&#36827;&#31243;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="template-bootscripts" name=
+                    "template-bootscripts"></a><span class=
+                    "term"><span class="command"><strong>template</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20026;&#20854;&#23427;&#23432;&#25252;&#36827;&#31243;&#21019;&#24314;&#33258;&#23450;&#20041;&#21551;&#21160;&#33050;&#26412;&#30340;&#27169;&#26495; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="udev-bootscripts" name=
+                    "udev-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>udev</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21551;&#21160; udev &#24182;&#22312; /dev&#30446;&#24405;&#21019;&#24314;&#35774;&#22791;&#33410;&#28857;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="udev-retry-bootscripts" name=
+                    "udev-retry-bootscripts"></a><span class=
+                    "term"><span class=
+                    "command"><strong>udev_retry</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22914;&#26524;&#38656;&#35201;&#65292;&#37325;&#35797;&#22833;&#36133;&#30340;udev &#28040;&#24687;&#65292;&#24182;&#20174;/dev/.udev&#25335;&#36125;&#36890;&#29992;&#30340;&#35268;&#21017;&#25991;&#20214;&#21040;/etc/udev/rules.d</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">&#21518;&#36864;</a>
+          <p>
+            &#20171;&#32461;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="usage.html" title=
+          "How Do These Bootscripts Work?">&#21069;&#36827;</a>
+          <p>
+            &#21551;&#21160;&#33050;&#26412;&#26159;&#22914;&#20309;&#24037;&#20316;&#30340;?
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

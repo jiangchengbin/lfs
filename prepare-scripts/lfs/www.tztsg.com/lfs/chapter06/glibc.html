@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.9.&nbsp;Glibc-2.11.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="man-pages.html" title=
+          "Man-pages-3.23">&#21518;&#36864;</a>
+          <p>
+            Man-pages-3.23
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="readjusting.html" title=
+          "Re-adjusting the Toolchain">&#21069;&#36827;</a>
+          <p>
+            &#20877;&#27425;&#35843;&#25972;&#24037;&#20855;&#38142;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-glibc" name="ch-system-glibc"></a>6.9. Glibc-2.11.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+         Glibc &#36719;&#20214;&#21253;&#21253;&#21547;&#20027;&#35201;&#30340; C &#24211;&#12290;&#36825;&#20010;&#24211;&#25552;&#20379;&#20102;&#22522;&#26412;&#20363;&#31243;&#65292; &#29992;&#20110;&#20998;&#37197;&#20869;&#23384;&#12289; &#25628;&#32034;&#30446;&#24405;&#12289; &#25171;&#24320;&#20851;&#38381;&#25991;&#20214;&#12289; &#35835;&#20889;&#25991;&#20214;&#12289; &#23383;&#20018;&#22788;&#29702;&#12289;&#27169;&#24335;&#21305;&#37197;&#12289;&#25968;&#23398;&#35745;&#31639;&#31561;&#31561;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">16.9 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">637 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.9.1. &#23433;&#35013; Glibc
+        </h2>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>
+            &#19968;&#20123; LFS &#22522;&#26412;&#31995;&#32479;&#20043;&#22806;&#30340;&#36719;&#20214;&#21253;&#24314;&#35758;&#23433;&#35013; GNU libiconv &#20197;&#20351;&#24471;&#25968;&#25454;&#22815;&#33021;&#22312;&#19981;&#21516;&#32534;&#30721;&#20043;&#38388;&#36827;&#34892;&#36716;&#25442;&#12290;&#35813;&#39033;&#30446;&#30340;&#20027;&#39029; (<a class="ulink" href=
+            "http://www.gnu.org/software/libiconv/">http://www.gnu.org/software/libiconv/</a>)
+            &#35828;&#65306;&quot;&#36825;&#20010;&#24211;&#20026;&#37027;&#20123;&#27809;&#26377; iconv() &#30340;&#31995;&#32479;&#25110;&#32773;&#34429;&#28982;&#26377; iconv() &#21364;&#19981;&#33021;&#19982; Unicode &#30456;&#20114;&#36716;&#25442;&#30340;&#31995;&#32479;&#25552;&#20379;&#20102;&#19968;&#20010;&#33021;&#22815;&#19982; Unicode   &#30456;&#20114;&#36716;&#25442;&#30340;&#23454;&#29616; &quot;&#12290;Glibc &#24211;&#20013;&#26377;&#19968;&#20010; iconv() &#65292;&#24182;&#19988;&#33021;&#22815;&#19982; Unicode &#30456;&#20114;&#36716;&#25442;&#65292; &#22240;&#27492;&#65292;LFS &#31995;&#32479;&#19981;&#38656;&#35201; GNU libiconv &#12290;</p>
+        </div>
+        <p>Glibc &#30340;&#32534;&#35793;&#31995;&#32479;&#26159;&#39640;&#24230;&#33258;&#32473;&#33258;&#36275;&#30340;&#65292;&#21363;&#20351;&#24403;&#21069;&#32534;&#35793;&#22120; specs &#25991;&#20214;&#21644;&#36830;&#25509;&#22120;&#36824;&#25351;&#21521; <code class="filename">/tools</code> &#30446;&#24405;&#65292;&#20063;&#33021;&#27491;&#30830;&#23433;&#35013;&#12290;&#25105;&#20204;&#22312;&#23433;&#35013; Glibc &#21069;&#19981;&#33021;&#35843;&#25972; specs &#25991;&#20214;&#21644;&#36830;&#25509;&#22120;&#65292;&#21542;&#21017; Glibc &#30340; autoconf &#27979;&#35797;&#20250;&#22833;&#36133;&#65292;&#20174;&#32780;&#22952;&#30861;&#25105;&#20204;&#21019;&#24314;&#19968;&#20010;&#24178;&#20928;&#31995;&#32479;&#30340;&#30446;&#26631;&#12290;</p>
+        <p>
+          &#24403;&#36816;&#34892; <span class="command"><strong>make
+          install</strong></span> &#26102;&#65292;&#19968;&#20010;&#21483;&#20570; <code class=
+          "filename">test-installation.pl</code> &#30340;&#33050;&#26412;&#20250;&#22312;&#25105;&#20204;&#26032;&#23433;&#35013;&#30340; Glibc &#19978;&#20570;&#19968;&#20010;&#23567;&#30340;&#23436;&#25972;&#24615;&#27979;&#35797;&#12290;&#28982;&#32780;&#65292;&#30001;&#20110;&#25105;&#20204;&#30340; toolchain &#20173;&#28982;&#25351;&#21521; <code class="filename">/tools</code> &#30446;&#24405;&#65292; &#23436;&#25972;&#24615;&#27979;&#35797;&#20250;&#23548;&#33268;&#20351;&#29992;&#38169;&#35823;&#30340;Glibc&#12290;&#23433;&#35013;&#19979;&#38754;&#30340;&#25805;&#20316;&#65292; &#25105;&#20204;&#21487;&#20197;&#24378;&#21046;&#33050;&#26412;&#27979;&#35797;&#25105;&#20204;&#21018;&#23433;&#35013;&#30340; Glibc&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">DL=$(readelf -l /bin/sh | sed -n 's@.*interpret.*/tools\(.*\)]$@\1@p')
+sed -i "s|libs -o|libs -L/usr/lib -Wl,-dynamic-linker=$DL -o|" \
+        scripts/test-installation.pl
+unset DL</kbd></pre>
+        <p><span class="command"><strong>ldd</strong></span> shell &#33050;&#26412;&#21253;&#21547; Bash-specific &#35821;&#27861;&#12290; &#22914;&#26524;&#21442;&#29031;BLFS&#25991;&#26723;&#30340; <a class="ulink" href=
+          "http://www.linuxfromscratch.org/blfs/view/svn/postlfs/shells.html">
+        Shells</a>&#31456;&#33410;&#23433;&#35013;&#20102;&#20854;&#20182;&#30340;          <span class="command"><strong>/bin/sh</strong></span> &#30340;&#35805;&#65292;&#35201;&#25226;&#23427;&#30340;&#40664;&#35748;&#31243;&#24207;&#35299;&#37322;&#22120;&#25913;&#21464;&#20026; <span class=
+          "command"><strong>/bin/bash</strong></span>&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i 's|@BASH@|/bin/bash|' elf/ldd.bash.in</kbd></pre>
+        <p>
+          Glibc &#25991;&#26723;&#25512;&#33616;&#22312;&#28304;&#30721;&#30446;&#24405;&#20043;&#22806;&#30340;&#19968;&#20010;&#19987;&#38376;&#30340;&#32534;&#35793;&#30446;&#24405;&#19979;&#36827;&#34892;&#32534;&#35793;&#65306;</p>
+        <pre class="userinput"><kbd class="command">mkdir -v ../glibc-build
+cd ../glibc-build</kbd></pre>
+        <p>
+          &#22240;&#20026;&#22312; Chapter 5 &#20013;&#65292; &#20026;x86&#26426;&#22120;&#21152;&#20837;&#20102;&#38656;&#35201;&#30340;&#32534;&#35793;&#22120;&#26631;&#24535; CFLAGS&#65292; &#25152;&#20197;&#65292;&#22312;&#36825;&#37324;&#65292;&#25105;&#20204;&#20063;&#35201;&#35774;&#32622;&#24211;&#30340;&#20248;&#21270;&#65292;&#20351;gcc &#32534;&#35793;&#22120;&#25552;&#39640;&#32534;&#35793;&#36895;&#24230;(-pipe)   &#21644;&#21253;&#30340;&#24615;&#33021; (-O3)&#12290;</p>
+        <pre class="userinput"><kbd class="command">case `uname -m` in
+  i?86) echo "CFLAGS += -march=i486 -mtune=native -O3 -pipe" &gt; configparms ;;
+esac</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Glibc &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">../glibc-2.11.1/configure --prefix=/usr \
+    --disable-profile --enable-add-ons \
+    --enable-kernel=2.6.18 --libexecdir=/usr/lib/glibc</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#26032;&#37197;&#32622;&#21442;&#25968;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--libexecdir=/usr/lib/glibc</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#35813;&#21442;&#25968;&#23558; <span class=
+                "command"><strong>pt_chown </strong></span>&#31243;&#24207;&#30340;&#40664;&#35748;&#20301;&#32622;&#20174; <code class="filename">/usr/libexec</code> &#25913;&#20026;
+                <code class="filename">/usr/lib/glibc</code>&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <div class="admon important">
+          <img alt="[Important]" src="../images/important.png" />
+          <h3>
+            &#37325;&#35201;
+          </h3>
+          <p>
+            &#26412;&#33410;&#30340; 
+ Glibc &#27979;&#35797;&#24456;&#37325;&#35201;&#12290;&#22312;&#20219;&#20309;&#24773;&#20917;&#19979;&#37117;&#19981;&#35201;&#30465;&#30053;&#36825;&#19968;&#27493;&#12290;
+          </p>
+        </div>
+        <p>
+          &#25191;&#34892;&#27979;&#35797;&#31243;&#24207;&#21069;&#65292;&#20026;&#20102;&#36991;&#20813;&#27979;&#35797;&#20986;&#38169;&#65292;&#25105;&#20204;&#35201;&#20174;&#28304;&#30446;&#24405;&#20013;&#25335;&#36125;&#19968;&#20010;&#25991;&#20214;&#21040;&#32534;&#35793;&#30446;&#24405;&#65292; &#28982;&#21518;&#23545;&#32467;&#26524;&#36827;&#34892;&#27979;&#35797;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">cp -v ../glibc-2.11.1/iconvdata/gconv-modules iconvdata
+make -k check 2&gt;&amp;1 | tee glibc-check-log
+grep Error glibc-check-log</kbd></pre>
+        <p>
+          &#22312; 
+          <span class="emphasis"><em>posix/annexc</em></span> &#27979;&#35797;&#20013;&#65292;&#20320;&#21487;&#33021;&#20250;&#30475;&#21040;&#19968;&#20010;&#39044;&#26009;&#30340;&#38169;&#35823;&#65288;&#21487;&#20197;&#24573;&#30053;&#65289;&#12290; &#21478;&#22806;&#65292; Glibc &#27979;&#35797;&#32452;&#20214; &#22810;&#23569;&#35201;&#20381;&#36182;&#20110;&#23487;&#20027;&#31995;&#32479;&#12290; &#19979;&#38754;&#26159;&#19968;&#20123;&#24120;&#35265;&#38169;&#35823;&#30340;&#21015;&#34920;&#65306;</p>
+        <div class="itemizedlist">
+          <ul>
+            <li>
+              <p><span class="emphasis"><em>nptl/tst-clock2</em></span>,
+                <span class="emphasis"><em>nptl/tst-attr3</em></span>, &#21644;
+                <span class="emphasis"><em>rt/tst-cpuclock2</em></span> &#30340;&#27979;&#35797;&#24050;&#30693;&#20250;&#20986;&#38169;&#12290; &#21407;&#22240;&#29616;&#22312;&#36824;&#19981;&#26159;&#24456;&#26126;&#30333;&#65292;  &#21487;&#33021;&#26159;&#31995;&#32479;&#36127;&#36733;&#36807;&#37325;&#23548;&#33268;&#30340;&#12290;</p>
+            </li>
+            <li>
+              <p>
+                math &#27979;&#35797;&#22312;&#19968;&#20123;&#20351;&#29992;&#36739;&#32769;&#30340; Intel &#25110; AMD &#30340;&#31995;&#32479;&#19978;&#20250;&#22833;&#36133;&#12290;</p>
+            </li>
+            <li>
+              <p>
+                &#22914;&#26524;&#20320;&#24102; <em class=
+                "parameter"><code>noatime</code></em> &#21442;&#25968;&#25346;&#36733; LFS &#20998;&#21306;&#30340;&#35805;&#65292;
+                <span class="emphasis"><em>atime</em></span> &#27979;&#35797;&#20250;&#22833;&#36133;&#12290;&#27491;&#22914;&#22312; <a class="xref" href=
+                "../chapter02/mounting.html" title=
+                "2.4.&nbsp;Mounting the New Partition">Section&nbsp;2.4,
+                &ldquo;&#25346;&#36733;&#36825;&#20010;&#26032;&#20998;&#21306;&rdquo;</a>&#65292;&#20013;&#25552;&#21040;&#30340;&#65292;&#22312;&#32534;&#35793;LFS&#36807;&#31243;&#20013;&#19981;&#35201;&#20351;&#29992; <em>noatime</em> &#36873;&#39033;&#12290;</p>
+            </li>
+            <li>
+              <p>
+                &#22312;&#19968;&#20123;&#24456;&#32769;&#24456;&#24930;&#30340;&#30828;&#20214;&#25110;&#31995;&#32479;&#19978;&#36816;&#34892;&#26102;&#65292;&#19968;&#20123;&#27979;&#35797;&#20250;&#30001;&#20110;&#36229;&#26102;&#32780;&#22833;&#36133;&#12290;</p>
+            </li>
+          </ul>
+        </div>
+        <p>
+          &#22312;&#23433;&#35013; Glibc &#30340;&#36807;&#31243;&#20013;&#65292;&#23427;&#20250;&#35686;&#21578;&#32570;&#23569; <code class=
+          "filename">/etc/ld.so.conf</code> &#25991;&#20214;&#12290; &#20854;&#23454;&#36825;&#27809;&#20160;&#20040;&#20851;&#31995;&#65292; &#19981;&#36807;&#19979;&#38754;&#30340;&#21629;&#20196;&#33021;&#20462;&#27491;&#23427;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">touch /etc/ld.so.conf</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+         locales &#33021;&#20351;&#31995;&#32479;&#20197;&#19968;&#31181;&#19978;&#38754;&#21629;&#20196;&#27809;&#26377;&#23433;&#35013;&#30340;&#35821;&#35328;&#22788;&#29702;&#12290; locales &#19981;&#26159;&#24517;&#39035;&#30340;&#65292;&#20294;&#26159;&#22914;&#26524;&#20182;&#20204;&#20013;&#30340;&#19968;&#20123;&#20002;&#22833;&#20102;&#65292;  &#21518;&#38754;&#30340;&#27979;&#35797;&#21333;&#20803;&#20250;&#36339;&#36807;&#37325;&#35201;&#27979;&#35797;&#12290;</p>
+        <p>
+          &#21333;&#20010;&#30340; locales&#21487;&#20197;&#36890;&#36807;&#20351;&#29992;<span class=
+          "command"><strong>localedef</strong></span>&#31243;&#24207;&#26469;&#23433;&#35013;&#12290;&#20363;&#22914;&#65292;&#19979;&#38754;&#30340;&#31532;&#19968;&#20010; <span class="command"><strong>localedef</strong></span>&#21629;&#20196;&#23558; <code class=
+          "filename">/usr/share/i18n/locales/cs_CZ</code> <span id="result_box"><span title="charset-independent locale definition" closure_uid_qdaje9="85">&#23383;&#31526;&#38598;&#29420;&#31435;&#30340;&#21306;&#22495;&#35774;&#32622;&#23450;&#20041;&#21644;</span></span> <code class=
+          "filename">/usr/share/i18n/charmaps/UTF-8.gz</code> <span id="result_box"><span title="charmap definition" closure_uid_qdaje9="87">&#23383;&#31526;&#34920;&#23450;&#20041;</span></span>&#30456;&#32467;&#21512;&#65292; &#24182;&#23558;&#32467;&#26524;&#28155;&#21152;&#21040; <code class=
+          "filename">/usr/lib/locale/locale-archive</code> &#25991;&#20214;&#20013;&#12290; &#19979;&#38754;&#30340;&#35828;&#26126;&#23558;&#20250;&#23433;&#35013;&#19968;&#20010;&#36890;&#36807;&#27979;&#35797;&#25152;&#38656;locale&#30340;&#26368;&#23567;&#38598;&#21512;&#65306;</p>
+        <pre class="userinput"><kbd class="command">mkdir -pv /usr/lib/locale
+localedef -i cs_CZ -f UTF-8 cs_CZ.UTF-8
+localedef -i de_DE -f ISO-8859-1 de_DE
+localedef -i de_DE@euro -f ISO-8859-15 de_DE@euro
+localedef -i de_DE -f UTF-8 de_DE.UTF-8
+localedef -i en_HK -f ISO-8859-1 en_HK
+localedef -i en_PH -f ISO-8859-1 en_PH
+localedef -i en_US -f ISO-8859-1 en_US
+localedef -i en_US -f UTF-8 en_US.UTF-8
+localedef -i es_MX -f ISO-8859-1 es_MX
+localedef -i fa_IR -f UTF-8 fa_IR
+localedef -i fr_FR -f ISO-8859-1 fr_FR
+localedef -i fr_FR@euro -f ISO-8859-15 fr_FR@euro
+localedef -i fr_FR -f UTF-8 fr_FR.UTF-8
+localedef -i it_IT -f ISO-8859-1 it_IT
+localedef -i ja_JP -f EUC-JP ja_JP
+localedef -i tr_TR -f UTF-8 tr_TR.UTF-8
+localedef -i zh_CN -f GB18030 zh_CN.GB18030</kbd></pre>
+        <p>
+          &#21478;&#22806;&#65292;&#20320;&#21487;&#20197;&#23433;&#35013;&#20320;&#30340;&#22269;&#23478;&#12289;&#35821;&#35328;&#21644;&#23383;&#31526;&#38598;&#25152;&#23545;&#24212;&#30340; locale &#12290; </p>
+        <p>&#24403;&#28982;&#65292;&#21033;&#29992;&#19979;&#38754;&#30340;&#21629;&#20196;&#65292;&#20320;&#21487;&#20197;&#19968;&#27425;&#23433;&#35013;&#25152;&#26377;&#21015;&#22312; <code class=
+          "filename">glibc-2.11.1/localedata/SUPPORTED</code> &#25991;&#20214; (&#23427;&#21253;&#25324;&#19978;&#38754;&#25152;&#21015;&#30340;&#20197;&#21450;&#26356;&#22810;&#30340;locale) &#20013;&#30340;locales&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make localedata/install-locales</kbd></pre>
+        <p>
+          &#28982;&#21518;&#20351;&#29992; <span class=
+          "command"><strong>localedef</strong></span> &#21629;&#20196;&#26469;&#21019;&#24314;&#21644;&#23433;&#35013;&#27809;&#26377;&#21015;&#22312;<code class=
+          "filename">glibc-2.11.1/localedata/SUPPORTED</code> &#25991;&#20214;&#20013;&#30340;locales&#65288;&#36825;&#31181;&#24773;&#20917;&#19981;&#22826;&#21487;&#33021;&#65289;&#65292; &#22914;&#26524;&#20320;&#38656;&#35201;&#20182;&#20204;&#30340;&#35805;&#12290;        </p>
+      </div>
+      <div class="configuration" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="conf-glibc" name="conf-glibc"></a>6.9.2. &#37197;&#32622; Glibc
+        </h2>
+        <p>
+          &#25105;&#20204;&#38656;&#35201;&#21019;&#24314; <code class="filename">/etc/nsswitch.conf</code> &#25991;&#20214;&#65292;&#22240;&#20026;&#22312;&#36825;&#20010;&#25991;&#20214;&#20002;&#22833;&#25110;&#19981;&#27491;&#30830;&#30340;&#24773;&#20917;&#19979;&#65292;Glibc &#20250;&#20351;&#29992;&#40664;&#35748;&#37197;&#32622;&#65292; &#32780; Glibc &#30340;&#40664;&#35748;&#37197;&#32622;&#26080;&#27861;&#24456;&#22909;&#22320;&#22312;&#32593;&#32476;&#29615;&#22659;&#19979;&#24037;&#20316;&#12290; &#24182;&#19988;&#25105;&#20204;&#20063;&#38656;&#35201;&#35774;&#32622;&#33258;&#24049;&#30340;&#26102;&#21306;&#12290;</p>
+        <p>&#20351;&#29992;&#19979;&#38754;&#30340;&#21629;&#20196;&#65292;&#24314;&#31435;&#19968;&#20010;&#26032;&#30340; <code class="filename">/etc/nsswitch.conf</code>
+          &#25991;&#20214;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">cat &gt; /etc/nsswitch.conf &lt;&lt; "EOF"
+<code class="literal"># Begin /etc/nsswitch.conf
+
+passwd: files
+group: files
+shadow: files
+
+hosts: files dns
+networks: files
+
+protocols: files
+services: files
+ethers: files
+rpc: files
+
+# End /etc/nsswitch.conf</code>
+EOF</kbd></pre>
+        <p>&#35201;&#24819;&#30830;&#23450;&#26412;&#22320;&#26102;&#21306;&#65292;&#21487;&#20197;&#20351;&#29992;&#19979;&#38754;&#30340;&#33050;&#26412;&#65306;</p>
+        <pre class="userinput"><kbd class="command">tzselect</kbd></pre>
+        <p>&#25353;&#29031;&#39034;&#24207;&#22238;&#31572;&#33050;&#26412;&#36816;&#34892;&#36807;&#31243;&#20013;&#25552;&#20986;&#30340;&#20960;&#20010;&#38382;&#39064;&#21518;&#65292;&#33050;&#26412;&#23601;&#20250;&#32473;&#20986;&#25152;&#38656;&#26102;&#21306;&#25991;&#20214;&#30340;&#20301;&#32622;(&#27604;&#22914; <span class=
+          "emphasis"><em>America/Edmonton</em></span>&#65289;&#12290; &#36824;&#26377;&#20854;&#20182;&#30340;&#19968;&#20123;&#26102;&#21306;&#21015;&#22312;  <code class=
+          "filename">/usr/share/zoneinfo</code>&#20013;&#65292;&#27604;&#22914; <span class=
+          "emphasis"><em>Canada/Eastern</em></span> &#25110; <span class=
+          "emphasis"><em>EST5EDT</em></span> &#36825;&#20123;&#34429;&#28982;&#27809;&#26377;&#34987;&#33050;&#26412;&#35782;&#21035;&#65292;&#20294;&#26159;&#37117;&#21487;&#20197;&#20351;&#29992;&#12290;</p>
+        <p>&#20877;&#29992;&#19979;&#21015;&#21629;&#20196;&#26469;&#21019;&#24314; <code class="filename">/etc/localtime</code> &#65306; </p>
+        <pre class="userinput"><kbd class=
+        "command">cp -v --remove-destination /usr/share/zoneinfo/<em class=
+        "replaceable"><code>&lt;xxx&gt;</code></em> \
+    /etc/localtime</kbd></pre>
+        <p>
+          &#23558; <em class="replaceable"><code>&lt;xxx&gt;</code></em> &#26367;&#25442;&#25104;&#36873;&#25321;&#30340;&#26102;&#21306;&#30340;&#21517;&#31216;(&#27604;&#22914;&#65292; Canada/Eastern)&#12290;        </p>
+        <div class="variablelist">
+          <p class="title">
+            <b>cp&#21629;&#20196;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--remove-destination</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#35813;&#36873;&#39033;&#24378;&#21046;&#21024;&#38500;&#24050;&#23384;&#22312;&#30340;&#31526;&#21495;&#38142;&#25509;&#12290; &#25105;&#20204;&#37319;&#29992;&#25335;&#36125;&#25991;&#20214;&#32780;&#19981;&#26159;&#21019;&#24314;&#31526;&#21495;&#38142;&#25509;&#30340;&#21407;&#22240;&#26159;&#65306;&#26377;&#21487;&#33021; <code class=
+                "filename">/usr</code> &#22312;&#21333;&#29420;&#30340;&#20998;&#21306;&#19978;&#65292;&#22914;&#26524;&#21551;&#21160;&#36827;&#20837;&#21333;&#29992;&#25143;&#27169;&#24335;&#65292;&#23601;&#20250;&#20986;&#38382;&#39064;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="configuration" lang="en" xml:lang="en">
+        <h2 class="sect2">
+        <a id="conf-ld" name="conf-ld"></a>6.9.3. &#37197;&#32622;&#21160;&#24577;&#38142;&#25509;&#24211;&#21152;&#36733;&#31243;&#24207;        </h2>
+        <p>
+          &#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#21160;&#24577;&#38142;&#25509;&#24211;&#21152;&#36733;&#31243;&#24207; (<code class=
+          "filename">/lib/ld-linux.so.2</code>) &#25628;&#32034; <code class=
+          "filename">/lib</code> &#21644; <code class="filename">/usr/lib</code>
+&#30446;&#24405;&#26469;&#23547;&#25214;&#31243;&#24207;&#36816;&#34892;&#26102;&#38656;&#35201;&#20351;&#29992;&#30340;&#21160;&#24577;&#36830;&#25509;&#24211;&#12290; &#20294;&#26159;&#65292; &#22914;&#26524;&#26576;&#20123;&#24211;&#22312;&#36825;&#20004;&#20010;&#30446;&#24405;&#20043;&#22806;&#65292; &#20320;&#23601;&#38656;&#35201;&#25226;&#23427;&#20204;&#30340;&#36335;&#24452;&#21152;&#21040; <code class="filename"> </code>
+          <code class="filename">/etc/ld.so.conf</code> &#25991;&#20214;&#37324;&#65292;&#20197;&#20415;&#21160;&#24577;&#38142;&#25509;&#24211;&#21152;&#36733;&#31243;&#24207;&#33021;&#22815;&#25214;&#21040;&#23427;&#20204;&#12290;  <code class=
+          "filename">/usr/local/lib</code> &#21644; <code class=
+          "filename">/opt/lib</code> &#26159;&#20004;&#20010;&#32463;&#24120;&#21253;&#21547;&#21160;&#24577;&#36830;&#25509;&#24211;&#20294;&#21448;&#19981;&#22312;&#40664;&#35748;&#30446;&#24405;&#20013;&#30340;&#30446;&#24405;&#65292; &#25105;&#20204;&#35201;&#25226;&#23427;&#20204;&#28155;&#21152;&#21040;&#21160;&#24577;&#38142;&#25509;&#24211;&#21152;&#36733;&#31243;&#24207;&#30340;&#25628;&#32034;&#36335;&#24452;&#20013;&#12290;</p>
+        <p>&#20351;&#29992;&#22914;&#19979;&#21629;&#20196;&#21019;&#24314;&#26032;&#30340; <code class="filename">/etc/ld.so.conf</code> &#25991;&#20214;&#65306;        </p>
+        <pre class="userinput"><kbd class=
+        "command">cat &gt; /etc/ld.so.conf &lt;&lt; "EOF"
+<code class="literal"># Begin /etc/ld.so.conf
+
+/usr/local/lib
+/opt/lib
+
+# End /etc/ld.so.conf</code>
+EOF</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-glibc" name="contents-glibc"></a>6.9.4. 
+          Glibc &#30340;&#25991;&#20214;        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">catchsegv, gencat, getconf, getent,
+              iconv, iconvconfig, ldconfig, ldd, lddlibc4, locale, localedef,
+              mtrace, nscd, pcprofiledump, pt_chown, rpcgen, rpcinfo, sln,
+              sprof, tzselect, xtrace, zdump, and zic</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">ld.so, libBrokenLocale.{a,so},
+              libSegFault.so, libanl.{a,so}, libbsd-compat.a, libc.{a,so},
+              libc_nonshared.a, libcidn.so, libcrypt.{a,so}, libdl.{a,so},
+              libg.a, libieee.a, libm.{a,so}, libmcheck.a, libmemusage.so,
+              libnsl.{a,so}, libnss_compat.so, libnss_dns.so,
+              libnss_files.so, libnss_hesiod.so, libnss_nis.so,
+              libnss_nisplus.so, libpcprofile.so, libpthread.{a,so},
+              libpthread_nonshared.a, libresolv.{a,so}, librpcsvc.a,
+              librt.{a,so}, libthread_db.so, and libutil.{a,so}</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="catchsegv" name="catchsegv"></a><span class=
+                    "term"><span class=
+                    "command"><strong>catchsegv</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#24403;&#31243;&#24207;&#21457;&#29983;&#27573;&#25925;&#38556;&#30340;&#26102;&#20505;&#65292;&#29992;&#26469;&#24314;&#31435;&#19968;&#20010;&#22534;&#26632;&#36319;&#36394;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="gencat" name="gencat"></a><span class=
+                    "term"><span class=
+                    "command"><strong>gencat</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#24314;&#31435;&#28040;&#24687;&#21015;&#34920;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="getconf" name="getconf"></a><span class=
+                    "term"><span class=
+                    "command"><strong>getconf</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#38024;&#23545;&#25991;&#20214;&#31995;&#32479;&#30340;&#25351;&#23450;&#21464;&#37327;&#26174;&#31034;&#20854;&#31995;&#32479;&#35774;&#32622;&#20540;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="getent" name="getent"></a><span class=
+                    "term"><span class=
+                    "command"><strong>getent</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#20174;&#31995;&#32479;&#31649;&#29702;&#25968;&#25454;&#24211;&#33719;&#21462;&#19968;&#20010;&#26465;&#30446;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="iconv" name="iconv"></a><span class=
+                    "term"><span class=
+                    "command"><strong>iconv</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#23383;&#31526;&#38598;&#36716;&#25442;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="iconvconfig" name="iconvconfig"></a><span class=
+                    "term"><span class=
+                    "command"><strong>iconvconfig</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#24314;&#31435;&#24555;&#36895;&#21152;&#36733;&#30340;<span class=
+                    "command"><strong>iconv</strong></span>&#27169;&#22359;&#25152;&#20351;&#29992;&#30340;&#37197;&#32622;&#25991;&#20214;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ldconfig" name="ldconfig"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ldconfig</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#37197;&#32622;&#21160;&#24577;&#38142;&#25509;&#24211;&#30340;&#23454;&#26102;&#32465;&#23450;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ldd" name="ldd"></a><span class=
+                    "term"><span class="command"><strong>ldd</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                  &#25253;&#21578;&#27599;&#20010;&#32473;&#23450;&#31243;&#24207;&#25110;&#20849;&#20139;&#24211;&#30340;&#20849;&#20139;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lddlibc4" name="lddlibc4"></a><span class=
+                    "term"><span class=
+                    "command"><strong>lddlibc4</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#24110;&#21161; <span class="command"><strong>ldd</strong></span>  &#25805;&#20316;&#30446;&#26631;&#25991;&#20214;                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="locale" name="locale"></a><span class=
+                    "term"><span class=
+                    "command"><strong>locale</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#25171;&#21360;&#24403;&#21069;locale&#30340;&#35814;&#32454;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="localedef" name="localedef"></a><span class=
+                    "term"><span class=
+                    "command"><strong>localedef</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#32534;&#35793; locale &#26631;&#20934;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mtrace" name="mtrace"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mtrace</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#35835;&#21462;&#24182;&#35299;&#37322;&#19968;&#20010;&#20869;&#23384;&#36319;&#36394;&#25991;&#20214;&#28982;&#21518;&#20197;&#20154;&#31867;&#21487;&#35835;&#30340;&#26684;&#24335;&#26174;&#31034;&#19968;&#20010;&#25688;&#35201;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="nscd" name="nscd"></a><span class=
+                    "term"><span class=
+                    "command"><strong>nscd</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#20026;&#26368;&#24120;&#29992;&#30340;&#21517;&#31216;&#26381;&#21153;&#35831;&#27714;&#25552;&#20379;&#32531;&#23384;&#30340;&#23432;&#25252;&#36827;&#31243;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pcprofiledump" name=
+                    "pcprofiledump"></a><span class="term"><span class=
+                    "command"><strong>pcprofiledump</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#36716;&#20648; PC profiling &#20135;&#29983;&#30340;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pt_chown" name="pt_chown"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pt_chown</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#19968;&#20010;&#36741;&#21161;&#31243;&#24207;&#65292;&#24110;&#21161; <span class=
+                    "command"><strong>grantpt</strong></span>  &#35774;&#32622;&#23376;&#34394;&#25311;&#32456;&#31471;&#30340;&#23646;&#20027;&#12289; &#29992;&#25143;&#32452;&#12289; &#35835;&#20889;&#26435;&#38480;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rpcgen" name="rpcgen"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rpcgen</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#20135;&#29983;&#23454;&#29616;&#36828;&#31243;&#36807;&#31243;&#35843;&#29992;(RPC)&#21327;&#35758;&#30340; C &#20195;&#30721;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rpcinfo" name="rpcinfo"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rpcinfo</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#23545; RPC &#26381;&#21153;&#22120;&#20135;&#29983;&#19968;&#20010; RPC &#21628;&#21483;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sln" name="sln"></a><span class=
+                    "term"><span class="command"><strong>sln</strong></span></span>                  </p>                </td>
+                <td>
+                  <p><span class=
+                    "command"><strong>ln</strong></span>  &#31243;&#24207;&#20351;&#29992;&#38745;&#24577;&#36830;&#25509;&#32534;&#35793;&#30340;&#29256;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sprof" name="sprof"></a><span class=
+                    "term"><span class=
+                    "command"><strong>sprof</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#35835;&#21462;&#24182;&#26174;&#31034;&#20849;&#20139;&#30446;&#26631;&#30340;&#29305;&#24449;&#25551;&#36848;&#25968;&#25454;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tzselect" name="tzselect"></a><span class=
+                    "term"><span class=
+                    "command"><strong>tzselect</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#23545;&#29992;&#25143;&#25552;&#20986;&#20851;&#20110;&#24403;&#21069;&#20301;&#32622;&#30340;&#38382;&#39064;&#24182;&#36755;&#20986;&#26102;&#21306;&#20449;&#24687;&#21040;&#26631;&#20934;&#36755;&#20986;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="xtrace" name="xtrace"></a><span class=
+                    "term"><span class=
+                    "command"><strong>xtrace</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#36890;&#36807;&#25171;&#21360;&#24403;&#21069;&#25191;&#34892;&#30340;&#20989;&#25968;&#36319;&#36394;&#31243;&#24207;&#25191;&#34892;&#24773;&#20917;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="zdump" name="zdump"></a><span class=
+                    "term"><span class=
+                    "command"><strong>zdump</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#26174;&#31034;&#26102;&#21306;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="zic" name="zic"></a><span class=
+                    "term"><span class="command"><strong>zic</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#26102;&#21306;&#32534;&#35793;&#22120;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ld.so" name="ld.so"></a><span class=
+                    "term"><code class="filename">ld.so</code></span>                  </p>                </td>
+                <td>
+                  <p>&#24110;&#21161;&#21160;&#24577;&#38142;&#25509;&#24211;&#25191;&#34892;&#30340;&#36741;&#21161;&#31243;&#24207;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libBrokenLocale" name=
+                    "libBrokenLocale"></a><span class="term"><code class=
+                    "filename">libBrokenLocale</code></span>                  </p>                </td>
+                <td>
+                  <p>&#24403;&#40657;&#23458;&#30772;&#22351;&#20102;&#31243;&#24207;(&#20363;&#22914;&#65292;&#19968;&#20123;&#26377;&#21160;&#26426;&#30340;&#24212;&#29992;&#31243;&#24207;) &#30340;&#36816;&#34892;&#26102;&#65292;&#30001; Glibc &#22312;&#20869;&#37096;&#20351;&#29992;&#12290;&#26356;&#22810;&#30340;&#32454;&#33410;&#65292;&#35831;&#21442;&#32771; <code class=
+                    "filename">glibc-2.11.1/locale/broken_cur_max.c</code></p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libSegFault" name="libSegFault"></a><span class=
+                    "term"><code class="filename">libSegFault</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    The segmentation fault signal handler, used by
+                    <span class="command"><strong>catchsegv</strong></span>                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libanl" name="libanl"></a><span class=
+                    "term"><code class="filename">libanl</code></span>                  </p>                </td>
+                <td>
+                  <p>&#24322;&#27493;&#21517;&#31216;&#26597;&#35810;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libbsd-compat" name=
+                    "libbsd-compat"></a><span class="term"><code class=
+                    "filename">libbsd-compat</code></span>                  </p>                </td>
+                <td>
+                  <p>&#20026;&#20102;&#22312; linux &#19979;&#25191;&#34892;&#19968;&#20123; BSD &#31243;&#24207;&#65292;libbsd-compat &#25552;&#20379;&#20102;&#24517;&#35201;&#30340;&#21487;&#31227;&#26893;&#24615;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libc" name="libc"></a><span class=
+                    "term"><code class="filename">libc</code></span>                  </p>                </td>
+                <td>
+                  <p>&#20027; C &#24211; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libcidn" name="libcidn"></a><span class=
+                    "term"><code class="filename">libcidn</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#34987;Glibc&#20351;&#29992;&#65292;&#22312; <code class=
+                    "function">getaddrinfo()</code> &#20989;&#25968;&#20013;&#26469;&#22788;&#29702;&#22269;&#38469;&#22495;&#21517;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libcrypt" name="libcrypt"></a><span class=
+                    "term"><code class="filename">libcrypt</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#29992;&#20110;&#21152;&#23494;&#30340;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libdl" name="libdl"></a><span class=
+                    "term"><code class="filename">libdl</code></span>                  </p>                </td>
+                <td>
+                  <p>&#21160;&#24577;&#36830;&#25509;&#25509;&#21475;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libg" name="libg"></a><span class=
+                    "term"><code class="filename">libg</code></span>                  </p>                </td>
+                <td>
+                  <p>&#19981;&#21547;&#21151;&#33021;&#30340;&#34394;&#25311;&#24211;&#12290;&#20197;&#21069;&#26159;<span class=
+                    "command"><strong>g++</strong></span>                  &#36816;&#34892;&#26102;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libieee" name="libieee"></a><span class=
+                    "term"><code class="filename">libieee</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#24378;&#21046;&#25968;&#23398;&#20989;&#25968;&#38169;&#35823;&#22788;&#29702;&#35268;&#21017;&#38142;&#25509;&#21040;&#30005;&#27668;&#21644;&#30005;&#23376;&#24037;&#31243;&#24072;&#21327;&#20250; (IEEE)&#23450;&#20041;&#30340;&#27169;&#22359;&#12290; &#40664;&#35748;&#30340;&#38169;&#35823;&#22788;&#29702;&#26159;  POSIX.1                    </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libm" name="libm"></a><span class=
+                    "term"><code class="filename">libm</code></span>                  </p>                </td>
+                <td>
+                  <p>&#25968;&#23398;&#20989;&#25968;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libmcheck" name="libmcheck"></a><span class=
+                    "term"><code class="filename">libmcheck</code></span>                  </p>                </td>
+                <td>
+                  <p>&#38142;&#25509;&#26102;&#65292;&#25171;&#24320;&#20869;&#23384;&#20998;&#37197;&#26816;&#26597;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libmemusage" name="libmemusage"></a><span class=
+                    "term"><code class="filename">libmemusage</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#24110;&#21161; <span class=
+                    "command"><strong>memusage</strong></span>&#25628;&#38598;&#31243;&#24207;&#36816;&#34892;&#26102;&#30340;&#20869;&#23384;&#21344;&#29992;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libnsl" name="libnsl"></a><span class=
+                    "term"><code class="filename">libnsl</code></span>                  </p>                </td>
+                <td>
+                  <p>&#32593;&#32476;&#26381;&#21153;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libnss" name="libnss"></a><span class=
+                    "term"><code class="filename">libnss</code></span>                  </p>                </td>
+                <td>
+                  <p>&#21517;&#31216;&#21517;&#31216;&#26381;&#21153;&#20999;&#25442;&#24211;&#65292; &#21253;&#21547;&#20102;&#35299;&#26512;&#20027;&#26426;&#21517;&#12289; &#29992;&#25143;&#21517;&#12289; &#32452;&#21517;&#12289; &#21035;&#21517;&#12289; &#26381;&#21153;&#12289; &#21327;&#35758;&#31561;&#31561;&#30340;&#20989;&#25968;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libpcprofile" name="libpcprofile"></a><span class=
+                    "term"><code class="filename">libpcprofile</code></span>                  </p>                </td>
+                <td>
+                  <p>&#21253;&#21547;&#29992;&#20110;&#36319;&#36394;&#26576;&#20123;&#29305;&#23450;&#28304;&#20195;&#30721;&#30340; CPU &#20351;&#29992;&#26102;&#38388;&#30340; profiling &#20989;&#25968;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libpthread" name="libpthread"></a><span class=
+                    "term"><code class="filename">libpthread</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    POSIX &#32447;&#31243;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libresolv" name="libresolv"></a><span class=
+                    "term"><code class="filename">libresolv</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#21253;&#21547;&#21019;&#24314;&#12289;&#21457;&#36865;&#12289;&#35299;&#37322;&#21040;&#20114;&#32852;&#32593;&#22495;&#21517;&#26381;&#21153;&#22120;&#30340;&#25968;&#25454;&#21253;&#30340;&#20989;&#25968;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="librpcsvc" name="librpcsvc"></a><span class=
+                    "term"><code class="filename">librpcsvc</code></span>                  </p>                </td>
+                <td>
+                  <p>&#25552;&#20379; RPC &#30340;&#20854;&#20182;&#26434;&#39033;&#26381;&#21153;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="librt" name="librt"></a><span class=
+                    "term"><code class="filename">librt</code></span>                  </p>                </td>
+                <td>
+                  <p>&#25552;&#20379;&#20102;&#22823;&#37096;&#20998;&#30340; POSIX.1b &#36816;&#34892;&#26102;&#25193;&#23637;&#25509;&#21475;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libthread_db" name="libthread_db"></a><span class=
+                    "term"><code class="filename">libthread_db</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#21253;&#21547;&#23545;&#22810;&#32447;&#31243;&#31243;&#24207;&#30340;&#35843;&#35797;&#24456;&#26377;&#29992;&#30340;&#20989;&#25968;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libutil" name="libutil"></a><span class=
+                    "term"><code class="filename">libutil</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#21253;&#21547;&#20102;&#22312;&#24456;&#22810;&#19981;&#21516;&#30340; Unix &#31243;&#24207;&#20013;&#20351;&#29992;&#30340;&quot;&#26631;&#20934;&quot;&#20989;&#25968;&#30340;&#20195;&#30721;</p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="man-pages.html" title=
+          "Man-pages-3.23">&#21518;&#36864;</a>
+          <p>
+            Man-pages-3.23
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="readjusting.html" title=
+          "Re-adjusting the Toolchain">&#21069;&#36827;</a>
+          <p>
+            &#20877;&#27425;&#35843;&#25972;&#24037;&#20855;&#38142;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

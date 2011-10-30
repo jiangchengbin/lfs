@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.50.&nbsp;Module-Init-Tools-3.11.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="man-db.html" title="Man-DB-2.5.6">&#21518;&#36864;</a>
+          <p>
+            Man-DB-2.5.6
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="patch.html" title="Patch-2.6.1">&#21069;&#36827;</a>
+          <p>
+            Patch-2.6.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-module-init-tools" name=
+        "ch-system-module-init-tools"></a>6.50. Module-Init-Tools-3.11.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+         Module-Init-Tools &#21253;&#21547;&#22788;&#29702; 2.5.47 &#21450;&#20197;&#19978;&#29256;&#26412;&#30340;Linux&#20869;&#26680;&#27169;&#22359;&#26102;&#20351;&#29992;&#30340;&#24037;&#20855;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">8.7 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.50.1. &#23433;&#35013; Module-Init-Tools
+        </h2>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#30340;&#27979;&#35797;&#32452;&#20214;&#26159;&#30528;&#30524;&#20110;&#23427;&#30340;&#32500;&#25252;&#32773;&#30340;&#38656;&#35201;&#12290; <strong>make check</strong> &#21629;&#20196;&#24314;&#31435;&#20102;&#19968;&#20010;modprobe&#30340;&#29305;&#27530;&#23553;&#35013;&#29256;&#26412;&#65292;&#23427;&#23545;&#20110;&#26222;&#36890;&#25805;&#20316;&#27809;&#26377;&#29992;&#22788;&#12290;&#36816;&#34892;&#27979;&#35797; (&#22823;&#32422; 0.2 SBU)&#65292;&#35831;&#25191;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196; (&#27880;&#24847;   &#20026;&#20102;&#27491;&#24120;&#20351;&#29992;&#32780;&#37325;&#26032;&#32534;&#35793;&#20043;&#21069;&#65292;&#38656;&#35201;&#36816;&#34892; <strong>make clean</strong> &#21629;&#20196;&#26469;&#28165;&#29702;&#28304;&#30721;&#30446;&#24405;&#65289;&#65306;</p>
+        <pre class="userinput"><kbd class="command">./configure
+make check
+./tests/runtests
+make clean</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Module-Init-Tools &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/ --enable-zlib-dynamic --mandir=/usr/share/man</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make INSTALL=install install</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>make &#21442;&#25968;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>INSTALL=install</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#27491;&#24120;&#24773;&#20917;&#19979;&#65292;&#22914;&#26524;&#20108;&#36827;&#21046;&#25991;&#20214;&#24050;&#32463;&#23384;&#22312;&#20102;&#65292;<strong>make   install</strong>&#23601;&#19981;&#20250;&#23433;&#35013;&#23427;&#20204;&#12290; &#36825;&#20010;&#36873;&#39033;&#26159;&#35843;&#29992; <strong>install</strong>&#32780;&#19981;&#26159;&#20351;&#29992;&#40664;&#35748;&#23553;&#35013;&#30340;&#33050;&#26412;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-module-init-tools" name=
+          "contents-module-init-tools"></a>6.50.2.  
+          Module-Init-Tools
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">depmod, insmod, insmod.static, lsmod,
+              modinfo, modprobe, and rmmod</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="depmod" name="depmod"></a><span class=
+                    "term"><span class=
+                    "command"><strong>depmod</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21019;&#24314;&#19968;&#20010;&#21487;&#21152;&#36733;&#20869;&#26680;&#27169;&#22359;&#30340;&#20381;&#36182;&#20851;&#31995;&#25991;&#20214;&#65292;<strong>modprobe</strong>&#29992;&#23427;&#26469;&#33258;&#21160;&#21152;&#36733;&#27169;&#22359;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="insmod" name="insmod"></a><span class=
+                    "term"><span class=
+                    "command"><strong>insmod</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21521;&#27491;&#22312;&#36816;&#34892;&#30340;&#20869;&#26680;&#21152;&#36733;&#27169;&#22359;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="insmod.static" name=
+                    "insmod.static"></a><span class="term"><span class=
+                    "command"><strong>insmod.static</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p><span class=
+                    "command"><strong>insmod</strong></span>                  &#30340;&#38745;&#24577;&#32534;&#35793;&#29256;&#26412;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lsmod" name="lsmod"></a><span class=
+                    "term"><span class=
+                    "command"><strong>lsmod</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21015;&#20986;&#24403;&#21069;&#21152;&#36733;&#30340;&#27169;&#22359;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="modinfo" name="modinfo"></a><span class=
+                    "term"><span class=
+                    "command"><strong>modinfo</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26816;&#26597;&#19982;&#20869;&#26680;&#27169;&#22359;&#30456;&#20851;&#32852;&#30340;&#30446;&#26631;&#25991;&#20214;&#65292;&#24182;&#25171;&#21360;&#20986;&#25152;&#26377;&#33021;&#24471;&#21040;&#30340;&#20449;&#24687;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="modprobe" name="modprobe"></a><span class=
+                    "term"><span class=
+                    "command"><strong>modprobe</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21033;&#29992; <strong>depmod</strong>&#65292;   &#21019;&#24314;&#30340;&#20381;&#36182;&#20851;&#31995;&#25991;&#20214;&#26469;&#33258;&#21160;&#21152;&#36733;&#30456;&#20851;&#30340;&#27169;&#22359;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rmmod" name="rmmod"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rmmod</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20174;&#24403;&#21069;&#36816;&#34892;&#30340;&#20869;&#26680;&#20013;&#21368;&#36733;&#27169;&#22359;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="man-db.html" title="Man-DB-2.5.6">&#21518;&#36864;</a>
+          <p>
+            Man-DB-2.5.6
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="patch.html" title="Patch-2.6.1">&#21069;&#36827;</a>
+          <p>
+            Patch-2.6.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

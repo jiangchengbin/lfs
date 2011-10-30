@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.19.&nbsp;Ncurses-5.7
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="pkg-config.html" title=
+          "Pkg-config-0.23">&#21518;&#36864;</a>
+          <p>
+            Pkg-config-0.23
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="util-linux-ng.html" title=
+          "Util-linux-ng-2.17">&#21069;&#36827;</a>
+          <p>
+            Util-linux-ng-2.17
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-ncurses" name="ch-system-ncurses"></a>6.19.
+        Ncurses-5.7
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+         Ncurses &#31243;&#24207;&#21253;&#25552;&#20379;&#23383;&#31526;&#32456;&#31471;&#22788;&#29702;&#24211;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.8 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">35 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.19.1. &#23433;&#35013; Ncurses
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Ncurses &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --with-shared --without-debug --enable-widec</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--enable-widec</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#35813;&#36873;&#39033;&#23558;&#23485;&#23383;&#31526;&#24211; (&#22914;
+                <code class="filename">libncursesw.so.5.7</code>) &#32534;&#35793;&#26367;&#25442;&#25104;&#27491;&#24120;&#30340;&#24211; (&#22914; <code class=
+                "filename">libncurses.so.5.7</code>)&#12290; &#36825;&#20123;&#23485;&#23383;&#31526;&#24211;&#21487;&#20197;&#22312;&#22810;&#23383;&#33410;&#21644;&#20256;&#32479;&#30340;8&#20301; locale &#19979;&#20351;&#29992;&#65292; &#28982;&#32780;&#27491;&#24120;&#30340;&#24211;&#19968;&#33324;&#21482;&#33021;&#22312; 8&#20301; &#30340;locale&#29615;&#22659;&#19979;&#24037;&#20316;&#12290; &#23485;&#23383;&#31526;&#21644;&#27491;&#24120;&#30340;&#24211;&#26159;&#28304;&#30721;&#20860;&#23481;&#30340;&#65292;   &#20294;&#19981;&#26159;&#20108;&#36827;&#21046;&#20860;&#23481;&#30340;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#26377;&#19968;&#20010;&#27979;&#35797;&#22871;&#20214;&#65292;&#20294;&#26159;&#23427;&#21482;&#33021;&#22312;&#36719;&#20214;&#21253;&#23433;&#35013;&#20197;&#21518;&#25165;&#33021;&#36816;&#34892;&#12290; &#36825;&#20010;&#27979;&#35797;&#24037;&#20855;&#20301;&#20110; <code class=
+          "filename">test/</code> &#30446;&#24405;&#12290; &#26356;&#22810;&#32454;&#33410;&#65292;&#35831;&#21442;&#32771;&#35813;&#30446;&#24405;&#20013;&#30340;README &#25991;&#20214;&#12290;
+        </p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#25226;&#24211;&#25991;&#20214;&#31227;&#21040;&#26356;&#21512;&#29702;&#30340; <code class="filename">/lib</code>  &#30446;&#24405;&#37324;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mv -v /usr/lib/libncursesw.so.5* /lib</kbd></pre>
+        <p>&#30001;&#20110;&#24211;&#25991;&#20214;&#34987;&#31227;&#21160;&#20102;&#65292;&#25152;&#20197;&#26377;&#19968;&#20010;&#31526;&#21495;&#38142;&#25509;&#23601;&#25351;&#21521;&#20102;&#19981;&#23384;&#22312;&#30340;&#25991;&#20214;&#12290; &#38656;&#35201;&#37325;&#26032;&#21019;&#24314;&#36825;&#20010;&#31526;&#21495;&#38142;&#25509;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">ln -sfv ../../lib/libncursesw.so.5 /usr/lib/libncursesw.so</kbd></pre>
+        <p>&#35768;&#22810;&#30340;&#31243;&#24207;&#20381;&#28982;&#24076;&#26395;&#38142;&#25509;&#22120;&#33021;&#22815;&#21457;&#29616;&#38750;&#23485;&#23383;&#31526;&#30340; Ncurses &#24211;&#12290; &#36890;&#36807;&#31526;&#21495;&#38142;&#25509;&#21644;&#38142;&#25509;&#22120;&#33050;&#26412;&#26469; &#27450;&#39575;&#23427;&#20351;&#20854;&#38142;&#25509;&#23485;&#23383;&#31526;&#30340;&#24211;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">for lib in ncurses form panel menu ; do \
+    rm -vf /usr/lib/lib${lib}.so ; \
+    echo "INPUT(-l${lib}w)" &gt;/usr/lib/lib${lib}.so ; \
+    ln -sfv lib${lib}w.a /usr/lib/lib${lib}.a ; \
+done
+ln -sfv libncurses++w.a /usr/lib/libncurses++.a</kbd></pre>
+        <p>&#26368;&#21518;&#65292;&#30830;&#20445;&#19968;&#20123;&#22312;&#32534;&#35793;&#30340;&#26102;&#20505;&#23547;&#25214; <code class=
+          "filename">-lcurses</code> &#30340;&#32769;&#31243;&#24207;&#20173;&#28982;&#21487;&#20197;&#32534;&#35793;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">rm -vf /usr/lib/libcursesw.so
+echo "INPUT(-lncursesw)" &gt;/usr/lib/libcursesw.so
+ln -sfv libncurses.so /usr/lib/libcurses.so
+ln -sfv libncursesw.a /usr/lib/libcursesw.a
+ln -sfv libncurses.a /usr/lib/libcurses.a</kbd></pre>
+        <p>
+          &#22914;&#26524;&#24895;&#24847;&#65292;&#21487;&#20197;&#23433;&#35013;  Ncurses &#24110;&#21161;&#25991;&#26723;&#65306; </p>
+        <pre class="userinput"><kbd class=
+        "command">mkdir -v       /usr/share/doc/ncurses-5.7
+cp -v -R doc/* /usr/share/doc/ncurses-5.7</kbd></pre>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>
+            &#19978;&#38754;&#30340;&#35828;&#26126;&#24182;&#27809;&#26377;&#21019;&#24314;&#38750;&#23485;&#23383;&#31526;&#30340; Ncurses &#24211;&#65292; &#22240;&#20026;&#27809;&#26377;&#36719;&#20214;&#21253;&#32534;&#35793;&#21518;&#22312;&#36816;&#34892; &#26102;&#38656;&#35201;&#38142;&#25509;&#21040;&#23427;&#20204;&#30340;&#12290; &#22914;&#26524;&#20320;&#22240;&#20026;&#19968;&#20123;&#21482;&#26377;&#20108;&#36827;&#21046;&#25991;&#20214;&#30340;&#31243;&#24207;&#65292;&#25110;&#20026;&#20102;&#21644;LFS&#20860;&#23481;&#32780;&#19968;&#23450;&#35201;&#23433;&#35013;&#36825;&#26679;&#30340;&#24211;&#30340;&#35805;&#65292; &#35831; &#25353;&#29031;&#19979;&#38754;&#30340;&#21629;&#20196;&#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+          <pre class="userinput"><kbd class="command">make distclean
+./configure --prefix=/usr --with-shared --without-normal \
+  --without-debug --without-cxx-binding
+make sources libs
+cp -av lib/lib*.so.5* /usr/lib</kbd></pre>
+        </div>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-ncurses" name="contents-ncurses"></a>6.19.2.
+           Ncurses
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">captoinfo (link to tic), clear, infocmp,
+              infotocap (link to tic), ncursesw5-config, reset (link to
+              tset), tic, toe, tput, and tset</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libcursesw.{a,so} (symlink and linker
+              script to libncursesw.{a,so}), libformw.{a,so},
+              libmenuw.{a,so}, libncurses++w.a, libncursesw.{a,so},
+              libpanelw.{a,so} and their non-wide-character counterparts
+              without "w" in the library names.</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="captoinfo" name="captoinfo"></a><span class=
+                    "term"><span class=
+                    "command"><strong>captoinfo</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558; termcap &#25551;&#36848;&#36716;&#21270;&#25104; terminfo &#25551;&#36848;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="clear" name="clear"></a><span class=
+                    "term"><span class=
+                    "command"><strong>clear</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22914;&#26524;&#21487;&#33021;&#65292;&#23601;&#36827;&#34892;&#28165;&#23631;&#25805;&#20316;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="infocmp" name="infocmp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>infocmp</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#27604;&#36739;&#25110;&#26174;&#31034; terminfo &#25551;&#36848;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="infotocap" name="infotocap"></a><span class=
+                    "term"><span class=
+                    "command"><strong>infotocap</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558; terminfo &#25551;&#36848;&#36716;&#21270;&#25104; termcat &#25551;&#36848;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ncursesw5-config" name=
+                    "ncursesw5-config"></a><span class="term"><span class=
+                    "command"><strong>ncursesw5-config</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20026;ncurses &#25552;&#20379;&#37197;&#32622;&#20449;&#24687;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="reset" name="reset"></a><span class=
+                    "term"><span class=
+                    "command"><strong>reset</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#37325;&#26032;&#21021;&#22987;&#21270;&#32456;&#31471;&#21040;&#40664;&#35748;&#20540;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tic" name="tic"></a><span class=
+                    "term"><span class="command"><strong>tic</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26159; terminfo &#39033;&#35828;&#26126;&#30340;&#32534;&#35793;&#22120;&#12290;&#36825;&#20010;&#31243;&#24207;&#36890;&#36807; ncurses &#24211;&#23558;&#28304;&#20195;&#30721;&#26684;&#24335;&#30340; terminfo &#25991;&#20214;&#36716;&#25442;&#25104;&#32534;&#35793;&#21518;&#26684;&#24335;(&#20108;&#36827;&#21046;)&#30340;&#25991;&#20214;&#12290; Terminfo   &#25991;&#20214;&#21253;&#21547;&#32456;&#31471;&#33021;&#21147;&#30340;&#20449;&#24687;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="toe" name="toe"></a><span class=
+                    "term"><span class="command"><strong>toe</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21015;&#20986;&#25152;&#26377;&#21487;&#29992;&#30340;&#32456;&#31471;&#31867;&#22411;&#65292;&#20998;&#21035;&#32473;&#20986;&#20027;&#21517;&#21644;&#25551;&#36848;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tput" name="tput"></a><span class=
+                    "term"><span class=
+                    "command"><strong>tput</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21033;&#29992; terminfo &#25968;&#25454;&#24211;&#20351;&#19982;&#32456;&#31471;&#30456;&#20851;&#30340;&#33021;&#21147;&#21644;&#20449;&#24687;&#20540;&#23545; shell &#21487;&#29992;&#65292; &#21021;&#22987;&#21270;&#21644;&#37325;&#26032;&#35774;&#32622;&#32456;&#31471;&#65292; &#25110;&#36820;&#22238;&#25152;&#35201;&#27714;&#32456;&#31471;&#20026;&#31867;&#22411;&#30340;&#38271;&#21517;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tset" name="tset"></a><span class=
+                    "term"><span class=
+                    "command"><strong>tset</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21487;&#20197;&#29992;&#26469;&#21021;&#22987;&#21270;&#32456;&#31471;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libcurses" name="libcurses"></a><span class=
+                    "term"><code class="filename">libcurses</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    A link to <code class="filename">libncurses</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libncurses" name="libncurses"></a><span class=
+                    "term"><code class="filename">libncurses</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#22312;&#32456;&#31471;&#23631;&#24149;&#19978;&#65292;&#29992;&#24456;&#22810;&#22797;&#26434;&#30340;&#26041;&#27861;&#26174;&#31034;&#25991;&#26412;&#30340;&#20989;&#25968;&#65307; &#20351;&#29992;&#36825;&#20123;&#20989;&#25968;&#30340;&#19968;&#20010;&#22909;&#30340;&#20363;&#23376;&#26159;&#22312;&#20869;&#26680;<span class="command"><strong>make
+                    menuconfig</strong></span>                  &#36807;&#31243;&#20013;&#26174;&#31034;&#30340;&#33756;&#21333;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libform" name="libform"></a><span class=
+                    "term"><code class="filename">libform</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#20351;&#29992;&#34920;&#26684;&#30340;&#20989;&#25968;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libmenu" name="libmenu"></a><span class=
+                    "term"><code class="filename">libmenu</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20351;&#29992;&#33756;&#21333;&#30340;&#20989;&#25968;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libpanel" name="libpanel"></a><span class=
+                    "term"><code class="filename">libpanel</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20351;&#29992;&#38754;&#26495;&#30340;&#20989;&#25968;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="pkg-config.html" title=
+          "Pkg-config-0.23">&#21518;&#36864;</a>
+          <p>
+            Pkg-config-0.23
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="util-linux-ng.html" title=
+          "Util-linux-ng-2.17">&#21069;&#36827;</a>
+          <p>
+            Util-linux-ng-2.17
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

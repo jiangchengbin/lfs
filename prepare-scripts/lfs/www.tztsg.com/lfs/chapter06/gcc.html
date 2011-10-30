@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.16.&nbsp;GCC-4.4.3
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" /></head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="file.html" title="File-5.04">&#21518;&#36864;</a>
+          <p>
+            File-5.04
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sed.html" title="Sed-4.2.1">&#21069;&#36827;</a>
+          <p>
+            Sed-4.2.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-gcc" name="ch-system-gcc"></a>6.16. GCC-4.4.3
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          GCC &#36719;&#20214;&#21253;&#21253;&#21547; GNU &#32534;&#35793;&#22120;&#38598;&#21512;&#65292;&#21253;&#25324; C &#21644; C++ &#32534;&#35793;&#22120;&#12290;
+        </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">44 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">1.1 GB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.16.1. &#23433;&#35013; GCC
+        </h2>
+        <p>
+          &#20351;&#29992;&#19968;&#20010; <strong><span class="command"><strong>sed</strong></span> </strong> &#21629;&#20196;&#26469;&#31105;&#27490; GCC &#23433;&#35013;&#23427;&#33258;&#24049;&#30340;  <code class=
+          "filename">libiberty.a</code>&#12290;&#25105;&#20204;&#23558;&#20351;&#29992; Binutils &#38468;&#24102;&#30340; <code class=
+          "filename">libiberty.a</code>  &#26469;&#20195;&#26367;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in</kbd></pre>
+        <p>
+          &#21644; <a class="xref" href="../chapter05/gcc-pass2.html" title=
+          "5.10.&nbsp;GCC-4.4.3 - Pass 2">Section&nbsp;5.10, &ldquo;GCC-4.4.3
+          - &#31532;&#20108;&#36941;&rdquo;</a> &#20013;&#19968;&#26679;&#65292; &#20026;&#20102;&#30830;&#20445;&#19968;&#33268;&#30340;&#32534;&#35793;&#22120;&#32534;&#35793;&#65292; &#25105;&#20204;&#20351;&#29992;&#21518;&#38754;&#30340;<strong> </strong><span class=
+          "command"><strong>sed</strong></span> &#21629;&#20196;&#65292; &#20351;&#29992;<code class="option">-fomit-frame-pointer</code> &#32534;&#35793;&#22120;&#26631;&#24535;&#36827;&#34892;&#32534;&#35793;&#65306;</p>
+        <pre class="userinput"><kbd class="command">case `uname -m` in
+  i?86) sed -i 's/^T_CFLAGS =$/&amp; -fomit-frame-pointer/' \
+        gcc/Makefile.in ;;
+esac</kbd></pre>
+        <p><span class="command"><strong>fixincludes</strong></span>
+          &#33050;&#26412;&#20598;&#23572;&#20250;&#22240;&#20026;&ldquo;&#20462;&#25913;&rdquo;&#31995;&#32479;&#30340;&#22836;&#25991;&#20214;&#32780;&#20986;&#38169;&#12290;&#22240;&#20026;&#29616;&#22312;&#30340;&#22836;&#25991;&#20214;&#24050;&#30693;&#19981;&#38656;&#35201;&#20462;&#22797;&#65292; &#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#21487;&#20197;&#36991;&#20813;<strong><span class=
+          "command"><strong>fixincludes</strong></span> </strong>&#33050;&#26412;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in</kbd></pre>
+        <p>
+          &#20351;&#29992; <span class="command"><strong>sed</strong></span>
+          &#26367;&#20195;&#26469;&#38450;&#27490;&#19968;&#20010;&#27979;&#35797;&#38169;&#35823;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i 's/getline/get_line/' libiberty/testsuite/test-demangle.c</kbd></pre>
+        <p>
+          GCC &#30340;&#23433;&#35013;&#25351;&#21335;&#25512;&#33616;&#29992;&#19968;&#20010;&#26032;&#24314;&#30340;&#30446;&#24405;&#26469;&#32534;&#35793;&#23427;&#65292;&#32780;&#19981;&#26159;&#22312;&#28304;&#30721;&#30446;&#24405;&#20013;&#65306;</p>
+        <pre class="userinput"><kbd class="command">mkdir -v ../gcc-build
+cd ../gcc-build</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; GCC &#20570;&#20934;&#22791;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">../gcc-4.4.3/configure --prefix=/usr \
+    --libexecdir=/usr/lib --enable-shared \
+    --enable-threads=posix --enable-__cxa_atexit \
+    --enable-clocale=gnu --enable-languages=c,c++ \
+    --disable-multilib --disable-bootstrap</kbd></pre>
+        <p>
+          &#27880;&#24847;&#65292;&#23545;&#20110;&#20854;&#20182;&#35821;&#35328;&#65292;&#36824;&#26377;&#19968;&#20123;&#26410;&#30693;&#30340;&#20808;&#20915;&#26465;&#20214;&#12290;&#35831;&#21442;&#32771; BLFS &#25991;&#26723;&#20851;&#20110;GCC&#25152;&#25903;&#25345;&#30340;&#25152;&#26377;&#35821;&#35328;&#30340;&#20171;&#32461;&#12290;</p>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <div class="admon important">
+          <img alt="[Important]" src="../images/important.png" />
+          <h3>
+            &#37325;&#35201;
+          </h3>
+          <p>
+            &#26412;&#33410;&#30340; 
+ GCC &#27979;&#35797;&#24456;&#37325;&#35201;&#12290;&#22312;&#20219;&#20309;&#24773;&#20917;&#19979;&#37117;&#19981;&#35201;&#30465;&#30053;&#36825;&#19968;&#27493;&#12290;
+          </p>
+        </div>
+        <p>
+          &#23545;&#32467;&#26524;&#36827;&#34892;&#26816;&#26597;&#65292;&#20294;&#36935;&#21040;&#38169;&#35823;&#19981;&#20572;&#27490;&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">make -k check</kbd></pre>
+        <p>
+          &#35201;&#26597;&#30475;&#27979;&#35797;&#32467;&#26524;&#30340;&#25688;&#35201;&#65292;&#21487;&#20197;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">../gcc-4.4.3/contrib/test_summary</kbd></pre>
+        <p>&#22914;&#26524;&#21482;&#24819;&#30475;&#27010;&#35201;&#65292;&#21487;&#20197;&#25226;&#36755;&#20986;&#36890;&#36807;&#31649;&#36947;&#20256;&#36882;&#32473; <strong class=
+          "userinput"><code>grep -A7 Summ</code></strong>.        </p>
+        <p>&#32467;&#26524;&#21487;&#20197;&#36319; <a class="ulink"
+          href="http://www.linuxfromscratch.org/lfs/build-logs/6.6/">http://www.linuxfromscratch.org/lfs/build-logs/6.6/</a>
+          &#21644; <a class="ulink" href=
+          "http://gcc.gnu.org/ml/gcc-testresults/">http://gcc.gnu.org/ml/gcc-testresults/</a> &#36827;&#34892;&#27604;&#36739;&#12290;</p>
+        <p>
+          &#19968;&#20123;&#39044;&#24819;&#19981;&#21040;&#30340;&#38169;&#35823;&#24635;&#26159;&#26080;&#27861;&#36991;&#20813;&#30340;&#12290; &#34429;&#28982;GCC&#30340;&#24320;&#21457;&#32773;&#32463;&#24120;&#30041;&#24847;&#36825;&#20123;&#38382;&#39064;&#65292; &#20294;&#26159;&#26377;&#20123;&#36824;&#26159;&#27809;&#26377;&#24471;&#21040;&#35299;&#20915;&#12290; &#36890;&#24120;&#65292;&#22240;&#20026;GCC&#20013;&#30340;&#19968;&#20010;bug&#65292;  <code class=
+          "filename">libmudflap</code>&#27979;&#35797;&#23588;&#20854;&#34987;&#35748;&#20026;&#26159;&#26377;&#38382;&#39064;&#30340; (<a class="ulink" href=
+          "http://gcc.gnu.org/bugzilla/show_bug.cgi?id=20003">http://gcc.gnu.org/bugzilla/show_bug.cgi?id=20003</a>).
+          &#38500;&#38750;&#27979;&#35797;&#32467;&#26524;&#21644;&#19978;&#38754;&#30340;URL&#20013;&#26377;&#24456;&#22810;&#19981;&#21516;&#65292;&#19968;&#33324;&#26159;&#23433;&#20840;&#30340;&#12290;        </p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#26377;&#30340;&#36719;&#20214;&#21253;&#24076;&#26395; C preprocessor (&#39044;&#22788;&#29702;&#22120;)&#23433;&#35013;&#22312; <code class="filename">/lib</code>  &#30446;&#24405;&#19979;&#65292; &#20026;&#20102;&#25903;&#25345;&#36825;&#20123;&#36719;&#20214;&#21253;&#65292; &#25105;&#20204;&#21019;&#24314;&#22914;&#19979;&#31526;&#21495;&#38142;&#25509;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">ln -sv ../usr/bin/cpp /lib</kbd></pre>
+        <p>&#35768;&#22810;&#36719;&#20214;&#21253;&#20351;&#29992; <span class=
+          "command"><strong>cc</strong></span> &#35843;&#29992; C &#32534;&#35793;&#22120;&#12290;&#20026;&#20102;&#28385;&#36275;&#23427;&#20204;&#30340;&#35201;&#27714;&#65292;&#21019;&#24314;&#22914;&#19979;&#31526;&#21495;&#38142;&#25509;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">ln -sv gcc /usr/bin/cc</kbd></pre>
+        <p>
+          &#29616;&#22312;&#65292;&#25105;&#20204;&#26368;&#32456;&#30340;&#24037;&#20855;&#38142;&#24050;&#32463;&#23601;&#20301;&#20102;&#65292; &#20877;&#27425;&#30830;&#35748;&#32534;&#35793;&#12289; &#38142;&#25509;&#20250;&#25353;&#29031;&#25105;&#20204;&#30340;&#39044;&#26399;&#24037;&#20316;&#38750;&#24120;&#37325;&#35201;&#12290; &#25105;&#20204;&#25353;&#29031;&#26412;&#31456;&#21069;&#38754;&#30340;&#26041;&#27861;&#20877;&#25191;&#34892;&#19968;&#27425;<span id="result_box"><span title="same sanity checks" closure_uid_61k4tl="55">&#21516;&#26679;&#30340;&#23436;&#25972;&#24615;&#26816;&#26597;</span></span>&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">echo 'main(){}' &gt; dummy.c
+cc dummy.c -v -Wl,--verbose &amp;&gt; dummy.log
+readelf -l a.out | grep ': /lib'</kbd></pre>
+        <p>
+          &#22914;&#26524;&#19968;&#20999;&#27491;&#24120;&#65292;&#24212;&#35813;&#19981;&#20250;&#20986;&#38169;&#65292;&#32780;&#19988;&#26368;&#21518;&#19968;&#20010;&#21629;&#20196;&#30340;&#32467;&#26524;&#24212;&#35813;&#26159; (&#26576;&#20123;&#29305;&#27530;&#24179;&#21488;&#19978;&#21160;&#24577;&#36830;&#25509;&#22120;&#30340;&#21517;&#31216;&#21487;&#33021;&#19982;&#27492;&#22788;&#19981;&#21516;):
+        </p>
+        <pre class="screen"><code class=
+        "computeroutput">[Requesting program interpreter: /lib/ld-linux.so.2]</code></pre>
+        <p>
+          &#29616;&#22312;&#30830;&#20445;&#25105;&#20204;&#23433;&#35013;&#20351;&#29992;&#20102;&#27491;&#30830;&#30340;  startfiles &#25991;&#20214;&#65306;       </p>
+        <pre class="userinput"><kbd class=
+        "command">grep -o '/usr/lib.*/crt[1in].*succeeded' dummy.log</kbd></pre>
+        <p>
+          &#22914;&#26524;&#19968;&#20999;&#27491;&#24120;&#65292;&#24212;&#35813;&#19981;&#20250;&#20986;&#38169;&#65292;&#32780;&#19988;&#26368;&#21518;&#19968;&#20010;&#21629;&#20196;&#30340;&#32467;&#26524;&#24212;&#35813;&#26159;:
+        </p>
+        <pre class="screen"><code class=
+        "computeroutput">/usr/lib/gcc/i686-pc-linux-gnu/4.4.3/../../../crt1.o succeeded
+/usr/lib/gcc/i686-pc-linux-gnu/4.4.3/../../../crti.o succeeded
+/usr/lib/gcc/i686-pc-linux-gnu/4.4.3/../../../crtn.o succeeded</code></pre>
+        <p>&#30001;&#20110;&#26426;&#22120;&#30340;&#26550;&#26500;&#19981;&#21516;&#65292;&#19978;&#38754;&#30340;&#36755;&#20986;&#21487;&#33021;&#30053;&#26377;&#19981;&#21516;&#65292;&#19981;&#21516;&#28857;&#36890;&#24120;&#26159; <code class="filename">/usr/lib/gcc</code>  &#21518;&#38754;&#30340;&#30446;&#24405;&#21517;&#12290;&#22914;&#26524;&#20320;&#30340;&#26426;&#22120;&#26159;64&#20301;&#30340;&#65292;&#20320;&#21487;&#33021;&#22312;&#23383;&#31526;&#20018;&#32467;&#23614;&#30475;&#21040;&#19968;&#20010;&#21517;&#21483;<code class=
+          "filename">lib64</code> &#30340;&#30446;&#24405;&#12290;  &#36825;&#37324;&#37325;&#35201;&#30340;&#26159;&#65292;<span class=
+          "command"><strong>gcc</strong></span><strong> </strong>&#22312; /usr/lib &#30446;&#24405;&#25214;&#21040;&#25152;&#26377;&#30340;&#19977;&#20010;   <code class="filename">crt*.o</code>  &#25991;&#20214;&#12290;</p>
+        <p>
+          &#39564;&#35777;&#32534;&#35793;&#22120;&#22312;&#25628;&#32034;&#27491;&#30830;&#30340;&#22836;&#25991;&#20214;&#65306;:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">grep -B4 '^ /usr/include' dummy.log</kbd></pre>
+        <p>
+          &#36825;&#20010;&#21629;&#20196;&#24212;&#35813;&#25104;&#21151;&#36820;&#22238;&#20197;&#19979;&#36755;&#20986;&#65306;
+        </p>
+        <pre class="screen"><code class=
+        "computeroutput">#include &lt;...&gt; search starts here:
+ /usr/local/include
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.4.3/include
+ /usr/lib/gcc/i686-pc-linux-gnu/4.4.3/include-fixed
+ /usr/include</code></pre>
+        <p>&#20877;&#27425;&#27880;&#24847;&#65292;&#20320;&#30340;&#26426;&#22120;&#30340;&#30446;&#24405;&#21517;&#21487;&#33021;&#21644;&#19978;&#38754;&#19981;&#21516;&#65292;&#30001;&#26426;&#22120;&#30340;&#26550;&#26500;&#20915;&#23450;&#12290;</p>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>
+            &#29616;&#22312;&#65292;4.3.0&#29256;&#30340;GCC &#35201;&#25226; <code class="filename">limits.h</code>  &#25991;&#20214;&#23433;&#35013;&#21040;&#19987;&#29992;&#30340;<code class="filename">include-fixed</code> &#30446;&#24405;&#65292; &#24182;&#19988;&#36825;&#20010;&#30446;&#24405;&#24517;&#39035;&#21040;&#20301;&#12290;</p>
+        </div>
+        <p>
+          &#25509;&#19979;&#26469;&#65292;&#30830;&#35748;&#27491;&#22312;&#20351;&#29992;&#24102;&#26377;&#27491;&#30830;&#25628;&#32034;&#36335;&#24452;&#30340;&#26032;&#38142;&#25509;&#22120;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">grep 'SEARCH.*/usr/lib' dummy.log |sed 's|; |\n|g'</kbd></pre>
+        <p>
+          &#22914;&#26524;&#19968;&#20999;&#27491;&#24120;&#65292;&#24212;&#35813;&#19981;&#20250;&#20986;&#38169;&#65292;&#32780;&#19988;&#26368;&#21518;&#19968;&#20010;&#21629;&#20196;&#30340;&#32467;&#26524;&#24212;&#35813;&#26159; (&#26576;&#20123;&#29305;&#27530;&#24179;&#21488;&#19978;&#30340;&#36755;&#20986;&#21487;&#33021;&#19982;&#27492;&#22788;&#19981;&#21516;):
+        </p>
+        <pre class="screen"><code class=
+        "computeroutput">SEARCH_DIR("/usr/i686-pc-linux-gnu/lib")
+SEARCH_DIR("/usr/local/lib")
+SEARCH_DIR("/lib")
+SEARCH_DIR("/usr/lib");</code></pre>
+        <p>
+          64-bit &#31995;&#32479;&#21487;&#33021;&#20250;&#30475;&#21040;&#26356;&#22810;&#30340;&#30446;&#24405;&#12290;&#20363;&#22914;&#65292;&#36825;&#37324;&#26159;&#19968;&#21488; x86_64 &#26426;&#22120;&#30340;&#36755;&#20986;&#65306; </p>
+        <pre class="screen"><code class=
+        "computeroutput">SEARCH_DIR("/usr/x86_64-unknown-linux-gnu/lib64")
+SEARCH_DIR("/usr/local/lib64")
+SEARCH_DIR("/lib64")
+SEARCH_DIR("/usr/lib64")
+SEARCH_DIR("/usr/x86_64-unknown-linux-gnu/lib")
+SEARCH_DIR("/usr/local/lib")
+SEARCH_DIR("/lib")
+SEARCH_DIR("/usr/lib");</code></pre>
+        <p>
+          &#19979;&#38754;&#65292;&#30830;&#20445;&#25105;&#20204;&#27491;&#22312;&#20351;&#29992;&#27491;&#30830;&#30340;libc&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">grep "/lib.*/libc.so.6 " dummy.log</kbd></pre>
+        <p>
+          &#22914;&#26524;&#19968;&#20999;&#27491;&#24120;&#65292;&#24212;&#35813;&#19981;&#20250;&#20986;&#38169;&#65292;&#32780;&#19988;&#26368;&#21518;&#19968;&#20010;&#21629;&#20196;&#30340;&#32467;&#26524;&#24212;&#35813;&#26159; (&#22312;64&#20301;&#23487;&#20027;&#31995;&#32479;&#19978;&#65292;&#26159; lib64 &#30446;&#24405;&#65289;:
+        </p>
+        <pre class="screen"><code class=
+        "computeroutput">attempt to open /lib/libc.so.6 succeeded</code></pre>
+        <p>
+          &#26368;&#21518;&#65292;&#30830;&#20445; GCC &#27491;&#22312;&#20351;&#29992;&#27491;&#30830;&#30340;&#21160;&#24577;&#38142;&#25509;&#22120;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">grep found dummy.log</kbd></pre>
+        <p>
+          &#22914;&#26524;&#19968;&#20999;&#27491;&#24120;&#65292;&#24212;&#35813;&#19981;&#20250;&#20986;&#38169;&#65292;&#32780;&#19988;&#26368;&#21518;&#19968;&#20010;&#21629;&#20196;&#30340;&#32467;&#26524;&#24212;&#35813;&#26159;(&#20801;&#35768;&#19981;&#21516;&#24179;&#21488;&#30340;&#21160;&#24577;&#38142;&#25509;&#22120;&#30340;&#21517;&#31216;&#19981;&#21516;&#65292; &#24182;&#19988;64&#20301;&#26426;&#22120;&#19978;&#65292;&#26159;lib64&#30446;&#24405;):
+        </p>
+        <pre class="screen"><code class=
+        "computeroutput">found ld-linux.so.2 at /lib/ld-linux.so.2</code></pre>
+        <p>
+          &#22914;&#26524;&#36755;&#20986;&#19982;&#19978;&#38754;&#19981;&#21516;&#25110;&#32773;&#27809;&#26377;&#36755;&#20986;&#65292;&#37027;&#20040;&#23601;&#26377;&#22823;&#38382;&#39064;&#20102;&#12290;&#20320;&#38656;&#35201;&#26816;&#26597;&#19968;&#19979;&#21069;&#38754;&#30340;&#25805;&#20316;&#65292; &#30475;&#30475;&#38382;&#39064;&#20986;&#22312;&#21738;&#37324;&#65292;&#24182;&#25913;&#27491;&#36807;&#26469;&#12290; &#22823;&#22810;&#25968;&#24773;&#20917;&#19979;&#65292;&#20986;&#38169;&#37117;&#26159;&#22240;&#20026;&#19978;&#38754;&#30340; specs &#25991;&#20214;&#27809;&#25913;&#23545;&#12290; &#22312;&#32487;&#32493;&#20043;&#21069;&#35201;&#35299;&#20915;&#25152;&#26377;&#30340;&#38382;&#39064;&#12290;
+</p>
+        <p>
+          &#22312;&#30830;&#23450;&#19968;&#20999;&#27491;&#24120;&#21518;&#65292;&#21024;&#38500;&#27979;&#35797;&#25991;&#20214;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">rm -v dummy.c a.out dummy.log</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-gcc" name="contents-gcc"></a>6.16.2.  
+          GCC &#30340;&#20869;&#23481;        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">c++, cc (link to gcc), cpp, g++, gcc,
+              gccbug, and gcov</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libgcc.a, libgcc_eh.a, libgcc_s.so,
+              libgcov.a, libgomp.{a,so}, libmudflap.{a,so},
+              libmudflapth.{a,so}, libssp.{a,so}, libssp_nonshared.a,
+              libstdc++.{a,so} and libsupc++.a</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="c" name="c"></a><span class="term"><span class=
+                    "command"><strong>c++</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    The C++ compiler                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="cc" name="cc"></a><span class="term"><span class=
+                    "command"><strong>cc</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    The C compiler                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="cpp" name="cpp"></a><span class=
+                    "term"><span class="command"><strong>cpp</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                     C &#39044;&#22788;&#29702;&#22120;&#65292; &#32534;&#35793;&#22120;&#29992;&#23427;&#26469;&#23558; #include&#65292;#define&#21644;&#31867;&#20284;&#30340;&#22768;&#26126;&#22312;&#28304;&#25991;&#20214;&#20013;&#23637;&#24320;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="g" name="g"></a><span class="term"><span class=
+                    "command"><strong>g++</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    The C++ compiler                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="gcc" name="gcc"></a><span class=
+                    "term"><span class="command"><strong>gcc</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    The C compiler                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="gccbug" name="gccbug"></a><span class=
+                    "term"><span class=
+                    "command"><strong>gccbug</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#19968;&#20010;shell&#33050;&#26412;&#65292;&#24110;&#21161;&#21019;&#24314;&#26377;&#20215;&#20540;&#30340; bug &#25253;&#21578;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="gcov" name="gcov"></a><span class=
+                    "term"><span class=
+                    "command"><strong>gcov</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#20840;&#38754;&#30340;&#27979;&#35797;&#24037;&#20855;&#65292;&#29992;&#26469;&#20998;&#26512;&#22312;&#31243;&#24207;&#30340;&#21738;&#37324;&#20570;&#20248;&#21270;&#30340;&#25928;&#26524;&#26368;&#22909;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libgcc" name="libgcc"></a><span class=
+                    "term"><code class="filename">libgcc</code></span>                  </p>                </td>
+                <td>
+                  <p><span class=
+                    "command"><strong>gcc</strong></span>&#36816;&#34892;&#26102;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libgcov" name="libgcov"></a><span class=
+                    "term"><code class="filename">libgcov</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#22312;GCC&#34987;&#29992;&#26469;&#21551;&#29992;profiling &#26102;&#65292;&#36825;&#20010;&#24211;&#20250;&#34987;&#38142;&#25509;&#21040;&#19968;&#20010;&#31243;&#24207;&#20013;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libgomp" name="libgomp"></a><span class=
+                    "term"><code class="filename">libgomp</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                C/C++ &#21644; Fortran&#22810;&#24179;&#21488;&#20849;&#20139;&#23384;&#20648;&#24182;&#34892;&#32534;&#31243;&#30340;OpenMP API &#30340;GNU &#23454;&#29616;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libmudflap" name="libmudflap"></a><span class=
+                    "term"><code class="filename">libmudflap</code></span>                  </p>                </td>
+                <td>
+                  <p>&#21253;&#21547;&#25903;&#25345;GCC&#33539;&#22260;&#26816;&#26597;&#20989;&#25968;&#30340;&#31243;&#24207;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libssp" name="libssp"></a><span class=
+                    "term"><code class="filename">libssp</code></span>                  </p>                </td>
+                <td>
+                  <p>&#21253;&#21547;&#25903;&#25345;GCC&#22534;&#26632;&#20445;&#25252;&#20989;&#25968;&#30340;&#31243;&#24207;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libstdc" name="libstdc"></a><span class=
+                    "term"><code class="filename">libstdc++</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#26631;&#20934;&#30340; C++ &#24211; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libsupc" name="libsupc"></a><span class=
+                    "term"><code class="filename">libsupc++</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#20026; C++ &#35821;&#35328;&#25552;&#20379;&#25903;&#25345;&#30340;&#24211;&#20989;&#25968;</p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="file.html" title="File-5.04">&#21518;&#36864;</a>
+          <p>
+            File-5.04
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sed.html" title="Sed-4.2.1">&#21069;&#36827;</a>
+          <p>
+            Sed-4.2.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

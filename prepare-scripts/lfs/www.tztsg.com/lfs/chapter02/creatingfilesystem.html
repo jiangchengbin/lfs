@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      2.3.&nbsp;Creating a File System on the Partition
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;2.&nbsp;&#20934;&#22791;&#19968;&#20010;&#26032;&#20998;&#21306; </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="creatingpartition.html" title=
+          "Creating a New Partition">&#21518;&#36864;</a>
+          <p>
+            &#21019;&#24314;&#19968;&#20010;&#26032;&#30340;&#20998;&#21306;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="mounting.html" title=
+          "Mounting the New Partition">&#21069;&#36827;</a>
+          <p>
+            &#25346;&#36733;&#36825;&#20010;&#26032;&#20998;&#21306;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter02.html" title=
+          "Chapter&nbsp;2.&nbsp;Preparing a New Partition">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="space-creatingfilesystem" name=
+        "space-creatingfilesystem"></a>2.3. &#22312;&#36825;&#20010;&#20998;&#21306;&#19978;&#21019;&#24314;&#25991;&#20214;&#31995;&#32479;
+      </h1>
+      <p>
+        &#38480;&#21046;&#65292;&#24050;&#32463;&#24314;&#31435;&#20102;&#19968;&#20010;&#31354;&#30340;&#20998;&#21306;&#65292;&#21487;&#20197;&#22312;&#20854;&#19978;&#24314;&#31435;&#25991;&#20214;&#31995;&#32479;&#20102;&#12290; &#22312;Linux&#19990;&#30028;&#26368;&#24120;&#29992;&#30340;&#26159;&#31532;&#20108;&#20195; &#25193;&#23637;&#25991;&#20214;&#31995;&#32479;(<code class="systemitem">ext2</code>)&#65292; &#20294;&#26159;&#65292;&#23545;&#20110;&#22823;&#23481;&#37327;&#30828;&#30424;&#65292;&#26085;&#24535;&#25991;&#20214;&#31995;&#32479;&#36234;&#26469;&#36234;&#21463;&#27426;&#36814;&#12290;&#31532;&#19977;&#20195;&#25193;&#23637;&#25991;&#20214;&#31995;&#32479;  (<code class=
+        "systemitem">ext3</code>) &#26159;
+        <code class="systemitem">ext2</code> &#30340;&#22686;&#24378;&#29256;&#65292;&#23427;&#21152;&#20837;&#20102;&#26085;&#24535;&#21151;&#33021;&#65292;&#24182;&#19988;&#21644;E2fsprogs &#24037;&#20855;&#20860;&#23481;&#12290; &#25105;&#20204;&#23558;&#24314;&#31435; <code class="systemitem">ext3</code> &#25991;&#20214;&#31995;&#32479;&#12290;
+        &#21019;&#24314;&#20854;&#20182;&#25991;&#20214;&#31995;&#32479;&#30340;&#20171;&#32461;&#65292;&#21487;&#20197;&#21442;&#32771;
+        <a class="ulink" href=
+        "http://www.linuxfromscratch.org/blfs/view/svn/postlfs/filesystems.html">
+        http://www.linuxfromscratch.org/blfs/view/svn/postlfs/filesystems.html</a>.      </p>
+      <p>&#35201;&#22312;LFS&#20998;&#21306;&#24314;&#31435; <code class="systemitem">ext3</code> &#25991;&#20214;&#31995;&#32479;&#65292;&#35831;&#36816;&#34892;&#19979;&#21015;&#21629;&#20196;&#65306;      </p>
+      <pre class="userinput"><kbd class="command">mke2fs -jv /dev/<em class=
+      "replaceable"><code>&lt;xxx&gt;</code></em></kbd></pre>
+      <p>
+        &#29992; LFS &#20998;&#21306;&#30340;&#21517;&#23383;&#65288;&#22312;&#21069;&#38754;&#30340;&#20363;&#23376;&#20013;&#26159;<code class="filename">hda5</code>&#65289;&#20195;&#26367; <em class="replaceable"><code>&lt;xxx&gt;</code></em> &#12290; </p>
+      <div class="admon note">
+        <img alt="[Note]" src="../images/note.png" />
+        <h3>
+          &#27880;&#24847;
+        </h3>
+        <p>&#26377;&#20123;&#21457;&#34892;&#29256;&#23487;&#20027;&#31995;&#32479;&#30340;&#25991;&#20214;&#31995;&#32479;&#21019;&#24314;&#24037;&#20855;(E2fsprogs)&#65292;&#21487;&#33021;&#20351;&#29992;&#20102;&#33258;&#23450;&#20041;&#30340;&#29305;&#24615;&#12290; &#22240;&#20026;LFS&#23433;&#35013;&#30340;E2fsprogs&#19981;&#25903;&#25345;&#36825;&#20123;&#29305;&#24615;&#65292;&#21487;&#33021;&#22312;&#31532;&#20061;  &#31456;&#24341;&#23548;&#36827;&#20837;&#26032;&#30340;LFS&#31995;&#32479;&#26102;&#20986;&#29616;&#38382;&#39064;&#65307; &#20320;&#20250;&#25910;&#21040;&#19968;&#20010;&#31867;&#20284; &ldquo;unsupported filesystem            features, upgrade your e2fsprogs&rdquo;   &#30340;&#38169;&#35823;&#12290; &#20026;&#20102;&#26816;&#26597;&#20320;&#30340;&#23487;&#20027;&#31995;&#32479;&#26159;&#21542;&#20351;&#29992;&#20102;&#33258;&#23450;&#20041;&#30340;&#29305;&#24615;&#65292;&#35831;&#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">debugfs -R feature /dev/<em class=
+        "replaceable"><code>&lt;xxx&gt;</code></em></kbd></pre>
+        <p>&#22914;&#26524;&#36755;&#20986;&#30340;&#29305;&#24615;&#19981;&#21516;&#20110;<code class=
+          "option">has_journal</code>, <code class="option">ext_attr</code>,
+          <code class="option">resize_inode</code>, <code class=
+          "option">dir_index</code>, <code class="option">filetype</code>,
+          <code class="option">sparse_super</code>, <code class=
+          "option">large_file</code> &#25110; <code class=
+          "option">needs_recovery</code>, &#37027;&#20040;&#23601;&#35828;&#26126;&#20320;&#30340;&#23487;&#20027;&#31995;&#32479;&#21487;&#33021;&#26377;&#33258;&#23450;&#20041;&#30340;&#22686;&#24378;&#29305;&#24615;&#12290; &#22312;&#36825;&#31181;&#24773;&#20917;&#19979;&#65292; &#20026;&#20102;&#36991;&#20813;&#21518;&#38754;&#20986;&#29616;&#38382;&#39064;&#65292; &#20320;&#24212;&#35813;&#37325;&#26032;&#32534;&#35793;E2fsprogs&#36719;&#20214;&#21253;&#65292; &#24182;&#29992;&#29983;&#25104;&#30340;&#20108;&#36827;&#21046;&#25991;&#20214;&#22312;&#20320;&#30340;LFS&#20998;&#21306;&#19978;&#37325;&#26032;&#21019;&#24314;&#25991;&#20214;&#31995;&#32479;&#65306; </p>
+        <pre class="userinput"><kbd class="command">cd /tmp
+tar -xzvf /path/to/sources/e2fsprogs-1.41.10.tar.gz
+cd e2fsprogs-1.41.10
+mkdir -v build
+cd build
+../configure
+make #note that we intentionally don't 'make install' here!
+./misc/mke2fs -jv /dev/<em class="replaceable"><code>&lt;xxx&gt;</code></em>
+cd /tmp
+rm -rfv e2fsprogs-1.41.10</kbd></pre>
+      </div>
+      <p>&#22914;&#26524;&#20320;&#20351;&#29992;&#21407;&#26377;&#30340;<code class="systemitem">&#20132;&#25442;</code>&#20998;&#21306;&#65292;&#23601;&#19981;&#24517;&#26684;&#24335;&#21270;&#20102;&#65292;&#20294;&#65292;&#22914;&#26524;&#20320;&#21019;&#24314;&#20102;&#19968;&#20010;&#26032;&#30340;<code class=
+        "systemitem">&#20132;&#25442;</code>&#20998;&#21306;&#65292; &#23601;&#38656;&#35201;&#29992;&#36825;&#20010;&#21629;&#20196;&#36827;&#34892;&#21021;&#22987;&#21270;&#65306;</p>
+      <pre class="userinput"><kbd class="command">mkswap /dev/<em class=
+      "replaceable"><code>&lt;yyy&gt;</code></em></kbd></pre>
+      <p>&#29992;<code class="systemitem">&#20132;&#25442;</code>&#20998;&#21306;&#30340;&#21517;&#23383;&#26469;&#20195;&#26367; <em class="replaceable"><code>&lt;yyy&gt;</code></em> &#12290;      </p>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="creatingpartition.html" title=
+          "Creating a New Partition">&#21518;&#36864;</a>
+          <p>
+            &#21019;&#24314;&#19968;&#20010;&#26032;&#30340;&#20998;&#21306;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="mounting.html" title=
+          "Mounting the New Partition">&#21069;&#36827;</a>
+          <p>
+            &#25346;&#36733;&#36825;&#20010;&#26032;&#20998;&#21306;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter02.html" title=
+          "Chapter&nbsp;2.&nbsp;Preparing a New Partition">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

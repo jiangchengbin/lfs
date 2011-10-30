@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      D.15.&nbsp;/etc/rc.d/init.d/sysctl
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Appendix&nbsp;D.&nbsp;&#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds14.html" title=
+          "/etc/rc.d/init.d/localnet">&#21518;&#36864;</a>
+          <p>
+            /etc/rc.d/init.d/localnet
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds16.html" title=
+          "/etc/rc.d/init.d/sysklogd">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/sysklogd
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="sysctlscript" name="sysctlscript"></a>D.15.
+        /etc/rc.d/init.d/sysctl
+      </h1>
+      <pre class="screen">#!/bin/sh
+########################################################################
+# Begin $rc_base/init.d/sysctl
+#
+# Description : File uses /etc/sysctl.conf to set kernel runtime
+#               parameters
+#
+# Authors     : Nathan Coulson (nathan@linuxfromscratch.org)
+#               Matthew Burgress (matthew@linuxfromscratch.org)
+#
+# Version     : 00.00
+#
+# Notes       :
+#
+########################################################################
+
+. /etc/sysconfig/rc
+. ${rc_functions}
+
+case "${1}" in
+    start)
+        if [ -f "/etc/sysctl.conf" ]; then
+            boot_mesg "Setting kernel runtime parameters..."
+            sysctl -q -p
+            evaluate_retval
+        fi
+        ;;
+
+    status)
+        sysctl -a    
+        ;;
+
+    *)
+        echo "Usage: ${0} {start|status}"
+        exit 1
+        ;;
+esac
+
+# End $rc_base/init.d/sysctl
+</pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds14.html" title=
+          "/etc/rc.d/init.d/localnet">&#21518;&#36864;</a>
+          <p>
+            /etc/rc.d/init.d/localnet
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds16.html" title=
+          "/etc/rc.d/init.d/sysklogd">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/sysklogd
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

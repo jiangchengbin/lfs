@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.57.&nbsp;Texinfo-4.13a
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="tar.html" title="Tar-1.22">&#21518;&#36864;</a>
+          <p>
+            Tar-1.22
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="udev.html" title="Udev-151">&#21069;&#36827;</a>
+          <p>
+            Udev-151
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-texinfo" name="ch-system-texinfo"></a>6.57.
+        Texinfo-4.13a
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Texinfo &#36719;&#20214;&#21253;&#21253;&#21547;&#35835;&#21462;&#12289;&#20889;&#20837;&#21644;&#36716;&#25442;&#25104; Info &#25991;&#26723;&#30340;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.3 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">21 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.57.1. &#23433;&#35013; Texinfo
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Texinfo &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>&#21487;&#36873;&#30340;&#65292;&#23433;&#35013; texinfo &#32452;&#20214;&#20013;&#26412;&#24212;&#30001; TeX &#26469;&#23433;&#35013;&#30340;&#37096;&#20221;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make TEXMF=/usr/share/texmf install-tex</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>make &#21442;&#25968;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>TEXMF=/usr/share/texmf</code></em></span>            </dt>
+            <dd>
+              <p>&#22914;&#26524;&#20320;&#20197;&#21518;&#25171;&#31639;&#23433;&#35013; TeX &#30340;&#35805;&#65292;makefile &#20013;&#30340; TEXMF &#21464;&#37327;&#20445;&#23384;&#30528;&#20320;&#30340; TeX &#26641;&#30340;&#20301;&#32622;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>Info &#25991;&#26723;&#31995;&#32479;&#20351;&#29992;&#19968;&#20010;&#32431;&#25991;&#26412;&#25991;&#20214;&#26469;&#23384;&#25918;&#33756;&#21333;&#26465;&#30446;&#30340;&#21015;&#34920;&#12290;&#36825;&#20010;&#25991;&#20214;&#20301;&#20110;/usr/share/info/dir&#12290; &#19981;&#24184;&#30340;&#26159;&#65292;&#30001;&#20110;&#19981;&#21516;&#36719;&#20214;&#21253;&#20013; Makefile   &#30340;&#20598;&#28982;&#38382;&#39064;&#65292;&#26377;&#26102;&#20505;&#36825;&#20010;&#25991;&#20214;&#20250;&#19982;&#23454;&#38469;&#23433;&#35013;&#22312;&#31995;&#32479;&#37324;&#30340; Info &#25991;&#26723;&#19981;&#19968;&#33268;&#12290;&#22914;&#26524;&#20320;&#35201;&#20877;&#27425;&#21019;&#24314;/usr/share/info/dir&#25991;&#20214;&#65292;&#21487;&#20197;&#20351;&#29992;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class="command">cd /usr/share/info
+rm -v dir
+for f in *
+do install-info $f dir 2&gt;/dev/null
+done</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-texinfo" name="contents-texinfo"></a>6.57.2.
+           Texinfo
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">info, infokey, install-info, makeinfo,
+              pdftexi2dvi, texi2dvi, texi2pdf, and texindex</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="info" name="info"></a><span class=
+                    "term"><span class=
+                    "command"><strong>info</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#29992;&#20110;&#35835;&#21462; Info &#25991;&#26723;&#65292;&#23427;&#31867;&#20284;&#20110; man &#25163;&#20876;&#39029;&#65292; &#20294;&#26159;&#20182;&#20204;&#20250;&#32473;&#20986;&#26356;&#28145;&#20837;&#30340;&#35299;&#37322;&#32780;&#19981;&#26159;&#20572;&#30041;&#22312;&#35299;&#37322;&#31243;&#24207;&#21442;&#25968;&#19978;&#12290; &#20363;&#22914;&#20320;&#21487;&#20197;&#30475;&#30475;<strong>man bison</strong> &#21644; <strong>info bison</strong>&#30340;&#21306;&#21035;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="infokey" name="infokey"></a><span class=
+                    "term"><span class=
+                    "command"><strong>infokey</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25226;&#21253;&#25324; Info &#35774;&#32622;&#30340;&#28304;&#25991;&#20214;&#32534;&#35793;&#25104;&#20108;&#36827;&#21046;&#26684;&#24335;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="install-info" name="install-info"></a><span class=
+                    "term"><span class=
+                    "command"><strong>install-info</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23433;&#35013; info &#25991;&#26723;&#65292;&#23427;&#20250;&#26356;&#26032; <strong><strong>info</strong></strong> &#30340;&#32034;&#24341;&#25991;&#20214;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="makeinfo" name="makeinfo"></a><span class=
+                    "term"><span class=
+                    "command"><strong>makeinfo</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558; Texinfo &#28304;&#25991;&#26723;&#32763;&#35793;&#25104;&#19981;&#21516;&#30340;&#26684;&#24335;&#65292; &#21253;&#25324;html&#12289; info&#25991;&#26723;&#12289; &#26222;&#36890;&#25991;&#26412;&#25991;&#26723;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pdftexi2dvi" name="pdftexi2dvi"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pdftexi2dvi</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#29992;&#26469;&#23558;&#32473;&#23450;&#30340;Texinfo&#25991;&#26723;&#26684;&#24335;&#21270;&#25104;&#20415;&#25658;&#25991;&#20214;&#26684;&#24335;(PDF) &#25991;&#20214; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="texi2dvi" name="texi2dvi"></a><span class=
+                    "term"><span class=
+                    "command"><strong>texi2dvi</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25226;&#32473;&#23450;&#30340; Texinfo &#25991;&#26723;&#26684;&#24335;&#21270;&#25104;&#21487;&#25171;&#21360;&#30340;&#35774;&#22791;&#26080;&#20851;&#30340;&#25991;&#20214;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="texi2pdf" name="texi2pdf"></a><span class=
+                    "term"><span class=
+                    "command"><strong>texi2pdf</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558; Texinfo &#25991;&#26723;&#36716;&#21270;&#25104; PDF &#25991;&#20214;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="texindex" name="texindex"></a><span class=
+                    "term"><span class=
+                    "command"><strong>texindex</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23545; Texinfo &#32034;&#24341;&#25991;&#20214;&#36827;&#34892;&#25490;&#24207;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="tar.html" title="Tar-1.22">&#21518;&#36864;</a>
+          <p>
+            Tar-1.22
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="udev.html" title="Udev-151">&#21069;&#36827;</a>
+          <p>
+            Udev-151
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

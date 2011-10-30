@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.30.&nbsp;Libtool-2.2.6b
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="bash.html" title="Bash-4.1">&#21518;&#36864;</a>
+          <p>
+            Bash-4.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gdbm.html" title="GDBM-1.8.3">&#21069;&#36827;</a>
+          <p>
+            GDBM-1.8.3
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-libtool" name="ch-system-libtool"></a>6.30.
+        Libtool-2.2.6b
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           Libtool &#26159;&#19968;&#20010;GNU&#36890;&#29992;&#24211;&#25903;&#25345;&#33050;&#26412;&#65292; &#23558;&#20351;&#29992;&#21160;&#24577;&#24211;&#30340;&#22797;&#26434;&#24615;&#38544;&#34255;&#22312;&#32479;&#19968;&#30340;&#12289;&#21487;&#31227;&#26893;&#30340;&#25509;&#21475;&#20013;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">3.7 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">35 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.30.1. &#23433;&#35013; Libtool
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Libtool &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>&#35201;&#27979;&#35797;&#32467;&#26524; (&#22823;&#32422;3.0 SBU)&#65292;&#35831;&#25191;&#34892;&#65306; </p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-libtool" name="contents-libtool"></a>6.30.2.
+           Libtool
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">libtool and libtoolize</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libltdl.{a,so}</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libtool" name="libtool"></a><span class=
+                    "term"><span class=
+                    "command"><strong>libtool</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#25552;&#20379;&#36890;&#29992;&#30340;&#24211;&#32534;&#35793;&#25903;&#25345;&#26381;&#21153;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libtoolize" name="libtoolize"></a><span class=
+                    "term"><span class=
+                    "command"><strong>libtoolize</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#25552;&#20379;&#20102;&#19968;&#31181;&#26631;&#20934;&#26041;&#24335;&#26469;&#23558; <span class=
+                    "command"><strong>libtool</strong></span><strong> </strong>&#25903;&#25345;&#21152;&#20837;&#21040;&#19968;&#20010;&#36719;&#20214;&#21253;&#20013;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libltdl" name="libltdl"></a><span class=
+                    "term"><code class="filename">libltdl</code></span>                  </p>                </td>
+                <td>
+                <p>&#38544;&#34255; dlopening &#24211;&#30340;&#22797;&#26434;&#32454;&#33410;</p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="bash.html" title="Bash-4.1">&#21518;&#36864;</a>
+          <p>
+            Bash-4.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gdbm.html" title="GDBM-1.8.3">&#21069;&#36827;</a>
+          <p>
+            GDBM-1.8.3
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

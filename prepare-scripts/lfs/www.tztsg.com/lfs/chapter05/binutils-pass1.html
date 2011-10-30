@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.4.&nbsp;Binutils-2.20 - Pass 1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="generalinstructions.html" title=
+          "General Compilation Instructions">&#21518;&#36864;</a>
+          <p>
+            &#24120;&#29992;&#32534;&#35793;&#22120;&#29992;&#27861;&#35828;&#26126;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gcc-pass1.html" title=
+          "GCC-4.4.3 - Pass 1">&#21069;&#36827;</a>
+          <p>
+            GCC-4.4.3 - &#31532;&#19968;&#36941;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-binutils-pass1" name=
+        "ch-tools-binutils-pass1"></a>5.4. Binutils-2.20 - &#31532;&#19968;&#36941;
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+        Binutils &#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#20010;&#38142;&#25509;&#22120;&#65292;&#19968;&#20010;&#27719;&#32534;&#22120;&#21644;&#20854;&#20182;&#22788;&#29702;&#30446;&#26631;&#25991;&#20214;&#30340;&#24037;&#20855;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">248 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.4.1. &#23433;&#35013;&#20132;&#21449;&#32534;&#35793; Binutils
+        </h2>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>
+          &#22238;&#22836;&#37325;&#26032;&#38405;&#35835;&#19978;&#33410;&#20013;&#30340;&#27880;&#24847;&#20107;&#39033;&#12290;&#29702;&#35299;&#36825;&#20123;&#26631;&#35760;&#30340; &ldquo;note&rdquo; &#23545;&#20110;&#20320;&#20197;&#21518;&#33410;&#30465;&#22823;&#37327;&#38382;&#39064;&#24456;&#37325;&#35201;&#12290;</p>
+        </div>
+        <p>&#23433;&#35013;&#30340;&#31532;&#19968;&#20010;&#36719;&#20214;&#21253;&#26159; Binutils &#65292;&#36825;&#38750;&#24120;&#37325;&#35201;&#65292;&#22240;&#20026; Glibc &#21644; GCC &#20250;&#38024;&#23545;&#21487;&#29992;&#30340;&#36830;&#25509;&#22120;   &#21644;&#27719;&#32534;&#22120;&#36827;&#34892;&#22810;&#31181;&#27979;&#35797;&#65292;&#20197;&#20915;&#23450;&#21551;&#29992;&#23427;&#20204;&#33258;&#24049;&#30340;&#21738;&#20123;&#29305;&#24615;&#12290;</p>
+        <p>Binutils &#30340;&#25991;&#26723;&#25512;&#33616;&#21019;&#24314;&#19968;&#20010;&#19987;&#29992;&#30446;&#24405;&#26469;&#32534;&#35793;&#23427;&#65292;&#32780;&#19981;&#26159;&#22312;&#28304;&#30721;&#30446;&#24405;&#20013;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mkdir -v ../binutils-build
+cd ../binutils-build</kbd></pre>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>
+            &#22914;&#26524;&#20320;&#24819;&#20351;&#29992;&#26412;&#20070;&#20313;&#19979;&#37096;&#20221;&#21015;&#20986;&#30340; SBU &#20540;&#65292; &#37027;&#20040;&#29616;&#22312;&#23601;&#35201;&#27979;&#37327;&#19968;&#19979;&#32534;&#35793;&#26412;&#36719;&#20214;&#21253;&#30340;&#26102;&#38388;&#12290; &#20320;&#21487;&#20197;&#29992;&#31867;&#20284;&#20110;&#19979;&#38754;&#36825;&#26679;&#30340; <span class=
+            "command"><strong>time</strong></span><strong> </strong>&#21629;&#20196; &#65306; 
+            <strong class="userinput"><code>time { ./configure ... &amp;&amp;
+            make &amp;&amp; make install; }</code></strong>.          </p>
+        </div>
+        <p>&#29616;&#22312;&#20026;&#32534;&#35793; Binutils &#20316;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">../binutils-2.20/configure \
+    --target=$LFS_TGT --prefix=/tools \
+    --disable-nls --disable-werror</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><code class=
+              "envar">--target=$LFS_TGT</code></span>            </dt>
+            <dd>
+              <p>
+                &#22240;&#20026; <code class=
+                "envar">LFS_TGT </code>&#21464;&#37327;&#20013;&#30340;&#26426;&#22120;&#25551;&#36848;&#21644; <span class=
+                "command"><strong>config.guess</strong></span> &#33050;&#26412;&#30340;&#36820;&#22238;&#20540;&#30053;&#26377;&#19981;&#21516;&#65292; &#25152;&#20197;&#65292; &#36825;&#20010;&#24320;&#20851;&#20250;&#21578;&#35785; <span class=
+                "command"><strong>configure</strong></span> &#33050;&#26412;&#65292;&#20026;&#20102;&#21019;&#24314;&#20132;&#21449;&#38142;&#25509;&#22120;&#65292;&#35201;&#35843;&#25972;Binutil &#30340;&#32534;&#35793;&#31995;&#32479;&#12290;              </p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--prefix=/tools</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#21442;&#25968;&#21578;&#35785; configure &#33050;&#26412;&#65292;&#20934;&#22791;&#25226; Binutils &#36719;&#20214;&#21253;&#20013;&#30340;&#31243;&#24207;&#23433;&#35013;&#21040; <code class="filename">/tools</code> &#30446;&#24405;&#20013;&#12290; </p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-nls</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#21442;&#25968;&#31105;&#27490;&#20102;&#22269;&#38469;&#21270;(&#36890;&#24120;&#31616;&#31216;i18n --&#35793;&#32773;)&#65292;&#22240;&#20026;&#20020;&#26102;&#24037;&#20855;&#19981;&#38656;&#35201;i18n&#29305;&#24615;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-werror</code></em></span>            </dt>
+            <dd>
+              <p>&#22312;&#26377;&#20174;&#23487;&#20027;&#32534;&#35793;&#22120;&#21457;&#20986;&#30340;&#35686;&#21578;&#26102;&#65292;&#36825;&#20010;&#21442;&#25968;&#38450;&#27490;&#20102;&#32534;&#35793;&#31243;&#24207;&#20572;&#27490;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>&#25509;&#19979;&#26469;&#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#29616;&#22312;&#32534;&#35793;&#23436;&#25104;&#20102;&#65292; &#36890;&#24120;&#25105;&#20204;&#20250;&#36816;&#34892;&#27979;&#35797;&#22871;&#20214;&#65292;&#20294;&#26159;&#30446;&#21069;&#27979;&#35797;&#22871;&#20214;(Tcl, Expect, DejaGNU) &#23578;&#26410;&#23433;&#35013;&#12290; &#32780;&#19988;&#22312;&#36825;&#37324;&#36816;&#34892;&#27979;&#35797;&#20063;&#27809;&#20160;&#20040;&#29992;&#22788;&#65292;   &#22240;&#20026;&#31532;&#19968;&#36941;&#23433;&#35013;&#30340;&#31243;&#24207;&#24456;&#24555;&#23601;&#20250;&#34987;&#31532;&#20108;&#36941;&#30340;&#31243;&#24207; &#25152;&#35206;&#30422;&#12290;</p>
+        <p>
+          &#22914;&#26524;&#22312;x86_64 &#19978;&#32534;&#35793;&#65292;&#23601;&#35201;&#21019;&#24314;&#19968;&#20010;&#31526;&#21495;&#38142;&#25509;&#65292;&#26469;&#30830;&#20445;&#24037;&#20855;&#38142;&#27491;&#24120;&#65306;</p>
+        <pre class="userinput"><kbd class="command">case $(uname -m) in
+  x86_64) mkdir -v /tools/lib &amp;&amp; ln -sv lib /tools/lib64 ;;
+esac</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#30340;&#35814;&#32454;&#20869;&#23481;&#20301;&#20110;  <a class="xref" href=
+          "../chapter06/binutils.html#contents-binutils" title=
+          "6.12.2.&nbsp;Contents of Binutils">Section&nbsp;6.12.2,
+          &ldquo; Binutils &#30340;&#20869;&#23481; &rdquo;</a>        </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="generalinstructions.html" title=
+          "General Compilation Instructions">&#21518;&#36864;</a>
+          <p>
+            &#24120;&#29992;&#32534;&#35793;&#22120;&#29992;&#27861;&#35828;&#26126;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gcc-pass1.html" title=
+          "GCC-4.4.3 - Pass 1">&#21069;&#36827;</a>
+          <p>
+            GCC-4.4.3 - &#31532;&#19968;&#36941;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

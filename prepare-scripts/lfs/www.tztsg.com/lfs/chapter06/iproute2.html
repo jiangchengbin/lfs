@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.45.&nbsp;IPRoute2-2.6.31
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gzip.html" title="Gzip-1.4">&#21518;&#36864;</a>
+          <p>
+            Gzip-1.4
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="kbd.html" title="Kbd-1.15.1">&#21069;&#36827;</a>
+          <p>
+            Kbd-1.15.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-iproute2" name="ch-system-iproute2"></a>6.45.
+        IPRoute2-2.6.31
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          IPRoute2 &#36719;&#20214;&#21253;&#21253;&#21547;&#20102;&#21253;&#21547;&#20102;&#22522;&#26412;&#30340;&#21644;&#39640;&#32423;&#30340;&#22522;&#20110; IPv4 &#32593;&#32476;&#30340;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.2 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">5.7 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.45.1. &#23433;&#35013; IPRoute2
+        </h2>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#20013;&#30340;<strong>arpd</strong> &#25991;&#20214;&#20381;&#36182;&#20110; Berkeley DB&#25991;&#20214;&#12290;   &#22240;&#20026;<strong>arpd</strong> &#19981;&#26159;&#19968;&#20010;&#22522;&#26412;Linux&#31995;&#32479;&#19978;&#24517;&#38656;&#30340;&#24120;&#35265;&#31243;&#24207;&#65292;&#25152;&#20197;&#35201;&#20351;&#29992;&#19979;&#38754;&#30340;<strong>sed</strong>&#21629;&#20196;&#26469;&#21024;&#38500;&#23545; Berkeley DB&#30340;&#20381;&#36182;&#12290;&#22914;&#26524;&#38656;&#35201; <strong>arpd</strong> &#31243;&#24207;&#65292; &#22312;BLFS&#25991;&#26723;&#20013;&#21487;&#20197;&#25214;&#21040;&#32534;&#35793;Berkeley   DB&#30340;&#35828;&#26126; <a class="ulink" href=
+          "http://www.linuxfromscratch.org/blfs/view/svn/server/databases.html#db">http://www.linuxfromscratch.org/blfs/view/svn/server/databases.html#db</a>.        </p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i '/^TARGETS/s@arpd@@g' misc/Makefile</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make DESTDIR=</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>make &#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>DESTDIR=</code></em></span>            </dt>
+            <dd>
+              <p>&#30830;&#20445;IPRoute2 &#36719;&#20214;&#23558;&#23433;&#35013;&#21040;&#27491;&#30830;&#30340;&#30446;&#24405;&#12290;&#40664;&#35748;&#30340;&#65292; <em>DESTDIR</em> &#35774;&#32622;&#20026;   /usr&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>&#36825;&#20010;&#36719;&#20214;&#21253;&#38468;&#24102;&#27979;&#35797;&#36719;&#20214;&#65292;&#20294;&#26159;&#22914;&#26524;&#22312;chroot&#29615;&#22659;&#37324;&#25191;&#34892;&#27979;&#35797;&#65292;&#21487;&#33021;&#24182;&#19981;&#21487;&#38752;&#12290; &#22914;&#26524;&#20320;&#24819;&#22312;&#21551;&#21160;&#36827;&#20837;&#20320;&#30340;&#26032;LFS&#31995;&#32479;&#21518;&#25191;&#34892;&#36825;&#20123;&#27979;&#35797;&#65292;&#35831;&#30830;&#20445;&#20320;&#22312;&#20869;&#26680;&#37197;&#32622;&#20013;&#36873;&#25321;&#20102;   /proc/config.gz CONFIG_IKCONFIG_PROC (&quot;General   setup&quot; -&gt; &quot;Enable access to .config through /proc/config.gz&quot;) &#25903;&#25345;&#65292;&#28982;&#21518;&#20877;testsuite/&#23376;&#30446;&#24405;&#20013;&#36816;&#34892; 'make alltests' &#12290; </p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make DESTDIR= SBINDIR=/sbin MANDIR=/usr/share/man \
+     DOCDIR=/usr/share/doc/iproute2-2.6.31 install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-iproute2" name="contents-iproute2"></a>6.45.2.
+           IPRoute2 &#30340;&#20869;&#23481;        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">ctstat (link to lnstat), genl, ifcfg,
+              ifstat, ip, lnstat, nstat, routef, routel, rtacct, rtmon, rtpr,
+              rtstat (link to lnstat), ss, and tc</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ctstat" name="ctstat"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ctstat</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#36830;&#25509;&#29366;&#24577;&#24037;&#20855;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="genl" name="genl"></a><span class=
+                    "term"><span class=
+                    "command"><strong>genl</strong></span></span>
+                  </p>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ifcfg" name="ifcfg"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ifcfg</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p><strong><strong>ip</strong></strong>&#21629;&#20196;&#30340;shell&#33050;&#26412;&#21253;&#35013;&#12290;&#27880;&#24847;&#23427;&#38656;&#35201;iputils&#36719;&#20214;&#21253;&#20013;&#30340; <strong>arping</strong> &#21644; <strong>rdisk</strong> &#31243;&#24207;&#65292;&#35831;&#21442;&#32771; <a class="ulink" href=
+                    "http://www.skbuff.net/iputils/">http://www.skbuff.net/iputils/</a>.                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ifstat" name="ifstat"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ifstat</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#32593;&#32476;&#25509;&#21475;&#30340;&#32479;&#35745;&#20449;&#24687;&#65292;&#21253;&#25324;&#25509;&#21475;&#21457;&#36865;&#21644;&#25509;&#25910;&#21040;&#30340;&#21253;&#25968;&#37327;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ip" name="ip"></a><span class="term"><span class=
+                    "command"><strong>ip</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20027;&#21487;&#25191;&#34892;&#31243;&#24207;&#65292;&#23427;&#21253;&#21547;&#19968;&#20123;&#19981;&#21516;&#30340;&#21151;&#33021;&#65306;</p>
+                  <p>
+                    <span class="command"><strong>ip link <em class=
+                    "replaceable"><code>&lt;device&gt;</code></em></strong></span>&#26597;&#30475;&#21644;&#20462;&#25913;&#35774;&#22791;&#29366;&#24577;</p>
+                  <p>
+                    <span class="command"><strong>ip addr</strong></span>&#26597;&#30475;&#22320;&#22336;&#21644;&#23646;&#24615;&#65292;&#28155;&#21152;&#26032;&#22320;&#22336;&#12289;&#21024;&#38500;&#26087;&#22320;&#22336;&#12290;</p>
+                  <p>
+                    <span class="command"><strong>ip neighbor</strong></span>&#26597;&#30475;&#37051;&#23621;&#30340;&#29305;&#24615;&#65292;&#28155;&#21152;&#26032;&#37051;&#23621;&#12289;&#21024;&#38500;&#26087;&#37051;&#23621;&#12290;</p>
+                  <p>
+                    <span class="command"><strong>ip rule</strong></span>&#26597;&#30475;&#21644;&#20462;&#25913;&#36335;&#30001;&#35268;&#21017;</p>
+                  <p>
+                    <span class="command"><strong>ip route</strong></span>&#26597;&#30475;&#36335;&#30001;&#34920;&#21644;&#20462;&#25913;&#36335;&#30001;&#34920;&#35268;&#21017;</p>
+                  <p>
+                    <span class="command"><strong>ip tunnel</strong></span>&#26597;&#30475;&#21644;&#20462;&#25913; IP &#38567;&#36947;&#21450;&#20854;&#29305;&#24615;</p>
+                  <p>
+                    <span class="command"><strong>ip maddr</strong></span>&#26597;&#30475;&#21644;&#20462;&#25913;&#22810;&#25773;&#22320;&#22336;&#21450;&#20854;&#29305;&#24615;</p>
+                  <p>
+                    <span class="command"><strong>ip mroute</strong></span>&#35774;&#32622;&#12289;&#20462;&#25913;&#12289;&#21024;&#38500;&#22810;&#25773;&#36335;&#30001;</p>
+                  <p>
+                    <span class="command"><strong>ip monitor</strong></span>&#19981;&#38388;&#26029;&#30340;&#30417;&#35270;&#35774;&#22791;&#29366;&#24577;&#12289;&#22320;&#22336;&#12289;&#36335;&#30001;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lnstat" name="lnstat"></a><span class=
+                    "term"><span class=
+                    "command"><strong>lnstat</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25552;&#20379; Linux &#32593;&#32476;&#32479;&#35745;&#20449;&#24687;&#65292;&#29992;&#20110;&#26367;&#20195;&#26087;&#30340;<strong>rtstat</strong>&#31243;&#24207;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="nstat" name="nstat"></a><span class=
+                    "term"><span class=
+                    "command"><strong>nstat</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#32593;&#32476;&#32479;&#35745;&#20449;&#24687;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="routef" name="routef"></a><span class=
+                    "term"><span class=
+                    "command"><strong>routef</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p><span class="command"><strong>ip
+                    route</strong></span>&#30340;&#19968;&#20010;&#32452;&#20214;&#65292;&#29992;&#20110;&#21047;&#26032;&#36335;&#30001;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="routel" name="routel"></a><span class=
+                    "term"><span class=
+                    "command"><strong>routel</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p><span class="command"><strong>ip
+                    route</strong></span>&#30340;&#19968;&#20010;&#32452;&#20214;&#65292;&#29992;&#20110;&#21015;&#20986;&#36335;&#30001;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rtacct" name="rtacct"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rtacct</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034; /proc/net/rt_acct&#25991;&#20214;&#30340;&#20869;&#23481; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rtmon" name="rtmon"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rtmon</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#36335;&#30001;&#30417;&#35270;&#24037;&#20855;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rtpr" name="rtpr"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rtpr</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    &#23558;<strong>ip -o</strong> &#30340;&#36755;&#20986;&#36716;&#25442;&#20026;&#21487;&#35835;&#30340;&#26684;&#24335;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rtstat" name="rtstat"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rtstat</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#36335;&#30001;&#29366;&#24577;&#24037;&#20855;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ss" name="ss"></a><span class="term"><span class=
+                    "command"><strong>ss</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#31867;&#20284;&#20110; <strong>netstat</strong>&#21629;&#20196;&#65292;&#26174;&#31034;&#27963;&#21160;&#30340;&#36830;&#25509;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tc" name="tc"></a><span class="term"><span class=
+                    "command"><strong>tc</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#27969;&#37327;&#25511;&#21046;&#65292;&#29992;&#20110;&#23454;&#29616;&#26381;&#21153;&#36136;&#37327;(QOS)&#21644;&#26381;&#21153;&#32423;&#21035;(COS)&#65306;</p>
+                  <p>
+                    <span class="command"><strong>tc qdisc</strong></span>&#24314;&#31435;&#25490;&#38431;&#35268;&#21017;</p>
+                  <p>
+                    <span class="command"><strong>tc class</strong></span>&#24314;&#31435;&#22522;&#20110;&#32423;&#21035;&#30340;&#38431;&#21015;&#35843;&#24230;</p>
+                  <p>
+                    <span class="command"><strong>tc
+                    estimator</strong></span>&#20272;&#31639;&#32593;&#32476;&#27969;&#37327;</p>
+                  <p>
+                    <span class="command"><strong>tc filter</strong></span>&#35774;&#32622; QOS/COS &#21253;&#36807;&#28388;&#22120;</p>
+                  <p>
+                    <span class="command"><strong>tc policy</strong></span>&#35774;&#32622; QOS/COS &#35268;&#21017;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gzip.html" title="Gzip-1.4">&#21518;&#36864;</a>
+          <p>
+            Gzip-1.4
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="kbd.html" title="Kbd-1.15.1">&#21069;&#36827;</a>
+          <p>
+            Kbd-1.15.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

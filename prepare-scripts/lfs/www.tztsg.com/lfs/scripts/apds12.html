@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      D.12.&nbsp;/etc/rc.d/init.d/cleanfs
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Appendix&nbsp;D.&nbsp;&#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds11.html" title=
+          "/etc/rc.d/init.d/udev_retry">&#21518;&#36864;</a>
+          <p>
+            /etc/rc.d/init.d/udev_retry
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds13.html" title=
+          "/etc/rc.d/init.d/console">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/console
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="cleanfs" name="cleanfs"></a>D.12. /etc/rc.d/init.d/cleanfs
+      </h1>
+      <pre class="screen">#!/bin/sh
+########################################################################
+# Begin $rc_base/init.d/cleanfs
+#
+# Description : Clean file system
+#
+# Authors     : Gerard Beekmans - gerard@linuxfromscratch.org
+#
+# Version     : 00.00
+#
+# Notes       :
+#
+########################################################################
+
+. /etc/sysconfig/rc
+. ${rc_functions}
+
+# Function to create files/directory on boot.
+create_files() {
+    # Read in the configuration file.
+    exec 9&gt;&amp;0 &lt; /etc/sysconfig/createfiles
+        while read name type perm usr grp dtype maj min junk
+        do
+
+            # Ignore comments and blank lines.
+                   case "${name}" in
+                ""|\#*) continue ;;
+            esac
+
+            # Ignore existing files.
+            if [ ! -e "${name}" ]; then
+                # Create stuff based on its type.
+                case "${type}" in
+                    dir)
+                        mkdir "${name}"
+                        ;;
+                    file)
+                        :&gt; "${name}"
+                        ;;
+                    dev)
+                        case "${dtype}" in
+                            char)
+                                mknod "${name}" c ${maj} ${min}
+                                ;;
+                            block)
+                                mknod "${name}" b ${maj} ${min}
+                                ;;
+                            pipe)
+                                mknod "${name}" p
+                                ;;
+                            *) 
+                                boot_mesg -n "\nUnknown device type: ${dtype}" ${WARNING}
+                                boot_mesg "" ${NORMAL}
+                                ;;
+                        esac
+                        ;;
+                    *)
+                        boot_mesg -n "\nUnknown type: ${type}" ${WARNING}
+                        boot_mesg "" ${NORMAL}
+                        continue
+                        ;;
+                esac
+
+                # Set up the permissions, too.
+                chown ${usr}:${grp} "${name}"
+                chmod ${perm} "${name}"
+            fi
+        done
+    exec 0&gt;&amp;9 9&gt;&amp;-
+}
+
+case "${1}" in
+    start)
+        boot_mesg -n "Cleaning file systems:" ${INFO}
+
+        boot_mesg -n " /tmp" ${NORMAL}
+        cd /tmp &amp;&amp;
+        find . -xdev -mindepth 1 ! -name lost+found \
+            -delete || failed=1
+
+        boot_mesg -n " /var/lock" ${NORMAL}
+        cd /var/lock &amp;&amp;
+        find . -type f -exec rm -f {} \; || failed=1
+
+        boot_mesg " /var/run" ${NORMAL}
+        cd /var/run &amp;&amp;
+        find . ! -type d ! -name utmp \
+            -exec rm -f {} \; || failed=1
+        &gt; /var/run/utmp
+        if grep -q '^utmp:' /etc/group ; then
+            chmod 664 /var/run/utmp
+            chgrp utmp /var/run/utmp
+        fi
+
+        (exit ${failed})
+        evaluate_retval
+
+        if egrep -qv '^(#|$)' /etc/sysconfig/createfiles 2&gt;/dev/null; then
+            boot_mesg "Creating files and directories..."
+            create_files
+            evaluate_retval
+        fi
+        ;;
+    *)
+        echo "Usage: ${0} {start}"
+        exit 1
+        ;;
+esac
+
+# End $rc_base/init.d/cleanfs
+</pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds11.html" title=
+          "/etc/rc.d/init.d/udev_retry">&#21518;&#36864;</a>
+          <p>
+            /etc/rc.d/init.d/udev_retry
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds13.html" title=
+          "/etc/rc.d/init.d/console">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/console
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

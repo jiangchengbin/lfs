@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.49.&nbsp;Man-DB-2.5.6
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="make.html" title="Make-3.81">&#21518;&#36864;</a>
+          <p>
+            Make-3.81
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="module-init-tools.html" title=
+          "Module-Init-Tools-3.11.1">&#21069;&#36827;</a>
+          <p>
+            Module-Init-Tools-3.11.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-man-db" name="ch-system-man-db"></a>6.49.
+        Man-DB-2.5.6
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           Man-DB &#21253;&#21547;&#26597;&#25214;&#21644;&#26174;&#31034; man &#25163;&#20876;&#39029;&#30340;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.4 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">22 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.49.1. &#23433;&#35013; Man-DB
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Man-DB &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --libexecdir=/usr/lib \
+    --sysconfdir=/etc --disable-setuid \
+    --with-browser=/usr/bin/lynx --with-vgrind=/usr/bin/vgrind \
+    --with-grap=/usr/bin/grap</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-setuid</code></em></span>            </dt>
+            <dd>
+              <p> <strong>man</strong> &#19981;&#32473;&#29992;&#25143; man &#35774;&#32622;uid&#20301;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--with-...</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#19977;&#20010;&#36873;&#39033;&#29992;&#26469;&#35774;&#32622;&#19968;&#20123;&#40664;&#35748;&#30340;&#31243;&#24207;&#12290; <strong>lynx</strong> &#26159;&#19968;&#20010;&#22522;&#20110;&#25991;&#26412;&#30340;web&#27983;&#35272;&#22120; (&#23433;&#35013;&#35828;&#26126;&#35831;&#21442;&#32771; BLFS&#65289;&#65292; <strong>vgrind</strong> &#23558;&#31243;&#24207;&#28304;&#20195;&#30721;&#36716;&#21464;&#20026;Groff&#30340;&#36755;&#20837;&#65292; <strong>grap</strong> &#23545;Groff&#25991;&#26723;&#30340;&#25490;&#29256;&#22270;&#24456;&#26377;&#29992;&#12290; <strong>vgrind</strong>&#21644; <strong>grap</strong> &#31243;&#24207;&#23545;&#20110;&#26597;&#30475;&#25163;&#20876;&#39029;&#24182;&#19981;&#26159;&#24517;&#39035;&#30340;&#12290;&#23427;&#20204;&#19981;&#26159; LFS &#25110; BLFS&#30340;&#19968;&#37096;&#20998;&#65292;   &#22914;&#26524;&#20320;&#24895;&#24847;&#65292;&#20320;&#21487;&#20197;&#22312;&#23436;&#25104;LFS&#31995;&#32479;&#21518;&#65292;&#33258;&#24049;&#23433;&#35013;&#36825;&#20123;&#31243;&#24207;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="sect2" lang="en" xml:lang="en">
+        <h2 class="sect2">
+        6.49.2. LFS&#37324;&#30340;&#38750;&#33521;&#35821;&#25163;&#20876;&#39029;        </h2>
+        <p>
+          &#19979;&#34920;&#26174;&#31034;&#20102;Man-DB&#20551;&#23450;&#23433;&#35013;&#22312;  <code class=
+          "filename">/usr/share/man/&lt;ll&gt;</code> &#30446;&#24405;&#19979;&#30340;&#25163;&#20876;&#39029;&#23558;&#20351;&#29992;&#32534;&#30721;&#30340;&#29305;&#33394;&#35774;&#32622;&#12290; &#21478;&#22806;&#65292; Man-DB &#20915;&#23450;&#25163;&#20876;&#39029;&#26159;&#21542;&#23433;&#35013;&#22312;UTF-8&#32534;&#30721;&#30340;&#30446;&#24405;&#19979;&#12290;</p>
+        <div class="table">
+          <a id="id2647098" name="id2647098"></a>
+          <p class="title">
+            <b>Table&nbsp;6.1.&nbsp;Expected character encoding of legacy
+            8-bit manual pages</b>
+          </p>
+          <div class="table-contents">
+            <table summary=
+            "Expected character encoding of legacy 8-bit manual pages"
+            border="1">
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    Language (code)
+                  </th>
+                  <th>
+                    Encoding
+                  </th>
+                  <th>
+                    Language (code)
+                  </th>
+                  <th>
+                    Encoding
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Danish (da)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Croatian (hr)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    German (de)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Hungarian (hu)
+                  </td>
+                  <td>
+                    ISO-8859-2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    English (en)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Japanese (ja)
+                  </td>
+                  <td>
+                    EUC-JP
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Spanish (es)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Korean (ko)
+                  </td>
+                  <td>
+                    EUC-KR
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Estonian (et)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Lithuanian (lt)
+                  </td>
+                  <td>
+                    ISO-8859-13
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Finnish (fi)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Latvian (lv)
+                  </td>
+                  <td>
+                    ISO-8859-13
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    French (fr)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Macedonian (mk)
+                  </td>
+                  <td>
+                    ISO-8859-5
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Irish (ga)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Polish (pl)
+                  </td>
+                  <td>
+                    ISO-8859-2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Galician (gl)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Romanian (ro)
+                  </td>
+                  <td>
+                    ISO-8859-2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Indonesian (id)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Russian (ru)
+                  </td>
+                  <td>
+                    KOI8-R
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Icelandic (is)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Slovak (sk)
+                  </td>
+                  <td>
+                    ISO-8859-2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Italian (it)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Slovenian (sl)
+                  </td>
+                  <td>
+                    ISO-8859-2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Norwegian Bokmal (nb)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Serbian Latin (sr@latin)
+                  </td>
+                  <td>
+                    ISO-8859-2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Dutch (nl)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Serbian (sr)
+                  </td>
+                  <td>
+                    ISO-8859-5
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Norwegian Nynorsk (nn)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Turkish (tr)
+                  </td>
+                  <td>
+                    ISO-8859-9
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Norwegian (no)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Ukrainian (uk)
+                  </td>
+                  <td>
+                    KOI8-U
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Portuguese (pt)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Vietnamese (vi)
+                  </td>
+                  <td>
+                    TCVN5712-1
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Swedish (sv)
+                  </td>
+                  <td>
+                    ISO-8859-1
+                  </td>
+                  <td>
+                    Simplified Chinese (zh_CN)
+                  </td>
+                  <td>
+                    GBK
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Belarusian (be)
+                  </td>
+                  <td>
+                    CP1251
+                  </td>
+                  <td>
+                    Simplified Chinese, Singapore (zh_SG)
+                  </td>
+                  <td>
+                    GBK
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Bulgarian (bg)
+                  </td>
+                  <td>
+                    CP1251
+                  </td>
+                  <td>
+                    Traditional Chinese, Hong Kong (zh_HK)
+                  </td>
+                  <td>
+                    BIG5HKSCS
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Czech (cs)
+                  </td>
+                  <td>
+                    ISO-8859-2
+                  </td>
+                  <td>
+                    Traditional Chinese (zh_TW)
+                  </td>
+                  <td>
+                    BIG5
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Greek (el)
+                  </td>
+                  <td>
+                    ISO-8859-7
+                  </td>
+                  <td>&nbsp;
+                    
+                  </td>
+                  <td>&nbsp;
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div><br class="table-break" />
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            &#27880;&#24847;
+          </h3>
+          <p>&#19981;&#22312;&#21015;&#34920;&#20013;&#30340;&#35821;&#35328;&#30340; Manual &#39029;&#26159;&#19981;&#25903;&#25345;&#30340;&#12290;</p>
+        </div>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-man-db" name="contents-man-db"></a>6.49.3.  Man-DB
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">accessdb, apropos (link to whatis),
+              catman, lexgrog, man, mandb, manpath, whatis, and
+              zsoelim</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="accessdb" name="accessdb"></a><span class=
+                    "term"><span class=
+                    "command"><strong>accessdb</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558; <strong><strong>whatis</strong></strong> &#25968;&#25454;&#24211;&#30340;&#20869;&#23481;&#36716;&#20648;&#20026;&#20154;&#31867;&#21487;&#35835;&#24418;&#24335;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="apropos" name="apropos"></a><span class=
+                    "term"><span class=
+                    "command"><strong>apropos</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25628;&#32034; <strong>whatis</strong>&#25968;&#25454;&#24211;&#65292;&#26174;&#31034;&#21253;&#21547;&#32473;&#23450;&#23383;&#31526;&#20018;&#30340;&#31995;&#32479;&#21629;&#20196;&#30340;&#31616;&#30701;&#25551;&#36848;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="catman" name="catman"></a><span class=
+                    "term"><span class=
+                    "command"><strong>catman</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21019;&#24314;&#25110;&#26356;&#26032;&#39044;&#26684;&#24335;&#21270;&#30340; manual &#39029;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lexgrog" name="lexgrog"></a><span class=
+                    "term"><span class=
+                    "command"><strong>lexgrog</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#19968;&#34892;&#32473;&#23450; manual &#39029;&#30340;&#25688;&#35201;&#20449;&#24687;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="man" name="man"></a><span class=
+                    "term"><span class="command"><strong>man</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26684;&#24335;&#21270;&#24182;&#26174;&#31034;&#35831;&#27714;&#30340; manual &#39029;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mandb" name="mandb"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mandb</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21019;&#24314;&#25110;&#21319;&#32423;<strong>whatis</strong>&#25968;&#25454;&#24211; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="manpath" name="manpath"></a><span class=
+                    "term"><span class=
+                    "command"><strong>manpath</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034; $MANPATH &#30340;&#20869;&#23481;&#25110;&#22312;man.conf&#20013;&#35774;&#32622;&#30340;&#25628;&#32034;&#36335;&#24452;&#65288;&#22914;&#26524; $MANPATH &#27809;&#26377;&#35774;&#32622;&#65289;&#65292;&#20197;&#21450;&#29992;&#25143;&#30340;&#29615;&#22659;&#21464;&#37327;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="whatis" name="whatis"></a><span class=
+                    "term"><span class=
+                    "command"><strong>whatis</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25628;&#32034;<strong>whatis</strong>&#25968;&#25454;&#24211;&#65292;&#26174;&#31034;&#21253;&#21547;&#32473;&#23450;&#20851;&#38190;&#23383;&#30340;&#31995;&#32479;&#21629;&#20196;&#30340;&#31616;&#30701;&#25551;&#36848;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="zsoelim" name="zsoelim"></a><span class=
+                    "term"><span class=
+                    "command"><strong>zsoelim</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#35835;&#21462;&#25991;&#20214;&#24182;&#29992;&#25552;&#21040;&#30340; <em>file</em>&#30340;&#20869;&#23481;&#26469;&#26367;&#25442; <em>.so file</em> &#26684;&#24335;&#30340;&#34892;&#12290;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="make.html" title="Make-3.81">&#21518;&#36864;</a>
+          <p>
+            Make-3.81
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="module-init-tools.html" title=
+          "Module-Init-Tools-3.11.1">&#21069;&#36827;</a>
+          <p>
+            Module-Init-Tools-3.11.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

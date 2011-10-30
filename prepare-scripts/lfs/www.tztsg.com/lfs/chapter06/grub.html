@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.43.&nbsp;GRUB-1.97.2
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="groff.html" title="Groff-1.20.1">&#21518;&#36864;</a>
+          <p>
+            Groff-1.20.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gzip.html" title="Gzip-1.4">&#21069;&#36827;</a>
+          <p>
+            Gzip-1.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-grub" name="ch-system-grub"></a>6.43. GRUB-1.97.2
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          GRUB &#31243;&#24207;&#21253;&#21253;&#21547; GRand &#32479;&#19968;&#24341;&#23548;&#35013;&#36733;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.4 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">27.6 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.43.1. &#23433;&#35013; GRUB
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; GRUB &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class="command">mkdir build
+cd build
+../configure --prefix=/usr           \
+             --sysconfdir=/etc       \
+             --disable-grub-emu      \
+             --disable-grub-emu-usb  \
+             --disable-grub-fstest   \
+             --disable-efiemu</kbd></pre>
+        <p>
+          &#24320;&#21457;&#32773;&#24314;&#35758;&#20351;&#29992;&#19968;&#20010;&#20998;&#31163;&#30340;&#32534;&#35793;&#30446;&#24405;&#65292;&#20197;&#20445;&#25345;&#29983;&#25104;&#30340;2400&#20010;&#25991;&#20214;&#22312;&#20027;&#30446;&#24405;&#20197;&#22806;&#12290;&#36825;&#20010;
+          --disable &#36873;&#39033;&#20165;&#20165;&#26159;&#36890;&#36807;&#31105;&#29992;LFS&#19981;&#38656;&#35201;&#30340;&#21151;&#33021;&#21644;&#27979;&#35797;&#31243;&#24207;&#26469;&#20943;&#23567;&#32534;&#35793;&#30340;&#23610;&#23544;&#12290;        </p>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#20351;&#29992; GRUB &#26469;&#20351;&#20320;&#30340; LFS &#31995;&#32479;&#21487;&#21551;&#21160;&#65292;&#35831;&#21442;&#32771; <a class="xref" href="../chapter08/grub.html" title=
+          "8.4.&nbsp;Using GRUB to Set Up the Boot Process">Section&nbsp;8.4,
+          &ldquo;&#20351;&#29992; GRUB &#37197;&#32622;&#21551;&#21160;&#36807;&#31243;&rdquo;</a>&#12290;</p>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-gRUB" name="contents-gRUB"></a>6.43.2.  
+          GRUB
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">grub-editenv, grub-mkelfimage,
+              grub-mkfont, grub-mkimage, grub-mkrescue, grub-dumpbios,
+              grub-install, grub-mkconfig, grub-mkdevicemap, grub-probe,
+              grub-setup</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">Installed directories:</strong>
+              <span class="segbody">/usr/lib/grub, /etc/grub.d,
+              /usr/share/grub, /usr/inclue/grub</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-editenv" name="grub-editenv"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grub-editenv</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                  &#32534;&#36753;&#29615;&#22659;&#22359;&#30340;&#24037;&#20855;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-mkelfimage" name=
+                    "grub-mkelfimage"></a><span class="term"><span class=
+                    "command"><strong>grub-mkelfimage</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#29983;&#25104;&#19968;&#20010;GRUB&#30340;&#21487;&#21551;&#21160;&#26144;&#20687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-mkfont" name="grub-mkfont"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grub-mkfont</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#21319;&#32423; GRUB &#20351;&#29992;&#30340;&#23383;&#20307;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-mkimage" name="grub-mkimage"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grub-mkimage</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#29983;&#25104;&#19968;&#20010;GRUB&#30340;&#21487;&#21551;&#21160;&#26144;&#20687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-mkrescue" name=
+                    "grub-mkrescue"></a><span class="term"><span class=
+                    "command"><strong>grub-mkrescue</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#29983;&#25104;&#19968;&#20010;&#36866;&#29992;&#20110;&#36719;&#30424;&#30340;GRUB&#30340;&#21487;&#21551;&#21160;&#26144;&#20687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-dumpbios" name=
+                    "grub-dumpbios"></a><span class="term"><span class=
+                    "command"><strong>grub-dumpbios</strong></span></span>                  </p>                </td>
+                <td>
+                  <p><span id="result_box"><span title="Create vbios and int10 dump" closure_uid_om81uv="25">&#21019;&#24314;vbios&#21644;int10&#36716;&#20648;</span></span></p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-install" name="grub-install"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grub-install</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#22312;&#30913;&#30424;&#19978;&#23433;&#35013; GRUB</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-mkconfig" name=
+                    "grub-mkconfig"></a><span class="term"><span class=
+                    "command"><strong>grub-mkconfig</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#29983;&#25104; grub &#37197;&#32622;&#25991;&#20214;                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-mkdevicemap" name=
+                    "grub-mkdevicemap"></a><span class="term"><span class=
+                    "command"><strong>grub-mkdevicemap</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#33258;&#21160;&#29983;&#25104;&#19968;&#20010;&#35774;&#22791;&#26144;&#23556;&#25991;&#20214;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-probe" name="grub-probe"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grub-probe</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#20026;&#21046;&#23450;&#30340;&#30446;&#24405;&#25110;&#35774;&#22791;&#25506;&#27979;&#35774;&#22791;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="grub-setup" name="grub-setup"></a><span class=
+                    "term"><span class=
+                    "command"><strong>grub-setup</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#35774;&#32622;&#26144;&#20687;&#20174;&#26576;&#20010;&#35774;&#22791;&#21551;&#21160;</p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="groff.html" title="Groff-1.20.1">&#21518;&#36864;</a>
+          <p>
+            Groff-1.20.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gzip.html" title="Gzip-1.4">&#21069;&#36827;</a>
+          <p>
+            Gzip-1.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.12.&nbsp;Expect-5.43.0
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="tcl.html" title="Tcl-8.5.8">&#21518;&#36864;</a>
+          <p>
+            Tcl-8.5.8
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="dejagnu.html" title="DejaGNU-1.4.4">&#21069;&#36827;</a>
+          <p>
+            DejaGNU-1.4.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-expect" name="ch-tools-expect"></a>5.12.
+        Expect-5.43.0
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           Expect &#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#20010;&#36890;&#36807;&#25191;&#34892;&#33050;&#26412;&#23545;&#35805;&#26694;&#19982;&#20854;&#23427;&#20132;&#20114;&#24335;&#31243;&#24207;&#36890;&#20449;&#30340;&#24037;&#20855;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">4.1 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.12.1. &#23433;&#35013; Expect
+        </h2>
+        <p>&#20808;&#20462;&#27491;&#19968;&#20010;&#21487;&#33021;&#23548;&#33268; GCC &#27979;&#35797;&#31243;&#24207;&#20551;&#22833;&#36133;&#30340; bug &#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../expect-5.43.0-spawn-1.patch</kbd></pre>
+        <p>&#25509;&#30528;&#65292;&#20877;&#20462;&#22797;&#19968;&#20010;bug &#65292;&#36825;&#26159;&#26368;&#36817;Tcl&#25913;&#21464;&#36896;&#25104;&#30340;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../expect-5.43.0-tcl_8.5.5_fix-1.patch</kbd></pre>
+        <p>&#28982;&#21518;&#65292;&#24378;&#21046; Expect&#30340;&#37197;&#32622;&#33050;&#26412;&#20351;&#29992; <code class=
+          "filename">/bin/stty </code>&#32780;&#19981;&#26159;&#21487;&#33021;&#22312;&#23487;&#20027;&#31995;&#32479;&#19978;&#25214;&#21040;&#30340; <code class=
+          "filename">/usr/local/bin/stty</code>&#12290; &#36825;&#21487;&#20197;&#30830;&#20445;&#25105;&#20204;&#30340;&#27979;&#35797;&#24037;&#20855;&#20173;&#28982;&#26159;&#26368;&#32456;&#35201;&#21019;&#24314;&#30340;&#24037;&#20855;&#38142;&#65306;</p>
+        <pre class="userinput"><kbd class="command">cp -v configure{,.orig}
+sed 's:/usr/local/bin:/bin:' configure.orig &gt; configure</kbd></pre>
+        <p>
+          &#29616;&#22312;&#20934;&#22791;&#32534;&#35793; Expect &#65306; </p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/tools --with-tcl=/tools/lib \
+  --with-tclinclude=/tools/include --with-x=no</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--with-tcl=/tools/lib</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#36873;&#39033;&#30830;&#20445;&#37197;&#32622;&#33050;&#26412;&#25214;&#21040;&#30340;&#26159;&#23433;&#35013;&#22312;&#20020;&#26102;&#24037;&#20855;&#30446;&#24405;&#19979;&#30340; Tcl &#65292;&#32780;&#19981;&#26159;&#23487;&#20027;&#31995;&#32479;&#37324;&#30340;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--with-tclinclude=/tools/include</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#36873;&#39033;&#21578;&#35785; Expect &#21040;&#21738;&#37324;&#23547;&#25214; Tcl &#30340;&#20869;&#37096;&#22836;&#25991;&#20214;&#12290;&#20351;&#29992;&#36825;&#20010;&#36873;&#39033;&#21487;&#20197;&#36991;&#20813; <span class="command"><strong>configure</strong></span><strong> </strong> &#33050;&#26412;&#22240;&#20026;&#25214;&#19981;&#21040; Tcl &#30340;&#28304;&#20195;&#30721;&#30446;&#24405;&#32780;&#23548;&#33268;&#30340;&#22833;&#36133;&#12290;              </p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--with-x=no</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#36873;&#39033;&#21578;&#35785; <strong>configure</strong> &#33050;&#26412;&#19981;&#35201;&#25628;&#32034;   Tk(Tcl&#30340;&#22270;&#24418;&#30028;&#38754;&#32452;&#20214;)&#25110;&#32773; X Window &#31995;&#32479;&#30340;&#24211;&#65292;&#36825;&#20004;&#32773;&#37117;&#21487;&#33021;&#20301;&#20110;&#23487;&#20027;&#31995;&#32479;&#19978;&#65292;&#32780;&#19981;&#22312;&#20020;&#26102;&#29615;&#22659;&#20013;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#29616;&#22312;&#32534;&#35793;&#23436;&#25104;&#20102;&#12290;&#21644;&#21069;&#38754;&#35752;&#35770;&#30340;&#19968;&#26679;&#65292;&#22312;&#26412;&#31456;&#65292;&#22240;&#20026;&#26159;&#20020;&#26102;&#24037;&#20855;&#65292;&#25105;&#20204;&#19981;&#24378;&#21046;&#24744;&#36816;&#34892;&#27979;&#35797;&#32452;&#20214;&#12290; &#22914; &#26524;&#19968;&#23450;&#35201;&#36816;&#34892;Expect &#27979;&#35797;&#31995;&#32479;&#65292; &#21487;&#25191;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make test</kbd></pre>
+        <p>&#35831;&#27880;&#24847;&#65292; &#24050;&#30693; Expect &#30340;&#27979;&#35797;&#31243;&#24207;&#20250;&#22312;&#26576;&#20123;&#19981;&#22312;&#25105;&#20204;&#25511;&#21046;&#33539;&#22260;&#20869;&#30340;&#23487;&#20027;&#31995;&#32479;&#19979;&#20986;&#29616;&#27979;&#35797;&#22833;&#36133;&#12290; &#22240;&#27492;&#65292;   &#22914;&#26524;&#24744;&#36816;&#34892;&#36825;&#37324;&#30340;&#27979;&#35797;&#31243;&#24207;&#22833;&#36133;&#20102;&#20063;&#27809;&#20851;&#31995;&#65292;&#22240;&#20026;&#36825;&#24182;&#19981;&#20851;&#38190;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make SCRIPTS="" install</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>make &#21442;&#25968;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>SCRIPTS=""</code></em></span>            </dt>
+            <dd>
+              <p>&#36825;&#20010;&#36873;&#39033;&#38450;&#27490;&#23433;&#35013; Expect &#25152;&#34917;&#20805;&#30340;&#19968;&#20123;&#24182;&#19981;&#38656;&#35201;&#30340;&#33050;&#26412;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-expect" name="contents-expect"></a>5.12.2.  Expect &#30340;&#20869;&#23481;       </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">expect</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;:</strong>
+              <span class="segbody">libexpect-5.43.a</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="expect" name="expect"></a><span class=
+                    "term"><span class=
+                    "command"><strong>expect</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25353;&#29031;&#19968;&#20010;&#33050;&#26412;&#19982;&#20854;&#23427;&#20132;&#20114;&#24335;&#31243;&#24207;&#36890;&#20449;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libexpect" name="libexpect"></a><span class=
+                    "term"><code class=
+                    "filename">libexpect-5.43.a</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#30340;&#20989;&#25968;&#21487;&#20197;&#35753; Expect &#20316;&#20026; Tcl &#30340;&#25193;&#23637;&#26469;&#20351;&#29992;&#65292;&#25110;&#32773;&#30452;&#25509;&#34987; C &#25110; C++ &#20351;&#29992;(&#19981;&#38656;&#35201; Tcl) </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="tcl.html" title="Tcl-8.5.8">&#21518;&#36864;</a>
+          <p>
+            Tcl-8.5.8
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="dejagnu.html" title="DejaGNU-1.4.4">&#21069;&#36827;</a>
+          <p>
+            DejaGNU-1.4.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

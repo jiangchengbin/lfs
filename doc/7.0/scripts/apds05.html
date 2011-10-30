@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      D.5.&nbsp;/etc/rc.d/init.d/consolelog
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-7.0">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 7.0
+      </h4>
+      <h3>
+        Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20111017
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds04.html" title=
+          "/etc/rc.d/init.d/mountvirtfs">Prev</a>
+          <p>
+            /etc/rc.d/init.d/mountvirtfs
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds06.html" title=
+          "/etc/rc.d/init.d/modules">Next</a>
+          <p>
+            /etc/rc.d/init.d/modules
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20111017">
+          Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 7.0">Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="consolelog" name="consolelog"></a>D.5.
+        /etc/rc.d/init.d/consolelog
+      </h1>
+      <pre class="screen">#!/bin/sh
+########################################################################
+# Begin consolelog
+#
+# Description : Set the kernel log level for the console
+#
+# Authors     : Dan Nicholson - dnicholson@linuxfromscratch.org
+#               Gerard Beekmans  - gerard@linuxfromscratch.org
+#               DJ Lucas - dj@linuxfromscratch.org
+# Update      : Bruce Dubbs - bdubbs@linuxfromscratch.org
+#
+# Version     : LFS 7.0
+#
+# Notes       : /proc must be mounted before this can run
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            consolelog
+# Required-Start:
+# Should-Start:        
+# Required-Stop:
+# Should-Stop:
+# Default-Start:       S
+# Default-Stop:
+# Short-Description:   Sets the console log level.
+# Description:         Sets the console log level.
+# X-LFS-Provided-By:   LFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+# set the default loglevel if needed
+LOGLEVEL=${LOGLEVEL:-7}
+
+[ -r /etc/sysconfig/console ] &amp;&amp; . /etc/sysconfig/console
+
+case "${1}" in
+   start)
+      case "$LOGLEVEL" in
+      [1-8])
+         log_info_msg "Setting the console log level to ${LOGLEVEL}..."
+         dmesg -n $LOGLEVEL
+         evaluate_retval
+         exit 0
+         ;;
+
+      *)
+         log_failure_msg "Console log level '${LOGLEVEL}' is invalid"
+         exit 1
+         ;;
+      
+      esac
+      ;;
+
+   status)
+      # Read the current value if possible
+      if [ -r /proc/sys/kernel/printk ]; then
+         read level line &lt; /proc/sys/kernel/printk
+      else
+         log_failure_msg "Can't read the current console log level"
+         exit 1
+      fi
+
+      # Print the value
+      if [ -n "$level" ]; then
+         log_info_msg "The current console log level is ${level}\n"
+         exit 0
+      fi
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|status}"
+      exit 1
+      ;;
+esac
+
+# End consolelog
+</pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds04.html" title=
+          "/etc/rc.d/init.d/mountvirtfs">Prev</a>
+          <p>
+            /etc/rc.d/init.d/mountvirtfs
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds06.html" title=
+          "/etc/rc.d/init.d/modules">Next</a>
+          <p>
+            /etc/rc.d/init.d/modules
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20111017">
+          Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 7.0">Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

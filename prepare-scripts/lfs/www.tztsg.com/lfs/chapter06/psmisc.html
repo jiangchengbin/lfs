@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.52.&nbsp;Psmisc-22.10
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="patch.html" title="Patch-2.6.1">&#21518;&#36864;</a>
+          <p>
+            Patch-2.6.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="shadow.html" title="Shadow-4.1.4.2">&#21069;&#36827;</a>
+          <p>
+            Shadow-4.1.4.2
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-psmisc" name="ch-system-psmisc"></a>6.52.
+        Psmisc-22.10
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Psmisc &#21253;&#21547;&#26377;&#29992;&#20110;&#26174;&#31034;&#36827;&#31243;&#20449;&#24687;&#30340;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">&#23569;&#20110; 0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">2.5 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.52.1. &#23433;&#35013; Psmisc
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Psmisc &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#40664;&#35748;&#24773;&#20917;&#19979;&#65292; Psmisc &#30340; <strong>pidof</strong>&#31243;&#24207;&#26410;&#34987;&#23433;&#35013;&#12290;   &#36825;&#36890;&#24120;&#24773;&#20917;&#19979;&#19981;&#26159;&#38382;&#39064;&#12290;&#22240;&#20026;&#23427;&#23558;&#22312;&#20043;&#21518;&#30340; Sysvinit &#21253;&#20013;&#34987;&#23433;&#35013;&#65292;&#32780;&#19988;&#36825;&#20010;&#21253;&#25552;&#20379;&#20102;&#19968;&#20010;&#26356;&#22909;&#30340; <strong><strong>pidof</strong></strong> &#31243;&#24207;&#12290;&#22914;&#26524;&#20320;&#19981;&#25171;&#31639;&#20351;&#29992; Sysvinit   &#65292; &#21017;&#21487;&#36890;&#36807;&#21019;&#24314;&#19979;&#38754;&#30340;&#31526;&#21495;&#36830;&#25509;&#26469;&#23433;&#35013;&#23436;&#25972;&#30340; Psmisc &#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">ln -sv killall /bin/pidof</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-psmisc" name="contents-psmisc"></a>6.52.2.  Psmisc
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">fuser, killall, peekfd, pstree, and
+              pstree.x11 (link to pstree)</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="fuser" name="fuser"></a><span class=
+                    "term"><span class=
+                    "command"><strong>fuser</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25253;&#21578;&#20351;&#29992;&#25152;&#32473;&#25991;&#20214;&#25110;&#25991;&#20214;&#31995;&#32479;&#30340;&#36827;&#31243;&#30340;&#36827;&#31243; ID (PID) </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="killall" name="killall"></a><span class=
+                    "term"><span class=
+                    "command"><strong>killall</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#36890;&#36807;&#36827;&#31243;&#21517;&#26469;&#32456;&#27490;&#36827;&#31243;&#65292;&#23427;&#21457;&#36865;&#28040;&#24687;&#21040;&#25152;&#26377;&#27491;&#22312;&#36816;&#34892;&#20219;&#24847;&#25152;&#32473;&#25351;&#20196;&#30340;&#36827;&#31243;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="peekfd" name="peekfd"></a><span class=
+                    "term"><span class=
+                    "command"><strong>peekfd</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26597;&#30475;&#19968;&#20010;&#27491;&#22312;&#36816;&#34892;&#30340;&#36827;&#31243;&#30340;&#25991;&#20214;&#25551;&#36848;&#65292;&#32473;&#20986;&#23427;&#30340;PID </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pstree" name="pstree"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pstree</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20197;&#30446;&#24405;&#26641;&#30340;&#24418;&#24335;&#26174;&#31034;&#25152;&#26377;&#27491;&#22312;&#36816;&#34892;&#30340;&#36827;&#31243;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pstree.x11" name="pstree.x11"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pstree.x11</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21516; <strong>pstree</strong>&#65292;&#21482;&#26159;&#23427;&#22312;&#36864;&#20986;&#21069;&#35201;&#27714;&#30830;&#35748;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="patch.html" title="Patch-2.6.1">&#21518;&#36864;</a>
+          <p>
+            Patch-2.6.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="shadow.html" title="Shadow-4.1.4.2">&#21069;&#36827;</a>
+          <p>
+            Shadow-4.1.4.2
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.34.&nbsp;Autoconf-2.65
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="perl.html" title="Perl-5.10.1">&#21518;&#36864;</a>
+          <p>
+            Perl-5.10.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="automake.html" title=
+          "Automake-1.11.1">&#21069;&#36827;</a>
+          <p>
+            Automake-1.11.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-autoconf" name="ch-system-autoconf"></a>6.34.
+        Autoconf-2.65
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           Autoconf &#33021;&#29983;&#25104;&#29992;&#20110;&#33258;&#21160;&#37197;&#32622;&#28304;&#20195;&#30721;&#30340; shell &#33050;&#26412;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">4.8 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">12.4 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.34.1. &#23433;&#35013; Autoconf
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Autoconf &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#36825;&#20250;&#33457;&#24456;&#38271;&#26102;&#38388;&#65292;&#22823;&#32422;4.7 SBU&#12290; &#21478;&#22806;&#65292;&#22240;&#20026;&#38656;&#35201;&#29992;&#21040;Automake &#20250;&#36339;&#36807;6&#20010;&#27979;&#35797;&#12290; &#20026;&#20102;&#20840;&#38754;&#27979;&#35797;&#65292; &#21487;&#20197;&#22312; Auotomake   &#23433;&#35013;&#23436;&#21518;&#37325;&#26032;&#27979;&#35797;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-autoconf" name="contents-autoconf"></a>6.34.2.
+          Contents of Autoconf
+        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">autoconf, autoheader, autom4te,
+              autoreconf, autoscan, autoupdate, and ifnames</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="autoconf" name="autoconf"></a><span class=
+                    "term"><span class=
+                    "command"><strong>autoconf</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#19968;&#20010;&#20135;&#29983;&#21487;&#20197;&#33258;&#21160;&#37197;&#32622;&#28304;&#20195;&#30721;&#21253;&#65292;&#29983;&#25104;shell&#33050;&#26412;&#30340;&#24037;&#20855;&#65292;&#20197;&#36866;&#24212;&#21508;&#31181;&#31867; UNIX &#31995;&#32479;&#30340;&#38656;&#35201;&#12290;<strong>autoconf</strong> &#20135;&#29983;&#30340;&#37197;&#32622;&#33050;&#26412;&#22312;&#36816;&#34892;&#26102;&#29420;&#31435;&#20110; <strong>autoconf</strong> &#65292;&#22240;&#27492;&#20351;&#29992;&#36825;&#20123;&#33050;&#26412;&#30340;&#29992;&#25143;&#19981;&#38656;&#35201;&#23433;&#35013; <strong>autoconf</strong> &#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="autoheader" name="autoheader"></a><span class=
+                    "term"><span class=
+                    "command"><strong>autoheader</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#33021;&#22815;&#21019;&#24314;&#20379; configure &#33050;&#26412;&#20351;&#29992;&#30340; C <em>#define</em> &#35821;&#21477;&#27169;&#26495;&#25991;&#20214;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="autom4te" name="autom4te"></a><span class=
+                    "term"><span class=
+                    "command"><strong>autom4te</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#19968;&#20010; M4 &#23439;&#22788;&#29702;&#22120;&#30340;&#21253;&#35013;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="autoreconf" name="autoreconf"></a><span class=
+                    "term"><span class=
+                    "command"><strong>autoreconf</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#24403; <strong>autoconf</strong> &#21644; <strong>automake</strong> &#30340;&#27169;&#29256;&#25991;&#20214;&#34987;&#25913;&#21464;&#30340;&#26102;&#20505;&#65292; &#20197;&#27491;&#30830;&#30340;&#39034;&#24207;&#33258;&#21160;&#36816;&#34892; <strong>autoconf</strong>, <strong>autoheader</strong>, <strong>aclocal</strong>, span&gt;<strong>automake</strong>, <strong>gettextize</strong>, <strong>libtoolize</strong> &#20197;&#33410;&#32422;&#26102;&#38388;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="autoscan" name="autoscan"></a><span class=
+                    "term"><span class=
+                    "command"><strong>autoscan</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20026;&#36719;&#20214;&#21253;&#21019;&#24314; configure.in   &#25991;&#20214;&#12290;&#23427;&#20197;&#21629;&#20196;&#34892;&#21442;&#25968;&#20013;&#25351;&#23450;&#30340;&#30446;&#24405;&#20026;&#26681;(&#22914;&#26524;&#26410;&#32473;&#23450;&#21442;&#25968;&#21017;&#20197;&#24403;&#21069;&#30446;&#24405;&#20026;&#26681;) &#30340;&#30446;&#24405;&#26641;&#20013;&#26816;&#26597;&#28304;&#25991;&#20214;&#65292;&#25628;&#32034;&#20854;&#20013;&#30340;&#21487;&#31227;&#26893;&#24615;&#38382;&#39064;&#65292; &#20026;&#37027;&#20010;&#36719;&#20214;&#21253;&#21019;&#24314;&#19968;&#20010; configure.scan &#25991;&#20214;&#20197;&#20805;&#24403;&#19968;&#20010;&#39044;&#22791;&#24615;&#30340; configure.in &#25991;&#20214;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="autoupdate" name="autoupdate"></a><span class=
+                    "term"><span class=
+                    "command"><strong>autoupdate</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558; configure.in &#25991;&#20214;&#20013; <strong>autoconf</strong> &#23439;&#30340;&#26087;&#21517;&#31216;&#26356;&#26032;&#20026;&#24403;&#21069;&#21517;&#31216;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ifnames" name="ifnames"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ifnames</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <table border="0">
+                    <tbody>
+                      <tr>
+                        <td><p>&#20026;&#19968;&#20010;&#36719;&#20214;&#21253;&#20889; configure.in &#25991;&#20214;&#25552;&#20379;&#24110;&#21161;&#65292;&#23427;&#25171;&#21360;&#36719;&#20214;&#21253;&#20013;&#37027;&#20123;&#22312; C   &#39044;&#22788;&#29702;&#22120;&#20013;&#24050;&#32463;&#20351;&#29992;&#20102;&#30340;&#26631;&#35782;&#31526;&#12290;&#22914;&#26524;&#19968;&#20010;&#21253;&#24050;&#32463;&#35774;&#32622;&#25104;&#20855;&#26377;&#26576;&#20123;&#21487;&#31227;&#26893;&#23646;&#24615;&#65292; &#36825;&#20010;&#31243;&#24207;&#33021;&#22815;&#24110;&#21161;&#25351;&#20986;&#23427;&#30340; <strong>configure</strong> &#33050;&#26412;&#24212;&#35813;&#22914;&#20309;&#26816;&#26597;&#12290;&#23427;&#21487;&#20197;&#29992;&#26469;&#22635;&#34917;&#30001; configure.in &#20135;&#29983;&#30340; <strong>autoscan</strong> &#20013;&#30340;&#38548;&#38402;&#12290;</p></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>&nbsp;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="perl.html" title="Perl-5.10.1">&#21518;&#36864;</a>
+          <p>
+            Perl-5.10.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="automake.html" title=
+          "Automake-1.11.1">&#21069;&#36827;</a>
+          <p>
+            Automake-1.11.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

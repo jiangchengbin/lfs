@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.33.&nbsp;Perl-5.10.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="inetutils.html" title=
+          "Inetutils-1.7">&#21518;&#36864;</a>
+          <p>
+            Inetutils-1.7
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="autoconf.html" title=
+          "Autoconf-2.65">&#21069;&#36827;</a>
+          <p>
+            Autoconf-2.65
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-perl" name="ch-system-perl"></a>6.33. Perl-5.10.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Perl &#36719;&#20214;&#21253;&#21253;&#21547;&#23454;&#29992;&#33795;&#21462;&#19982;&#25253;&#21578;&#35821;&#35328;&#65288;Practical Extraction and Report Language&#65289;&#12290;
+        </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">5.5 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">171 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.33.1. &#23433;&#35013; Perl
+        </h2>
+        <p>
+          &#20026;&#20102;&#22312; Perl &#37197;&#32622;&#25991;&#20214;&#21644;&#21487;&#36873;&#30340;&#27979;&#35797;&#20013;&#24341;&#29992;&#65292;&#39318;&#20808;&#35201;&#21019;&#24314;&#19968;&#20010;&#22522;&#26412;&#30340; <code class="filename">/etc/hosts</code> &#25991;&#20214;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">echo "127.0.0.1 localhost $(hostname)" &gt; /etc/hosts</kbd></pre>
+        <p>
+          &#20462;&#22797;&#19968;&#20010;&#38382;&#39064;&#65292;&#36825;&#37324;&#26080;&#25928;&#30340; utf-8 &#23383;&#31526;&#24341;&#36215;&#30340;&#27573;&#38169;&#35823;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../perl-5.10.1-utf8-1.patch</kbd></pre>
+        <p>
+          &#29616;&#22312;&#30340;Perl&#29256;&#26412;&#29983;&#25104; Compress::Raw::Zlib &#27169;&#22359;&#12290;   &#40664;&#35748;&#65292; Perl&#20250;&#29992;Zlib&#36164;&#28304;&#30340;&#20869;&#37096;&#25335;&#36125;&#26469;&#32534;&#35793;&#12290; &#20026;&#20102;Perl&#20250;&#20351;&#29992;&#23433;&#35013;&#21040;&#31995;&#32479;&#19978;&#30340;Zlib&#24211;&#65292; &#35831;&#25191;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i -e "s|BUILD_ZLIB\s*= True|BUILD_ZLIB = False|"           \
+       -e "s|INCLUDE\s*= ./zlib-src|INCLUDE    = /usr/include|" \
+       -e "s|LIB\s*= ./zlib-src|LIB        = /usr/lib|"         \
+    ext/Compress-Raw-Zlib/config.in</kbd></pre>
+        <p>&#20026;&#20102;&#23545; Perl &#30340;&#35774;&#32622;&#36827;&#34892;&#23436;&#20840;&#30340;&#25511;&#21046;&#65292;&#20320;&#21487;&#20197;&#36816;&#34892;&#20132;&#20114;&#30340; <strong><span class="command"><strong>Configure</strong></span> </strong> &#33050;&#26412;&#65292; &#31934;&#24515;&#36873;&#25321;&#32534;&#35793;&#37197;&#32622;&#12290; &#22914;&#26524;&#20320;&#33021;&#25509;&#21463;   Perl &#30340;&#33258;&#21160;&#37197;&#32622;(&#36825;&#26159;&#24456;&#26126;&#26234;&#30340;)&#65292;&#23601;&#29992;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">sh Configure -des -Dprefix=/usr \
+                  -Dvendorprefix=/usr           \
+                  -Dman1dir=/usr/share/man/man1 \
+                  -Dman3dir=/usr/share/man/man3 \
+                  -Dpager="/usr/bin/less -isR"</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>-Dvendorprefix=/usr</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#35813;&#21442;&#25968;&#30830;&#20445; <span class=
+                "command"><strong>perl</strong></span> &#30693;&#36947;&#24590;&#26679;&#21578;&#35785;&#20854;&#20182;&#36719;&#20214;&#21253;&#23427;&#20204;&#30340;perl&#27169;&#22359;&#23433;&#35013;&#22312;&#21738;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>-Dpager="/usr/bin/less
+              -isR"</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#32416;&#27491; <span class=
+                "command"><strong>perldoc</strong></span><strong> </strong> &#20195;&#30721;&#35843;&#29992; <span class="command"><strong>less</strong></span><strong> </strong> &#31243;&#24207;&#26102;&#30340;&#19968;&#20010;&#38169;&#35823;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>-Dman1dir=/usr/share/man/man1
+              -Dman3dir=/usr/share/man/man3</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#22240;&#20026; Groff &#36824;&#27809;&#26377;&#23433;&#35013;&#65292; <strong>Configure</strong> &#20250;&#35748;&#20026;&#25105;&#20204;&#19981;&#24819;&#23433;&#35013; Perl &#30340; man &#25163;&#20876;&#12290; &#24212;&#29992;&#36825;&#20010;&#21442;&#25968;&#26469;&#25913;&#21464;&#36825;&#31181;&#24773;&#20917;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524; (&#22823;&#32422; 2.5 SBU)&#65292; &#35831;&#25191;&#34892;:
+        </p>
+        <pre class="userinput"><kbd class="command">make test</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-perl" name="contents-perl"></a>6.33.2. 
+          Perl &#30340;&#20869;&#23481;        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">a2p, c2ph, config_data, corelist, cpan,
+              cpan2dist, cpanp, cpanp-run-perl, dprofpp, enc2xs, find2perl,
+              h2ph, h2xs, instmodsh, libnetcfg, perl, perl5.10.1 (link to
+              perl), perlbug, perldoc, perlivp, piconv, pl2pm, pod2html,
+              pod2latex, pod2man, pod2text, pod2usage, podchecker, podselect,
+              prove, psed (link to s2p), pstruct (link to c2ph), ptar,
+              ptardiff, s2p, shasum, splain, and xsubpp</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">Several hundred which cannot all be
+              listed here</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="a2p" name="a2p"></a><span class=
+                    "term"><span class="command"><strong>a2p</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#25226; awk &#32763;&#35793;&#25104; Perl                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="c2ph" name="c2ph"></a><span class=
+                    "term"><span class=
+                    "command"><strong>c2ph</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#26174;&#31034; <span class=
+                    "command"><strong>cc -g -S</strong></span><strong><strong> </strong></strong> &#20135;&#29983;&#30340;   C &#35821;&#35328;&#32467;&#26500;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="config_data" name="config_data"></a><span class=
+                    "term"><span class=
+                    "command"><strong>config_data</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#35810;&#38382;&#25110;&#25913;&#21464;Perl&#27169;&#22359;&#30340;&#37197;&#32622;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="corelist" name="corelist"></a><span class=
+                    "term"><span class=
+                    "command"><strong>corelist</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                Module::CoreList &#30340;&#21629;&#20196;&#34892;&#21069;&#31471;                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="cpan" name="cpan"></a><span class=
+                    "term"><span class=
+                    "command"><strong>cpan</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#20174;&#21629;&#20196;&#34892;&#19982;&#32508;&#21512;Perl&#26723;&#26696;&#32593;&#32476; 
+                (CPAN) &#20132;&#27969; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="cpan2dist" name="cpan2dist"></a><span class=
+                    "term"><span class=
+                    "command"><strong>cpan2dist</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                CPANPLUS &#21457;&#34892;&#32773;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="cpanp" name="cpanp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>cpanp</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                CPANPLUS &#21457;&#23556;&#22120;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="cpanp-run-perl" name=
+                    "cpanp-run-perl"></a><span class="term"><span class=
+                    "command"><strong>cpanp-run-perl</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                Perl &#33050;&#26412; (&#38656;&#35201;&#35828;&#26126;) </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="dprofpp" name="dprofpp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>dprofpp</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#26174;&#31034;Perl&#30340;profile&#25968;&#25454; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="enc2xs" name="enc2xs"></a><span class=
+                    "term"><span class=
+                    "command"><strong>enc2xs</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#20026; Encode &#27169;&#22359;&#32534;&#35793; Perl &#25193;&#23637;&#65292;&#29992;&#20110; Unicode &#23383;&#31526;&#26144;&#23556;&#25110; Tcl &#32534;&#30721;&#25991;&#20214;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="find2perl" name="find2perl"></a><span class=
+                    "term"><span class=
+                    "command"><strong>find2perl</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#25226; <span class=
+                    "command"><strong>find</strong></span> &#21629;&#20196;&#32763;&#35793;&#25104; Perl                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="h2ph" name="h2ph"></a><span class=
+                    "term"><span class=
+                    "command"><strong>h2ph</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23558; .h &#30340;C&#22836;&#25991;&#20214;&#36716;&#25104; .ph &#30340;perl&#22836;&#25991;&#20214;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="h2xs" name="h2xs"></a><span class=
+                    "term"><span class=
+                    "command"><strong>h2xs</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23558; .h &#30340; C &#22836;&#25991;&#20214;&#36716;&#25104; perl &#31243;&#24207;&#25193;&#23637;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="instmodsh" name="instmodsh"></a><span class=
+                    "term"><span class=
+                    "command"><strong>instmodsh</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#19968;&#20010;&#30417;&#27979;&#23433;&#35013; Perl &#27169;&#22359;&#30340; Shell &#33050;&#26412;&#65292; &#29978;&#33267;&#21487;&#20197;&#20174;&#24050;&#23433;&#35013;&#27169;&#22359;&#20013;&#21019;&#24314;&#21387;&#32553;&#21253;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libnetcfg" name="libnetcfg"></a><span class=
+                    "term"><span class=
+                    "command"><strong>libnetcfg</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#21487;&#20197;&#29992;&#26469;&#37197;&#32622; <code class=
+                    "filename">libnet</code>                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="perl" name="perl"></a><span class=
+                    "term"><span class=
+                    "command"><strong>perl</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#32508;&#21512;&#20102; C, <strong>sed</strong>, <strong>awk</strong>, <strong>sh</strong> &#29305;&#24615;&#21644;&#33021;&#21147;&#20110;&#19968;&#20307;&#30340;&#24378;&#22823;&#30340;&#32534;&#31243;&#35821;&#35328;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="perl-version" name="perl-version"></a><span class=
+                    "term"><span class=
+                    "command"><strong>perl5.10.1</strong></span></span>                  </p>                </td>
+                <td>
+                <p><span class=
+                    "command"><strong>perl</strong></span>                  &#30340;&#30828;&#36830;&#25509;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="perlbug" name="perlbug"></a><span class=
+                    "term"><span class=
+                    "command"><strong>perlbug</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#29983;&#25104;&#20851;&#20110; perl &#21644;&#30456;&#20851;&#27169;&#22359;&#30340; bug &#25253;&#21578;&#65292;&#24182;&#19988; mail &#32473;&#20182;&#20204;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="perldoc" name="perldoc"></a><span class=
+                    "term"><span class=
+                    "command"><strong>perldoc</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#26174;&#31034;&#23884;&#20110; perl &#23433;&#35013;&#30446;&#24405;&#25110;&#32773;&#19968;&#20010; perl &#33050;&#26412;&#30340; .pod &#26684;&#24335;&#30340;&#23567;&#25991;&#26723;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="perlivp" name="perlivp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>perlivp</strong></span></span>                  </p>                </td>
+                <td>
+                <p>Perl &#23433;&#35013;&#39564;&#35777;&#36807;&#31243;&#65292;&#21487;&#20197;&#29992;&#23427;&#26469;&#39564;&#35777; Perl &#21450;&#20854;&#24211;&#26159;&#21542;&#23433;&#35013;&#27491;&#24120;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="piconv" name="piconv"></a><span class=
+                    "term"><span class=
+                    "command"><strong>piconv</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    Perl &#29256;&#26412;&#30340;&#23383;&#31526;&#32534;&#30721;&#36716;&#25442;&#31243;&#24207;&#65292;&#31867;&#20284;&#20110; <strong> </strong>
+                <span class="command"><strong>iconv</strong></span>                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pl2pm" name="pl2pm"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pl2pm</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23558; Perl4 &#26679;&#24335;&#30340; .pl &#24211;&#25991;&#20214;&#36716;&#21270;&#20026; Perl5 &#26679;&#24335;&#30340; .pm &#24211;&#27169;&#22359;&#30340;&#24037;&#20855;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pod2html" name="pod2html"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pod2html</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23558; pod &#26684;&#24335;&#30340;&#25991;&#20214;&#36716;&#20026; html &#26684;&#24335;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pod2latex" name="pod2latex"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pod2latex</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23558; pod &#26684;&#24335;&#30340;&#25991;&#20214;&#36716;&#20026; LaTeX &#26684;&#24335;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pod2man" name="pod2man"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pod2man</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23558; pod &#25968;&#25454;&#36716;&#20026;&#26684;&#24335;&#21270;&#30340; *roff &#36755;&#20837;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pod2text" name="pod2text"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pod2text</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23558; pod &#25968;&#25454;&#36716;&#20026;&#26684;&#24335;&#21270;&#30340; ASCII &#25991;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pod2usage" name="pod2usage"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pod2usage</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#25171;&#21360;&#25991;&#20214;&#20869;&#23884;&#30340; pod &#25991;&#26723;&#30340;&#20351;&#29992;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="podchecker" name="podchecker"></a><span class=
+                    "term"><span class=
+                    "command"><strong>podchecker</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#26816;&#26597; pod &#26684;&#24335;&#30340;&#25991;&#26723;&#30340;&#35821;&#27861;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="podselect" name="podselect"></a><span class=
+                    "term"><span class=
+                    "command"><strong>podselect</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#26377;&#36873;&#25321;&#30340;&#25171;&#21360; pod &#25991;&#26723;&#20869;&#23481;&#21040;&#26631;&#20934;&#36755;&#20986;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="prove" name="prove"></a><span class=
+                    "term"><span class=
+                    "command"><strong>prove</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#27979;&#35797;Test::Harness &#27169;&#22359;&#30340;&#21629;&#21517;&#34892;&#24037;&#20855; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="psed" name="psed"></a><span class=
+                    "term"><span class=
+                    "command"><strong>psed</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#26159; Perl &#29256;&#26412;&#30340;&#27969;&#24335;&#32534;&#36753;&#22120;&#65292;&#31867;&#20284;&#20110;<span class=
+                    "command"><strong>sed</strong></span>                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pstruct" name="pstruct"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pstruct</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#26174;&#31034; <strong>cc -g -S</strong> &#20135;&#29983;&#30340; C &#35821;&#35328;&#32467;&#26500;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ptar" name="ptar"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ptar</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#29992;Perl&#35821;&#35328;&#20889;&#30340;&#31867;&#20284; <strong>tar</strong>&#30340;&#31243;&#24207;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ptardiff" name="ptardiff"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ptardiff</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#19968;&#20010;&#27604;&#36739;&#25552;&#21462;&#25991;&#26723;&#21644;&#26410;&#25552;&#21462;&#25991;&#26723;&#30340;Perl&#31243;&#24207;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="s2p" name="s2p"></a><span class=
+                    "term"><span class="command"><strong>s2p</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23558;<strong>sed</strong> &#33050;&#26412;&#32763;&#35793;&#25104;Perl </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="shasum" name="shasum"></a><span class=
+                    "term"><span class=
+                    "command"><strong>shasum</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#25171;&#21360;&#25110;&#26816;&#26597;SHA &#30340;&#39564;&#35777;&#21644;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="splain" name="splain"></a><span class=
+                    "term"><span class=
+                    "command"><strong>splain</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#24378;&#21046; Perl &#36755;&#20986;&#20887;&#20313;&#35686;&#21578;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="xsubpp" name="xsubpp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>xsubpp</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#25226;Perl XS&#20195;&#30721;&#36716;&#21464;&#20026;C &#20195;&#30721; </p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="inetutils.html" title=
+          "Inetutils-1.7">&#21518;&#36864;</a>
+          <p>
+            Inetutils-1.7
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="autoconf.html" title=
+          "Autoconf-2.65">&#21069;&#36827;</a>
+          <p>
+            Autoconf-2.65
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

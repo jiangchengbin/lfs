@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.21.&nbsp;Gettext-0.17
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gawk.html" title="Gawk-3.1.7">&#21518;&#36864;</a>
+          <p>
+            Gawk-3.1.7
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="grep.html" title="Grep-2.5.4">&#21069;&#36827;</a>
+          <p>
+            Grep-2.5.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-gettext" name="ch-tools-gettext"></a>5.21.
+        Gettext-0.17
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Gettext &#21253;&#21547;&#29992;&#20110;&#31995;&#32479;&#30340;&#22269;&#38469;&#21270;&#21644;&#26412;&#22320;&#21270;&#30340;&#24037;&#20855;&#65292;&#36825;&#20123;&#24037;&#20855;&#20801;&#35768;&#29992; NLS &#65288;&#26412;&#22269;&#35821;&#35328;&#25903;&#25345;&#65289;&#26469;&#32534;&#35793;&#31243;&#24207;&#65292;&#32780;&#20197;&#29992;&#25143;&#26412;&#22269;&#30340;&#35821;&#35328;&#36755;&#20986;&#28040;&#24687;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.8 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">82 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.21.1. &#23433;&#35013; Gettext
+        </h2>
+        <p>&#23545;&#20110;&#20020;&#26102;&#24037;&#20855;&#38142;&#26469;&#35828;&#65292;&#25105;&#20204;&#21482;&#38656;&#35201;&#32534;&#35793;&#21644;&#23433;&#35013; Gettext &#20013;&#30340;&#19968;&#20010;&#20108;&#36827;&#21046;&#25991;&#20214;&#12290;</p>
+        <p>
+          &#20026;&#32534;&#35793; Gettext &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class="command">cd gettext-tools
+./configure --prefix=/tools --disable-shared</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-shared</code></em></span>            </dt>
+            <dd>
+              <p>&#24403;&#21069;&#25105;&#20204;&#19981;&#38656;&#35201;&#23433;&#35013;&#20219;&#20309; Gettext &#20849;&#20139;&#24211;&#65292;&#22240;&#27492;&#20063;&#23601;&#19981;&#38656;&#35201;&#32534;&#35793;&#23427;&#20204;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make -C gnulib-lib
+make -C src msgfmt</kbd></pre>
+        <p>&#22240;&#20026;&#21482;&#32534;&#35793;&#20102;&#19968;&#20010;&#20108;&#36827;&#21046;&#25991;&#20214;&#65292; &#27809;&#26377;&#32534;&#35793;Gettext&#21253;&#20013;&#20854;&#20182;&#30340;&#25903;&#25345;&#24211;&#65292; &#25152;&#20197;&#26080;&#27861;&#36816;&#34892;&#27979;&#35797;&#22871;&#20214;&#12290; &#22240;&#32780;&#25105;&#20204;&#20063;&#19981;&#25512;&#33616;&#22312;&#27492;&#26102;&#36816;&#34892;&#27979;&#35797;</p>
+        <p>&#23433;&#35013;&#20108;&#36827;&#21046;&#25991;&#20214; <span class="command"><strong>msgfmt</strong></span>&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">cp -v src/msgfmt /tools/bin</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#30340;&#35814;&#32454;&#20869;&#23481;&#20301;&#20110;  <a class="xref" href=
+          "../chapter06/gettext.html#contents-gettext" title=
+          "6.41.2.&nbsp;Contents of Gettext">Section&nbsp;6.41.2,
+          &ldquo;Contents of Gettext.&rdquo;</a>
+        </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gawk.html" title="Gawk-3.1.7">&#21518;&#36864;</a>
+          <p>
+            Gawk-3.1.7
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="grep.html" title="Grep-2.5.4">&#21069;&#36827;</a>
+          <p>
+            Grep-2.5.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.41.&nbsp;Gettext-0.17
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="flex.html" title="Flex-2.5.35">&#21518;&#36864;</a>
+          <p>
+            Flex-2.5.35
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="groff.html" title="Groff-1.20.1">&#21069;&#36827;</a>
+          <p>
+            Groff-1.20.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-gettext" name="ch-system-gettext"></a>6.41.
+        Gettext-0.17
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Gettext &#36719;&#20214;&#21253;&#21253;&#21547;&#22269;&#38469;&#21270;&#21644;&#26412;&#22320;&#21270;&#30340;&#24037;&#20855;&#12290; &#36825;&#20123;&#24037;&#20855;&#20801;&#35768;&#22312;&#32534;&#35793;&#31243;&#24207;&#30340;&#26102;&#20505;&#20351;&#29992; NLS &#65288;&#26412;&#22269;&#35821;&#35328;&#25903;&#25345;&#65289;&#65292;&#21487;&#20197;&#20351;&#31243;&#24207;&#30340;&#36755;&#20986;&#20351;&#29992;&#29992;&#25143;&#35774;&#32622;&#30340;&#35821;&#35328;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">5.8 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">125 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.41.1. &#23433;&#35013; Gettext
+        </h2>
+        <p>&#24212;&#29992;&#34917;&#19969;&#26469;&#20462;&#22797;&#25991;&#20214;&#30340;&#26435;&#38480;&#65292;&#23646;&#20027;&#21644;&#19968;&#20010;&#20869;&#37096;bug&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../gettext-0.17-upstream_fixes-2.patch</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Gettext &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr \
+            --docdir=/usr/share/doc/gettext-0.17</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524; (&#38656;&#35201;&#24456;&#38271;&#26102;&#38388;&#65292;&#22823;&#32422; 3 SBU), &#35831;&#25191;&#34892;:        </p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-gettext" name="contents-gettext"></a>6.41.2.
+           Gettext
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">autopoint, config.charset, config.rpath,
+              envsubst, gettext, gettext.sh, gettextize, hostname, msgattrib,
+              msgcat, msgcmp, msgcomm, msgconv, msgen, msgexec, msgfilter,
+              msgfmt, msggrep, msginit, msgmerge, msgunfmt, msguniq,
+              ngettext, recode-sr-latin, and xgettext</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libasprintf.{a,so}, libgettextlib.so,
+              libgettextpo.{a,so}, libgettextsrc.so, and
+              preloadable_libintl.so</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="autopoint" name="autopoint"></a><span class=
+                    "term"><span class=
+                    "command"><strong>autopoint</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558;&#26631;&#20934;&#30340; gettext infrastructure &#25991;&#20214;&#25335;&#36125;&#21040;&#28304;&#30721;&#21253;&#20013;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="config.charset" name=
+                    "config.charset"></a><span class="term"><span class=
+                    "command"><strong>config.charset</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20135;&#29983;&#19968;&#20010;&#20381;&#36182;&#20110;&#31995;&#32479;&#30340;&#23383;&#31526;&#32534;&#30721;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="config.rpath" name="config.rpath"></a><span class=
+                    "term"><span class=
+                    "command"><strong>config.rpath</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#36755;&#20986;&#20381;&#36182;&#20110;&#31995;&#32479;&#30340;&#21464;&#37327;&#65292; &#25551;&#36848;&#22914;&#20309;&#22312;&#21487;&#25191;&#34892;&#31243;&#24207;&#20013;&#35774;&#32622;&#24211;&#25991;&#20214;&#30340;&#23454;&#26102;&#26597;&#25214;&#36335;&#24452;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="envsubst" name="envsubst"></a><span class=
+                    "term"><span class=
+                    "command"><strong>envsubst</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    &#26367;&#25442; shell &#26684;&#24335;&#21270;&#23383;&#31526;&#20018;&#20013;&#30340;&#29615;&#22659;&#21464;&#37327;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="gettext" name="gettext"></a><span class=
+                    "term"><span class=
+                    "command"><strong>gettext</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#36890;&#36807;&#22312;&#28040;&#24687;&#21015;&#34920;&#20013;&#26597;&#25214;&#65292; &#26469;&#23558;&#19968;&#31181;&#33258;&#28982;&#35821;&#35328;&#30340;&#28040;&#24687;&#32763;&#35793;&#25104;&#29992;&#25143;&#30340;&#26412;&#22320;&#35821;&#35328;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="gettext.sh" name="gettext.sh"></a><span class=
+                    "term"><span class=
+                    "command"><strong>gettext.sh</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20027;&#35201;&#20316;&#20026;&#19968;&#20010;shell&#30340;&#20989;&#25968;&#24211;&#26469;&#20026; gettext &#26381;&#21153;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="gettextize" name="gettextize"></a><span class=
+                    "term"><span class=
+                    "command"><strong>gettextize</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25335;&#36125;&#25152;&#26377;&#30340;&#26631;&#20934; Gettext &#25991;&#20214;&#21040;&#36719;&#20214;&#21253;&#30340;&#39030;&#23618;&#30446;&#24405;&#19979;&#65292; &#20197;&#36827;&#34892;&#22269;&#38469;&#21270;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="hostname-gettext" name=
+                    "hostname-gettext"></a><span class="term"><span class=
+                    "command"><strong>hostname</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#29992;&#19981;&#21516;&#30340;&#26684;&#24335;&#26174;&#31034;&#19968;&#20010;&#32593;&#32476;&#20027;&#26426;&#21517;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgattrib" name="msgattrib"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgattrib</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26681;&#25454;&#32763;&#35793;&#30446;&#24405;&#20013;&#28040;&#24687;&#30340;&#23646;&#24615;&#36807;&#28388;&#23427;&#20204;&#65292;&#24182;&#19988;&#25805;&#20316;&#36825;&#20123;&#23646;&#24615;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgcat" name="msgcat"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgcat</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    &#23558;&#32473;&#23450;&#30340; .po &#25991;&#20214;&#21512;&#24182;&#21040;&#19968;&#36215;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgcmp" name="msgcmp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgcmp</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#27604;&#36739;&#20004;&#20010; .po&#25991;&#20214;&#65292;&#30475;&#23427;&#20204;&#26159;&#21542;&#21253;&#21547;&#30456;&#21516;&#30340; msgid &#23383;&#31526;&#20018;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgcomm" name="msgcomm"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgcomm</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25214;&#20986;&#19981;&#21516; .po&#25991;&#20214;&#20013;&#30340;&#30456;&#21516;&#20449;&#24687;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgconv" name="msgconv"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgconv</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25226;&#19968;&#20010;&#32763;&#35793;&#21015;&#34920;&#36716;&#21270;&#25104;&#21478;&#19968;&#31181;&#23383;&#31526;&#32534;&#30721;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgen" name="msgen"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgen</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#24314;&#31435;&#19968;&#20010;&#33521;&#25991;&#32763;&#35793;&#30446;&#24405;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgexec" name="msgexec"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgexec</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23545;&#19968;&#20010;&#32763;&#35793;&#21015;&#34920;&#20013;&#30340;&#25152;&#26377;&#32763;&#35793;&#25191;&#34892;&#21516;&#19968;&#20010;&#21629;&#20196;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgfilter" name="msgfilter"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgfilter</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23545;&#19968;&#20010;&#32763;&#35793;&#21015;&#34920;&#20013;&#30340;&#25152;&#26377;&#32763;&#35793;&#20351;&#29992;&#21516;&#19968;&#20010;&#36807;&#28388;&#22120;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgfmt" name="msgfmt"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgfmt</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20174;&#32763;&#35793;&#21015;&#34920;&#29983;&#25104;&#19968;&#20010;&#20108;&#36827;&#21046;&#30340;&#28040;&#24687;&#21015;&#34920;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msggrep" name="msggrep"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msggrep</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558;&#19968;&#20010;&#32763;&#35793;&#21015;&#34920;&#20013;&#30340;&#25152;&#26377;&#31526;&#21512;&#32473;&#23450;&#26684;&#24335;&#25110;&#32773;&#23646;&#20110;&#32473;&#23450;&#28304;&#25991;&#20214;&#30340;&#28040;&#24687;&#23637;&#24320;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msginit" name="msginit"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msginit</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#29983;&#25104;&#19968;&#20010;&#26032;&#30340;.po&#25991;&#20214;&#65292; &#24182;&#20351;&#29992;&#29992;&#25143;&#29615;&#22659;&#20013;&#30340;&#28040;&#24687;&#26469;&#23545;&#36825;&#20010;&#25991;&#20214;&#36827;&#34892;&#21021;&#22987;&#21270;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgmerge" name="msgmerge"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgmerge</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558;&#20004;&#20010;&#32763;&#35793;&#21512;&#24182;&#25104;&#19968;&#20010;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msgunfmt" name="msgunfmt"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msgunfmt</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558;&#20108;&#36827;&#21046;&#32763;&#35793;&#25991;&#20214;&#21453;&#32534;&#35793;&#25104;&#28304;&#25991;&#20214;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="msguniq" name="msguniq"></a><span class=
+                    "term"><span class=
+                    "command"><strong>msguniq</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23558;&#32763;&#35793;&#30446;&#24405;&#20013;&#37325;&#22797;&#30340;&#32763;&#35793;&#21512;&#24182;&#25104;&#19968;&#20010;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ngettext" name="ngettext"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ngettext</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#20381;&#36182;&#20110;&#25968;&#23383;&#26684;&#24335;&#30340;&#25991;&#26412;&#25991;&#20214;&#30340;&#26412;&#22269;&#35821;&#35328;&#32763;&#35793;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="recode-sr-latin" name=
+                    "recode-sr-latin"></a><span class="term"><span class=
+                    "command"><strong>recode-sr-latin</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25226;&#22622;&#23572;&#32500;&#20122;&#65288;Serbian&#65289;&#25991;&#26412;&#20174;&#35199;&#37324;&#23572;&#23383;&#27597;&#65288;Cyrillic&#65289; &#37325;&#26032;&#32534;&#30721;&#25104;&#25289;&#19969;&#65288;Latin&#65289;&#25991; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="xgettext" name="xgettext"></a><span class=
+                    "term"><span class=
+                    "command"><strong>xgettext</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20174;&#28304;&#25991;&#20214;&#20013;&#23637;&#24320;&#28040;&#24687;&#34892;, &#29992;&#26469;&#21019;&#24314;&#36215;&#22987;&#32763;&#35793;&#27169;&#26495;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libasprintf" name="libasprintf"></a><span class=
+                    "term"><code class="filename">libasprintf</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23450;&#20041;<em>autosprintf</em> &#31867;&#65292;&#20351; C &#30340;&#20989;&#25968;&#20197; C++ &#31243;&#24207;&#21487;&#20351;&#29992;&#30340;&#32467;&#26500;&#36755;&#20986;&#65292;   &#19982; <em>&lt;string&gt;</em> &#23383;&#31526;&#20018;&#21644; <em>&lt;iostream&gt;</em> &#27969;&#19968;&#36215;&#20351;&#29992;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libgettextlib" name=
+                    "libgettextlib"></a><span class="term"><code class=
+                    "filename">libgettextlib</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#22810;&#20010; gettext &#31243;&#24207;&#20351;&#29992;&#30340;&#20989;&#25968;&#65292;&#26159;&#31169;&#26377;&#24211;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libgettextpo" name="libgettextpo"></a><span class=
+                    "term"><code class="filename">libgettextpo</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#29992;&#26469;&#20889;&#22788;&#29702; .po &#25991;&#20214;&#30340;&#31243;&#24207;&#12290;&#24403; Gettext &#33258;&#24102;&#30340;&#26631;&#20934;&#31243;&#24207;(&#22914; <strong><strong>msgcomm</strong>&#65292;<strong>msgcmp</strong></strong><strong>&#65292;</strong><strong>msgattrib</strong>&#21644;<strong>msgen</strong>) &#19981;&#33021;&#28385;&#36275;&#35201;&#27714;&#26102;&#65292; &#21487;&#20197;&#20351;&#29992;&#36825;&#20010;&#24211;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libgettextsrc" name=
+                    "libgettextsrc"></a><span class="term"><code class=
+                    "filename">libgettextsrc</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#22810;&#20010; gettext &#31243;&#24207;&#20351;&#29992;&#30340;&#20989;&#25968;&#65292;&#26159;&#31169;&#26377;&#24211;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="preloadable_libintl.so" name=
+                    "preloadable_libintl.so"></a><span class=
+                    "term"><code class=
+                    "filename">preloadable_libintl</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#19968;&#20010;&#24211;&#25991;&#20214;&#65292;&#35745;&#21010;&#30001;LD_PRELOAD&#20351;&#29992;&#65292; &#22312;&#26410;&#32763;&#35793;&#30340;&#20449;&#24687;&#35760;&#24405;&#20013;&#24110;&#21161; libintl   &#24037;&#20316;&#12290;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="flex.html" title="Flex-2.5.35">&#21518;&#36864;</a>
+          <p>
+            Flex-2.5.35
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="groff.html" title="Groff-1.20.1">&#21069;&#36827;</a>
+          <p>
+            Groff-1.20.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

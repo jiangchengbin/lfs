@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      D.5.&nbsp;/etc/rc.d/init.d/modules
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Appendix&nbsp;D.&nbsp;&#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds04.html" title=
+          "/etc/rc.d/init.d/consolelog">&#21518;&#36864;</a>
+          <p>
+            /etc/rc.d/init.d/consolelog
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds06.html" title=
+          "/etc/rc.d/init.d/udev">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/udev
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="modules" name="modules"></a>D.5. /etc/rc.d/init.d/modules
+      </h1>
+      <pre class="screen">#!/bin/sh
+########################################################################
+# Begin $rc_base/init.d/modules
+#
+# Description : Module auto-loading script
+#
+# Authors     : Zack Winkles
+#
+# Version     : 00.00
+#
+# Notes       :
+#
+########################################################################
+
+. /etc/sysconfig/rc
+. ${rc_functions}
+
+# Assure that the kernel has module support.
+[ -e /proc/ksyms -o -e /proc/modules ] || exit 0
+
+case "${1}" in
+    start)
+
+        # Exit if there's no modules file or there are no
+        # valid entries
+        [ -r /etc/sysconfig/modules ] &amp;&amp;
+            egrep -qv '^($|#)' /etc/sysconfig/modules ||
+            exit 0
+
+        boot_mesg -n "Loading modules:" ${INFO}
+
+        # Only try to load modules if the user has actually given us
+        # some modules to load.
+        while read module args; do
+
+            # Ignore comments and blank lines.
+            case "$module" in
+                ""|"#"*) continue ;;
+            esac
+
+            # Attempt to load the module, making
+            # sure to pass any arguments provided.
+            modprobe ${module} ${args} &gt;/dev/null
+
+            # Print the module name if successful,
+            # otherwise take note.
+            if [ $? -eq 0 ]; then
+                boot_mesg -n " ${module}" ${NORMAL}
+            else
+                failedmod="${failedmod} ${module}"
+            fi
+        done &lt; /etc/sysconfig/modules
+
+        boot_mesg "" ${NORMAL}
+        # Print a message about successfully loaded
+        # modules on the correct line.
+        echo_ok
+
+        # Print a failure message with a list of any
+        # modules that may have failed to load.
+        if [ -n "${failedmod}" ]; then
+            boot_mesg "Failed to load modules:${failedmod}" ${FAILURE}
+            echo_failure
+        fi
+        ;;
+    *)
+        echo "Usage: ${0} {start}"
+        exit 1
+        ;;
+esac
+
+# End $rc_base/init.d/modules
+</pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds04.html" title=
+          "/etc/rc.d/init.d/consolelog">&#21518;&#36864;</a>
+          <p>
+            /etc/rc.d/init.d/consolelog
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds06.html" title=
+          "/etc/rc.d/init.d/udev">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/udev
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      D.1.&nbsp;/etc/rc.d/init.d/rc
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Appendix&nbsp;D.&nbsp;&#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="scripts.html" title=
+          "Boot and sysconfig scripts version-20100124">&#21518;&#36864;</a>
+          <p>
+            &#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds02.html" title=
+          "/etc/rc.d/init.d/functions">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/functions
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="rc" name="rc"></a>D.1. /etc/rc.d/init.d/rc
+      </h1>
+      <p>
+        The <code class="systemitem">rc</code> script is the first script
+        called by <span class="application">init</span> and initiates the
+        boot process.
+      </p>
+      <pre class="screen">#!/bin/sh
+########################################################################
+# Begin $rc_base/init.d/rc
+#
+# Description : Main Run Level Control Script
+#
+# Authors     : Gerard Beekmans  - gerard@linuxfromscratch.org
+#
+# Version     : 00.00
+#
+# Notes       :
+#
+########################################################################
+
+. /etc/sysconfig/rc
+. ${rc_functions}
+
+# This sets a few default terminal options.
+stty sane
+
+# These 3 signals will not cause our script to exit
+trap "" INT QUIT TSTP
+
+[ "${1}" != "" ] &amp;&amp; runlevel=${1}
+
+if [ "${runlevel}" = "" ]; then
+    echo "Usage: ${0} &lt;runlevel&gt;" &gt;&amp;2
+    exit 1
+fi
+
+previous=${PREVLEVEL}
+[ "${previous}" = "" ] &amp;&amp; previous=N
+
+if [ ! -d ${rc_base}/rc${runlevel}.d ]; then
+    boot_mesg "${rc_base}/rc${runlevel}.d does not exist." ${WARNING}
+    boot_mesg_flush
+    exit 1
+fi
+
+# Attempt to stop all service started by previous runlevel,
+# and killed in this runlevel
+if [ "${previous}" != "N" ]; then
+    for i in $(ls -v ${rc_base}/rc${runlevel}.d/K* 2&gt; /dev/null)
+    do
+        check_script_status
+
+        suffix=${i#$rc_base/rc$runlevel.d/K[0-9][0-9]}
+        prev_start=$rc_base/rc$previous.d/S[0-9][0-9]$suffix
+        sysinit_start=$rc_base/rcsysinit.d/S[0-9][0-9]$suffix
+
+        if [ "${runlevel}" != "0" ] &amp;&amp; [ "${runlevel}" != "6" ]; then
+            if [ ! -f ${prev_start} ] &amp;&amp; [ ! -f ${sysinit_start} ]; then
+                boot_mesg -n "WARNING:\n\n${i} can't be" ${WARNING}
+                boot_mesg -n " executed because it was not"
+                boot_mesg -n " not started in the previous"
+                boot_mesg -n " runlevel (${previous})."
+                boot_mesg "" ${NORMAL}
+                boot_mesg_flush
+                continue
+            fi
+        fi
+        ${i} stop
+        error_value=${?}
+
+        if [ "${error_value}" != "0" ]; then
+            print_error_msg
+        fi
+    done
+fi
+
+#Start all functions in this runlevel
+for i in $( ls -v ${rc_base}/rc${runlevel}.d/S* 2&gt; /dev/null)
+do
+    if [ "${previous}" != "N" ]; then
+        suffix=${i#$rc_base/rc$runlevel.d/S[0-9][0-9]}
+        stop=$rc_base/rc$runlevel.d/K[0-9][0-9]$suffix
+        prev_start=$rc_base/rc$previous.d/S[0-9][0-9]$suffix
+
+        [ -f ${prev_start} ] &amp;&amp; [ ! -f ${stop} ] &amp;&amp; continue
+    fi
+
+    check_script_status
+
+    case ${runlevel} in
+        0|6)
+            ${i} stop
+            ;;
+        *)
+            ${i} start
+            ;;
+    esac
+    error_value=${?}
+
+    if [ "${error_value}" != "0" ]; then
+        print_error_msg
+    fi
+done
+
+# End $rc_base/init.d/rc
+</pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="scripts.html" title=
+          "Boot and sysconfig scripts version-20100124">&#21518;&#36864;</a>
+          <p>
+            &#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds02.html" title=
+          "/etc/rc.d/init.d/functions">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/functions
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

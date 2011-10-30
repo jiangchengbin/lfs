@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      D.27.&nbsp;/etc/sysconfig/network-devices/services/ipv4-static
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Appendix&nbsp;D.&nbsp;&#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds26.html" title=
+          "/etc/sysconfig/network-devices/ifdown">&#21518;&#36864;</a>
+          <p>
+            /etc/sysconfig/network-devices/ifdown
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds28.html" title=
+          "/etc/sysconfig/network-devices/services/ipv4-static-route">&#21069;&#36827;</a>
+          <p>
+            /etc/sysconfig/network-devices/services/ipv4-static-route
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ipv4static" name="ipv4static"></a>D.27.
+        /etc/sysconfig/network-devices/services/ipv4-static
+      </h1>
+      <pre class="screen">#!/bin/sh
+########################################################################
+# Begin $network_devices/services/ipv4-static
+#
+# Description : IPV4 Static Boot Script
+#
+# Authors     : Nathan Coulson - nathan@linuxfromscratch.org
+#        Kevin P. Fleming - kpfleming@linuxfromscratch.org
+#
+# Version     : 00.00
+#
+# Notes       :
+#
+########################################################################
+
+. /etc/sysconfig/rc 
+. ${rc_functions} 
+. ${IFCONFIG}
+
+if [ -z "${IP}" ]; then
+    boot_mesg "IP variable missing from ${IFCONFIG}, cannot continue." ${FAILURE}
+    echo_failure
+    exit 1
+fi
+
+if [ -z "${PREFIX}" -a -z "${PEER}" ]; then
+    boot_mesg -n "PREFIX variable missing from ${IFCONFIG}," ${WARNING}
+    boot_mesg " assuming 24."
+    echo_warning
+    PREFIX=24
+    args="${args} ${IP}/${PREFIX}"
+elif [ -n "${PREFIX}" -a -n "${PEER}" ]; then
+    boot_mesg "PREFIX and PEER both specified in ${IFCONFIG}, cannot continue." ${FAILURE}
+    echo_failure
+    exit 1
+elif [ -n "${PREFIX}" ]; then
+    args="${args} ${IP}/${PREFIX}"
+elif [ -n "${PEER}" ]; then
+    args="${args} ${IP} peer ${PEER}"
+fi
+
+if [ -n "${BROADCAST}" ]; then
+    args="${args} broadcast ${BROADCAST}"
+fi
+
+case "${2}" in
+    up)
+        boot_mesg "Adding IPv4 address ${IP} to the ${1} interface..."
+        ip addr add ${args} dev ${1}
+        evaluate_retval
+    
+        if [ -n "${GATEWAY}" ]; then
+            if ip route | grep -q default; then
+                boot_mesg "Gateway already setup; skipping." ${WARNING}
+                echo_warning
+            else
+                boot_mesg "Setting up default gateway..."
+                ip route add default via ${GATEWAY} dev ${1}
+                evaluate_retval
+             fi
+        fi
+    ;;
+    
+    down)
+        if [ -n "${GATEWAY}" ];    then
+            boot_mesg "Removing default gateway..."
+            ip route del default
+            evaluate_retval
+        fi
+    
+        boot_mesg "Removing IPv4 address ${IP} from the ${1} interface..."
+        ip addr del ${args} dev ${1}
+        evaluate_retval
+    ;;
+    
+    *)
+        echo "Usage: ${0} [interface] {up|down}"
+        exit 1
+    ;;
+esac
+
+# End $network_devices/services/ipv4-static
+</pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds26.html" title=
+          "/etc/sysconfig/network-devices/ifdown">&#21518;&#36864;</a>
+          <p>
+            /etc/sysconfig/network-devices/ifdown
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds28.html" title=
+          "/etc/sysconfig/network-devices/services/ipv4-static-route">&#21069;&#36827;</a>
+          <p>
+            /etc/sysconfig/network-devices/services/ipv4-static-route
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

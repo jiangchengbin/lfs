@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.4.&nbsp;Entering the Chroot Environment
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" /></head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="pkgmgt.html" title=
+          "Package Management">&#21518;&#36864;</a>
+          <p>
+            &#21253;&#31649;&#29702; 
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="creatingdirs.html" title=
+          "Creating Directories">&#21069;&#36827;</a>
+          <p>
+            &#21019;&#24314;&#31995;&#32479;&#30446;&#24405;&#32467;&#26500; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-chroot" name="ch-system-chroot"></a>6.4. &#36827;&#20837; Chroot &#29615;&#22659;
+      </h1>
+      <p>
+        &#29616;&#22312;&#23558;&#35201;&#36827;&#20837; chroot &#29615;&#22659;&#26469;&#24320;&#22987;&#32534;&#35793;&#23433;&#35013;&#26368;&#32456;&#30340; LFS &#31995;&#32479;&#20102;&#65292; &#30446;&#21069;&#25105;&#20204;&#21482;&#20351;&#29992;&#20020;&#26102;&#26500;&#24314;&#30340;&#24037;&#20855;&#12290;  &#20197; <code class=
+        "systemitem">root</code> &#36523;&#20221;&#36816;&#34892;&#20197;&#19979;&#21629;&#20196;&#36827;&#20837;&#26500;&#24314;&#29615;&#22659;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">chroot "$LFS" /tools/bin/env -i \
+    HOME=/root TERM="$TERM" PS1='\u:\w\$ ' \
+    PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \
+    /tools/bin/bash --login +h</kbd></pre>
+      <p>
+        <span class="command"><strong>env</strong></span> &#21629;&#20196;&#30340;&#21442;&#25968; <em class="parameter"><code>-i</code></em><em> </em>&#30340;&#20316;&#29992;&#26159;&#28165;&#38500;&#25152;&#26377; chroot &#29615;&#22659;&#21464;&#37327;&#65292; &#28982;&#21518;&#65292;&#20165;&#20165;&#37325;&#35774;&#21464;&#37327; <code class="envar">HOME</code>, <code class="envar">TERM</code>, <code class="envar">PS1</code>  &#21644; <code class="envar">PATH</code>  &#30340;&#20540;&#12290;    <em class=
+        "parameter"><code>TERM=$TERM</code></em> &#35774;&#23450;&#34394;&#25311;&#26681;&#29615;&#22659;&#20013;&#30340; TERM &#30340;&#20540;&#19982; chroot &#22806;&#38754;&#30340;&#19968;&#26679;&#12290; &#36825;&#20010;&#20540;&#26159;&#35753;&#20687; vim &#21644; less &#20043;&#31867;&#30340;&#31243;&#24207;&#21487;&#20197;&#27491;&#30830;&#25805;&#20316;&#12290; &#22914;&#26524;&#36824;&#38656;&#35201;&#37325;&#26032;&#35774;&#32622;&#20854;&#23427;&#30340;&#20540;&#65292;&#22914;   CFLAGS &#25110; CXXFLAGS &#65292;&#36825;&#37324;&#26159;&#20010;&#19981;&#38169;&#30340;&#20301;&#32622;&#12290; </p>
+      <p>
+        &#20174;&#29616;&#22312;&#24320;&#22987;&#65292;&#19981;&#20877;&#38656;&#35201; <code class=
+        "envar">LFS</code> &#21464;&#37327;&#20102;&#65292;&#22240;&#20026;&#25152;&#26377;&#30340;&#24037;&#20316;&#37117;&#34987;&#38480;&#21046;&#22312; LFS &#25991;&#20214;&#31995;&#32479;&#37324;&#12290; &#36825;&#26159;&#30001;&#20110;&#24050;&#32463;&#21578;&#35785;&#20102;   Bash shell&#65292; $LFS &#26159;&#29616;&#22312;&#30340;&#26681;(/)&#30446;&#24405;&#12290;</p>
+      <p>&#27880;&#24847;&#65292;&#36825;&#37324; <code class="filename">/tools/bin</code> &#20301;&#20110; <code class="envar">PATH</code> &#30340;&#21518;&#37096;&#65292; &#36825;&#23601;&#26159;&#35828; &#65292; &#19968;&#26086;&#26368;&#32456;&#29256;&#26412;&#23433;&#35013;&#23436;&#25104;&#65292; &#23601;&#19981;&#20877;&#20351;&#29992;&#20020;&#26102;&#24037;&#20855;&#20102;&#12290; &#20026;&#20102;&#20351; shell &#26080;&#27861;&quot;&#35760;&#20303;&quot;&#21487;&#25191;&#34892;&#20108;&#36827;&#21046;&#20195;&#30721;&#30340;&#20301;&#32622;&#65292; &#38656;&#35201;&#36890;&#36807;&#20351;&#29992; <em class="parameter"><code>+h</code></em>  &#21442;&#25968;&#20851;&#38381; <span class=
+        "command"><strong>bash</strong></span>    &#30340;&#25955;&#21015;&#21151;&#33021;&#12290;</p>
+      <p>
+        &#27880;&#24847;&#27492;&#26102; <span class="command"><strong>bash</strong></span>&#25552;&#31034;&#31526;&#20250;&#26174;&#31034;&#65306;<code class="computeroutput">I have no name!</code> &#36825;&#26159;&#27491;&#24120;&#30340;&#65292; &#22240;&#20026;&#36824;&#27809;&#26377;&#21019;&#24314; <code class="filename">/etc/passwd</code>
+        &#25991;&#20214;&#12290;</p>
+      <div class="admon note">
+        <img alt="[Note]" src="../images/note.png" />
+        <h3>
+          &#27880;&#24847;
+        </h3>
+        <p>&#36825;&#19968;&#31456;&#21097;&#19979;&#30340;&#21629;&#20196;&#20197;&#21450;&#21518;&#38754;&#20960;&#31456;&#30340;&#21629;&#20196;&#37117;&#26159;&#22312;chroot&#29615;&#22659;&#19979;&#36827;&#34892;&#30340;&#12290;&#22914;&#26524;&#20320;&#31163;&#24320;&#20102;&#36825;&#20010;&#29615;&#22659; &#65288;&#27604;&#22914;&#37325;&#21551;&#65289;&#65292; &#35201;&#30830;&#20445;&#20869;&#26680;&#34394;&#25311;&#25991;&#20214;&#31995;&#32479;&#25346;&#36733;&#65292;&#20687;&#22312; <a class="xref" href=
+          "kernfs.html#ch-system-bindmount" title=
+          "6.2.2.&nbsp;Mounting and Populating /dev">Section&nbsp;6.2.2,
+          &ldquo;&#25346;&#36733;&#24182;&#22635;&#20805; /dev &#30446;&#24405;&rdquo;</a> and <a class="xref"
+          href="kernfs.html#ch-system-kernfsmount" title=
+          "6.2.3.&nbsp;Mounting Virtual Kernel File Systems">Section&nbsp;6.2.3,
+          &ldquo;&#25346;&#36733;&#34394;&#25311;&#20869;&#26680;&#25991;&#20214;&#31995;&#32479;&rdquo;</a>&#25551;&#36848;&#30340;&#12290; &#22312;&#32487;&#32493;&#23433;&#35013;&#20043;&#21069;&#65292; &#20877;&#27425;&#36827;&#20837;chroot&#29615;&#22659;&#12290;</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="pkgmgt.html" title=
+          "Package Management">&#21518;&#36864;</a>
+          <p>
+            &#21253;&#31649;&#29702; 
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="creatingdirs.html" title=
+          "Creating Directories">&#21069;&#36827;</a>
+          <p>
+            &#21019;&#24314;&#31995;&#32479;&#30446;&#24405;&#32467;&#26500; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      1.3.&nbsp;Changelog
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;1.&nbsp;&#20171;&#32461;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="whatsnew.html" title=
+          "What's new since the last release">&#21518;&#36864;</a>
+          <p>
+            &#19982;&#19978;&#19968;&#29256;&#26377;&#20160;&#20040;&#19981;&#21516;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="resources.html" title="Resources">&#21069;&#36827;</a>
+          <p>
+            &#36164;&#28304;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter01.html" title=
+          "Chapter&nbsp;1.&nbsp;Introduction">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-scatter-changelog" name="ch-scatter-changelog"></a>1.3.
+        &#26356;&#26032;&#35760;&#24405;
+      </h1>
+      <p>
+        &#26412;&#20070;&#26159; Linux From Scratch &#25351;&#23548;&#20070;6.6&#29256;&#65292;&#21457;&#24067;&#26085;&#26399;&#26159;2010&#24180;3&#26376;1&#26085;&#12290; &#22914;&#26524;&#26412;&#20070;&#29256;&#26412;&#24050;&#32463;&#36229;&#36807;&#20102;&#20845;&#20010;&#26376;&#65292;&#23601;&#21487;&#33021;&#26377;&#26356;&#26032;&#12289;&#26356;&#22909;&#30340;&#29256;&#26412;&#21487;&#20379;&#19979;&#36733;&#20102;&#12290;&#20026;&#20102;&#26597;&#25214;&#26356;&#26032;&#29256;&#26412;&#65292; &#21487;&#35775;&#38382; <a class="ulink" href=
+        "http://www.linuxfromscratch.org/mirrors.html">http://www.linuxfromscratch.org/mirrors.html</a>.      </p>
+      <p>&#20197;&#19979;&#26159;&#26412;&#20070;&#33258;&#19978;&#19968;&#29256;&#26412;&#20197;&#26469;&#30340;&#26356;&#26032;&#21015;&#34920;&#12290;</p>
+      <div class="itemizedlist">
+        <p class="title">
+          <b>&#26356;&#26032;&#26085;&#24535;&#20837;&#21475;:</b>
+        </p>
+        <ul>
+          <li>
+            <p>
+              2010-02-28
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Fix location of change to config.h in Bison.
+                    Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2595">#2595</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-02-26
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Add make-3.81-upstream_fixes-1.patch. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2588">#2588</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bdubbs] Add perl-5.10.1-utf8-1.patch. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2589">#2589</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-02-22
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Correct the version number used in Readline's
+                    documentation. This is the equivalent of upstream's 002
+                    patch.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bdubbs] Update to e2fsprogs-1.41.10. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2576">#2576</a>.
+                    This also reverts the changes made in response to
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2586">#2586</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bdubbs] Make more robust output in version check for
+                    glibc.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-02-21
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Fix an error in e2fsprogs. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2586">#2586</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Tag for lfs-6.6-rc2.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-02-19
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Upgrade to Linux-2.6.32.8. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2575">#2575</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-02-17
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Add a discussion about disk partitioning. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2582">#2582</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bdubbs] Ensure that GDBM is added to the info 'dir'
+                    file. Thanks to Randy McMurchy for the fix. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2574">#2574</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bdubbs] Put file before gcc in chapter 6 for better test
+                    coverage. Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2568">#2568</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bdubbs] Update known failure problems in glibc tests.
+                    Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2569">#2569</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-02-11
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Update the book's attribution.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-02-01
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Have Module-Init-Tools use Zlib's dynamic
+                    instead of static library. Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2562">#2562</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Linux-2.6.32.7. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2563">#2563</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-01-31
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Reword paragraph in 'Target Architectures'
+                    discussing multi-lib systems.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-01-28
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Udev-151. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2561">#2561</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Linux-2.6.32.6. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2559">#2559</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-01-26
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Remove a lot of redundant Udev rules, using
+                    upstream's rules instead. Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2527">#2527</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bryan] Use /etc/modprobe.d/*.conf files instead of a
+                    single /etc/modprobe.conf file, since module-init-tools
+                    now warns. Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2560">#2560</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-01-24
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Update to GRUB-1.97.2. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2556">#2556</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Update to lfs-bootscripts-20100124, which
+                    checks that /dev isn't already mounted.. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2550">#2550</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Don't create /lib/udev/devices/kmsg as Udev
+                    &gt;= 142 creates it automatically. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2552">#2552</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to File-5.04. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2555">#2555</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to GCC-4.4.3. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2553">#2553</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Gzip-1.4. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2551">#2551</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Udev-150. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2547">#2547</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to GMP-5.0.0. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2546">#2546</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Coreutils-8.4. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2545">#2545</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Util-Linux-NG-2.17. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2544">#2544</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Linux-2.6.32.5. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2542">#2542</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Psmisc-22.10. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2541">#2541</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-01-09
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Grammar and spelling updates from Chris Staub.
+                    Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2548">#2548</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2010-01-03
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Prevent a failure in GCC's testsuite due to a
+                    conflict with Glibc's getline function.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Readline-6.1. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2540">#2540</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Bash-4.1. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2539">#2539</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Patch-2.6.1. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2538">#2538</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Glibc-2.11.1. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2537">#2537</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Psmisc-22.9. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2536">#2536</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to IPRoute2-2.6.31. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2535">#2535</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-12-21
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Linux-2.6.32.2. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2534">#2534</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Inetutils-1.7. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2533">#2533</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-12-16
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Linux-2.6.32.1. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2532">#2532</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Automake-1.11.1. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2529">#2529</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Coreutils-8.2. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2524">#2524</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-12-06
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Move some of inetutils' programs to an
+                    FHS-compliant location. Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2524">#2524</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Linux-2.6.32. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2526">#2526</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Udev-149. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2525">#2525</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-12-02
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Util-Linux-NG-2.16.2. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2523">#2523</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to MPFR-2.4.2. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2522">#2522</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgrade to Autoconf-2.65. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2520">#2520</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-29
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Provided more information about grub
+                    configuration.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-24
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Create separate standards and rationale pages
+                    and reformated. Provided more information about packages
+                    needed to satisfy LSB.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-23
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Add a page describing the Linux standards LFS
+                    uses to guide its procedures. Included a sub-section on
+                    why each package is in the book. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/1673">#1673</a>
+                    and <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2196">#2196</a>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-22
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Update host requirements script to print a
+                    comment that makeinfo is used to identify the Texinfo
+                    package version.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bdubbs] Added a section to each package's dependencies
+                    in the Appendix to list external (non-LFS) dependencies
+                    for LFS packages. Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/1682">#1682</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-21
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Remove unneccessary .install and ..install.cmd
+                    files that were being installed by the Linux headers.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Coreutils-8.1. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2518">#2518</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Tcl-8.4.8. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2517">#2517</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Libtool-2.2.6b. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2514">#2514</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-16
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Removed paragraph in LFS &#30446;&#26631;&#26550;&#26500;
+                    that said that we can't build a 64-bit loader.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-16
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Clarified explanation of why we use cross
+                    compilation techniques in the &#24037;&#20855;&#38142;&#25216;&#26415;&#35828;&#26126;.
+                    Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2412">#2412</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-15
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Patch-2.6. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2513">#2513</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Udev-147. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2512">#2512</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Linux-2.6.31.6. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2511">#2511</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-14
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Removed obsolete note on the Host System
+                    requirements page.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-12
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Added a note to '&#20851;&#20110; SBU' to address parallel
+                    make procedures and how SBU values will be affected.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [bdubbs] Minor changes to GRUB-1.97.1 instructions.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-09
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Upgraded to GRUB-1.97.1 Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2510">#2510</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-11-06
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Glibc-2.11. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2509">#2509</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to latest upstream patches for Bash.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Linux-2.6.31.5. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2508">#2508</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Module-Init-Tools-3.11.1. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2507">#2507</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-10-29
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] Upgraded to GRUB-1.97. Split the build/install
+                    portion from the configuration of /boot and the mbr and
+                    placed the build portion in Chapter 6. Expanded the
+                    discussion about the /boot mbr portion in Chapter 8.
+                    Fixes <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2093">#2093</a>.
+                    This also eliminates the need for an initramfs as
+                    specified in <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2033">#2033</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-10-20
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Linux-2.6.31.4. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2503">#2503</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to GCC-4.4.2. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2504">#2504</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Binutils-2.20. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2505">#2505</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-10-12
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Kbd-1.15.1. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2501">#2501</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Man-Pages-3.23. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2498">#2498</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Linux-2.6.31.3. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2499">#2499</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Gzip-1.3.13. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2500">#2500</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-09-29
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Linux-2.6.31.1. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2496">#2496</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Install psmisc's binaries in <code class=
+                    "filename">/usr/bin</code> instead of <code class=
+                    "filename">/bin</code> as they are only called whilst
+                    <code class="filename">/usr</code> is mounted. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2469">#2469</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-09-25
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bryan] Upgrade to udev-config-20090925. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2497">#2497</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-09-24
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Update list of installed headers for Linux.
+                    Thanks to Chris Staub for the patch. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2495">#2495</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Update list of installed programs for various
+                    packages. Thanks to Chris Staub for the patch. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2494">#2494</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-09-17
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Bash-4.0-fixes-4.patch. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2484">#2484</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Linux-2.6.31. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2485">#2485</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Util-Linux-NG-2.16.1. Fixes
+                    <a class="ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2483">#2483</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Coreutils-7.6. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2487">#2487</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Man-DB-2.5.6. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2481">#2481</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-09-11
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] - Deleted the reference to the outdated and
+                    incomplete optimization hint.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-09-10
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] - Added a section to the &#24207;&#35328; about LFS
+                    supported architectures.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-09-02
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] - Removed more documentation in the Chapter 5
+                    stripping section.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-08-26
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Udev-146. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2473">#2473</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Perl-5.10.1. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2479">#2479</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] Upgraded to Linux-2.6.30.5. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2475">#2475</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] - Upgraded to Less-436. Fixes <a class="ulink"
+                    href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2471">2471</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] - Upgraded to E2fsprogs-1.41.9. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2478">2478</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    [matthew] - Upgraded to Coreutils-7.5. Fixes <a class=
+                    "ulink" href=
+                    "http://wiki.linuxfromscratch.org/lfs/ticket/2477">#2477</a>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p>
+              2009-08-19
+            </p>
+            <div class="itemizedlist">
+              <ul>
+                <li>
+                  <p>
+                    [bdubbs] - &#37325;&#20889;&#20102;&#24120;&#29992;&#32534;&#35793;&#22120;&#29992;&#27861;&#35828;&#26126;&#20013;&#30340;&#27880;&#37322;&#65292;&#24182;&#19988;&#65292;&#20026;&#20102;&#35753;&#29992;&#25143;&#23454;&#38469;&#38405;&#35835;&#24120;&#29992;&#32534;&#35793;&#22120;&#29992;&#27861;&#35828;&#26126;&#65292;&#32473;bin-utils &#21152;&#20102;&#19968;&#26465;&#35828;&#26126;&#12290;</p>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <p>
+        LFS 6.5 released August 16, 2009.
+      </p>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="whatsnew.html" title=
+          "What's new since the last release">&#21518;&#36864;</a>
+          <p>
+            &#19982;&#19978;&#19968;&#29256;&#26377;&#20160;&#20040;&#19981;&#21516;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="resources.html" title="Resources">&#21069;&#36827;</a>
+          <p>
+            &#36164;&#28304;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter01.html" title=
+          "Chapter&nbsp;1.&nbsp;Introduction">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

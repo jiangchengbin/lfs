@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      4.2.&nbsp;Creating the $LFS/tools Directory
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;4.&nbsp;&#26368;&#21518;&#30340;&#20934;&#22791;&#24037;&#20316; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="aboutlfs.html" title="About $LFS">&#21518;&#36864;</a>
+          <p>
+            &#20851;&#20110;&#29615;&#22659;&#21464;&#37327; $LFS
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="addinguser.html" title=
+          "Adding the LFS User">&#21069;&#36827;</a>
+          <p>
+            &#28155;&#21152; LFS &#29992;&#25143;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter04.html" title=
+          "Chapter&nbsp;4.&nbsp;Final Preparations">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-creatingtoolsdir" name=
+        "ch-tools-creatingtoolsdir"></a>4.2. &#21019;&#24314; $LFS/tools &#30446;&#24405;
+      </h1>
+      <p><a class="xref" href=
+        "../chapter05/chapter05.html" title=
+        "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">Chapter 5</a>&#20013;&#32534;&#35793;&#30340;&#25152;&#26377;&#31243;&#24207;&#37117;&#23558;&#23433;&#35013;&#21040;<code class="filename"> $LFS/tools</code> &#30446;&#24405;&#19979;&#65292;&#20197;&#20415;&#19982; <a class="xref"
+        href="../chapter06/chapter06.html" title=
+        "Chapter&nbsp;6.&nbsp;Installing Basic System Software">Chapter
+        6</a> &#20013;&#32534;&#35793;&#30340;&#31243;&#24207;&#38548;&#31163;&#24320;&#26469;&#12290; &#36825;&#37324;&#32534;&#35793;&#30340;&#31243;&#24207;&#21482;&#26159;&#20020;&#26102;&#20351;&#29992;&#30340;&#24037;&#20855;&#65292;&#19981;&#26159;&#26368;&#32456; LFS &#31995;&#32479;&#30340;&#32452;&#25104;&#37096;&#20998;&#12290; &#25226;&#36825;&#20123;&#31243;&#24207;&#25918;&#21040;&#19968;&#20010;&#21333;&#29420;&#30340;&#30446;&#24405;&#19979;&#65292;&#22312;&#20351;&#29992;&#36807;&#20043;&#21518;&#31616;&#21333;&#30340;&#21024;&#38500;&#25481;&#23601;&#21487;&#20197;&#20102;&#12290; &#36825;&#26679;&#20570;&#20063;&#21487;&#20197;&#38450;&#27490;&#36825;&#20123;&#31243;&#24207;&#19982;&#23487;&#20027;&#31995;&#32479;&#20013;&#30456;&#21516;&#30340;&#31243;&#24207;&#28151;&#28102; ( <a class="xref"
+        href="../chapter05/chapter05.html" title=
+        "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">Chapter
+        5</a> &#20013;&#23481;&#26131;&#20986;&#29616;&#36825;&#26679;&#30340;&#20107;&#24773;)&#12290;</p>
+      <p><code class="systemitem">   &#20197; root</code> &#29992;&#25143;&#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#26469;&#21019;&#24314;&#25152;&#38656;&#30340;&#30446;&#24405;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">mkdir -v $LFS/tools</kbd></pre>
+      <p>&#19979;&#19968;&#27493;&#26159;&#22312;&#23487;&#20027;&#31995;&#32479;&#19978;&#21019;&#24314;&#19968;&#20010; <code class="filename">/tools</code>
+        &#31526;&#21495;&#38142;&#25509;&#65292;&#25351;&#21521;  LFS &#20998;&#21306;&#19978;&#26032;&#21019;&#24314;&#30340;&#30446;&#24405;&#65292; &#36825;&#20010;&#21629;&#20196;&#21516;&#26679;&#35201;&#20316;&#20026; <code class=
+        "systemitem">root</code> &#36523;&#20221;&#36816;&#34892;&#65306;      </p>
+      <pre class="userinput"><kbd class=
+      "command">ln -sv $LFS/tools /</kbd></pre>
+      <div class="admon note">
+        <img alt="[Note]" src="../images/note.png" />
+        <h3>
+          &#27880;&#24847;
+        </h3>
+        <p>
+          &#19978;&#38754;&#30340;&#21629;&#20196;&#26159;&#27491;&#30830;&#30340;&#12290; <span class=
+          "command"><strong>ln </strong></span>&#21629;&#20196;&#30340;&#35821;&#27861;&#26377;&#20102;&#19968;&#28857;&#21464;&#21270;&#12290;&#22914;&#26524;&#24744;&#35748;&#20026;&#21457;&#29616;&#20102;&#19968;&#20010;&#38169;&#35823;&#65292; &#22312;&#25253;&#21578;&#23427;&#20043;&#21069;&#65292;  &#20808;&#29992;<span class="command"><strong>info
+          coreutils ln</strong></span> &#21644; <code class=
+          "filename">ln(1)</code>&#21629;&#20196;&#26597;&#30475;&#25163;&#20876;&#39029;&#12290;</p>
+      </div>
+      <p>&#25152;&#21019;&#24314;&#30340;&#31526;&#21495;&#38142;&#25509;&#20351;&#24471;&#23558;&#35201;&#32534;&#35793;&#30340;&#24037;&#20855;&#38142;&#24635;&#26159;&#20301;&#20110;<code class="filename">/tools</code> &#30446;&#24405;&#19979;&#65292;&#36825;&#24847;&#21619;&#30528;&#32534;&#35793;&#22120;&#12289; &#27719;&#32534;&#22120;&#21644;&#36830; &#25509;&#22120;&#22312;&#26412;&#31456;(&#36825;&#26102;&#25105;&#20204;&#36824;&#22312;&#20351;&#29992;&#23487;&#20027;&#31995;&#32479;&#30340;&#19968;&#20123;&#24037;&#20855;)&#21644;&#19979;&#19968;&#31456;(&#36825;&#26102;&#25105;&#20204; &ldquo;<span class="quote">chrooted</span>&rdquo; &#21040;&#20102;
+        LFS &#20998;&#21306;)&#37117;&#21487;&#20197;&#20351;&#29992;&#12290;</p>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="aboutlfs.html" title="About $LFS">&#21518;&#36864;</a>
+          <p>
+            &#20851;&#20110;&#29615;&#22659;&#21464;&#37327; $LFS
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="addinguser.html" title=
+          "Adding the LFS User">&#21069;&#36827;</a>
+          <p>
+            &#28155;&#21152; LFS &#29992;&#25143;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter04.html" title=
+          "Chapter&nbsp;4.&nbsp;Final Preparations">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

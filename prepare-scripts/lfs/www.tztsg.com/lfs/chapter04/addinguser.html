@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      4.3.&nbsp;Adding the LFS User
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" /></head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;4.&nbsp;&#26368;&#21518;&#30340;&#20934;&#22791;&#24037;&#20316; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="creatingtoolsdir.html" title=
+          "Creating the $LFS/tools Directory">&#21518;&#36864;</a>
+          <p>
+            &#21019;&#24314; $LFS/tools &#30446;&#24405;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="settingenvironment.html" title=
+          "Setting Up the Environment">&#21069;&#36827;</a>
+          <p>
+            &#35774;&#32622;&#29615;&#22659;&#21464;&#37327;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter04.html" title=
+          "Chapter&nbsp;4.&nbsp;Final Preparations">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-addinguser" name="ch-tools-addinguser"></a>4.3.
+        &#28155;&#21152; LFS &#29992;&#25143;
+      </h1>
+      <p>
+        &#24403;&#20197; <code class="systemitem">root</code> &#29992;&#25143;&#30331;&#24405;&#26102;&#65292;&#19968;&#20010;&#38169;&#35823;&#65292;&#23601;&#21487;&#33021;&#30772;&#22351;&#25110;&#32773;&#25703;&#27585;&#31995;&#32479;&#12290;&#22240;&#27492;&#65292; &#26412;&#31456;&#25105;&#20204;&#25512;&#33616;&#20351;&#29992;&#19968;&#20010;&#26080;&#29305;&#26435;&#30340;&#29992;&#25143;&#26469;&#32534;&#35793;&#36719;&#20214;&#21253;&#12290;&#24744;&#21487;&#20197;&#20351;&#29992;&#24744;&#33258;&#24049;&#30340;&#29992;&#25143;&#21517;&#65292; &#19981;&#36807;&#20026;&#20102;&#24314;&#31435;&#19968;&#20010;&#24178;&#20928;&#30340;&#24037;&#20316;&#29615;&#22659;&#65292;&#24314;&#35758;&#24744;&#26032;&#24314;&#19968;&#20010;&#21517;&#20026;<code class=
+        "systemitem">lfs</code> &#30340;&#29992;&#25143;&#65292;&#20316;&#20026;&#19968;&#20010;&#26032;&#32452;&#65288;&#20063;&#31216;&#20026;<code class="systemitem">lfs</code>&#65289;&#30340;&#25104;&#21592;&#65292;&#24182;&#22312;&#20854;&#20013;&#28155;&#21152;&#19968;&#20010;&#21517;&#20026;&#12290;&#20197; <code class="systemitem">root</code> &#29992;&#25143;&#36816;&#34892;&#19979;&#21015;&#21629;&#20196;&#26469;&#28155;&#21152;&#26032;&#29992;&#25143;&#65306;</p>
+      <pre class="userinput"><kbd class="command">groupadd lfs
+useradd -s /bin/bash -g lfs -m -k /dev/null lfs</kbd></pre>
+      <div class="variablelist">
+        <p class="title">
+          <b>&#21629;&#20196;&#34892;&#36873;&#39033;&#30340;&#21547;&#20041;&#26159;&#65306;</b>
+        </p>
+        <dl>
+          <dt>
+            <span class="term"><em class="parameter"><code>-s
+            /bin/bash</code></em></span>          </dt>
+          <dd>
+            <p>
+              &#25351;&#23450; <span class="command"><strong>bash</strong></span>
+              &#20026; <code class="systemitem">lfs</code> &#29992;&#25143;&#30340;&#40664;&#35748; shell&#12290;</p>
+          </dd>
+          <dt>
+            <span class="term"><em class="parameter"><code>-g
+            lfs</code></em></span>          </dt>
+          <dd>
+            <p>
+              &#35813;&#36873;&#39033;&#23558; <code class="systemitem">lfs</code> &#29992;&#25143;&#28155;&#21152;&#21040; <code class="systemitem">lfs</code> &#32452;&#12290; </p>
+          </dd>
+          <dt>
+            <span class="term"><em class=
+            "parameter"><code>-m</code></em></span>          </dt>
+          <dd>
+            <p>
+              &#35813;&#36873;&#39033;&#20026; <code class=
+              "systemitem">lfs</code> &#29992;&#25143;&#21019;&#24314; home &#30446;&#24405;&#12290;            </p>
+          </dd>
+          <dt>
+            <span class="term"><em class="parameter"><code>-k
+            /dev/null</code></em></span>          </dt>
+          <dd>
+            <p>&#36825;&#20010;&#21442;&#25968;&#36890;&#36807;&#23558;&#36755;&#20837;&#20301;&#32622;&#20462;&#25913;&#20026;&#29305;&#27530;&#30340;&#31354;&#35774;&#22791;&#26469;&#38450;&#27490;&#20174;&#26694;&#26550;&#30446;&#24405;(&#40664;&#35748;&#26159;<code class=
+              "filename"> /etc/skel</code>) &#25335;&#36125;&#25991;&#20214;&#12290;</p>
+          </dd>
+          <dt>
+            <span class="term"><em class=
+            "parameter"><code>lfs</code></em></span>          </dt>
+          <dd>
+            <p>&#36825;&#26159;&#25152;&#21019;&#24314;&#30340;&#32452;&#21644;&#29992;&#25143;&#30340;&#23454;&#38469;&#21517;&#23383;</p>
+          </dd>
+        </dl>
+      </div>
+      <p>&#20026;&#20102;&#21487;&#20197;&#20351;&#29992; <em><code class="systemitem">lfs</code></em> &#29992;&#25143;&#30331;&#24405;(&#19982;&#20174; <code class="systemitem">root</code><em> </em>&#29992;&#25143;&#20999;&#25442;&#21040; <em><code class="systemitem">lfs</code></em> &#29992;&#25143;&#19981;&#21516;&#65292;&#36825;&#31181;&#20999;&#25442;&#19981;&#38656;&#35201;<em> </em><code class="systemitem">lfs</code> &#29992;&#25143;&#26377;&#19968;&#20010;&#23494;&#30721;), &#24517;&#39035;&#20808;&#20026; <em><code class="systemitem">lfs</code> </em>&#29992;&#25143;&#35774;&#32622;&#19968;&#20010;&#23494;&#30721;&#65306;</p>
+      <pre class="userinput"><kbd class="command">passwd lfs</kbd></pre>
+      <p>
+        &#36890;&#36807;&#25226; <em> <code class="systemitem">lfs</code></em> &#29992;&#25143;&#35774;&#32622;&#20026; <code class=
+        "filename">$LFS/tools</code>   &#30446;&#24405;&#30340;&#25152;&#26377;&#32773;&#26469;&#25480;&#20104; <code class=
+        "systemitem">lfs</code><em> </em> &#29992;&#25143;&#23545;&#35813;&#30446;&#24405;&#30340;&#23436;&#20840;&#35775;&#38382;&#26435;&#38480;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">chown -v lfs $LFS/tools</kbd></pre>
+      <p>&#22914;&#26524;&#24744;&#20381;&#29031;&#24314;&#35758;&#21019;&#24314;&#20102;&#29420;&#31435;&#30340;&#24037;&#20316;&#30446;&#24405;&#65292;&#35831;&#23558;&#35813;&#30446;&#24405;&#30340;&#25152;&#26377;&#26435;&#36171;&#20104; <code class="systemitem">lfs</code><em> </em>&#29992;&#25143;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">chown -v lfs $LFS/sources</kbd></pre>
+      <p>&#25509;&#19979;&#26469;&#65292;&#20197;  <code class="systemitem">lfs</code><em> </em> &#29992;&#25143;&#30331;&#24405;&#12290;&#24744;&#21487;&#20197;&#36890;&#36807;&#19968;&#20010;&#34394;&#25311;&#25511;&#21046;&#21488;&#65292; &#19968;&#20010;&#26174;&#31034;&#31649;&#29702;&#22120;&#65292; &#25110;&#32773;&#29992;&#19979;&#38754;&#30340;&#20999;&#25442;&#29992;&#25143;&#21629;&#20196;&#65306;</p>
+      <pre class="userinput"><kbd class="command">su - lfs</kbd></pre>
+      <p>&ldquo;<span class="quote"><em class=
+        "parameter"><code>-</code></em></span>&rdquo; &#21442;&#25968;&#25351;&#31034; <strong><span class=
+        "command"><strong>su</strong></span></strong> &#24320;&#21551;&#19968;&#20010;&#30331;&#38470;Shell(login   shell)&#32780;&#19981;&#26159;&#38750;&#30331;&#38470;Shell(non-login   shell)&#65292;&#36825;&#20004;&#31181; shell &#30340;&#19981;&#21516;&#20043;&#22788;&#35831;&#21442;&#32771; <code class=
+        "filename">bash(1)</code> &#21644; <span class="command"><strong>info
+        bash</strong></span>.      </p>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="creatingtoolsdir.html" title=
+          "Creating the $LFS/tools Directory">&#21518;&#36864;</a>
+          <p>
+            &#21019;&#24314; $LFS/tools &#30446;&#24405;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="settingenvironment.html" title=
+          "Setting Up the Environment">&#21069;&#36827;</a>
+          <p>
+            &#35774;&#32622;&#29615;&#22659;&#21464;&#37327;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter04.html" title=
+          "Chapter&nbsp;4.&nbsp;Final Preparations">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

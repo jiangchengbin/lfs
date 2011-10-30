@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.40.&nbsp;Flex-2.5.35
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="findutils.html" title=
+          "Findutils-4.4.2">&#21518;&#36864;</a>
+          <p>
+            Findutils-4.4.2
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gettext.html" title="Gettext-0.17">&#21069;&#36827;</a>
+          <p>
+            Gettext-0.17
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-flex" name="ch-system-flex"></a>6.40. Flex-2.5.35
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           Flex&#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#20010;&#33021;&#29983;&#25104;&#35782;&#21035;&#25991;&#26412;&#27169;&#24335;&#31243;&#24207;&#30340;&#24037;&#20855;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.7 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">28 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.40.1. &#23433;&#35013; Flex
+        </h2>
+        <p>
+          &#24212;&#29992;&#34917;&#19969;&#20462;&#22797;C++&#25195;&#25551;&#20202;&#21457;&#29983;&#22120;&#20013;&#30340;bug&#65292;&#22312;&#20351;&#29992;GCC-4.4.3&#26102;&#65292;&#35813;bug&#20250;&#36896;&#25104;&#25195;&#25551;&#22120;&#32534;&#35793;&#38169;&#35823;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../flex-2.5.35-gcc44-1.patch</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Flex &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524; (about 0.5 SBU), &#35831;&#25191;&#34892;:
+        </p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#26377;&#20123;&#36719;&#20214;&#21253;&#35797;&#22270;&#22312;/usr/lib&#30446;&#24405;&#26597;&#25214;lex &#24211;&#12290;&#21487;&#20197;&#21019;&#24314;&#19968;&#20010;&#31526;&#21495;&#38142;&#25509;&#26469;&#28385;&#36275;&#35201;&#27714;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">ln -sv libfl.a /usr/lib/libl.a</kbd></pre>
+        <p>&#19968;&#20123;&#31243;&#24207;&#24182;&#19981;&#30693;&#36947;<strong>flex</strong>&#32780;&#26159;&#35797;&#22270;&#23547;&#25214; <strong>lex</strong>&#31243;&#24207;&#12290; &#20026;&#20102;&#28385;&#36275;&#36825;&#20123;&#31243;&#24207;&#30340;&#38656;&#35201;&#65292; &#25105;&#20204;&#23558;&#21019;&#24314;&#19968;&#20010;&#21517;&#20026;lex&#30340;&#33050;&#26412;&#65292; &#36825;&#20010;&#33050;&#26412;&#35843;&#29992;flex&#24182;&#36890;&#36807;&#23427;&#26469;&#27169;&#20223;<strong>lex</strong>&#30340;&#36755;&#20986;&#25991;&#20214;&#21629;&#21517;&#24815;&#20363;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">cat &gt; /usr/bin/lex &lt;&lt; "EOF"
+<code class="literal">#!/bin/sh
+# Begin /usr/bin/lex
+
+exec /usr/bin/flex -l "$@"
+
+# End /usr/bin/lex</code>
+EOF
+chmod -v 755 /usr/bin/lex</kbd></pre>
+        <p>
+          &#22914;&#26524;&#24895;&#24847;&#65292;&#21487;&#20197;&#23433;&#35013;  <code class="filename">flex.pdf</code>
+          &#25991;&#26723;&#25991;&#20214;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">mkdir -v /usr/share/doc/flex-2.5.35
+cp    -v doc/flex.pdf \
+         /usr/share/doc/flex-2.5.35</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-flex" name="contents-flex"></a>6.40.2.  
+          Flex
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">flex and lex</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libfl.a and libfl_pic.a</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="flex" name="flex"></a><span class=
+                    "term"><span class=
+                    "command"><strong>flex</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26159;&#19968;&#20010;&#29992;&#26469;&#29983;&#25104;&#35782;&#21035;&#25991;&#26412;&#30340;&#27169;&#24335;&#31243;&#24207;&#30340;&#24037;&#20855;&#12290;&#27169;&#24335;&#35782;&#21035;&#22312;&#24456;&#22810;&#31243;&#24207;&#20013;&#26159;&#38750;&#24120;&#26377;&#29992;&#65292; &#29992;&#25143;&#35774;&#32622;&#19968;&#20123;&#26597;&#35810;&#35268;&#21017;&#65292;&#28982;&#21518; flex &#21487;&#20197;&#29983;&#25104;&#19968;&#20010;&#26597;&#35810;&#31243;&#24207;&#12290;&#20154;&#20204;&#20351;&#29992; flex   &#21487;&#20197;&#27604;&#20146;&#33258;&#32534;&#20889;&#26597;&#35810;&#31243;&#24207;&#26356;&#20415;&#25463;&#12290; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lex" name="lex"></a><span class=
+                    "term"><span class="command"><strong>lex</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22312; <strong>lex</strong>&#20223;&#30495;&#27169;&#24335;&#19979;&#36816;&#34892;<strong>flex</strong>&#30340;&#19968;&#20010;&#33050;&#26412;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libfl.a" name="libfl.a"></a><span class=
+                    "term"><code class="filename">libfl.a</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p><code class="filename">flex</code> &#24211;&#25991;&#20214;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="findutils.html" title=
+          "Findutils-4.4.2">&#21518;&#36864;</a>
+          <p>
+            Findutils-4.4.2
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gettext.html" title="Gettext-0.17">&#21069;&#36827;</a>
+          <p>
+            Gettext-0.17
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.15.&nbsp;Bash-4.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="ncurses.html" title="Ncurses-5.7">&#21518;&#36864;</a>
+          <p>
+            Ncurses-5.7
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="bzip2.html" title="Bzip2-1.0.5">&#21069;&#36827;</a>
+          <p>
+            Bzip2-1.0.5
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-bash" name="ch-tools-bash"></a>5.15. Bash-4.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           Bash &#36719;&#20214;&#21253;&#21253;&#21547; Bourne-Again SHell&#12290;        </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.5 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">35 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.15.1. &#23433;&#35013; Bash
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Bash &#20570;&#20934;&#22791;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/tools --without-bash-malloc</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--without-bash-malloc</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#36873;&#39033;&#31105;&#29992;&#20102; Bash &#30340;&#20869;&#23384;&#20998;&#37197;(<code class="function">malloc</code>)&#20989;&#25968;&#65292; &#36825;&#20010;&#20989;&#25968;&#24050;&#30693;&#20250;&#36896;&#25104;&#27573;&#38169;&#35823;&#65292; &#36890;&#36807;&#35774;&#32622;&#36825;&#20010;&#36873;&#39033;&#65292; Bash &#23558;&#20351;&#29992; Glibc &#37324;&#30340; malloc &#20989;&#25968;&#65292;&#23427;&#26356;&#20026;&#31283;&#23450;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#29616;&#22312;&#32534;&#35793;&#23436;&#25104;&#20102; &#21644;&#21069;&#38754;&#35752;&#35770;&#30340;&#19968;&#26679;&#65292;&#22312;&#26412;&#31456;&#65292;&#22240;&#20026;&#26159;&#20020;&#26102;&#24037;&#20855;&#65292;&#25105;&#20204;&#19981;&#24378;&#21046;&#24744;&#36816;&#34892;&#27979;&#35797;&#32452;&#20214;&#12290; &#22914;&#26524;&#19968;&#23450;&#35201;&#36816;&#34892; Bash &#27979;&#35797;&#31995;&#32479;&#65292; &#21487;&#25191;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;
+
+        </p>
+        <pre class="userinput"><kbd class="command">make tests</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#20026;&#36825;&#20010;&#31243;&#24207;&#24314;&#31435;&#19968;&#20010;&#38142;&#25509;&#65292;&#20197;&#20415;&#20351;&#29992;<strong> sh</strong> &#36816;&#34892; BAsh&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">ln -vs bash /tools/bin/sh</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#30340;&#35814;&#32454;&#20869;&#23481;&#20301;&#20110;  <a class="xref" href=
+          "../chapter06/bash.html#contents-bash" title=
+          "6.29.2.&nbsp;Contents of Bash">Section&nbsp;6.29.2,
+          &ldquo; Bash &#30340;&#20869;&#23481; &rdquo;</a>        </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="ncurses.html" title="Ncurses-5.7">&#21518;&#36864;</a>
+          <p>
+            Ncurses-5.7
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="bzip2.html" title="Bzip2-1.0.5">&#21069;&#36827;</a>
+          <p>
+            Bzip2-1.0.5
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

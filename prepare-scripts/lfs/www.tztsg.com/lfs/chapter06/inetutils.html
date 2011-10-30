@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.32.&nbsp;Inetutils-1.7
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gdbm.html" title="GDBM-1.8.3">&#21518;&#36864;</a>
+          <p>
+            GDBM-1.8.3
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="perl.html" title="Perl-5.10.1">&#21069;&#36827;</a>
+          <p>
+            Perl-5.10.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-inetutils" name="ch-system-inetutils"></a>6.32.
+        Inetutils-1.7
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Inetutils &#36719;&#20214;&#21253;&#21253;&#21547;&#22522;&#30784;&#32593;&#32476;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.4 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">17 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.32.1. &#23433;&#35013; Inetutils
+        </h2>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --libexecdir=/usr/sbin \
+    --localstatedir=/var --disable-ifconfig \
+    --disable-logger --disable-syslogd --disable-whois \
+    --disable-servers</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-ifconfig</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#36873;&#39033;&#38459;&#27490;Inetutils&#23433;&#35013;<span class="command"><strong>ifconfig</strong></span><strong> </strong>&#31243;&#24207;&#65292;&#23427;&#21487;&#20197;&#29992;&#26469;&#37197;&#32622;&#32593;&#32476;&#25509;&#21475;&#12290; LFS&#20351;&#29992;IPRoute2&#20013;&#30340;<span class="command"><strong>ip</strong></span><strong> </strong>&#25191;&#34892;&#27492;&#20219;&#21153;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-logger</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#38459;&#27490; inetutils &#23433;&#35013; <span class="command"><strong>logger</strong></span><strong> </strong> &#31243;&#24207;&#65292; &#33050;&#26412;&#21033;&#29992;&#36825;&#20010;&#31243;&#24207;&#21521;&#31995;&#32479;&#26085;&#24535;&#23432;&#25252;&#36827;&#31243;&#20256;&#36882;&#28040;&#24687;&#12290; &#25105;&#20204;&#19981;&#23433;&#35013;&#23427;&#26159;&#22240;&#20026;   Util-linux &#21253;&#21547;&#19968;&#20010;&#32769;&#29256;&#26412;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-syslogd</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#21442;&#25968;&#38459;&#27490; inetutils &#23433;&#35013; System Log Daemon(&#31995;&#32479;&#26085;&#24535;&#23432;&#25252;&#36827;&#31243;)&#65292;&#25105;&#20204;&#23558;&#22312; Sysklogd &#36719;&#20214;&#21253;&#20013;&#23433;&#35013;&#23427;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-whois</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#38459;&#27490; inetutils &#32534;&#35793; <strong><span class="command"><strong>whois</strong></span> </strong> &#23458;&#25143;&#31471;&#65292;&#22240;&#20026;&#23427;&#24050;&#32463;&#24456;&#38472;&#26087;&#20102;&#12290;&#22312; BLFS book &#37324;&#38754;&#26377;&#23433;&#35013;&#26356;&#22909;&#30340; <strong><span class=
+                "command"><strong>whois</strong></span> </strong> &#23458;&#25143;&#31471;&#30340;&#25351;&#23548;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-servers</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#38459;&#27490;&#23433;&#35013;&#20960;&#31181;&#32593;&#32476;&#26381;&#21153;&#22120;&#12290;&#36825;&#20123;&#26381;&#21153;&#22120;&#23545;&#20110;&#22522;&#26412;&#30340; LFS &#31995;&#32479;&#26159;&#19981;&#21512;&#36866;&#30340;&#65292; &#26377;&#30340;&#36824;&#19981;&#23433;&#20840;&#65292; &#24456;&#22810;&#26381;&#21153;&#22120;&#37117;&#26377;&#26356;&#22909;&#30340;&#26367;&#20195;&#32773;&#12290;&#21442;&#35265; <a class="ulink"
+                href=
+                "http://www.linuxfromscratch.org/blfs/view/svn/basicnet/inetutils.html">
+                http://www.linuxfromscratch.org/blfs/view/svn/basicnet/inetutils.html</a>&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#25226;&#19968;&#20123;&#31243;&#24207;&#31227;&#21160;&#21040;&#31526;&#21512; FHS &#26631;&#20934;&#30340;&#20301;&#32622;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mv -v /usr/bin/{hostname,ping,ping6} /bin
+mv -v /usr/bin/traceroute /sbin</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-inetutils" name="contents-inetutils"></a>6.32.2.
+          Inetutils
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">ftp, hostname, ping, ping6, rcp, rexec,
+              rlogin, rsh, talk, telnet, tftp, and traceroute</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ftp" name="ftp"></a><span class=
+                    "term"><span class="command"><strong>ftp</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#25991;&#20214;&#20256;&#36755;&#21327;&#35758;&#31243;&#24207; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="hostname" name="hostname"></a><span class=
+                    "term"><span class=
+                    "command"><strong>hostname</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#26174;&#31034;&#25110;&#35774;&#32622;&#20027;&#26426;&#21517; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ping" name="ping"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ping</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#21457;&#36865;&#35831;&#27714;&#24212;&#31572;&#21253;&#65292;&#24182;&#25253;&#21578;&#22238;&#22797;&#25152;&#38656;&#30340;&#26102;&#38388;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ping6" name="ping6"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ping6</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                IPv6 &#32593;&#32476;&#30340; <span class=
+                    "command"><strong>ping</strong></span> &#29256;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rcp" name="rcp"></a><span class=
+                    "term"><span class="command"><strong>rcp</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#25191;&#34892;&#36828;&#31243;&#25991;&#20214;&#25335;&#36125; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rexec" name="rexec"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rexec</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#22312;&#36828;&#31243;&#20027;&#26426;&#19978;&#25191;&#34892;&#21629;&#20196;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rlogin" name="rlogin"></a><span class=
+                    "term"><span class=
+                    "command"><strong>rlogin</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#25191;&#34892;&#36828;&#31243;&#30331;&#24405; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rsh" name="rsh"></a><span class=
+                    "term"><span class="command"><strong>rsh</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#36816;&#34892;&#36828;&#31243; shell                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="talk" name="talk"></a><span class=
+                    "term"><span class=
+                    "command"><strong>talk</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#29992;&#26469;&#19982;&#21478;&#19968;&#20010;&#29992;&#25143;&#20132;&#35848; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="telnet" name="telnet"></a><span class=
+                    "term"><span class=
+                    "command"><strong>telnet</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                TELNET &#21327;&#35758;&#25509;&#21475;                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tftp" name="tftp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>tftp</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#23567;&#25991;&#20214;&#20256;&#36755;&#31243;&#24207;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="traceroute" name="traceroute"></a><span class=
+                    "term"><span class=
+                    "command"><strong>traceroute</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#36861;&#36394;&#25968;&#25454;&#21253;&#20174;&#20320;&#30340;&#20027;&#26426;&#21040;&#32593;&#32476;&#19978;&#21478;&#19968;&#21488;&#20027;&#26426;&#30340;&#36335;&#30001;&#65292; &#26174;&#31034;&#27839;&#36884;&#30340;&#25152;&#26377;&#20013;&#38388;&#36339;&#65288;&#32593;&#20851;&#65289;</p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gdbm.html" title="GDBM-1.8.3">&#21518;&#36864;</a>
+          <p>
+            GDBM-1.8.3
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="perl.html" title="Perl-5.10.1">&#21069;&#36827;</a>
+          <p>
+            Perl-5.10.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

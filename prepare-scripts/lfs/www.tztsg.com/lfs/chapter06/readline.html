@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.28.&nbsp;Readline-6.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="grep.html" title="Grep-2.5.4">&#21518;&#36864;</a>
+          <p>
+            Grep-2.5.4
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="bash.html" title="Bash-4.1">&#21069;&#36827;</a>
+          <p>
+            Bash-4.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-readline" name="ch-system-readline"></a>6.28.
+        Readline-6.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Readline &#36719;&#20214;&#21253;&#26159;&#19968;&#20010;&#25552;&#20379;&#21629;&#20196;&#34892;&#32534;&#36753;&#21644;&#21382;&#21490;&#32426;&#24405;&#21151;&#33021;&#30340;&#24211;&#38598;&#21512;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.2 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">13.8 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.28.1. &#23433;&#35013; Readline
+        </h2>
+        <p>
+          &#37325;&#26032;&#23433;&#35013; Readline &#20250;&#23558;&#32769;&#30340;&#24211;&#37325;&#21629;&#21517;&#20026;&lt;libraryname&gt;.old&#12290;&#36825;&#36890;&#24120;&#24182;&#19981;&#26159;&#38382;&#39064;&#12290;   &#20294;&#26159;&#65292; &#22312;&#26576;&#20123;&#24773;&#20917;&#19979;&#23427;&#20250;&#24341;&#21457;<span class=
+          "command"><strong>ldconfig</strong></span>&#30340;&#19968;&#20010;&#38142;&#25509;bug&#12290; &#24212;&#29992;&#19979;&#38754;&#30340;&#20004;&#20010;sed&#21629;&#20196;&#21487;&#20197;&#36991;&#20813;&#36825;&#31181;&#24773;&#20917;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i '/MV.*old/d' Makefile.in
+sed -i '/{OLDSUFF}/c:' support/shlib-install</kbd></pre>
+        <p>
+          &#22312; Readline &#24110;&#21161;&#25991;&#26723;&#20013;&#20351;&#29992;&#30340;&#27491;&#30830;&#30340;&#29256;&#26412;&#21495;&#65306; </p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i -e 's/0x0600/0x0601/' \
+       -e 's/6\.0/6.1/' \
+       -e 's/RL_VERSION_MINOR\t0/RL_VERSION_MINOR\t1/' readline.h</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Readline &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --libdir=/lib</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make SHLIB_LIBS=-lncurses</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>make &#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>SHLIB_LIBS=-lncurses</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#36873;&#39033;&#24378;&#21046; Readline &#38142;&#25509;&#21040; libncurses(&#30495;&#23454;&#30340;, <code class=
+                "filename">libncursesw</code>)&#24211;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#23558;&#38745;&#24577;&#24211;&#31227;&#21160;&#21040;&#19968;&#20010;&#26356;&#21512;&#29702;&#30340;&#20301;&#32622;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mv -v /lib/lib{readline,history}.a /usr/lib</kbd></pre>
+        <p>
+          &#28982;&#21518;&#65292;&#21024;&#38500; <code class="filename">/lib</code> &#20013;&#30340; <code class="filename">.so</code> &#25991;&#20214;&#65292;&#24182;&#23558;&#23427;&#20204;&#37325;&#26032;&#36830;&#25509;&#21040; <code class="filename">/usr/lib</code> &#20013;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">rm -v /lib/lib{readline,history}.so
+ln -sfv ../../lib/libreadline.so.6 /usr/lib/libreadline.so
+ln -sfv ../../lib/libhistory.so.6 /usr/lib/libhistory.so</kbd></pre>
+        <p>
+          &#22914;&#26524;&#24895;&#24847;&#65292;&#21487;&#20197;&#23433;&#35013;&#36719;&#20214;&#25991;&#26723;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mkdir   -v       /usr/share/doc/readline-6.1
+install -v -m644 doc/*.{ps,pdf,html,dvi} \
+                 /usr/share/doc/readline-6.1</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-readline" name="contents-readline"></a>6.28.2.
+           Readline
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libhistory.{a,so}, and
+              libreadline.{a,so}</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libhistory" name="libhistory"></a><span class=
+                    "term"><code class="filename">libhistory</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25552;&#20379;&#19968;&#20010;&#32479;&#19968;&#30340;&#35843;&#29992;&#21382;&#21490;&#34892;&#30340;&#29992;&#25143;&#25509;&#21475;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libreadline" name="libreadline"></a><span class=
+                    "term"><code class="filename">libreadline</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#24212;&#29992;&#20110;&#21508;&#31181;&#38656;&#35201;&#21629;&#20196;&#34892;&#25509;&#21475;&#30340;&#24212;&#29992;&#31243;&#24207;&#30340;&#32479;&#19968;&#30340;&#29992;&#25143;&#25509;&#21475;&#30340;&#36741;&#21161;&#31243;&#24207;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="grep.html" title="Grep-2.5.4">&#21518;&#36864;</a>
+          <p>
+            Grep-2.5.4
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="bash.html" title="Bash-4.1">&#21069;&#36827;</a>
+          <p>
+            Bash-4.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

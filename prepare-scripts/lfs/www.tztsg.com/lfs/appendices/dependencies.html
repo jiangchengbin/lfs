@@ -1,0 +1,2084 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      Appendix&nbsp;C.&nbsp;Dependencies
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Part&nbsp;IV.&nbsp;&#38468;&#24405;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="acknowledgements.html" title=
+          "Acknowledgments">&#21518;&#36864;</a>
+          <p>
+            &#33268;&#35874; 
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="../scripts/scripts.html" title=
+          "Boot and sysconfig scripts version-20100124">&#21069;&#36827;</a>
+          <p>
+            &#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="../part4.html" title=
+          "Part&nbsp;IV.&nbsp;Appendices">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="appendix" lang="en" xml:lang="en">
+      <h1 class="appendix">
+        <a id="appendixc" name="appendixc"></a>C. &#20381;&#36182;&#20851;&#31995;
+      </h1>
+      <p>&#22312;LFS&#20013;&#23433;&#35013;&#30340;&#27599;&#19968;&#20010;&#36719;&#20214;&#21253;&#65292;&#20026;&#20102;&#27491;&#30830;&#30340;&#32534;&#35793;&#21644;&#23433;&#35013;&#65292;&#37117;&#35201;&#20381;&#36182;&#19968;&#20010;&#25110;&#20960;&#20010;&#20854;&#20182;&#30340;&#36719;&#20214;&#21253;&#12290; &#26377;&#20123;&#36719;&#20214;&#21253;&#29978;&#33267;&#20250;&#24490;&#29615;&#20381;&#36182;&#65292;&#20063;&#23601;&#26159;&#35828;&#65292;   &#31532;&#19968;&#20010;&#36719;&#20214;&#21253;&#20381;&#36182;&#31532;&#20108;&#20010;&#65292; &#32780;&#31532;&#20108;&#20010;&#20063;&#20381;&#36182;&#31532;&#19968;&#20010;&#12290; &#22240;&#20026;&#36825;&#20123;&#20381;&#36182;&#20851;&#31995;&#65292;&#22312;LFS&#20013;&#65292;&#36719;&#20214;&#21253;&#30340;&#23433;&#35013;&#39034;&#24207;&#38750;&#24120;&#37325;&#35201;&#12290; &#26412;&#39029;&#30340;&#30446;&#26631;&#23601;&#26159;&#35760;&#24405;LFS&#20013;&#32534;&#35793;&#30340;&#27599;&#20010;&#36719;&#20214;&#21253;&#30340;&#20381;&#36182;&#20851;&#31995;&#12290;</p>
+      <p>
+        &#23545;&#20110;&#25105;&#20204;&#32534;&#35793;&#30340;&#27599;&#20010;&#36719;&#20214;&#21253;&#65292;&#25105;&#20204;&#21015;&#20986;&#20102;&#19977;&#20010;&#65292;&#26377;&#26102;&#26159;&#22235;&#20010;&#20381;&#36182;&#31867;&#22411;&#12290; &#31532;&#19968;&#20010;&#20381;&#36182;&#21015;&#34920;&#21015;&#21015;&#20986;&#20026;&#20102;&#32534;&#35793;&#21644;&#23433;&#35013;&#35752;&#35770;&#20013;&#30340;&#36719;&#20214;&#21253;&#65292;&#38656;&#35201;&#30340;&#20854;&#20182;&#21487;&#29992;&#30340;&#36719;&#20214;&#12290; &#31532;&#20108;&#20010;&#20381;&#36182;&#21015;&#34920;&#21015;&#21015;&#20986;&#65292; &#20026;&#20102;&#36816;&#34892;&#27979;&#35797;&#31243;&#24207;&#65292; &#38500;&#31532;&#19968;&#34892;&#21015;&#20986;&#30340;&#36719;&#20214;&#21253;&#20197;&#22806;&#36824;&#38656;&#35201;&#30340;&#36719;&#20214;&#21253;&#12290; &#31532;&#19977;&#20010;&#20381;&#36182;&#21015;&#34920;&#21015;&#21015;&#20986;&#38656;&#35201;&#35813;&#36719;&#20214;&#21253;&#32534;&#35793;&#21644;&#23433;&#35013;&#20043;&#21518;&#65292; &#25165;&#33021;&#32534;&#35793;&#21644;&#23433;&#35013;&#30340;&#36719;&#20214;&#21253;&#65292;&#22312;&#22823;&#22810;&#25968;&#24773;&#20917;&#19979;&#65292; &#36825;&#26159;&#30001;&#20110;&#36825;&#20123;&#36719;&#20214;&#21253;&#35201;&#30828;&#32534;&#30721;&#23427;&#20204;&#33050;&#26412;&#20013;&#30340;&#20108;&#36827;&#21046;&#25991;&#20214;&#30340;&#36335;&#24452;&#12290; &#22914;&#26524;&#19981;&#25353;&#29305;&#23450;&#39034;&#24207;&#23433;&#35013;&#65292; &#36825;&#21487;&#33021;&#36896;&#25104; /tools/bin/[binary] &#30446;&#24405;&#34987;&#25918;&#22312;&#23433;&#35013;&#21040;&#26368;&#32456;&#31995;&#32479;&#30340;&#33050;&#26412;&#20869;&#12290;&#36825;&#26174;&#28982;&#26159;&#19981;&#21487;&#21462;&#30340;&#12290;      </p>
+      <p>
+        &#26368;&#21518;&#30340;&#20381;&#36182;&#21015;&#34920;&#21015;&#20986;&#22312;LFS&#20013;&#19981;&#28041;&#21450;&#65292;&#20294;&#21487;&#33021;&#23545;&#29992;&#25143;&#26377;&#29992;&#30340;&#21487;&#36873;&#36719;&#20214;&#21253;&#12290; &#36825;&#20123;&#36719;&#20214;&#21253;&#21487;&#33021;&#26377;&#33258;&#24049;&#39069;&#22806;&#30340;&#24378;&#21046;&#25110;&#21487;&#36873;&#30340;&#20381;&#36182;&#20851;&#31995;&#12290; &#23545;&#20110;&#36825;&#20123;&#20381;&#36182;&#20851;&#31995;&#65292;&#25512;&#33616;&#23436;&#25104;LFS&#25945;&#26448;&#21518;&#20877;&#23433;&#35013;&#23427;&#20204;&#65292;&#28982;&#21518;&#65292;&#22238;&#22836;&#37325;&#26032;&#32534;&#35793;LFS&#36719;&#20214;&#21253;&#12290;&#26377;&#20123;&#24773;&#20917;&#19979;&#65292;&#20250;&#22312;BLFS&#20013;&#22788;&#29702;&#37325;&#26032;&#23433;&#35013;&#30340;&#38382;&#39064;&#12290;</p>
+      <h2>
+        <a id="autoconf-dep" name="autoconf-dep"></a>Autoconf
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Coreutils, Grep, M4, Make, Perl, Sed,
+            and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Automake, Diffutils, Findutils, GCC, and
+            Libtool</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Automake</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Emacs</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="automake-dep" name="automake-dep"></a>Automake
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Autoconf, Bash, Coreutils, Gettext, Grep,
+            M4, Make, Perl, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Binutils, Bison, Bzip2, DejaGNU, Diffutils,
+            Expect, Findutils, Flex, GCC, Gettext, Gzip, Libtool, and
+            Tar.</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="bash-dep" name="bash-dep"></a>Bash
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Bison, Coreutils,
+            Diffutils, Gawk, GCC, Glibc, Grep, Make, Ncurses, Patch,
+            Readline, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Xorg</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="binutils-dep" name="binutils-dep"></a>Binutils
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, Make, Perl, Sed, Texinfo and Zlib</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">DejaGNU and Expect</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="bison-dep" name="bison-dep"></a>Bison
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, Grep, M4, Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils and Findutils</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Flex, Kbd, and Tar</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Doxygen (testsuite)</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="bzip2-dep" name="bzip2-dep"></a>Bzip2
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Glibc, Make, and Patch</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="coreutils-dep" name="coreutils-dep"></a>Coreutils
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, GMP, Grep, Make, Patch, Perl, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils, E2fsprogs, Findutils, and
+            Util-linux-ng</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Bash, Diffutils, Findutils, Man-DB, and
+            Udev</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Perl Expect and IO:Tty modules (for
+            testsuite)</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="dejagnu-dep" name="dejagnu-dep"></a>DejaGNU
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Coreutils, Diffutils, GCC, Grep,
+            Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="diffutils-dep" name="diffutils-dep"></a>Diffutils
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Gettext, Glibc, Grep, Make, Patch, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="expect-dep" name="expect-dep"></a>Expect
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Glibc, Grep, Make, Patch, Sed, and Tcl</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="e2fsprogs-dep" name="e2fsprogs-dep"></a>E2fsprogs
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, Gzip, Make, Pkg-config, Sed, Texinfo, and
+            Util-linux-ng</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="file-dep" name="file-dep"></a>File
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, Make, Sed, and Zlib</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="findutils-dep" name="findutils-dep"></a>Findutils
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, Grep, Make, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">DejaGNU, Diffutils, and Expect</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="flex-dep" name="flex-dep"></a>Flex
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, Grep, M4, Make, Patch, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bison and Gawk</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">IPRoute2, Kbd, and Man-DB</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="gawk-dep" name="gawk-dep"></a>Gawk
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, Grep, Make, Patch, Sed and, Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="gcc-dep" name="gcc-dep"></a>Gcc
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils,
+            Findutils, Gawk, GCC, Gettext, Glibc, GMP, Grep, M4, Make, MPFR,
+            Patch, Perl, Sed, Tar, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">DejaGNU and Expect</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody"><a class="ulink" href=
+            "http://gcc.gnu.org/wiki/Graphite">CLooG-PPL</a>, <a class=
+            "ulink" href="http://gcc.gnu.org/wiki/GNAT">GNAT</a> and
+            <a class="ulink" href=
+            "http://gcc.gnu.org/wiki/Graphite">PPL</a></span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="gdbm" name="gdbm"></a>GDBM
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Grep, Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="gettext-dep" name="gettext-dep"></a>Gettext
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Gawk, GCC,
+            Glibc, Grep, Make, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils, Perl, and Tcl</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Automake</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="glibc-dep" name="glibc-dep"></a>Glibc
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Gettext, Grep, Gzip, Make, Perl, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">File</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="gmp-dep" name="gmp-dep"></a>GMP
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, M4, Make, Sed and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">MPFR, GCC</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="grep-dep" name="grep-dep"></a>Grep
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Gettext, Glibc, Grep, Make, Patch, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Gawk</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Man-DB</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Pcre, Xorg, and CUPS</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="groff-dep" name="groff-dep"></a>Groff
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Bison, Coreutils, Gawk,
+            GCC, Glibc, Grep, Make, Patch, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Man-DB and Perl</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">GPL Ghostscript</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="grub-dep" name="grub-dep"></a>GRUB
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Glibc, Grep, Make, Ncurses, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="gzip-dep" name="gzip-dep"></a>Gzip
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Glibc,
+            Grep, Make, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Man-DB</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="iana-etc-dep" name="iana-etc-dep"></a>Iana-Etc
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Coreutils, Gawk, and Make</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Perl</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="inetutils-dep" name="inetutils-dep"></a>Inetutils
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Glibc,
+            Grep, Make, Ncurses, Patch, Sed, Texinfo, and Zlib</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Tar</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="iproute2-dep" name="iproute2-dep"></a>IProute2
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Bison, Coreutils, Flex, GCC, Glibc,
+            Make, and Linux API Headers</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="kbd-dep" name="kbd-dep"></a>Kbd
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Bison, Coreutils, Flex,
+            GCC, Gettext, Glibc, Gzip, Make, Patch, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="less-dep" name="less-dep"></a>Less
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Glibc, Grep, Make, Ncurses, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Pcre</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="libtool-dep" name="libtool-dep"></a>Libtool
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, Make, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Findutils</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="linux-dep" name="linux-dep"></a>Linux Kernel
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils,
+            Findutils, GCC, Glibc, Grep, Gzip, Make, Module-Init-Tools,
+            Ncurses, Perl, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="m4-dep" name="m4-dep"></a>M4
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Glibc,
+            Grep, Make, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Autoconf and Bison</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">libsigsegv</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="make-dep" name="make-dep"></a>Make
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, Grep, Make, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Perl and Procps</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="man-db-dep" name="man-db-dep"></a>Man-DB
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Bzip2, Coreutils, Flex,
+            GCC, GDBM, Gettext, Glibc, Grep, Groff, Gzip, Less, Make, and
+            Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Not run. Requires Man-DB testsuite
+            package</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="man-pages-dep" name="man-pages-dep"></a>Man-Pages
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Coreutils, and Make</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="module-init-tools-dep" name=
+        "module-init-tools-dep"></a>Module-Init-Tools
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Findutils, GCC,
+            Glibc, Grep, Make, Patch, Sed, and Zlib</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils, File, Gawk, and Gzip</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="mpfr-dep" name="mpfr-dep"></a>MPFR
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, GMP, Make, Sed and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">GCC</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="ncurses-dep" name="ncurses-dep"></a>Ncurses
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, Make, Patch, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Bash, GRUB, Inetutils, Less, Procps,
+            Psmisc, Readline, Texinfo, Util-linux-ng, and Vim</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="patch-dep" name="patch-dep"></a>Patch
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Glibc,
+            Grep, Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Ed</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="perl-dep" name="perl-dep"></a>Perl
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Gawk, GCC, GDBM,
+            Glibc, Grep, Groff, Make, Sed, and Zlib</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Iana-Etc and Procps</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Autoconf</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="pkg-config-dep" name="pkg-config-dep"></a>Pkg-config
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="procps-dep" name="procps-dep"></a>Procps
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Glibc,
+            Make, and Ncurses</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="psmisc-dep" name="psmisc-dep"></a>Psmisc
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, Grep, Make, Ncurses, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="readline-dep" name="readline-dep"></a>Readline
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Gawk, GCC,
+            Glibc, Grep, Make, Ncurses, Patch, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">Bash</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="sed-dep" name="sed-dep"></a>Sed
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, Grep, Make, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils and Gawk</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">E2fsprogs, File, Libtool, and Shadow</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Cracklib</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="shadow-dep" name="shadow-dep"></a>Shadow
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils,
+            Findutils, Gawk, GCC, Gettext, Glibc, Grep, Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="sysklogd-dep" name="sysklogd-dep"></a>Sysklogd
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Binutils, Coreutils, GCC, Glibc, Make, and
+            Patch</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="sysvinit-dep" name="sysvinit-dep"></a>Sysvinit
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Binutils, Coreutils, GCC, Glibc, Make, and
+            Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="tar-dep" name="tar-dep"></a>Tar
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Bison, Coreutils, GCC,
+            Gettext, Glibc, Grep, Inetutils, Make, Sed, and Texinfo</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Diffutils, Findutils, Gawk, and Gzip</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="tcl-dep" name="tcl-dep"></a>Tcl
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Glibc, Grep, Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="texinfo-dep" name="texinfo-dep"></a>Texinfo
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Gettext,
+            Glibc, Grep, Make, Ncurses, Patch, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="udev-dep" name="udev-dep"></a>Udev
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, Gawk,
+            GCC, Glibc, Grep, Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="util-linux-dep" name="util-linux-dep"></a>Util-linux-ng
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils,
+            Findutils, Gawk, GCC, Gettext, Glibc, Grep, Make, Ncurses, Sed,
+            and Zlib</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">No testsuite available</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="vim-dep" name="vim-dep"></a>Vim
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, Diffutils, GCC,
+            Glibc, Grep, Make, Ncurses, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">Xorg, GTK+2, LessTif, Python, Tcl, Ruby,
+            and GPM</span>
+          </div>
+        </div>
+      </div>
+      <h2>
+        <a id="zlib-dep" name="zlib-dep"></a>Zlib
+      </h2>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#23433;&#35013;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">Bash, Binutils, Coreutils, GCC, Glibc,
+            Make, and Sed</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#27979;&#35797;&#20381;&#36182;&#20110;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#24517;&#39035;&#20808;&#20110;&#23433;&#35013;:</strong>
+            <span class="segbody">File, Module-Init-Tools, Perl, and
+            Util-linux-ng</span>
+          </div>
+        </div>
+      </div>
+      <div class="segmentedlist">
+        <div class="seglistitem">
+          <div class="seg">
+            <strong class="segtitle">&#21487;&#36873;&#30340;&#20381;&#36182;:</strong>
+            <span class="segbody">None</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="acknowledgements.html" title=
+          "Acknowledgments">&#21518;&#36864;</a>
+          <p>
+            &#33268;&#35874; 
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="../scripts/scripts.html" title=
+          "Boot and sysconfig scripts version-20100124">&#21069;&#36827;</a>
+          <p>
+            &#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="../part4.html" title=
+          "Part&nbsp;IV.&nbsp;Appendices">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

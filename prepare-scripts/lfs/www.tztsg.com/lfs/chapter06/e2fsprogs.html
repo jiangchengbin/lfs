@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.21.&nbsp;E2fsprogs-1.41.10
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="util-linux-ng.html" title=
+          "Util-linux-ng-2.17">&#21518;&#36864;</a>
+          <p>
+            Util-linux-ng-2.17
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="coreutils.html" title=
+          "Coreutils-8.4">&#21069;&#36827;</a>
+          <p>
+            Coreutils-8.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-e2fsprogs" name="ch-system-e2fsprogs"></a>6.21.
+        E2fsprogs-1.41.10
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          E2fsprogs &#36719;&#20214;&#21253;&#21253;&#21547;&#22788;&#29702;ext2 &#25991;&#20214;&#31995;&#32479;&#30340;&#24037;&#20855;&#12290; &#23427;&#36824;&#25903;&#25345;ext3 &#21644; ext4 &#26085;&#24535;&#25991;&#20214;&#31995;&#32479;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.5 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">45 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.21.1. &#23433;&#35013; E2fsprogs
+        </h2>
+        <p>
+          E2fsprogs &#25991;&#26723;&#24314;&#35758;&#36825;&#20010;&#36719;&#20214;&#21253;&#22312;&#28304;&#25991;&#20214;&#30446;&#24405;&#26641;&#30340;&#23376;&#30446;&#24405;&#19979;&#32534;&#35793;&#65306;</p>
+        <pre class="userinput"><kbd class="command">mkdir -v build
+cd build</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; E2fsprogs &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">../configure --prefix=/usr --with-root-prefix="" \
+    --enable-elf-shlibs --disable-libblkid --disable-libuuid \
+    --disable-uuidd --disable-fsck</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--with-root-prefix=""</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#26377;&#30340;&#31243;&#24207;(&#22914; <strong><span class=
+                "command"><strong>e2fsck</strong></span> </strong> )&#23545;&#31995;&#32479;&#26469;&#35828;&#26159;&#38750;&#24120;&#37325;&#35201;&#30340;&#65292;&#20363;&#22914;&#65292;&#22312; <code class="filename">/usr</code>  &#27809;&#26377;&#25346;&#36733;&#30340;&#24773;&#20917;&#19979;&#12290; &#36825;&#20123;&#31243;&#24207;&#21644;&#24211;&#23601;&#24212;&#25918;&#22312;&#20687; <code class="filename">/lib</code>    &#21644; <code class="filename">/sbin</code>  &#36825;&#20123;&#30446;&#24405;&#20013;&#12290; &#22914;&#26524;&#27809;&#26377;&#25226;&#19978;&#38754;&#30340;&#21442;&#25968;&#20256;&#36882;&#32473; E2fsprogs &#30340; configure &#33050;&#26412;&#65292;&#23427;&#23601;&#20250;&#25226;&#31243;&#24207;&#25918;&#22312; <code class="filename">/usr</code>  &#30446;&#24405;&#19979;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--enable-elf-shlibs</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#35813;&#36873;&#39033;&#20250;&#21019;&#24314;&#20849;&#20139;&#24211;&#65292;&#20379;&#35813;&#36719;&#20214;&#21253;&#20013;&#30340;&#19968;&#20123;&#31243;&#24207;&#20351;&#29992;&#12290;</p>
+            </dd>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--disable-*</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#35813;&#36873;&#39033;&#38459;&#27490; E2fsprogs &#32534;&#35793;&#21644;&#23433;&#35013; <code class="systemitem">libuuid</code>  &#21644; <code class=
+                "systemitem">libblkid</code>  &#24211;&#65292; <code class=
+                "systemitem">uuidd</code>&#65292;&#21644; <strong><span class=
+                "command"><strong>fsck</strong></span></strong>&#65292;&#22240;&#20026;&#21069;&#38754; Util-Linux-NG &#24050;&#32463;&#23433;&#35013;&#20102;&#23427;&#20204;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          E2fsprogs &#30340;&#19968;&#20010;&#27979;&#35797;&#20250;&#23581;&#35797;&#20998;&#37197; 256 MB &#20869;&#23384;&#12290; &#22914;&#26524;&#20320;&#27809;&#26377;&#20805;&#36275;&#30340;RAM&#31354;&#38388;&#65292; &#25512;&#33616;&#25171;&#24320;&#36275;&#22815;&#30340;&#20132;&#25442;&#20998;&#21306;&#12290; &#24314;&#31435;&#21644;&#21551;&#29992;&#20132;&#25442;&#31354;&#38388;&#30340;&#32454;&#33410;&#65292;&#35831;&#21442;&#32771;          <a class="xref" href="../chapter02/creatingfilesystem.html" title=
+          "2.3.&nbsp;Creating a File System on the Partition">Section&nbsp;2.3,
+         &ldquo;&#22312;&#36825;&#20010;&#20998;&#21306;&#19978;&#21019;&#24314;&#25991;&#20214;&#31995;&#32479;&rdquo;</a> &#21644;
+          <a class="xref" href="../chapter02/mounting.html" title=
+          "2.4.&nbsp;Mounting the New Partition">Section&nbsp;2.4,
+          &ldquo;&#25346;&#36733;&#36825;&#20010;&#26032;&#20998;&#21306;&rdquo;</a> &#12290; </p>
+        <p>&#23433;&#35013;&#25191;&#34892;&#25991;&#20214;&#65292;&#25991;&#26723;&#65292;&#21644;&#20849;&#20139;&#24211;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>&#23433;&#35013;&#38745;&#24577;&#24211;&#21644;&#22836;&#25991;&#20214;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make install-libs</kbd></pre>
+        <p>&#20351;&#23433;&#35013;&#30340;&#38745;&#24577;&#24211;&#21487;&#20889;&#65292;&#20197;&#20415;&#20197;&#21518;&#21487;&#20197;&#21024;&#38500;&#35843;&#35797;&#31526;&#21495;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">chmod -v u+w /usr/lib/{libcom_err,libe2p,libext2fs,libss}.a</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#23433;&#35013;&#20102;&#19968;&#20010;&#21387;&#32553;&#30340;<code class="filename">.info</code>  &#25991;&#20214;&#65292;&#20294;&#26159;&#23427;&#24182;&#19981;&#26356;&#26032;&#20840;&#31995;&#32479;&#30340;<code class=
+          "filename"> dir</code> &#25991;&#20214;&#12290; Unzip &#36825;&#20010;&#25991;&#20214;&#65292;&#24182;&#26356;&#26032;&#31995;&#32479;&#30340; <code class="filename">dir</code>    &#25991;&#20214;&#65292;&#35831;&#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">gunzip -v /usr/share/info/libext2fs.info.gz
+install-info --dir-file=/usr/share/info/dir \
+             /usr/share/info/libext2fs.info</kbd></pre>
+        <p>
+          &#22914;&#26524;&#24895;&#24847;&#65292;&#20320;&#21487;&#20197;&#36890;&#36807;&#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#26469;&#24314;&#31435;&#24182;&#23433;&#35013;&#19968;&#20123;&#38468;&#21152;&#30340;&#25991;&#26723;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">makeinfo -o      doc/com_err.info ../lib/et/com_err.texinfo
+install -v -m644 doc/com_err.info /usr/share/info
+install-info --dir-file=/usr/share/info/dir \
+             /usr/share/info/com_err.info</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-e2fsprogs" name="contents-e2fsprogs"></a>6.21.2.
+           E2fsprogs
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">badblocks, chattr, compile_et, debugfs,
+              dumpe2fs, e2freefrag, e2fsck, e2image, e2initrd_helper,
+              e2label, e2undo, filefrag, fsck.ext2, fsck.ext3, fsck.ext4,
+              fsck.ext4dev, logsave, lsattr, mk_cmds, mke2fs, mkfs.ext2,
+              mkfs.ext3, mkfs.ext4, mkfs.ext4dev, mklost+found, resize2fs,
+              and tune2fs</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libcom_err.{a,so}, libe2p.{a,so},
+              libext2fs.{a,so} and libss.{a,so}</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="badblocks" name="badblocks"></a><span class=
+                    "term"><span class=
+                    "command"><strong>badblocks</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#29992;&#26469;&#26816;&#26597;&#35774;&#22791;(&#36890;&#24120;&#26159;&#30913;&#30424;&#20998;&#21306;)&#19978;&#30340;&#22351;&#22359;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="chattr" name="chattr"></a><span class=
+                    "term"><span class=
+                    "command"><strong>chattr</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#22312; ext2 &#21644; ext3 &#25991;&#20214;&#31995;&#32479;&#19978;&#25913;&#21464;&#25991;&#20214;&#23646;&#24615;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="compile_et" name="compile_et"></a><span class=
+                    "term"><span class=
+                    "command"><strong>compile_et</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#19968;&#20010;&#38169;&#35823;&#21015;&#34920;&#32534;&#35793;&#22120;&#65307;&#29992;&#26469;&#23558;&#38169;&#35823;&#20195;&#30721;(error-code) &#21644;&#30456;&#20851;&#20986;&#38169;&#20449;&#24687;&#30340;&#21015;&#34920;&#36716;&#21270;&#20026;&#36866;&#29992;&#20110; <code class=
+                    "filename">com_err</code>  &#24211;&#30340; C &#35821;&#35328;&#25991;&#20214;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="debugfs" name="debugfs"></a><span class=
+                    "term"><span class=
+                    "command"><strong>debugfs</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#25991;&#20214;&#31995;&#32479;&#35843;&#35797;&#22120;&#65307; &#33021;&#29992;&#26469;&#26816;&#26597;&#21644;&#25913;&#21464; <code class=
+                    "systemitem">ext2</code>  &#25991;&#20214;&#31995;&#32479;&#30340;&#29366;&#24577;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="dumpe2fs" name="dumpe2fs"></a><span class=
+                    "term"><span class=
+                    "command"><strong>dumpe2fs</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#26174;&#31034;&#25351;&#23450;&#35774;&#22791;&#19978;&#29616;&#23384;&#30340;&#25991;&#20214;&#31995;&#32479;&#30340;&#36229;&#32423;&#22359;(super block) &#21644;&#22359;&#32676;(blocks group)&#30340;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="e2freefrag" name="e2freefrag"></a><span class=
+                    "term"><span class=
+                    "command"><strong>e2freefrag</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#25253;&#21578;&#31354;&#38386;&#31354;&#38388;&#30340;&#30862;&#29255;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="e2fsck" name="e2fsck"></a><span class=
+                    "term"><span class=
+                    "command"><strong>e2fsck</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#29992;&#26469;&#26816;&#26597;&#21644;&#20462;&#22797; <code class=
+                    "systemitem">ext2</code>  &#21644; <code class=
+                    "systemitem">ext3</code>  &#25991;&#20214;&#31995;&#32479;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="e2image" name="e2image"></a><span class=
+                    "term"><span class=
+                    "command"><strong>e2image</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#29992;&#26469;&#23558;&#20851;&#38190;&#30340; <code class=
+                    "systemitem">ext2</code> &#25991;&#20214;&#31995;&#32479;&#25968;&#25454;&#20445;&#23384;&#21040;&#19968;&#20010;&#25991;&#20214;&#20013;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="e2initrd_helper" name=
+                    "e2initrd_helper"></a><span class="term"><span class=
+                    "command"><strong>e2initrd_helper</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#26174;&#31034;&#25351;&#23450;&#30340;&#25991;&#20214;&#31995;&#32479;&#30340; FS &#31867;&#22411;&#65292;&#32473;&#20986;&#30340;&#21487;&#20197;&#26159;&#35774;&#22791;&#21517;&#25110;&#26631;&#35782;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="e2label" name="e2label"></a><span class=
+                    "term"><span class=
+                    "command"><strong>e2label</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#26174;&#31034;&#25110;&#32773;&#25913;&#21464;&#25351;&#23450;&#35774;&#22791;&#19978;&#30340; <code class="systemitem">ext2</code>  &#25991;&#20214;&#31995;&#32479;&#26631;&#35782;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="e2undo" name="e2undo"></a><span class=
+                    "term"><span class=
+                    "command"><strong>e2undo</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#20026;&#19968;&#20010;&#35774;&#22791;&#19978;&#30340;ext2/ext3/ext4&#25991;&#20214;&#31995;&#32479;&#65292;&#35760;&#24405;&#25764;&#38144;&#26085;&#24535; undo_log&#12290; &#36825;&#21487;&#20197;&#29992;e2fsprogs&#31243;&#24207;&#26469;&#25764;&#38144;&#19968;&#20010;&#38169;&#35823;&#25805;&#20316;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="filefrag" name="filefrag"></a><span class=
+                    "term"><span class=
+                    "command"><strong>filefrag</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#25253;&#21578;&#19968;&#20010;&#29305;&#23450;&#25991;&#20214;&#21487;&#33021;&#34987;&#30772;&#22351;&#30340;&#22914;&#20309;&#20005;&#37325;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="fsck.ext2" name="fsck.ext2"></a><span class=
+                    "term"><span class=
+                    "command"><strong>fsck.ext2</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#40664;&#35748;&#26816;&#26597; <code class="systemitem">ext2</code> &#25991;&#20214;&#31995;&#32479;&#12290;&#23427;&#26159;&#25351;&#21521; <strong><span class=
+                    "command"><strong>e2fsck</strong></span> </strong>&#30340;&#19968;&#20010;&#30828;&#38142;&#25509;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="fsck.ext3" name="fsck.ext3"></a><span class=
+                    "term"><span class=
+                    "command"><strong>fsck.ext3</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#40664;&#35748;&#26816;&#26597; <code class="systemitem">ext3</code> &#25991;&#20214;&#31995;&#32479;&#12290;&#23427;&#26159;&#25351;&#21521; <span class=
+                    "command"><strong>e2fsck</strong></span><strong> </strong>&#30340;&#19968;&#20010;&#30828;&#38142;&#25509;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="fsck.ext4" name="fsck.ext4"></a><span class=
+                    "term"><span class=
+                    "command"><strong>fsck.ext4</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#40664;&#35748;&#26816;&#26597; <code class="systemitem">ext4</code> &#25991;&#20214;&#31995;&#32479;&#12290;&#23427;&#26159;&#25351;&#21521; <strong><span class=
+                    "command"><strong>e2fsck</strong></span> </strong>&#30340;&#19968;&#20010;&#30828;&#38142;&#25509;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="fsck.ext4dev" name="fsck.ext4dev"></a><span class=
+                    "term"><span class=
+                    "command"><strong>fsck.ext4dev</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#40664;&#35748;&#26816;&#26597; <code class="systemitem">ext4</code> &#24320;&#21457;&#25991;&#20214;&#31995;&#32479;&#12290;&#23427;&#26159;&#25351;&#21521; <strong><span class="command"><strong>e2fsck</strong></span> </strong>&#30340;&#19968;&#20010;&#30828;&#38142;&#25509;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="logsave" name="logsave"></a><span class=
+                    "term"><span class=
+                    "command"><strong>logsave</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#23558;&#19968;&#20010;&#21629;&#20196;&#30340;&#36755;&#20986;&#20445;&#23384;&#21040;&#19968;&#20010;&#26085;&#24535;&#25991;&#20214;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lsattr" name="lsattr"></a><span class=
+                    "term"><span class=
+                    "command"><strong>lsattr</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#21015;&#20986; ext2 &#25991;&#20214;&#31995;&#32479;&#19978;&#30340;&#25991;&#20214;&#23646;&#24615;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mk_cmds" name="mk_cmds"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mk_cmds</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#23558;&#19968;&#20010;&#21253;&#21547;&#21629;&#20196;&#21517;&#21644;&#24110;&#21161;&#20449;&#24687;&#30340;&#21015;&#34920;&#36716;&#21270;&#20026;&#36866;&#29992;&#20110;<code class=
+                    "filename">libss</code>&#23376;&#31995;&#32479;&#24211;&#30340; C &#28304;&#25991;&#20214;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mke2fs" name="mke2fs"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mke2fs</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#22312;&#32473;&#23450;&#35774;&#22791;&#19978;&#21019;&#24314; <code class="systemitem">ext2</code> &#25110; <code class="systemitem">ext3</code>  &#25991;&#20214;&#31995;&#32479;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mkfs.ext2" name="mkfs.ext2"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mkfs.ext2</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#40664;&#35748;&#21019;&#24314;<code class="systemitem">ext2</code> &#25991;&#20214;&#31995;&#32479;&#65292;&#23427;&#26159;<strong><span class=
+                    "command"><strong>mke2fs</strong></span> </strong>&#30340;&#19968;&#20010;&#30828;&#38142;&#25509;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mkfs.ext3" name="mkfs.ext3"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mkfs.ext3</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#40664;&#35748;&#21019;&#24314;<code class="systemitem">ext3</code> &#25991;&#20214;&#31995;&#32479;&#65292;&#23427;&#26159;<strong><span class=
+                    "command"><strong>mke2fs</strong></span> </strong>&#30340;&#19968;&#20010;&#30828;&#38142;&#25509;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mkfs.ext4" name="mkfs.ext4"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mkfs.ext4</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#40664;&#35748;&#21019;&#24314;<code class="systemitem">ext4</code> &#25991;&#20214;&#31995;&#32479;&#65292;&#23427;&#26159;<strong><span class=
+                    "command"><strong>mke2fs</strong></span> </strong>&#30340;&#19968;&#20010;&#30828;&#38142;&#25509;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mkfs.ext4dev" name="mkfs.ext4dev"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mkfs.ext4dev</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#40664;&#35748;&#21019;&#24314;<code class="systemitem">ext4</code> &#24320;&#21457;&#25991;&#20214;&#31995;&#32479;&#65292;&#23427;&#26159;<strong><span class=
+                    "command"><strong>mke2fs</strong></span> </strong>&#30340;&#19968;&#20010;&#30828;&#38142;&#25509;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mklost-found" name="mklost-found"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mklost+found</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#29992;&#26469;&#22312;<code class="systemitem">ext2</code> &#25991;&#20214;&#31995;&#32479;&#19978;&#21019;&#24314; <code class="filename">lost+found</code>
+                &#30446;&#24405;&#65292; &#36890;&#36807;&#39044;&#20808;&#20998;&#37197;&#30913;&#30424;&#22359;&#21040;&#36825;&#20010;&#30446;&#24405;&#26469;&#20943;&#36731;<span class=
+                    "command"><strong>e2fsck</strong></span>&#30340;&#36127;&#25285;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="resize2fs" name="resize2fs"></a><span class=
+                    "term"><span class=
+                    "command"><strong>resize2fs</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#21487;&#20197;&#29992;&#26469;&#22686;&#22823;&#25110;&#32553;&#23567;&#19968;&#20010; <code class=
+                    "systemitem">ext2</code> &#25991;&#20214;&#31995;&#32479;                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tune2fs" name="tune2fs"></a><span class=
+                    "term"><span class=
+                    "command"><strong>tune2fs</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#35843;&#25972;<code class=
+                    "systemitem">ext2</code> &#25991;&#20214;&#31995;&#32479;&#19978;&#30340;&#21487;&#35843;&#21442;&#25968;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libcom_err" name="libcom_err"></a><span class=
+                    "term"><code class="filename">libcom_err</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#36890;&#29992;&#38169;&#35823;&#26174;&#31034;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libe2p" name="libe2p"></a><span class=
+                    "term"><code class="filename">libe2p</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#29992;&#20110; <span class=
+                    "command"><strong>dumpe2fs</strong></span>, <span class=
+                    "command"><strong>chattr</strong></span>,&#21644;
+                    <span class="command"><strong>lsattr</strong></span>                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libext2fs" name="libext2fs"></a><span class=
+                    "term"><code class="filename">libext2fs</code></span>                  </p>                </td>
+                <td>
+                  <p>&#20801;&#35768;&#29992;&#25143;&#32423;&#30340;&#31243;&#24207;&#25805;&#20316;<code class="systemitem">ext2</code> &#25991;&#20214;&#31995;&#32479; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libss" name="libss"></a><span class=
+                    "term"><code class="filename">libss</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#29992;&#20110; <span class=
+                    "command"><strong>debugfs</strong></span>                  </p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="util-linux-ng.html" title=
+          "Util-linux-ng-2.17">&#21518;&#36864;</a>
+          <p>
+            Util-linux-ng-2.17
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="coreutils.html" title=
+          "Coreutils-8.4">&#21069;&#36827;</a>
+          <p>
+            Coreutils-8.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

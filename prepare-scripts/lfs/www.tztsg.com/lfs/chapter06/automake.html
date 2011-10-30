@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.35.&nbsp;Automake-1.11.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="autoconf.html" title=
+          "Autoconf-2.65">&#21518;&#36864;</a>
+          <p>
+            Autoconf-2.65
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="bzip2.html" title="Bzip2-1.0.5">&#21069;&#36827;</a>
+          <p>
+            Bzip2-1.0.5
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-automake" name="ch-system-automake"></a>6.35.
+        Automake-1.11.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           Automake &#19982; Autoconf &#37197;&#21512;&#20351;&#29992;&#65292;&#20135;&#29983; Makefile &#25991;&#20214;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">18.3 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">28.8 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.35.1. &#23433;&#35013; Automake
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Automake &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --docdir=/usr/share/doc/automake-1.11.1</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524;&#65292;&#35831;&#36816;&#34892;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          This takes a long time, about 10 SBUs.
+        </p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-automake" name="contents-automake"></a>6.35.2.
+           Automake &#30340;&#20869;&#23481;
+        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">acinstall, aclocal, aclocal-1.11.1,
+              automake, automake-1.11.1, compile, config.guess, config.sub,
+              depcomp, elisp-comp, install-sh, mdate-sh, missing,
+              mkinstalldirs, py-compile, symlink-tree, and ylwrap</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="acinstall" name="acinstall"></a><span class=
+                    "term"><span class=
+                    "command"><strong>acinstall</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#29992;&#26469;&#23433;&#35013; aclocal &#39118;&#26684;&#30340; M4&#25991;&#20214;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="aclocal" name="aclocal"></a><span class=
+                    "term"><span class=
+                    "command"><strong>aclocal</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    &#26681;&#25454; <code class=
+                    "filename">configure.in</code> &#25991;&#20214;&#30340;&#20869;&#23481;&#65292;&#33258;&#21160;&#29983;&#25104; <code class="filename">aclocal.m4</code>  &#25991;&#20214; </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="aclocalversion" name=
+                    "aclocalversion"></a><span class="term"><span class=
+                    "command"><strong>aclocal-1.11.1</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                    <span class=
+                    "command"><strong>aclocal</strong></span>                  &#30340;&#30828;&#38142;&#25509;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="automake" name="automake"></a><span class=
+                    "term"><span class=
+                    "command"><strong>automake</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#26681;&#25454; Makefile.am &#25991;&#20214;&#30340;&#20869;&#23481;&#65292;&#33258;&#21160;&#29983;&#25104; Makefile.in &#25991;&#20214;&#12290;&#22312;&#30446;&#24405;&#30340;&#39030;&#23618;&#36816;&#34892;&#35813;&#21629;&#20196;&#65292;&#21487;&#20197;&#20026;&#19968;&#20010;&#21253;&#24314;&#31435;&#25152;&#26377;&#30340; Makefile.in &#25991;&#20214;&#12290;&#36890;&#36807;&#25195;&#25551; configure.in   &#25991;&#20214;&#65292;&#23427;&#21487;&#20197;&#33258;&#21160;&#25214;&#21040;&#27599;&#19968;&#20010;&#21512;&#36866;&#30340; Makefile.am &#25991;&#20214;&#24182;&#19988;&#20135;&#29983;&#30456;&#24212;&#30340; Makefile.in &#25991;&#20214;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="automake-version" name=
+                    "automake-version"></a><span class="term"><span class=
+                    "command"><strong>automake-1.11.1</strong></span></span>                  </p>                </td>
+                <td>
+                  <p><span class=
+                    "command"><strong>automake</strong></span>                  &#30340;&#19968;&#20010;&#30828;&#38142;&#25509;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="compile" name="compile"></a><span class=
+                    "term"><span class=
+                    "command"><strong>compile</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#21253;&#35013;&#20102;&#32534;&#35793;&#22120;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="config.guess" name="config.guess"></a><span class=
+                    "term"><span class=
+                    "command"><strong>config.guess</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#29992;&#26469;&#20026;&#29305;&#23450;&#30340; build, host, target &#23581;&#35797;&#29468;&#27979;&#26631;&#20934;&#30340;&#31995;&#32479;&#21517;&#31216;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="config.sub" name="config.sub"></a><span class=
+                    "term"><span class=
+                    "command"><strong>config.sub</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#37197;&#32622;&#39564;&#35777;&#23376;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="depcomp" name="depcomp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>depcomp</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#22312;&#32534;&#35793;&#31243;&#24207;&#30340;&#21516;&#26102;&#20135;&#29983;&#20854;&#20381;&#36182;&#20449;&#24687;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="elisp-comp" name="elisp-comp"></a><span class=
+                    "term"><span class=
+                    "command"><strong>elisp-comp</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#25353;&#23383;&#33410;&#32534;&#35793; Emacs Lisp &#20195;&#30721;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="install-sh" name="install-sh"></a><span class=
+                    "term"><span class=
+                    "command"><strong>install-sh</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#33021;&#23433;&#35013;&#31243;&#24207;&#12289;&#33050;&#26412;&#12289;&#25968;&#25454;&#25991;&#20214;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mdate-sh" name="mdate-sh"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mdate-sh</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#25171;&#21360;&#31243;&#24207;&#21644;&#30446;&#24405;&#26356;&#25913;&#26102;&#38388;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="missing" name="missing"></a><span class=
+                    "term"><span class=
+                    "command"><strong>missing</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#19968;&#20010;&#29992;&#26469;&#22635;&#20805;&#22312;&#23433;&#35013;&#36807;&#31243;&#26816;&#26597;&#20986;&#30340;&#32570;&#22833;&#30340; GNU &#31243;&#24207;&#31354;&#20301;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mkinstalldirs" name=
+                    "mkinstalldirs"></a><span class="term"><span class=
+                    "command"><strong>mkinstalldirs</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#20135;&#29983;&#30446;&#24405;&#26641;&#32467;&#26500;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="py-compile" name="py-compile"></a><span class=
+                    "term"><span class=
+                    "command"><strong>py-compile</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#32534;&#35793; Python &#31243;&#24207;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="symlink-tree" name="symlink-tree"></a><span class=
+                    "term"><span class=
+                    "command"><strong>symlink-tree</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#20026;&#25972;&#20010;&#30446;&#24405;&#21019;&#24314;&#31526;&#21495;&#38142;&#25509;&#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ylwrap" name="ylwrap"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ylwrap</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#21253;&#35013;&#20102; <strong>lex</strong> &#21644; <strong>yacc</strong> &#30340;&#33050;&#26412;</p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="autoconf.html" title=
+          "Autoconf-2.65">&#21518;&#36864;</a>
+          <p>
+            Autoconf-2.65
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="bzip2.html" title="Bzip2-1.0.5">&#21069;&#36827;</a>
+          <p>
+            Bzip2-1.0.5
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

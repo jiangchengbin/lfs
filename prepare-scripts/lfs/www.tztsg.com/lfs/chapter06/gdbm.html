@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.31.&nbsp;GDBM-1.8.3
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="libtool.html" title=
+          "Libtool-2.2.6b">&#21518;&#36864;</a>
+          <p>
+            Libtool-2.2.6b
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="inetutils.html" title=
+          "Inetutils-1.7">&#21069;&#36827;</a>
+          <p>
+            Inetutils-1.7
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-gdbm" name="ch-system-gdbm"></a>6.31. GDBM-1.8.3
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          GDBM &#21253;&#21547;GNU&#25968;&#25454;&#24211;&#31649;&#29702;&#22120;&#12290; &#36825;&#26159;&#19968;&#20010;&#22312;&#21333;&#20010;&#25991;&#20214;&#20013;&#23384;&#20648;&#20851;&#38190;&#23383;/&#25968;&#25454;&#23545;&#30340;&#30913;&#30424;&#25991;&#20214;&#26684;&#24335;&#25968;&#25454;&#24211;&#12290;   &#36825;&#20123;&#23384;&#20648;&#30340;&#30495;&#23454;&#35760;&#24405;&#25968;&#25454;&#21333;&#19968;&#30340;&#20851;&#38190;&#23383;&#36827;&#34892;&#32034;&#24341;&#65292;&#36825;&#20250;&#27604;&#23384;&#22312;&#25991;&#26412;&#25991;&#20214;&#20013;&#33410;&#30465;&#26102;&#38388;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">2.7 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.31.1. &#23433;&#35013; GDBM
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; GDBM &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#22240;&#20026;&#19968;&#20123;LFS&#31995;&#32479;&#22806;&#30340;&#36719;&#20214;&#21253;&#21487;&#33021;&#20250;&#23547;&#25214;&#36825;&#20123;&#32769;&#30340;&#25968;&#25454;&#24211;&#31649;&#29702;&#31243;&#24207;&#65292;&#36824;&#35201;&#39069;&#22806;&#23433;&#35013;DBM&#21644;NDBM &#20860;&#23481;&#30340;&#22836;&#25991;&#20214;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make install-compat</kbd></pre>
+        <p>
+          &#36890;&#36807;&#23558; GDBM &#28155;&#21152;&#21040; <strong>info</strong> &#20869;&#23481;&#34920;&#20013;&#65292;&#26469;&#20462;&#22797;&#19968;&#20010;&#23567;&#30340;&#23433;&#35013;&#38382;&#39064;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">install-info --dir-file=/usr/info/dir /usr/info/gdbm.info</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-gdbm" name="contents-gdbm"></a>6.31.2.  
+          GDBM
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libgdbm.{so,a} and
+              libgdbm_compat.{so,a}</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libgdbm" name="libgdbm"></a><span class=
+                    "term"><code class="filename">libgdbm</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#19968;&#20010;&#31649;&#29702;&#21704;&#24076;&#25968;&#25454;&#24211;&#30340;&#20989;&#25968;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="libtool.html" title=
+          "Libtool-2.2.6b">&#21518;&#36864;</a>
+          <p>
+            Libtool-2.2.6b
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="inetutils.html" title=
+          "Inetutils-1.7">&#21069;&#36827;</a>
+          <p>
+            Inetutils-1.7
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.37.&nbsp;Diffutils-2.8.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="bzip2.html" title="Bzip2-1.0.5">&#21518;&#36864;</a>
+          <p>
+            Bzip2-1.0.5
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gawk.html" title="Gawk-3.1.7">&#21069;&#36827;</a>
+          <p>
+            Gawk-3.1.7
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-diffutils" name="ch-system-diffutils"></a>6.37.
+        Diffutils-2.8.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Diffutils &#36719;&#20214;&#21253;&#37324;&#30340;&#31243;&#24207;&#21521;&#20320;&#26174;&#31034;&#20004;&#20010;&#25991;&#20214;&#25110;&#30446;&#24405;&#30340;&#24046;&#24322;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">6.3 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.37.1. &#23433;&#35013; Diffutils
+        </h2>
+        <p>POSIX &#35201;&#27714; <strong><strong>diff</strong></strong> &#21629;&#20196;&#33021;&#22815;&#26681;&#25454;&#24403;&#21069;&#30340;locale&#22788;&#29702; whitespace&#65288;&#31354;&#30333;&#31526;&#65289;&#12290; &#19979;&#38754;&#30340;patch&#21487;&#20197;&#35299;&#20915;&#36825;&#20010;&#38382;&#39064;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../diffutils-2.8.1-i18n-1.patch</kbd></pre>
+        <p>&#19978;&#38754;&#30340;&#36825;&#20010;patch&#23558;&#20250;&#23548;&#33268;&#29992;&#19968;&#20010;&#26080;&#25928;&#30340;&#31243;&#24207;<strong><strong>help2man</strong></strong>&#26469;&#37325;&#26032;&#32534;&#35793; diff.1 man &#24110;&#21161;&#12290;&#32467;&#26524;&#23548;&#33268; <strong><strong>diff</strong></strong> &#30340; man   &#19981;&#21487;&#35835;&#12290;&#25105;&#20204;&#21487;&#20197;&#36890;&#36807;&#25913;&#21464; man/diff.1&#30340;&#26102;&#38388;&#25139;&#26469;&#36991;&#20813;&#36825;&#20010;&#38382;&#39064;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">touch man/diff.1</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Diffutils &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-diffutils" name="contents-diffutils"></a>6.37.2.
+           Diffutils
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">cmp, diff, diff3, and sdiff</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="cmp" name="cmp"></a><span class=
+                    "term"><span class="command"><strong>cmp</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#27604;&#36739;&#20004;&#20010;&#25991;&#20214;&#65292;&#24182;&#25351;&#20986;&#23427;&#20204;&#26159;&#21542;&#19981;&#21516;&#21450;&#19981;&#21516;&#30340;&#23383;&#33410;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="diff" name="diff"></a><span class=
+                    "term"><span class=
+                    "command"><strong>diff</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#27604;&#36739;&#20004;&#20010;&#25991;&#20214;&#25110;&#30446;&#24405;&#65292;&#24182;&#25351;&#20986;&#21738;&#20123;&#25991;&#20214;&#30340;&#21738;&#20123;&#34892;&#19981;&#21516;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="diff3" name="diff3"></a><span class=
+                    "term"><span class=
+                    "command"><strong>diff3</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#36880;&#34892;&#27604;&#36739;&#19977;&#20010;&#25991;&#20214;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sdiff" name="sdiff"></a><span class=
+                    "term"><span class=
+                    "command"><strong>sdiff</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21512;&#24182;&#20004;&#20010;&#25991;&#20214;&#65292;&#24182;&#20197;&#20132;&#20114;&#26041;&#24335;&#36755;&#20986;&#32467;&#26524;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="bzip2.html" title="Bzip2-1.0.5">&#21518;&#36864;</a>
+          <p>
+            Bzip2-1.0.5
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gawk.html" title="Gawk-3.1.7">&#21069;&#36827;</a>
+          <p>
+            Gawk-3.1.7
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

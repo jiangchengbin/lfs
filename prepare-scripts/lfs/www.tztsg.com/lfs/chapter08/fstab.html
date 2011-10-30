@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      8.2.&nbsp;Creating the /etc/fstab File
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;8.&nbsp;&#20351; LFS &#31995;&#32479;&#33021;&#22815;&#21551;&#21160;</h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">&#21518;&#36864;</a>
+          <p>
+            &#20171;&#32461;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="kernel.html" title="Linux-2.6.32.8">&#21069;&#36827;</a>
+          <p>
+            Linux-2.6.32.8
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter08.html" title=
+          "Chapter&nbsp;8.&nbsp;Making the LFS System Bootable">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-bootable-fstab" name="ch-bootable-fstab"></a>8.2. &#21019;&#24314; /etc/fstab &#25991;&#20214;
+      </h1>
+      <p>
+        &#19968;&#20123;&#31243;&#24207;&#20351;&#29992;<code class="filename">/etc/fstab</code>&#25991;&#20214;&#26469;&#30830;&#23450;&#21738;&#20123;&#25991;&#20214;&#31995;&#32479;&#34987;&#40664;&#35748;&#21152;&#36733;&#20102;&#65292;&#21152;&#36733;&#30340;&#39034;&#24207;&#20197;&#21450;&#21738;&#20123;&#24517;&#39035;&#22312;&#21152;&#36733;&#21069;&#36827;&#34892;&#26816;&#26597; (&#23436;&#25972;&#24615;&#38169;&#35823;&#26657;&#39564;)&#12290;&#22914;&#19979;&#25152;&#31034;&#21019;&#24314;&#19968;&#20010;&#26032;&#30340;&#25991;&#20214;&#31995;&#32479;&#34920;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">cat &gt; /etc/fstab &lt;&lt; "EOF"
+<code class="literal"># Begin /etc/fstab
+
+# file system  mount-point  type   options         dump  fsck
+#                                                        order
+
+/dev/<em class=
+"replaceable"><code>&lt;xxx&gt;</code></em>     /            <em class=
+"replaceable"><code>&lt;fff&gt;</code></em>  defaults        1     1
+/dev/<em class=
+"replaceable"><code>&lt;yyy&gt;</code></em>     swap         swap   pri=1           0     0
+proc           /proc        proc   defaults        0     0
+sysfs          /sys         sysfs  defaults        0     0
+devpts         /dev/pts     devpts gid=4,mode=620  0     0
+tmpfs          /dev/shm     tmpfs  defaults        0     0
+# End /etc/fstab</code>
+EOF</kbd></pre>
+      <p>
+        &#20351;&#29992;&#20320;&#30340;&#31995;&#32479;&#19978;&#30340;&#36866;&#24403;&#20540;&#26367;&#25442;<em class="replaceable"><code>&lt;xxx&gt;</code></em>&#65292;<em class="replaceable"><code>&lt;yyy&gt;</code></em>&#21644;<em class=
+        "replaceable"><code>&lt;fff&gt;</code></em> &#65292; &#27604;&#22914;<code class=
+        "filename">hda2</code>&#65292;<code class="filename">hda5</code>&#21644;<code class="systemitem">ext3</code>&#12290; &#20851;&#20110;&#25991;&#20214;&#20013;&#20845;&#20010;&#23383;&#27573;&#30340;&#35814;&#32454;&#20449;&#24687;&#65292;&#35831;&#21442;&#32771;<span class="command"><strong>man 5
+        fstab</strong></span>&#12290;</p>
+      <p><code class="filename">/dev/shm</code> &#25346;&#36733;&#28857;&#26159;&#20026;&#20102;<code class="systemitem">tmpfs</code>&#33021;&#21253;&#25324;&#21551;&#29992;POSIX&#20849;&#20139;&#20869;&#23384;&#12290; &#36825;&#38656;&#35201;&#20869;&#26680;&#24517;&#39035;&#22312;&#32534;&#30340;&#26102;&#20505;&#25903;&#25345;&#36825;&#20010;&#36873;&#39033;&#25165;&#33021;&#36215;&#20316;&#29992;  (&#26356;&#22810;&#30456;&#20851;&#20449;&#24687;&#22312;&#19979;&#19968;&#31456;)&#12290;&#35831;&#27880;&#24847;&#65292; &#30446;&#21069;&#24456;&#23569;&#36719;&#20214;&#20351;&#29992;POSIX&#20849;&#20139;&#20869;&#23384;&#12290;&#22240;&#32780;&#65292;&#35748;&#20026;<code class=
+        "filename">/dev/shm</code>&#21152;&#36733;&#28857;&#26159;&#21487;&#36873;&#30340;&#12290; &#26356;&#22810;&#20449;&#24687;&#65292;&#35831;&#21442;&#32771;&#20869;&#26680;&#28304;&#30721;&#30446;&#24405;&#20013;&#30340;<code class=
+        "filename">Documentation/filesystems/tmpfs.txt</code>&#12290;</p>
+      <p>
+       &#24102;&#26377;MS-DOS&#25110;Windows&#34880;&#32479;&#30340;&#25991;&#20214;&#31995;&#32479; (&#27604;&#22914; vfat&#65292; ntfs&#65292; smbfs&#65292;
+       cifs&#65292;iso9660&#65292; udf) &#20026;&#20102;&#27491;&#30830;&#29702;&#35299;&#25991;&#20214;&#21517;&#20013;&#30340;&#38750;ASCII&#23383;&#31526;&#65292;&#38656;&#35201;&ldquo;<span class=
+        "quote">iocharset</span>&rdquo;&#21152;&#36733;&#28857;&#12290; &#36825;&#20010;&#36873;&#39033;&#21644;&#20320;&#30340;&#25152;&#22788;&#20301;&#32622;&#29305;&#24449;&#26159;&#19968;&#26679;&#30340;&#65292; &#29992;&#36825;&#20010;&#26041;&#24335;&#35843;&#25972;&#20869;&#26680;&#25903;&#25345;&#23427;&#12290; &#22914;&#26524;&#38656;&#35201;&#25805;&#20316;&#30456;&#20851;&#30340;&#29305;&#24449;&#23450;&#20041; (&#22312; File systems -&gt; Native   Language Support&#19979;&#21487;&#25214;&#21040;) &#21487;&#20197;&#32534;&#35793;&#36827;&#20869;&#26680;&#37324;&#25110;&#32534;&#35793;&#25104;&#27169;&#22359;&#12290;&ldquo;codepage&rdquo; &#36873;&#39033;&#21516;&#26679;&#20063;&#26159;&#20026;   vfat &#21644; smbfs &#25991;&#20214;&#31995;&#32479;&#25152;&#38656;&#35201;&#12290; &#23427;&#24212;&#35813;&#34987;&#35774;&#32622;&#20026; MS-DOS &#22312;&#20320;&#30340;&#22269;&#23478;&#37324;&#20351;&#29992;&#30340; codepage &#25968;&#23383;&#21495;&#12290;&#20030;&#20010;&#20363;&#23376;&#65292;&#20026;&#20102;&#25346;&#22312; USB flash   &#35774;&#22791;&#65292;ru_RU.KOI8-R &#30340;&#20351;&#29992;&#32773;&#38656;&#35201;&#22312;<code class="filename">/etc/fstab</code>&#37324;&#30340;&#20197;&#19979;&#34892;:</p>
+      <pre class="screen"><code class=
+      "literal">noauto,user,quiet,showexec,iocharset=koi8r,codepage=866</code></pre>
+      <p>
+        ru_RU.UTF-8 &#20351;&#29992;&#32773;&#30340;&#30456;&#24212;&#34892;&#65306;</p>
+      <pre class="screen"><code class=
+      "literal">noauto,user,quiet,showexec,iocharset=utf8,codepage=866</code></pre>
+      <div class="admon note">
+        <img alt="[Note]" src="../images/note.png" />
+        <h3>
+          &#27880;&#24847;
+        </h3>
+        <p>&#22312;&#21518;&#38754;&#30340;&#20363;&#23376;&#37324;&#65292;&#20869;&#26680;&#21457;&#20986;&#22914;&#19979;&#20449;&#24687;</p>
+        <pre class="screen"><code class=
+        "computeroutput">FAT: utf8 is not a recommended IO charset for FAT filesystems,
+    filesystem will be case sensitive!</code></pre>
+        <p>&#36825;&#20010;&#21542;&#23450;&#30340;&#24314;&#35758;&#24212;&#35813;&#21487;&#20197;&#34987;&#24573;&#30053;&#65292;&#22240;&#20026;&#25152;&#26377;&#30340;&#20854;&#20182;&quot;iocharset&quot; &#20540;&#36873;&#39033;&#36896;&#25104;UTF-8 locales &#25991;&#20214;&#21517;&#30340;&#38169;&#35823;&#26174;&#31034;&#12290;</p>
+      </div>
+      <p>
+        &#22312;&#20869;&#26680;&#37197;&#32622;&#36807;&#31243;&#20013;&#65292; &#23545;&#20110;&#19968;&#20123;&#25991;&#20214;&#31995;&#32479;&#65292; &#20063;&#21487;&#20197;&#25351;&#23450;&#40664;&#35748;&#30340;&#20195;&#30721;&#39029;&#65288;codepage&#65289;&#21644; iocharset &#20540;&#12290;&#30456;&#24212;&#30340;&#21442;&#25968;&#34987;&#31216;&#20026; &ldquo;&#40664;&#35748; NLS &#36873;&#39033;&rdquo; (<code class=
+        "option">CONFIG_NLS_DEFAULT</code>),   &ldquo;&#40664;&#35748;&#36828;&#31243; NLS &#36873;&#39033;&rdquo; (<code class=
+        "option">CONFIG_SMB_NLS_DEFAULT</code>), &ldquo;FAT &#30340;&#40664;&#35748; codepage   &rdquo; (<code class=
+        "option">CONFIG_FAT_DEFAULT_CODEPAGE</code>), &#21644; &ldquo;FAT &#40664;&#35748; iocharset&rdquo; (<code class=
+        "option">CONFIG_FAT_DEFAULT_IOCHARSET</code>)&#12290;   &#22312;&#20869;&#26680;&#32534;&#35793;&#26102;&#65292; &#27809;&#21150;&#27861;&#20026;ntfs&#25991;&#20214;&#31995;&#32479;&#25351;&#23450;&#36825;&#20123;&#35774;&#32622;&#12290;</p>
+      <p>
+        &#23545;&#20110;&#19968;&#20123;&#30828;&#30424;&#31867;&#22411;&#65292;&#21487;&#20197;&#20351; ext3 &#25991;&#20214;&#31995;&#32479;&#21487;&#38752;&#22320;&#36328;&#36234;&#20572;&#30005;&#65288;reliable across power failures&#65289;&#12290;&#35201;&#20570;&#21040;&#36825;&#19968;&#28857;&#65292;&#35831;&#23558;&#25346;&#36733;&#21442;&#25968;<code class=
+        "option">barrier=1</code> &#21152;&#20837;&#21040;<code class="filename">/etc/fstab</code>&#12290; &#35201;&#26816;&#26597;&#26159;&#21542;&#30913;&#30424;&#39537;&#21160;&#22120;&#25903;&#25345;&#36825;&#20010;&#21442;&#25968;&#65292;&#35831;&#22312;&#35813;&#30913;&#30424;&#39537;&#21160;&#22120;&#19978;&#25191;&#34892; <a class="ulink" href=
+        "http://www.linuxfromscratch.org/blfs/view/cvs/general/hdparm.html">hdparm</a>
+        &#12290;&#20363;&#22914;&#65292;&#22914;&#26524;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">hdparm -I /dev/sda | grep NCQ</kbd></pre>
+      <p>
+      &#36820;&#22238;&#38750;&#31354;&#30340;&#36755;&#20986;&#65292;&#23601;&#35828;&#26126;&#25903;&#25345;&#36825;&#20010;&#36873;&#39033;&#12290;</p>
+      <p>
+        &#27880;&#24847;: &#22522;&#20110;&#20998;&#21306;&#30340;&#36923;&#36753;&#21367;&#31649;&#29702;  (LVM)&#19981;&#33021;&#20351;&#29992;<code class="option">barrier</code>&#21442;&#25968;&#12290;      </p>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">&#21518;&#36864;</a>
+          <p>
+            &#20171;&#32461;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="kernel.html" title="Linux-2.6.32.8">&#21069;&#36827;</a>
+          <p>
+            Linux-2.6.32.8
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter08.html" title=
+          "Chapter&nbsp;8.&nbsp;Making the LFS System Bootable">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

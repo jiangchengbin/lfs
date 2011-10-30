@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      1.2.&nbsp;What's new since the last release
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-7.0">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 7.0
+      </h4>
+      <h3>
+        Chapter&nbsp;1.&nbsp;Introduction
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="how.html" title=
+          "How to Build an LFS System">Prev</a>
+          <p>
+            How to Build an LFS System
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="changelog.html" title="Changelog">Next</a>
+          <p>
+            Changelog
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter01.html" title=
+          "Chapter&nbsp;1.&nbsp;Introduction">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 7.0">Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-intro-whatsnew" name="ch-intro-whatsnew"></a>1.2. What's
+        new since the last release
+      </h1>
+      <p>
+        Below is a list of package updates made since the previous release of
+        the book.
+      </p>
+      <div class="admon note">
+        <img alt="[Note]" src="../images/note.png" />
+        <h3>
+          Note
+        </h3>
+        <p>
+          A somewhat major change was made in this version of the book by
+          adding a new top level directory, /run. This directory has a tmpfs
+          mounted and is used by programs like udev to store run time
+          information. The directories /var/run and /var/lock are also linked
+          to this directory. The bootscripts have been updated to accomodate
+          this change.
+        </p>
+      </div>
+      <div class="itemizedlist">
+        <p class="title">
+          <b>Upgraded to:</b>
+        </p>
+        <ul>
+          <li>
+            <p>
+              Binutils 2.21.1a
+            </p>
+          </li>
+          <li>
+            <p>
+              Bison 2.5
+            </p>
+          </li>
+          <li>
+            <p>
+              Coreutils 8.14
+            </p>
+          </li>
+          <li>
+            <p>
+              DejaGNU 1.5
+            </p>
+          </li>
+          <li>
+            <p>
+              Diffutils 3.2
+            </p>
+          </li>
+          <li>
+            <p>
+              File 5.09
+            </p>
+          </li>
+          <li>
+            <p>
+              Gawk 4.0.0
+            </p>
+          </li>
+          <li>
+            <p>
+              GCC 4.6.1
+            </p>
+          </li>
+          <li>
+            <p>
+              GDBM 1.9.1
+            </p>
+          </li>
+          <li>
+            <p>
+              Glibc 2.14.1
+            </p>
+          </li>
+          <li>
+            <p>
+              GMP 5.0.2
+            </p>
+          </li>
+          <li>
+            <p>
+              Grep 2.9
+            </p>
+          </li>
+          <li>
+            <p>
+              GRUB 1.99
+            </p>
+          </li>
+          <li>
+            <p>
+              IPRoute2 2.6.39
+            </p>
+          </li>
+          <li>
+            <p>
+              Less 444
+            </p>
+          </li>
+          <li>
+            <p>
+              LFS-Bootscripts 20111017
+            </p>
+          </li>
+          <li>
+            <p>
+              Linux 3.1
+            </p>
+          </li>
+          <li>
+            <p>
+              M4 1.4.16
+            </p>
+          </li>
+          <li>
+            <p>
+              Man-DB 2.6.0.2
+            </p>
+          </li>
+          <li>
+            <p>
+              Module-Init-Tools 3.16
+            </p>
+          </li>
+          <li>
+            <p>
+              MPC 0.9
+            </p>
+          </li>
+          <li>
+            <p>
+              MPFR 3.1.0
+            </p>
+          </li>
+          <li>
+            <p>
+              Ncurses 5.9
+            </p>
+          </li>
+          <li>
+            <p>
+              Perl 5.14.2
+            </p>
+          </li>
+          <li>
+            <p>
+              Psmisc 22.14
+            </p>
+          </li>
+          <li>
+            <p>
+              Tar 1.26
+            </p>
+          </li>
+          <li>
+            <p>
+              TCL 8.5.10
+            </p>
+          </li>
+          <li>
+            <p>
+              Udev 173
+            </p>
+          </li>
+          <li>
+            <p>
+              Util-Linux 2.20
+            </p>
+          </li>
+          <li>
+            <p>
+              XZ-Utils 5.0.3
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="itemizedlist">
+        <p class="title">
+          <b>Added:</b>
+        </p>
+        <ul>
+          <li>
+            <p>
+              bash-4.2-fixes-3.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              coreutils-8.14-i18n-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              gcc-4.6.1-cross_compile-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              gcc-4.6.1-startfiles_fix-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              gcc-4.6.1-locale-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              glibc-2.14.1-fixes-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              glibc-2.14.1-gcc_fix-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              glibc-2.14.1-cpuid-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              libpipeline-1.2.0
+            </p>
+          </li>
+          <li>
+            <p>
+              module-init-tools-3.16-man_pages-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              perl-5.14.1-libc-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              readline-6.2-fixes-1.patch
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="itemizedlist">
+        <p class="title">
+          <b>Removed:</b>
+        </p>
+        <ul>
+          <li>
+            <p>
+              coreutils-8.10-i18n-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              dejagnu-1.4.4-consolidated-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              gcc-4.6.0-cross_compile-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              gcc-4.6.0-startfiles_fix-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              glibc-2.13-gcc_fix-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              perl-5.12.3-libc-1.patch
+            </p>
+          </li>
+          <li>
+            <p>
+              Pkg-Config-0.25
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="how.html" title=
+          "How to Build an LFS System">Prev</a>
+          <p>
+            How to Build an LFS System
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="changelog.html" title="Changelog">Next</a>
+          <p>
+            Changelog
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter01.html" title=
+          "Chapter&nbsp;1.&nbsp;Introduction">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 7.0">Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

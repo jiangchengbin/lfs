@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      D.10.&nbsp;/etc/rc.d/init.d/mountfs
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Appendix&nbsp;D.&nbsp;&#21551;&#21160;&#21644;&#31995;&#32479;&#37197;&#32622;&#33050;&#26412; &#29256;&#26412;-20100124
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds09.html" title=
+          "/etc/rc.d/init.d/checkfs">&#21518;&#36864;</a>
+          <p>
+            /etc/rc.d/init.d/checkfs
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds11.html" title=
+          "/etc/rc.d/init.d/udev_retry">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/udev_retry
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="mountfs" name="mountfs"></a>D.10. /etc/rc.d/init.d/mountfs
+      </h1>
+      <pre class="screen">#!/bin/sh
+########################################################################
+# Begin $rc_base/init.d/mountfs
+#
+# Description : File System Mount Script
+#
+# Authors     : Gerard Beekmans - gerard@linuxfromscratch.org
+#
+# Version     : 00.00
+#
+# Notes       :
+#
+########################################################################
+
+. /etc/sysconfig/rc
+. ${rc_functions}
+
+case "${1}" in
+    start)
+        boot_mesg "Remounting root file system in read-write mode..."
+        mount -n -o remount,rw / &gt;/dev/null
+        evaluate_retval
+
+        # Remove fsck-related file system watermarks.
+        rm -f /fastboot /forcefsck
+
+        boot_mesg "Recording existing mounts in /etc/mtab..."
+        &gt; /etc/mtab
+        mount -f / || failed=1
+        mount -f /proc || failed=1
+        mount -f /sys || failed=1
+        (exit ${failed})
+        evaluate_retval
+
+        # This will mount all filesystems that do not have _netdev in
+        # their option list.  _netdev denotes a network filesystem.
+        boot_mesg "Mounting remaining file systems..."
+        mount -a -O no_netdev &gt;/dev/null
+        evaluate_retval
+        ;;
+
+    stop)
+        boot_mesg "Unmounting all other currently mounted file systems..."
+        umount -a -d -r &gt;/dev/null
+        evaluate_retval
+        ;;
+
+    *)
+        echo "Usage: ${0} {start|stop}"
+        exit 1
+        ;;
+esac
+
+# End $rc_base/init.d/mountfs
+</pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="apds09.html" title=
+          "/etc/rc.d/init.d/checkfs">&#21518;&#36864;</a>
+          <p>
+            /etc/rc.d/init.d/checkfs
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="apds11.html" title=
+          "/etc/rc.d/init.d/udev_retry">&#21069;&#36827;</a>
+          <p>
+            /etc/rc.d/init.d/udev_retry
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="scripts.html" title=
+          "Appendix&nbsp;D.&nbsp;Boot and sysconfig scripts version-20100124">
+          &#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

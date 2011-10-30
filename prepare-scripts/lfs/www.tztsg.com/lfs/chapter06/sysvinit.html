@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.55.&nbsp;Sysvinit-2.86
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="sysklogd.html" title="Sysklogd-1.5">&#21518;&#36864;</a>
+          <p>
+            Sysklogd-1.5
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="tar.html" title="Tar-1.22">&#21069;&#36827;</a>
+          <p>
+            Tar-1.22
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-sysvinit" name="ch-system-sysvinit"></a>6.55.
+        Sysvinit-2.86
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Sysvinit &#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#20123;&#25511;&#21046;&#31995;&#32479;&#21551;&#21160;&#12289;&#36816;&#34892;&#12289;&#20851;&#38381;&#30340;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">&#23569;&#20110; 0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">1 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.55.1. &#23433;&#35013; Sysvinit
+        </h2>
+        <p>&#24403;&#36816;&#34892;&#32423;&#21035;&#34987;&#25913;&#21464; (&#27604;&#22914;&#65292;&#27491;&#22312;&#20851;&#38381;&#31995;&#32479;&#26102;)&#65292; <strong>init</strong>&#21521;&#37027;&#20123;&#30001;<strong>init</strong>&#33258;&#36523;&#24320;&#21551;&#30340;&#65292; &#24182;&#19988;&#23558;&#19981;&#20250;&#22312;&#26032;   &#30340;&#36816;&#34892;&#32423;&#21035;&#37324;&#36816;&#34892;&#30340;&#32447;&#31243;&#21457;&#36865;&#32456;&#31471;&#20449;&#21495;&#12290;&#24403;<strong>init</strong>&#20570;&#19978;&#38754;&#36825;&#20123;&#20107;&#24773;&#26102;&#65292;&#20250;&#36755;&#20986;&#20687;&quot;Sending processes the TERM   signal&quot; &#36825;&#26679;&#30340;&#20449;&#24687;&#65292; &#36825;&#30475;&#36215;&#26469;&#23601;&#20687;&#23427;&#27491;&#22312;&#21521;&#37027;&#20123;&#31995;&#32479;&#27491;&#22312;&#36816;&#34892;&#30340;&#31243;&#24207;&#21457;&#36865;&#19978;&#38754;&#36825;&#20123;&#20449;&#24687;&#19968;&#26679;&#12290;   &#35201;&#36991;&#20813;&#38169;&#35823;&#22320;&#29702;&#35299;&#36825;&#20010;&#20449;&#24687;&#65292;&#21487;&#20197;&#20462;&#25913;&#28304;&#30721;&#20197;&#20415;&#21487;&#20197;&#20195;&#26367;&#20026;&#35835;&#36215;&#26469;&#20687;&quot;Sending processes configured   via /etc/inittab the TERM signal&quot;&#30340;&#20449;&#24687;&#65292;&#21487;&#20197;&#29992;&#19979;&#38754;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i 's@Sending processes@&amp; configured via /etc/inittab@g' \
+    src/init.c</kbd></pre>
+        <p>&#20197;&#21069;&#65292;&#36890;&#36807;Util-linux-ng&#36719;&#20214;&#21253;&#24050;&#32463;&#23433;&#35013;&#20102;<strong>wall</strong>&#31243;&#24207;&#30340;&#19968;&#20010;&#29256;&#26412;&#12290; &#35201;&#38459;&#27490;&#23433;&#35013;Sysvinit&#29256;&#30340;&#36825;&#20010;&#31243;&#24207;&#21450;&#20854;&#25163;&#20876;&#39029;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i -e 's/utmpdump wall/utmpdump/' \
+       -e 's/mountpoint.1 wall.1/mountpoint.1/' src/Makefile</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make -C src</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make -C src install</kbd></pre>
+      </div>
+      <div class="configuration" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="conf-sysvinit" name="conf-sysvinit"></a>6.55.2.  
+          Sysvinit
+        &#30340;&#20869;&#23481;</h2>
+        <p>
+          &#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#26469;&#24314;&#31435;&#19968;&#20010;&#26032;&#30340; <code class="filename">/etc/inittab</code> &#25991;&#20214;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">cat &gt; /etc/inittab &lt;&lt; "EOF"
+<code class="literal"># Begin /etc/inittab
+
+id:3:initdefault:
+
+si::sysinit:/etc/rc.d/init.d/rc sysinit
+
+l0:0:wait:/etc/rc.d/init.d/rc 0
+l1:S1:wait:/etc/rc.d/init.d/rc 1
+l2:2:wait:/etc/rc.d/init.d/rc 2
+l3:3:wait:/etc/rc.d/init.d/rc 3
+l4:4:wait:/etc/rc.d/init.d/rc 4
+l5:5:wait:/etc/rc.d/init.d/rc 5
+l6:6:wait:/etc/rc.d/init.d/rc 6
+
+ca:12345:ctrlaltdel:/sbin/shutdown -t1 -a -r now
+
+su:S016:once:/sbin/sulogin
+
+1:2345:respawn:/sbin/agetty tty1 9600
+2:2345:respawn:/sbin/agetty tty2 9600
+3:2345:respawn:/sbin/agetty tty3 9600
+4:2345:respawn:/sbin/agetty tty4 9600
+5:2345:respawn:/sbin/agetty tty5 9600
+6:2345:respawn:/sbin/agetty tty6 9600
+
+# End /etc/inittab</code>
+EOF</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-sysvinit" name="contents-sysvinit"></a>6.55.3.
+           Sysvinit
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">bootlogd, halt, init, killall5, last,
+              lastb (link to last), mesg, mountpoint, pidof (link to
+              killall5), poweroff (link to halt), reboot (link to halt),
+              runlevel, shutdown, sulogin, telinit (link to init), and
+              utmpdump</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="bootlogd" name="bootlogd"></a><span class=
+                    "term"><span class=
+                    "command"><strong>bootlogd</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25226;&#21551;&#21160;&#20449;&#24687;&#35760;&#24405;&#21040;&#19968;&#20010;&#26085;&#24535;&#25991;&#20214;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="halt" name="halt"></a><span class=
+                    "term"><span class=
+                    "command"><strong>halt</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#27491;&#24120;&#24773;&#20917;&#19979;&#31561;&#25928;&#20110;<strong>shutdown</strong>&#21152;&#19978;<em>-h</em><em> </em>&#21442;&#25968;(&#24403;&#21069;&#31995;&#32479;&#36816;&#34892;&#32423;&#21035;&#26159; 0   &#26102;&#38500;&#22806;)&#12290; &#23427;&#23558;&#21578;&#35785;&#20869;&#26680;&#21435;&#20013;&#27490;&#31995;&#32479;&#65292;&#24182;&#22312;&#31995;&#32479;&#27491;&#22312;&#20851;&#38381;&#30340;&#36807;&#31243;&#20013;&#23558;&#26085;&#24535;&#35760;&#24405;&#21040; /var/log/wtmp&#25991;&#20214;&#37324;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="init" name="init"></a><span class=
+                    "term"><span class=
+                    "command"><strong>init</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#24403;&#20869;&#26680;&#24050;&#32463;&#21021;&#22987;&#21270;&#30828;&#20214;&#65292;&#25509;&#31649;&#24341;&#23548;&#31243;&#24207;&#65292;&#24320;&#21551;&#25351;&#20196;&#32447;&#31243;&#26102;&#65292; init &#20250;&#34987;&#31532;&#19968;&#20010;&#21551;&#21160;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="killall5" name="killall5"></a><span class=
+                    "term"><span class=
+                    "command"><strong>killall5</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21457;&#36865;&#19968;&#20010;&#20449;&#21495;&#21040;&#25152;&#26377;&#36827;&#31243;&#65292; &#20294;&#37027;&#20123;&#22312;&#23427;&#33258;&#24049;&#35774;&#23450;&#32423;&#21035;&#30340;&#36827;&#31243;&#23558;&#19981;&#20250;&#34987;&#36825;&#20010;&#36816;&#34892;&#30340;&#33050;&#26412;&#25152;&#20013;&#26029;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="last" name="last"></a><span class=
+                    "term"><span class=
+                    "command"><strong>last</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#32473;&#20986;&#21738;&#19968;&#20010;&#29992;&#25143;&#26368;&#21518;&#19968;&#27425;&#30331;&#24405;(&#25110;&#36864;&#20986;&#30331;&#24405;)&#65292;&#23427;&#25628;&#32034; /var/log/wtmp&#25991;&#20214;&#65292;&#20986;&#32473;&#20986;&#31995;&#32479;&#24341;&#23548;&#12289;&#20851;&#38381;&#12289;&#36816;&#34892;&#32423;&#21035;&#25913;&#21464;&#31561;&#20449;&#24687;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lastb" name="lastb"></a><span class=
+                    "term"><span class=
+                    "command"><strong>lastb</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#32473;&#20986;&#30331;&#22833;&#36133;&#30340;&#23581;&#35797;&#65292;&#24182;&#20889;&#20837;&#26085;&#24535; <code class="filename">/var/log/btmp</code>                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mesg" name="mesg"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mesg</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25511;&#21046;&#26159;&#21542;&#20801;&#35768;&#20854;&#20182;&#29992;&#25143;&#20063;&#26377;&#21521;&#31995;&#32479;&#25152;&#26377;&#29992;&#25143;&#21457;&#36865;&#20449;&#24687;&#30340;&#26435;&#38480;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mountpoint" name="mountpoint"></a><span class=
+                    "term"><span class=
+                    "command"><strong>mountpoint</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26816;&#26597;&#32473;&#23450;&#30340;&#30446;&#24405;&#26159;&#21542;&#26159;&#19968;&#20010;&#25346;&#36733;&#28857;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pidof" name="pidof"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pidof</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25253;&#21578;&#32473;&#23450;&#31243;&#24207;&#30340; PID</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="poweroff" name="poweroff"></a><span class=
+                    "term"><span class=
+                    "command"><strong>poweroff</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21578;&#35785;&#20869;&#26680;&#20013;&#27490;&#31995;&#32479;&#24182;&#19988;&#20851;&#38381;&#31995;&#32479;(&#21442;&#35265; <strong>halt</strong>) </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="reboot" name="reboot"></a><span class=
+                    "term"><span class=
+                    "command"><strong>reboot</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21578;&#35785;&#20869;&#26680;&#37325;&#21551;&#31995;&#32479; (&#21442;&#35265; <strong>halt</strong>) </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="runlevel" name="runlevel"></a><span class=
+                    "term"><span class=
+                    "command"><strong>runlevel</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21578;&#21069;&#19968;&#20010;&#21644;&#24403;&#21069;&#30340;&#31995;&#32479;&#36816;&#34892;&#32423;&#21035;&#65292;&#24182;&#19988;&#23558;&#26368;&#21518;&#19968;&#20123;&#36816;&#34892;&#32423;&#21035;&#20889;&#20837; <code class=
+                    "filename">/var/run/utmp</code>                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="shutdown" name="shutdown"></a><span class=
+                    "term"><span class=
+                    "command"><strong>shutdown</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20351;&#31995;&#32479;&#23433;&#20840;&#20851;&#38381;&#65292; &#21521;&#25152;&#26377;&#32447;&#31243;&#21457;&#36865;&#20851;&#38381;&#20449;&#21495;&#24182;&#19988;&#36890;&#30693;&#25152;&#26377;&#24050;&#32463;&#30331;&#24405;&#30340;&#31995;&#32479;&#29992;&#25143;&#31995;&#32479;&#21363;&#23558;&#20851;&#38381;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sulogin" name="sulogin"></a><span class=
+                    "term"><span class=
+                    "command"><strong>sulogin</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20801;&#35768; root &#30331;&#24405;&#65292;&#23427;&#36890;&#24120;&#24773;&#20917;&#19979;&#26159;&#22312;&#31995;&#32479;&#22312;&#21333;&#29992;&#25143;&#27169;&#24335;&#19979;&#36816;&#34892;&#26102;&#65292;&#30001;<strong>init</strong>&#25152;&#27966;&#29983;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="telinit" name="telinit"></a><span class=
+                    "term"><span class=
+                    "command"><strong>telinit</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21578;&#35785; <strong>init</strong>&#23558;&#20999;&#25442;&#21040;&#37027;&#19968;&#20010;&#36816;&#34892;&#32423;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="utmpdump" name="utmpdump"></a><span class=
+                    "term"><span class=
+                    "command"><strong>utmpdump</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20197;&#19968;&#20010;&#22810;&#29992;&#25143;&#21451;&#22909;&#30340;&#26041;&#24335;&#21015;&#20986;&#24050;&#32463;&#32473;&#20986;&#30340;&#30331;&#24405;&#25991;&#20214;&#30340;&#30446;&#24405;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="sysklogd.html" title="Sysklogd-1.5">&#21518;&#36864;</a>
+          <p>
+            Sysklogd-1.5
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="tar.html" title="Tar-1.22">&#21069;&#36827;</a>
+          <p>
+            Tar-1.22
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

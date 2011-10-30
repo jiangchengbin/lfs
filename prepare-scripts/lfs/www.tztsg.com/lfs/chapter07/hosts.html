@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      7.12.&nbsp;Customizing the /etc/hosts File
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;7.&nbsp;&#37197;&#32622;&#31995;&#32479;&#21551;&#21160;&#33050;&#26412;</h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="hostname.html" title=
+          "Configuring the localnet Script">&#21518;&#36864;</a>
+          <p>
+            &#37197;&#32622; localnet &#33050;&#26412; 
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="network.html" title=
+          "Configuring the network Script">&#21069;&#36827;</a>
+          <p>
+            &#37197;&#32622;&#32593;&#32476;&#33050;&#26412; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-scripts-hosts" name="ch-scripts-hosts"></a>7.12.
+        &#23450;&#21046; /etc/hosts &#25991;&#20214; 
+      </h1>
+      <p>&#35201;&#22312;<code class="filename">/etc/hosts</code> &#25991;&#20214;&#37324;&#37197;&#32622;&#32593;&#21345;&#30340; IP &#22320;&#22336;&#12289;FQDN &#21644;&#21487;&#33021;&#20250;&#29992;&#30340;&#21035;&#21517;&#65292;&#35821;&#27861;&#22914;&#19979;&#65306; </p>
+      <pre class="screen"><code class=
+      "literal">IP_address myhost.example.org aliases</code></pre>
+      <p>&#38500;&#38750;&#24744;&#30340;&#35745;&#31639;&#26426;&#22312; Internet &#19978;&#26159;&#21487;&#35775;&#38382;&#30340;(&#20363;&#22914;&#65292;&#26377;&#19968;&#20010;&#27880;&#20876;&#30340;&#22495;&#21517;&#24182;&#20998;&#37197;&#21040;&#20102;&#19968;&#20010;&#21512;&#27861;&#30340; IP &#22320;&#22336;(&#22359;)(&#22823;&#22810;&#25968;&#29992;&#25143;&#27809;&#26377;)&#65292;&#35831;&#30830;&#20445; IP   &#22320;&#22336;&#22312;&#31169;&#26377;&#32593;&#32476; IP &#22320;&#22336;&#33539;&#22260;&#20869;&#65292;&#27491;&#30830;&#30340;&#33539;&#22260;&#26159;&#65306; </p>
+      <pre class="screen"><code class=
+      "literal">Private Network Address Range      Normal Prefix
+10.0.0.1 - 10.255.255.254           8
+172.x.0.1 - 172.x.255.254           16
+192.168.y.1 - 192.168.y.254         24</code></pre>
+      <p>
+        x &#21487;&#20197;&#26159; 16-31&#20043;&#38388;&#30340;&#20219;&#20309;&#25972;&#25968;&#12290; y &#21487;&#20197;&#26159; 0-255 &#20043;&#38388;&#30340;&#20219;&#20309;&#25972;&#25968;&#12290;</p>
+      <p>&#19968;&#20010;&#21512;&#27861;&#30340; IP &#22320;&#22336;&#21487;&#33021;&#26159; 192.168.1.1&#12290; &#36825;&#20010; IP &#30340;&#21512;&#27861; FQDN &#21487;&#33021;&#26159; lfs.example.org&#12290; </p>
+      <p>&#21363;&#20351;&#24744;&#27809;&#26377;&#32593;&#21345;&#65292;&#20173;&#28982;&#38656;&#35201;&#19968;&#20010; FQDN&#65292;&#26576;&#20123;&#31243;&#24207;&#38656;&#35201;&#23427;&#25165;&#33021;&#27491;&#24120;&#24037;&#20316;&#12290;</p>
+      <p>&#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#21019;&#24314; <code class="filename">/etc/hosts</code> &#25991;&#20214;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">cat &gt; /etc/hosts &lt;&lt; "EOF"
+<code class="literal"># Begin /etc/hosts (network card version)
+
+127.0.0.1 localhost
+<em class="replaceable"><code>&lt;192.168.1.1&gt;</code></em> <em class=
+"replaceable"><code>&lt;HOSTNAME.example.org&gt;</code></em> <em class=
+"replaceable"><code>[alias1] [alias2 ...]</code></em>
+
+# End /etc/hosts (network card version)</code>
+EOF</kbd></pre>
+      <p>
+        &#25226; <em class="replaceable"><code>&lt;192.168.1.1&gt;</code></em> &#21644;
+        <em class=
+        "replaceable"><code>&lt;HOSTNAME.example.org&gt;</code></em> &#26356;&#25913;&#20026;&#29305;&#23450;&#29992;&#25143;&#25110;&#29305;&#21035;&#35201;&#27714;&#25152;&#38656;&#35201;&#30340;&#20540; (&#22914;&#26524;&#36825;&#21488;&#26426;&#22120;&#35201;&#36830;&#20837;&#19968;&#20010;&#24050;&#23384;&#22312;&#30340;&#32593;&#32476;&#65292;&#24182;&#19988;&#32593;&#32476;/&#31995;&#32479;&#31649;&#29702;&#21592;&#24050;&#32463;&#32473;&#24744;&#20998;&#37197;&#20102;&#19968;&#20010; IP &#22320;&#22336;)&#12290;   &#21487;&#36873;&#30340;&#21035;&#21517;&#21487;&#20197;&#30465;&#30053;&#12290;</p>
+      <p>&#22914;&#26524;&#24744;&#19981;&#25171;&#31639;&#37197;&#32622;&#32593;&#21345;&#65292;&#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#21019;&#24314; <code class="filename">/etc/hosts</code> &#25991;&#20214;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">cat &gt; /etc/hosts &lt;&lt; "EOF"
+<code class="literal"># Begin /etc/hosts (no network card version)
+
+127.0.0.1 <em class=
+"replaceable"><code>&lt;HOSTNAME.example.org&gt;</code></em> <em class=
+"replaceable"><code>&lt;HOSTNAME&gt;</code></em> localhost
+
+# End /etc/hosts (no network card version)</code>
+EOF</kbd></pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="hostname.html" title=
+          "Configuring the localnet Script">&#21518;&#36864;</a>
+          <p>
+            &#37197;&#32622; localnet &#33050;&#26412; 
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="network.html" title=
+          "Configuring the network Script">&#21069;&#36827;</a>
+          <p>
+            &#37197;&#32622;&#32593;&#32476;&#33050;&#26412; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

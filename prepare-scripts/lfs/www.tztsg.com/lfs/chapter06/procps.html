@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.26.&nbsp;Procps-3.2.8
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="bison.html" title="Bison-2.4.1">&#21518;&#36864;</a>
+          <p>
+            Bison-2.4.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="grep.html" title="Grep-2.5.4">&#21069;&#36827;</a>
+          <p>
+            Grep-2.5.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-procps" name="ch-system-procps"></a>6.26.
+        Procps-3.2.8
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Procps &#36719;&#20214;&#21253;&#21253;&#21547;&#30417;&#27979;&#31243;&#24207;&#30340;&#31243;&#24207;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">2.3 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.26.1. &#23433;&#35013; Procps
+        </h2>
+        <p>
+          &#22312;<strong> <span class=
+          "command"><strong>watch</strong></span> </strong>&#31243;&#24207;&#20013;&#65292;&#24212;&#29992;&#34917;&#19969;&#20462;&#22797;&#19968;&#20010;Unicode&#30456;&#20851;&#30340;&#38382;&#39064;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../procps-3.2.8-watch_unicode-1.patch</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-procps" name="contents-procps"></a>6.26.2. Procps
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">free, kill, pgrep, pkill, pmap, ps, pwdx,
+              skill, slabtop, snice, sysctl, tload, top, uptime, vmstat, w,
+              and watch</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;:</strong>
+              <span class="segbody">libproc.so</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="free" name="free"></a><span class=
+                    "term"><span class=
+                    "command"><strong>free</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25253;&#21578;&#31995;&#32479;&#20013;&#31354;&#38386;&#21644;&#20351;&#29992;&#30340;&#20869;&#23481;&#25968;&#37327;&#65288;&#21253;&#25324;&#29289;&#29702;&#21644;&#20132;&#25442;&#20869;&#23384;&#65289;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="kill" name="kill"></a><span class=
+                    "term"><span class=
+                    "command"><strong>kill</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21521;&#36827;&#31243;&#21457;&#36865;&#20449;&#21495; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pgrep" name="pgrep"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pgrep</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20381;&#38752;&#21517;&#23383;&#21644;&#20854;&#23427;&#23646;&#24615;&#26597;&#25214;&#36827;&#31243;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pkill" name="pkill"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pkill</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20381;&#38752;&#21517;&#23383;&#21644;&#20854;&#20182;&#23646;&#24615;&#36827;&#34892;&#20449;&#21495;&#22788;&#29702;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pmap" name="pmap"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pmap</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#32473;&#23450;&#36827;&#31243;&#30340;&#20869;&#23384;&#26144;&#20687;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ps" name="ps"></a><span class="term"><span class=
+                    "command"><strong>ps</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21015;&#20986;&#24403;&#21069;&#36816;&#34892;&#30340;&#36827;&#31243;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="pwdx" name="pwdx"></a><span class=
+                    "term"><span class=
+                    "command"><strong>pwdx</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#19968;&#20010;&#36827;&#31243;&#24403;&#21069;&#30340;&#24037;&#20316;&#30446;&#24405;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="skill" name="skill"></a><span class=
+                    "term"><span class=
+                    "command"><strong>skill</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21521;&#21305;&#37197;&#32473;&#23450;&#26465;&#20214;&#30340;&#36827;&#31243;&#21457;&#36865;&#20449;&#21495;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="slabtop" name="slabtop"></a><span class=
+                    "term"><span class=
+                    "command"><strong>slabtop</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#23454;&#26102;&#26174;&#31034;&#35814;&#32454;&#30340;&#20869;&#26680;&#32531;&#23384;&#20449;&#24687;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="snice" name="snice"></a><span class=
+                    "term"><span class=
+                    "command"><strong>snice</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25913;&#21464;&#31526;&#21512;&#32473;&#23450;&#26465;&#20214;&#30340;&#36827;&#31243;&#30340;&#35843;&#24230;&#20248;&#20808;&#32423;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sysctl" name="sysctl"></a><span class=
+                    "term"><span class=
+                    "command"><strong>sysctl</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26356;&#25913;&#36816;&#34892;&#30340;&#20869;&#26680;&#21442;&#25968;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tload" name="tload"></a><span class=
+                    "term"><span class=
+                    "command"><strong>tload</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#25171;&#21360;&#19968;&#24352;&#24403;&#21069;&#31995;&#32479;&#24179;&#22343;&#36127;&#36733;&#22270;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="top" name="top"></a><span class=
+                    "term"><span class="command"><strong>top</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#19968;&#20010;&#20351;&#29992;CPU&#26368;&#22810;&#30340;&#36827;&#31243;&#21015;&#34920;&#65292;&#23427;&#25552;&#20379;&#20102;&#19968;&#20010;&#35266;&#23519;&#22788;&#29702;&#22120;&#27963;&#21160;&#30340;&#26041;&#27861;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="uptime" name="uptime"></a><span class=
+                    "term"><span class=
+                    "command"><strong>uptime</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#31995;&#32479;&#24050;&#32463;&#36816;&#34892;&#20102;&#22810;&#38271;&#26102;&#38388;&#65292;&#26377;&#22810;&#23569;&#29992;&#25143;&#30331;&#24405;&#65292;&#21644;&#35813;&#31995;&#32479;&#30340;&#24179;&#22343;&#36127;&#36733;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="vmstat" name="vmstat"></a><span class=
+                    "term"><span class=
+                    "command"><strong>vmstat</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#34394;&#25311;&#20869;&#23384;&#30340;&#32479;&#35745;&#20449;&#24687;&#65292;&#32473;&#20986;&#20851;&#20110;&#36827;&#31243;&#65292;&#20869;&#23384;&#65292;&#39029;&#38754;&#25991;&#20214;&#65292;&#22359;&#36755;&#20837;/&#36755;&#20986; (IO)&#65292; &#38519;&#38449;&#65292;&#21644; CPU &#27963;&#21160;&#30340;&#20449;&#24687;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="w" name="w"></a><span class="term"><span class=
+                    "command"><strong>w</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#26174;&#31034;&#24403;&#21069;&#30331;&#24405;&#30340;&#26159;&#21738;&#20010;&#29992;&#25143;&#65292;&#20174;&#21738;&#37324;&#20197;&#21450;&#20174;&#20309;&#26102;&#30331;&#24405; </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="watch" name="watch"></a><span class=
+                    "term"><span class=
+                    "command"><strong>watch</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#37325;&#22797;&#25191;&#34892;&#32473;&#23450;&#30340;&#21629;&#20196;&#65292;&#39318;&#20808;&#26174;&#31034;&#36755;&#20986;&#20840;&#23631;&#65292; &#23427;&#20801;&#35768;&#29992;&#25143;&#30475;&#38543;&#30528;&#26102;&#38388;&#30340;&#25512;&#31227;&#35266;&#23519;&#36755;&#20986;&#30340;&#21464;&#21270;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libproc" name="libproc"></a><span class=
+                    "term"><code class="filename">libproc</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#36825;&#20010;&#36719;&#20214;&#21253;&#37324;&#22823;&#22810;&#25968;&#31243;&#24207;&#29992;&#21040;&#30340;&#20989;&#25968;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="bison.html" title="Bison-2.4.1">&#21518;&#36864;</a>
+          <p>
+            Bison-2.4.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="grep.html" title="Grep-2.5.4">&#21069;&#36827;</a>
+          <p>
+            Grep-2.5.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

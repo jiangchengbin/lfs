@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.27.&nbsp;Perl-5.10.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="patch.html" title="Patch-2.6.1">&#21518;&#36864;</a>
+          <p>
+            Patch-2.6.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sed.html" title="Sed-4.2.1">&#21069;&#36827;</a>
+          <p>
+            Sed-4.2.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-perl" name="ch-tools-perl"></a>5.27. Perl-5.10.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Perl &#36719;&#20214;&#21253;&#21253;&#21547;&#23454;&#29992;&#33795;&#21462;&#19982;&#25253;&#21578;&#35821;&#35328;&#65288;Practical Extraction and Report Language&#65289;&#12290;
+        </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.8 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">106 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.27.1. &#23433;&#35013; Perl
+        </h2>
+        <p>
+          &#39318;&#20808;&#20351;&#29992;&#19979;&#38754;&#30340;&#34917;&#19969;&#26469;&#35843;&#25972;&#19968;&#20123;&#25351;&#21521; C &#24211;&#30340;&#30828;&#36830;&#25509;&#36335;&#24452;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">patch -Np1 -i ../perl-5.10.1-libc-1.patch</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Perl &#20570;&#20934;&#22791; (&#35831;&#27491;&#30830;&#36755;&#20837;&#19979;&#38754;&#21629;&#20196;&#20013;&#30340; 'Data/Dumper Fcntl IO POSIX' &#37096;&#20998; &mdash;&mdash;&#23427;&#20204;&#20840;&#26159;&#23383;&#27597;):        </p>
+        <pre class="userinput"><kbd class=
+        "command">sh Configure -des -Dprefix=/tools \
+                  -Dstatic_ext='Data/Dumper Fcntl IO POSIX'</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>-Dstatic_ext='Data/Dumper Fcntl IO
+              POSIX'</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#36873;&#39033;&#35753; Perl &#32534;&#35793;&#38745;&#24577;&#25193;&#23637;&#30340;&#26368;&#23567;&#38598;&#65292;&#19979;&#19968;&#31456;&#23433;&#35013;&#21644;&#27979;&#35797; Coreutils &#21644; Glibc &#36719;&#20214;&#21253;&#30340; &#26102;&#20505;&#38656;&#35201;&#29992;&#21040;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#20165;&#38656;&#35201;&#32534;&#35793;&#35813;&#36719;&#20214;&#21253;&#20013;&#30340;&#20960;&#20010;&#24037;&#20855;&#21644;&#19968;&#20010;&#24211;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make perl utilities ext/Errno/pm_to_blib</kbd></pre>
+        <p>
+          &#23613;&#31649; Perl &#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#65292;&#20294;&#25105;&#20204;&#19981;&#24314;&#35758;&#22312;&#36825;&#37324;&#36816;&#34892;&#12290;&#30001;&#20110;&#21482;&#32534;&#35793;&#20102;&#19968;&#37096;&#20998; Perl&#65292;&#29616;&#22312;&#36816;&#34892; <span class="command"><strong>make test</strong></span><strong> </strong> &#20250;&#32534;&#35793;   Perl &#30340;&#20854;&#20313;&#37096;&#20998;&#65292; &#32780;&#36825;&#37324;&#25105;&#20204;&#24182;&#19981;&#38656;&#35201;&#23427;&#20204;&#12290; &#22914;&#26524;&#24819;&#27979;&#35797;&#30340;&#35805;&#65292; &#21487;&#20197;&#21040;&#19979;&#19968;&#31456;&#20877;&#36816;&#34892;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+        &#23433;&#35013;&#36825;&#20123;&#24037;&#20855;&#21644;&#23427;&#20204;&#30340;&#24211;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">cp -v perl pod/pod2man /tools/bin
+mkdir -pv /tools/lib/perl5/5.10.1
+cp -Rv lib/* /tools/lib/perl5/5.10.1</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#30340;&#35814;&#32454;&#20869;&#23481;&#20301;&#20110;  <a class="xref" href=
+          "../chapter06/perl.html#contents-perl" title=
+          "6.33.2.&nbsp;Contents of Perl">Section&nbsp;6.33.2,
+          &ldquo;Contents of Perl.&rdquo;</a>
+        </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="patch.html" title="Patch-2.6.1">&#21518;&#36864;</a>
+          <p>
+            Patch-2.6.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sed.html" title="Sed-4.2.1">&#21069;&#36827;</a>
+          <p>
+            Sed-4.2.1
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

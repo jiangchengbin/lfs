@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.23.&nbsp;Iana-Etc-2.30
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="coreutils.html" title=
+          "Coreutils-8.4">&#21518;&#36864;</a>
+          <p>
+            Coreutils-8.4
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="m4.html" title="M4-1.4.13">&#21069;&#36827;</a>
+          <p>
+            M4-1.4.13
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-iana-etc" name="ch-system-iana-etc"></a>6.23.
+        Iana-Etc-2.30
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Iana-Etc &#36719;&#20214;&#21253;&#65292;&#25552;&#20379;&#20102;&#32593;&#32476;&#26381;&#21153;&#21644;&#21327;&#35758;&#30340;&#25968;&#25454;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">&#23569;&#20110; 0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">2.3 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.23.1. &#23433;&#35013; Iana-Etc
+        </h2>
+        <p>&#19979;&#38754;&#30340;&#21629;&#20196;&#23558; IANA &#30340;&#21407;&#22987;&#25968;&#25454;&#36716;&#25442;&#20026;<code class=
+          "filename">/etc/protocols</code> &#21644; <code class=
+          "filename">/etc/services</code>&#25968;&#25454;&#25991;&#20214;&#33021;&#22815;&#35782;&#21035;&#30340;&#26684;&#24335;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-iana-etc" name="contents-iana-etc"></a>6.23.2.
+           Iana-Etc &#30340;&#20869;&#23481;        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#25991;&#20214;:</strong> <span class=
+              "segbody">/etc/protocols and /etc/services</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="protocols" name="protocols"></a><span class=
+                    "term"><code class=
+                    "filename">/etc/protocols</code></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#25551;&#36848; TCP/IP &#23376;&#31995;&#32479;&#21487;&#29992;&#30340;&#21508;&#31181;DARPA Internet &#21327;&#35758;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="services" name="services"></a><span class=
+                    "term"><code class="filename">/etc/services</code></span>                  </p>                </td>
+                <td>
+                  <table border="0">
+                    <tbody>
+                      <tr>
+                        <td><p>&#23558; internet &#26381;&#21153;&#26144;&#23556;&#21040;&#19968;&#20010;&#21253;&#21547;&#31471;&#21475;&#21495;&#21644;&#25152;&#20351;&#29992;&#21327;&#35758;&#30340;&#25991;&#26412;&#21517;&#31216;&#12290;</p></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <p>&nbsp;</p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="coreutils.html" title=
+          "Coreutils-8.4">&#21518;&#36864;</a>
+          <p>
+            Coreutils-8.4
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="m4.html" title="M4-1.4.13">&#21069;&#36827;</a>
+          <p>
+            M4-1.4.13
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

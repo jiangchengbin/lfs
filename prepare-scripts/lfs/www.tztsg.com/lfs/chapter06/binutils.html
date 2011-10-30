@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.12.&nbsp;Binutils-2.20
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="zlib.html" title="Zlib-1.2.3">&#21518;&#36864;</a>
+          <p>
+            Zlib-1.2.3
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gmp.html" title="GMP-5.0.0">&#21069;&#36827;</a>
+          <p>
+            GMP-5.0.0
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-binutils" name="ch-system-binutils"></a>6.12.
+        Binutils-2.20
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Binutils &#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#20010;&#38142;&#25509;&#22120;&#65292;&#19968;&#20010;&#27719;&#32534;&#22120;&#21644;&#20854;&#20182;&#22788;&#29702;&#30446;&#26631;&#25991;&#20214;&#30340;&#24037;&#20855;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">2.1 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">222 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.12.1. &#23433;&#35013; Binutils
+        </h2>
+        <p>
+          &#36890;&#36807;&#25191;&#34892;&#19968;&#20010;&#31616;&#21333;&#30340;&#27979;&#35797;&#65292;&#26469;&#30830;&#35748; chroot &#29615;&#22659;&#20013;&#30340; PTY&#26159;&#21542;&#27491;&#24120;&#24037;&#20316;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">expect -c "spawn ls"</kbd></pre>
+        <p>&#35813;&#21629;&#20196;&#30340;&#36755;&#20986;&#22914;&#19979;&#65306;</p>
+        <pre class="screen"><code class=
+        "computeroutput">spawn ls</code></pre>
+        <p>
+          &#22914;&#26524;&#36755;&#20986;&#21253;&#21547;&#19979;&#21015;&#20449;&#24687;&#65292;&#23601;&#35828;&#26126;&#20320;&#30340;&#29615;&#22659;&#36824;&#27809;&#26377;&#35774;&#32622;&#22909; PTY &#25805;&#20316;&#65292;&#22312;&#36816;&#34892; Binutils &#21644; GCC &#30340;&#27979;&#35797;&#32452;&#20214;&#20197;&#21069;&#65292;&#20320;&#24517;&#39035;&#20808;&#35299;&#20915;&#36825;&#20010;&#38382;&#39064;&#65306;</p>
+        <pre class="screen"><code class=
+        "computeroutput">The system has no more ptys.
+Ask your system administrator to create more.</code></pre>
+        <p>&#29616;&#22312;&#19981;&#35201;&#23433;&#35013;&#36825;&#20010;&#36807;&#26102;&#30340;<code class=
+          "filename">standards.info</code>&#25991;&#20214;&#65292;&#22240;&#20026;&#22312;&#21518;&#38754;&#30340;Autoconf &#20171;&#32461;&#20013;&#65292; &#36824;&#35201;&#23433;&#35013;&#19968;&#20010;&#26032;&#30340;&#29256;&#26412;&#65306;</p>
+        <pre class="userinput"><kbd class="command">rm -fv etc/standards.info
+sed -i.bak '/^INFO/s/standards.info //' etc/Makefile.in</kbd></pre>
+        <p>
+          Binutils &#30340;&#25991;&#26723;&#25512;&#33616;&#29992;&#19968;&#20010;&#26032;&#24314;&#30340;&#30446;&#24405;&#26469;&#32534;&#35793;&#23427;&#65292;&#32780;&#19981;&#26159;&#22312;&#28304;&#30721;&#30446;&#24405;&#20013;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mkdir -v ../binutils-build
+cd ../binutils-build</kbd></pre>
+        <p>
+          &#20026;&#32534;&#35793; Binutils &#20570;&#20934;&#22791;&#65306;
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">../binutils-2.20/configure --prefix=/usr \
+    --enable-shared</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make tooldir=/usr</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>make &#21442;&#25968;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>tooldir=/usr</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36890;&#24120;&#24773;&#20917;&#19979;&#65292;tooldir(&#26368;&#32456;&#30340;&#21487;&#25191;&#34892;&#25991;&#20214;&#23433;&#35013;&#30446;&#24405;)&#34987;&#35774;&#32622;&#25104; <code class=
+                "filename">$(exec_prefix)/$(target_alias)</code>&#12290; &#20363;&#22914;&#22312; i686 &#26426;&#22120;&#19978;&#65292;&#23558;&#26159; <code class=
+                "filename">/usr/x86_64-unknown-linux-gnu</code>&#12290;&#22240;&#20026;&#25105;&#20204;&#21482;&#20026;&#33258;&#24049;&#30340;&#31995;&#32479;&#36827;&#34892;&#32534;&#35793;&#65292;&#23601;&#19981;&#38656;&#35201;&#22312; <code class="filename">/usr</code> &#30446;&#24405;&#37324;&#23384;&#22312;&#29305;&#27530;&#30340;&#23376;&#30446;&#24405;&#12290; 
+                <code class="filename">$(exec_prefix)/$(target_alias)</code>
+                &#21482;&#26159;&#22312;&#20132;&#21449;&#32534;&#35793;&#26102; (&#20363;&#22914;&#65292; &#22312; Intel &#26426;&#22120;&#19978;&#32534;&#35793;&#23558;&#35201;&#22312; PowerPC &#19978;&#25191;&#34892;&#30340;&#31243;&#24207;)&#25165;&#20250;&#29992;&#21040;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="admon important">
+          <img alt="[Important]" src="../images/important.png" />
+          <h3>
+            &#37325;&#35201;
+          </h3>
+          <p>
+            &#26412;&#33410;&#30340; Binutils &#27979;&#35797;&#22871;&#20214;&#24456;&#20851;&#38190;&#12290;&#22312;&#20219;&#20309;&#24773;&#20917;&#19979;&#37117;&#19981;&#35201;&#30465;&#30053;&#36825;&#19968;&#27493;&#12290;</p>
+        </div>
+        <p>
+          &#23545;&#32467;&#26524;&#36827;&#34892;&#27979;&#35797;&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">make tooldir=/usr install</kbd></pre>
+        <p>
+        &#23433;&#35013;&#26576;&#20123;&#36719;&#20214;&#21253;&#38656;&#35201;&#30340; <code class="filename">libiberty</code> &#22836;&#25991;&#20214;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">cp -v ../binutils-2.20/include/libiberty.h /usr/include</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-binutils" name="contents-binutils"></a>6.12.2.
+           Binutils
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">addr2line, ar, as, c++filt, gprof, ld,
+              nm, objcopy, objdump, ranlib, readelf, size, strings, and
+              strip</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#24211;&#65306;:</strong>
+              <span class="segbody">libiberty.a, libbfd.{a,so}, and
+              libopcodes.{a,so}</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="addr2line" name="addr2line"></a><span class=
+                    "term"><span class=
+                    "command"><strong>addr2line</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#25226;&#31243;&#24207;&#22320;&#22336;&#36716;&#25442;&#20026;&#25991;&#20214;&#21517;&#21644;&#34892;&#21495;&#12290; &#22312;&#21629;&#20196;&#34892;&#20013;&#32473;&#23427;&#19968;&#20010;&#22320;&#22336;&#21644;&#19968;&#20010;&#21487;&#25191;&#34892;&#25991;&#20214;&#21517;&#65292;    &#23427;&#23601;&#20250;&#20351;&#29992;&#36825;&#20010;&#21487;&#25191;&#34892;&#25991;&#20214;&#30340;&#35843;&#35797;&#20449;&#24687;&#25351;&#20986;&#22312;&#32473;&#20986;&#30340;&#22320;&#22336;&#19978;&#26159;&#21738;&#20010;&#25991;&#20214;&#20197;&#21450;&#34892;&#21495;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ar" name="ar"></a><span class="term"><span class=
+                    "command"><strong>ar</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#24314;&#31435;&#12289;&#20462;&#25913;&#12289;&#25552;&#21462;&#24402;&#26723;&#25991;&#20214;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="as" name="as"></a><span class="term"><span class=
+                    "command"><strong>as</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>&#19968;&#20010;&#27719;&#32534;&#22120;&#65292;&#29992;&#26469;&#27719;&#32534; <strong><span class=
+                    "command"><strong>gcc</strong></span> </strong> &#30340;&#36755;&#20986;&#65292;&#20135;&#29983;&#30340;&#30446;&#26631;&#25991;&#20214;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="c-filt" name="c-filt"></a><span class=
+                    "term"><span class=
+                    "command"><strong>c++filt</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#36830;&#25509;&#22120;&#20351;&#29992;&#23427;&#26469;&#36807;&#28388; C++ &#21644; Java &#31526;&#21495;&#65292;&#38450;&#27490;&#37325;&#36733;&#20989;&#25968;&#20914;&#31361;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="gprof" name="gprof"></a><span class=
+                    "term"><span class=
+                    "command"><strong>gprof</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#26174;&#31034;&#31243;&#24207;&#35843;&#29992;&#27573;&#30340;&#21508;&#31181;&#25968;&#25454;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ld" name="ld"></a><span class="term"><span class=
+                    "command"><strong>ld</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#36830;&#25509;&#22120;&#65292;&#23427;&#25226;&#19968;&#20123;&#30446;&#26631;&#21644;&#24402;&#26723;&#25991;&#20214;&#32467;&#21512;&#20026;&#19968;&#20010;&#25991;&#20214;&#65292;&#37325;&#23450;&#20301;&#25968;&#25454;&#65292;&#24182;&#38142;&#25509;&#31526;&#21495;&#24341;&#29992;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="nm" name="nm"></a><span class="term"><span class=
+                    "command"><strong>nm</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#21015;&#20986;&#20986;&#29616;&#22312;&#30446;&#26631;&#25991;&#20214;&#20013;&#30340;&#31526;&#21495;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="objcopy" name="objcopy"></a><span class=
+                    "term"><span class=
+                    "command"><strong>objcopy</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#25226;&#19968;&#31181;&#30446;&#26631;&#25991;&#20214;&#32763;&#35793;&#25104;&#21478;&#19968;&#31181;&#31867;&#22411;&#30340;&#30446;&#26631;&#25991;&#20214;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="objdump" name="objdump"></a><span class=
+                    "term"><span class=
+                    "command"><strong>objdump</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#26174;&#31034;&#25152;&#32473;&#30446;&#26631;&#25991;&#20214;&#30340;&#20449;&#24687;&#12290; &#20351;&#29992;&#36873;&#39033;&#26469;&#25511;&#21046;&#20854;&#26174;&#31034;&#30340;&#20449;&#24687;&#12290; &#23427;&#25152;&#26174;&#31034;&#30340;&#20449;&#24687;&#36890;&#24120;&#21482;&#26377;&#32534;&#20889;&#32534;&#35793;&#24037;&#20855;&#30340;&#20154;&#25165;&#24863;&#20852;&#36259;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="ranlib" name="ranlib"></a><span class=
+                    "term"><span class=
+                    "command"><strong>ranlib</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#20135;&#29983;&#24402;&#26723;&#25991;&#20214;&#32034;&#24341;&#65292;&#24182;&#23558;&#20854;&#20445;&#23384;&#21040;&#36825;&#20010;&#24402;&#26723;&#25991;&#20214;&#20013;&#12290; &#22312;&#32034;&#24341;&#20013;&#21015;&#20986;&#20102;&#24402;&#26723;&#25991;&#20214;&#21508;&#25104;&#21592;&#25152;&#23450;&#20041;&#30340;&#21487;&#37325;&#20998;&#37197;&#30446;&#26631;&#25991;&#20214;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="readelf" name="readelf"></a><span class=
+                    "term"><span class=
+                    "command"><strong>readelf</strong></span></span>                  </p>                </td>
+                <td>
+                  <p>
+                &#26174;&#31034; ELF &#26684;&#24335;&#21487;&#25191;&#34892;&#25991;&#20214;&#30340;&#20449;&#24687;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="size" name="size"></a><span class=
+                    "term"><span class=
+                    "command"><strong>size</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#21015;&#20986;&#30446;&#26631;&#25991;&#20214;&#27599;&#19968;&#27573;&#30340;&#22823;&#23567;&#20197;&#21450;&#24635;&#20307;&#30340;&#22823;&#23567;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="strings" name="strings"></a><span class=
+                    "term"><span class=
+                    "command"><strong>strings</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#25171;&#21360;&#27599;&#20010;&#32473;&#23450;&#25991;&#20214;&#30340;&#21487;&#25171;&#21360;&#23383;&#31526;&#20018;&#65292; &#36825;&#20123;&#23383;&#31526;&#20018;&#26368;&#23569;&#29305;&#23450;&#30340;&#38271;&#24230;&#65288;&#40664;&#35748;&#26159;4&#65289;&#65292; &#40664;&#35748;&#24773;&#20917;&#19979;&#65292; &#23427;&#21482;&#25171;&#21360;&#30446;&#26631;&#25991;&#20214;&#21021;&#22987;&#21270;&#21644;&#21487;&#21152;&#36733;&#27573;&#20013;&#30340;&#21487;&#25171;&#21360;&#23383;&#31526;&#65307;   &#23545;&#20110;&#20854;&#23427;&#31867;&#22411;&#30340;&#25991;&#20214;&#23427;&#25171;&#21360;&#25972;&#20010;&#25991;&#20214;&#30340;&#21487;&#25171;&#21360;&#23383;&#31526;&#12290;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="strip" name="strip"></a><span class=
+                    "term"><span class=
+                    "command"><strong>strip</strong></span></span>                  </p>                </td>
+                <td>
+                <p>&#21024;&#38500;&#30446;&#26631;&#25991;&#20214;&#20013;&#30340;&#31526;&#21495;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libiberty" name="libiberty"></a><span class=
+                    "term"><code class="filename">libiberty</code></span>                  </p>                </td>
+                <td>
+                  <p>&#21253;&#21547;&#35768;&#22810;GNU&#31243;&#24207;&#37117;&#20250;&#29992;&#21040;&#30340;&#20989;&#25968;&#65292;&#36825;&#20123;&#31243;&#24207;&#26377;&#65306;<span class="command"><strong>getopt</strong></span>,
+                    <span class="command"><strong>obstack</strong></span>,
+                    <span class="command"><strong>strerror</strong></span>,
+                    <span class="command"><strong>strtol</strong></span>, &#21644;
+                <span class="command"><strong>strtoul</strong></span>                  </p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libbfd" name="libbfd"></a><span class=
+                    "term"><code class="filename">libbfd</code></span>                  </p>                </td>
+                <td>
+                <p>&#20108;&#36827;&#21046;&#25991;&#20214;&#25551;&#36848;&#24211;</p>                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libopcodes" name="libopcodes"></a><span class=
+                    "term"><code class="filename">libopcodes</code></span>                  </p>                </td>
+                <td>
+                <p>&#29992;&#26469;&#22788;&#29702; opcodes&#65288;&quot;&#21487;&#35835;&#25991;&#26412;&#26684;&#24335;&#30340;&quot;&#65289;&#22788;&#29702;&#22120;&#25805;&#20316;&#25351;&#20196;)&#30340;&#24211;&#65292; &#22312;&#29983;&#25104;&#19968;&#20123;&#24212;&#29992;&#31243;&#24207;&#30340;&#26102;&#20505;&#20063;&#20250;&#29992;&#21040;&#23427;&#65292;&#27604;&#22914;<span class=
+                    "command"><strong>objdump</strong></span>.                  </p>                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="zlib.html" title="Zlib-1.2.3">&#21518;&#36864;</a>
+          <p>
+            Zlib-1.2.3
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="gmp.html" title="GMP-5.0.0">&#21069;&#36827;</a>
+          <p>
+            GMP-5.0.0
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

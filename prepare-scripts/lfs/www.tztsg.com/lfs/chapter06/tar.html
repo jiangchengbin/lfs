@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.56.&nbsp;Tar-1.22
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="sysvinit.html" title=
+          "Sysvinit-2.86">&#21518;&#36864;</a>
+          <p>
+            Sysvinit-2.86
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="texinfo.html" title="Texinfo-4.13a">&#21069;&#36827;</a>
+          <p>
+            Texinfo-4.13a
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-tar" name="ch-system-tar"></a>6.56. Tar-1.22
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Tar &#36719;&#20214;&#21253;&#21547;&#26377;&#19968;&#20010;&#24402;&#26723;&#31243;&#24207;&#12290;
+        </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">1.9 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">21.2 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.56.1. &#23433;&#35013; Tar
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Tar &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --bindir=/bin --libexecdir=/usr/sbin</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#35201;&#27979;&#35797;&#32467;&#26524; (about 1 SBU), &#35831;&#25191;&#34892;:
+        </p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-tar" name="contents-tar"></a>6.56.2.  
+          Tar
+        &#30340;&#20869;&#23481;</h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">rmt and tar</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rmt" name="rmt"></a><span class=
+                    "term"><span class="command"><strong>rmt</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#36890;&#36807;&#19968;&#20010;&#36827;&#31243;&#38388;&#30340;&#36890;&#20449;&#36830;&#25509;&#23454;&#26045;&#36828;&#31243;&#25805;&#20316;&#19968;&#20010;&#30913;&#24102;&#39537;&#21160;&#22120;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="tar" name="tar"></a><span class=
+                    "term"><span class="command"><strong>tar</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21019;&#24314;&#24402;&#26723;&#25991;&#20214;&#65292;&#20063;&#23601;&#26159;&#21387;&#32553;&#21253;&#65288;tarball&#65289;&#65292;&#20174;&#21387;&#32553;&#21253;&#37324;&#25552;&#21462;&#25991;&#20214;&#65292; &#21644;&#21015;&#20986;&#21387;&#32553;&#21253;&#30340;&#20869;&#23481;&#12290;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="sysvinit.html" title=
+          "Sysvinit-2.86">&#21518;&#36864;</a>
+          <p>
+            Sysvinit-2.86
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="texinfo.html" title="Texinfo-4.13a">&#21069;&#36827;</a>
+          <p>
+            Texinfo-4.13a
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

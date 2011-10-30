@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.7.&nbsp;Linux-2.6.32.8 API Headers
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="createfiles.html" title=
+          "Creating Essential Files and Symlinks">&#21518;&#36864;</a>
+          <p>
+            &#21019;&#24314;&#24517;&#38656;&#30340;&#25991;&#20214;&#19982;&#31526;&#21495;&#36830;&#25509; 
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="man-pages.html" title=
+          "Man-pages-3.23">&#21069;&#36827;</a>
+          <p>
+            Man-pages-3.23
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-linux-headers" name=
+        "ch-system-linux-headers"></a>6.7. Linux-2.6.32.8 API Headers
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Linux API Headers &#26159;&#20026;&#20102;&#29992;&#25143; Glibc &#32780;&#20844;&#24320;&#30340;&#20869;&#26680; API&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">431 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.7.1. &#23433;&#35013; Linux API Headers
+        </h2>
+        <p>&#20026;&#20102;&#20379;&#31995;&#32479;C&#24211;&#65288;&#22312;LFS&#20013;&#26159;Glibc&#65289;&#20351;&#29992;&#65292;Linux &#20869;&#26680;&#38656;&#35201;&#20844;&#24320;&#24212;&#29992;&#31243;&#24207;&#25509;&#21475; (API) &#12290;   &#36825;&#26159;&#36890;&#36807;&#22788;&#29702;Linux&#20869;&#26680;&#28304;&#31243;&#24207;tar&#21253;&#20013;&#30340;&#21508;&#31181;C&#22836;&#25991;&#20214;&#32780;&#23454;&#29616;&#30340;&#12290;</p>
+        <p>&#30830;&#20445;&#19978;&#19968;&#27425;&#30340;&#27963;&#21160;&#27809;&#26377;&#30041;&#19979;&#22833;&#25928;&#30340;&#25991;&#20214;&#21644;&#20381;&#36182;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make mrproper</kbd></pre>
+        <p>
+          &#29616;&#22312;&#65292; &#20174;&#28304;&#30721;&#20013;&#27979;&#35797;&#24182;&#25552;&#21462;&#29992;&#25143;&#21487;&#35265;&#30340;&#20869;&#26680;&#22836;&#25991;&#20214;&#12290;&#22240;&#20026;&#25552;&#21462;&#36807;&#31243;&#20250;&#21024;&#38500;&#30446;&#26631;&#30446;&#24405;&#20013;&#30340;&#21407;&#26377;&#25991;&#20214;&#65292; &#25152;&#20197;&#65292; &#35201;&#25226;&#23427;&#20204;&#25918;&#22312;&#19968;&#20010;&#20013;&#38388;&#30340;&#26412;&#22320;&#30446;&#24405;&#20013;&#12290; &#36824;&#35201;&#20174;&#20013;&#38388;&#30446;&#24405;&#20013;&#21024;&#38500;&#19968;&#20123;&#23545;&#20869;&#26680;&#24320;&#21457;&#32773;&#26377;&#29992;&#65292;&#32780;LFS&#19981;&#38656;&#35201;&#30340;&#38544;&#34255;&#25991;&#20214;&#12290;</p>
+        <pre class="userinput"><kbd class="command">make headers_check
+make INSTALL_HDR_PATH=dest headers_install
+find dest/include \( -name .install -o -name ..install.cmd \) -delete
+cp -rv dest/include/* /usr/include</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-linux-headers" name=
+          "contents-linux-headers"></a>6.7.2.  Linux API Headers &#30340;&#20869;&#23481;       </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#25353;&#29031;&#30340;&#22836;&#25991;&#20214;:</strong>
+              <span class="segbody">/usr/include/asm/*.h,
+              /usr/include/asm-generic/*.h, /usr/include/drm/*.h,
+              /usr/include/linux/*.h, /usr/include/mtd/*.h,
+              /usr/include/rdma/*.h, /usr/include/scsi/*.h,
+              /usr/include/sound/*.h, /usr/include/video/*.h,
+              /usr/include/xen/*.h</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="asm" name="asm"></a><span class=
+                    "term"><code class="filename">/usr/include/asm/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API ASM Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="asm-generic" name="asm-generic"></a><span class=
+                    "term"><code class=
+                    "filename">/usr/include/asm-generic/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API ASM Generic Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="drm" name="drm"></a><span class=
+                    "term"><code class="filename">/usr/include/drm/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API DRM Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="linux" name="linux"></a><span class=
+                    "term"><code class=
+                    "filename">/usr/include/linux/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API Linux Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="mtd" name="mtd"></a><span class=
+                    "term"><code class="filename">/usr/include/mtd/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API MTD Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="rdma" name="rdma"></a><span class=
+                    "term"><code class=
+                    "filename">/usr/include/rdma/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API RDMA Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="scsi" name="scsi"></a><span class=
+                    "term"><code class=
+                    "filename">/usr/include/scsi/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API SCSI Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="sound" name="sound"></a><span class=
+                    "term"><code class=
+                    "filename">/usr/include/sound/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API Sound Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="video" name="video"></a><span class=
+                    "term"><code class=
+                    "filename">/usr/include/video/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API Video Headers
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="xen" name="xen"></a><span class=
+                    "term"><code class="filename">/usr/include/xen/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API Xen Headers
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="createfiles.html" title=
+          "Creating Essential Files and Symlinks">&#21518;&#36864;</a>
+          <p>
+            &#21019;&#24314;&#24517;&#38656;&#30340;&#25991;&#20214;&#19982;&#31526;&#21495;&#36830;&#25509; 
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="man-pages.html" title=
+          "Man-pages-3.23">&#21069;&#36827;</a>
+          <p>
+            Man-pages-3.23
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

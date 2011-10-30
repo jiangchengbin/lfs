@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.2.&nbsp;Preparing Virtual Kernel File Systems
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">&#21518;&#36864;</a>
+          <p>
+            &#20171;&#32461;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="pkgmgt.html" title=
+          "Package Management">&#21069;&#36827;</a>
+          <p>
+            &#21253;&#31649;&#29702; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-kernfs" name="ch-system-kernfs"></a>6.2. &#20934;&#22791;&#34394;&#25311;&#20869;&#26680;&#25991;&#20214;&#31995;&#32479;
+      </h1>
+      <p>
+        &#20869;&#26680;&#20135;&#29983;&#30340;&#21508;&#31181;&#25991;&#20214;&#31995;&#32479;&#26159;&#29992;&#26469;&#21644;&#20869;&#26680;&#33258;&#24049;&#36890;&#20449;&#30340;&#12290; &#36825;&#20123;&#25991;&#20214;&#31995;&#32479;&#26159;&#34394;&#25311;&#30340;&#65292; &#23427;&#20204;&#19981;&#21344;&#29992;&#30913;&#30424;&#31354;&#38388;&#65292; &#36825;&#20123;&#25991;&#20214;&#31995;&#32479;&#30340;&#20869;&#23481;&#23384;&#22312;&#20110;&#20869;&#23384;&#20013;&#12290;</p>
+      <p>
+        &#39318;&#20808;&#35753;&#25105;&#20204;&#20026;&#34394;&#25311;&#20869;&#26680;&#25991;&#20214;&#31995;&#32479;&#24314;&#31435;&#25346;&#36733;&#30446;&#24405;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">mkdir -v $LFS/{dev,proc,sys}</kbd></pre>
+      <div class="sect2" lang="en" xml:lang="en">
+        <h2 class="sect2">
+        6.2.1.&#21019;&#24314;&#21021;&#22987;&#35774;&#22791;&#33410;&#28857;        </h2>
+        <p>
+          &#20869;&#26680;&#22312;&#24341;&#23548;&#31995;&#32479;&#26102;&#35201;&#27714;&#23384;&#22312;&#26576;&#20123;&#35774;&#22791;&#33410;&#28857;&#65292;&#29305;&#21035;&#26159; <code class=
+          "filename">console</code> &#21644; <code class="filename">null</code>
+          &#35774;&#22791;&#12290; &#20026;&#20102;&#22312; <strong>udevd</strong> &#21551;&#21160;&#20043;&#21069;&#20197;&#21450; Linux &#20197; <em class=
+          "parameter"><code>init=/bin/bash</code></em> &#21551;&#21160;&#26102;&#65292;&#36825;&#20123;&#35774;&#22791;&#33410;&#28857;&#21487;&#20197;&#20351;&#29992;&#65292;&#23601;&#24517;&#39035;&#22312;&#30828;&#30424;&#19978;&#21019;&#24314;&#23427;&#20204;&#12290; &#36890;&#36807;&#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#26469;&#21019;&#24314;&#36825;&#20123;&#35774;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mknod -m 600 $LFS/dev/console c 5 1
+mknod -m 666 $LFS/dev/null c 1 3</kbd></pre>
+      </div>
+      <div class="sect2" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="ch-system-bindmount" name="ch-system-bindmount"></a>6.2.2.
+          &#25346;&#36733;&#24182;&#22635;&#20805; /dev        &#30446;&#24405;</h2>
+        <p>
+          &#25512;&#33616;&#30340;&#21521; <code class=
+          "filename">/dev</code> &#30446;&#24405;&#22635;&#20805;&#35774;&#22791;&#30340;&#26041;&#27861;&#26159;&#22312; <code class=
+          "filename">/dev</code>  &#19978;&#25346;&#36733;&#19968;&#20010;&#34394;&#25311;&#25991;&#20214;&#31995;&#32479;(&#27604;&#22914; <code class="systemitem">tmpfs</code>)&#65292; &#28982;&#21518;&#22312;&#35774;&#22791;&#34987;&#26816;&#27979;&#21040;&#25110;&#34987;&#35775;&#38382;&#21040;&#30340;&#26102;&#20505; (&#36890;&#24120;&#26159;&#22312; Udev   &#24341;&#23548;&#30340;&#36807;&#31243;&#20013;) &#21160;&#24577;&#21019;&#24314;&#35774;&#22791;&#33410;&#28857;&#12290;  &#22240;&#20026;&#29616;&#22312;&#26032;&#30340;&#31995;&#32479;&#36824;&#27809;&#26377;Udev&#65292;&#24182;&#19988;&#23578;&#26410;&#34987;&#24341;&#23548;&#65292; &#25152;&#20197;&#23601;&#26377;&#24517;&#35201;&#36890;&#36807;&#25163;&#24037;&#25346;&#36733;&#21644;&#22635;&#20805; <code class="filename">/dev</code>  &#30446;&#24405;&#12290; &#36825;&#21487;&#20197;&#36890;&#36807;&#32465;&#23450;&#25346;&#36733;&#23487;&#20027;&#31995;&#32479;&#30340; <code class="filename">/dev</code>  &#30446;&#24405;&#12290;   &#32465;&#23450;&#25346;&#36733;&#26159;&#19968;&#31181;&#29305;&#27530;&#30340;&#25346;&#36733;&#26041;&#24335;&#65292; &#20801;&#35768;&#20320;&#21019;&#24314;&#19968;&#20010;&#30446;&#24405;&#25110;&#32773;&#26159;&#25346;&#36733;&#28857;&#30340;&#38236;&#20687;&#21040;&#20854;&#20182;&#30340;&#22320;&#26041;&#12290; &#21487;&#20197;&#20351;&#29992;&#19979;&#38754;&#30340;&#21629;&#20196;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">mount -v --bind /dev $LFS/dev</kbd></pre>
+      </div>
+      <div class="sect2" lang="en" xml:lang="en">
+        <h2 class="sect2">
+        <a id="ch-system-kernfsmount" name=
+          "ch-system-kernfsmount"></a>6.2.3.&#25346;&#36733;&#34394;&#25311;&#20869;&#26680;&#25991;&#20214;&#31995;&#32479;        </h2>
+        <p>
+          &#29616;&#22312;&#25346;&#36733;&#21097;&#20313;&#30340;&#34394;&#25311;&#20869;&#26680;&#25991;&#20214;&#31995;&#32479;&#65306; </p>
+        <pre class="userinput"><kbd class=
+        "command">mount -vt devpts devpts $LFS/dev/pts
+mount -vt tmpfs shm $LFS/dev/shm
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys</kbd></pre>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">&#21518;&#36864;</a>
+          <p>
+            &#20171;&#32461;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="pkgmgt.html" title=
+          "Package Management">&#21069;&#36827;</a>
+          <p>
+            &#21253;&#31649;&#29702; 
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

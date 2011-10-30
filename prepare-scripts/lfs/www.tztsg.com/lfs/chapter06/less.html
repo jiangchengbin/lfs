@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.47.&nbsp;Less-436
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="kbd.html" title="Kbd-1.15.1">&#21518;&#36864;</a>
+          <p>
+            Kbd-1.15.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="make.html" title="Make-3.81">&#21069;&#36827;</a>
+          <p>
+            Make-3.81
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-less" name="ch-system-less"></a>6.47. Less-436
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          Less &#36719;&#20214;&#21253;&#21253;&#21547;&#19968;&#20010;&#25991;&#26412;&#25991;&#20214;&#26597;&#30475;&#22120;&#12290; </p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">&#23569;&#20110; 0.1 SBU</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">2.9 MB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.47.1. &#23433;&#35013; Less
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; Less &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --sysconfdir=/etc</kbd></pre>
+        <div class="variablelist">
+          <p class="title">
+            <b>&#37197;&#32622;&#36873;&#39033;&#30340;&#21547;&#20041;&#65306;</b>
+          </p>
+          <dl>
+            <dt>
+              <span class="term"><em class=
+              "parameter"><code>--sysconfdir=/etc</code></em></span>            </dt>
+            <dd>
+              <p>
+                &#36825;&#20010;&#36873;&#39033;&#21578;&#35785;&#31243;&#24207;&#24314;&#31435;&#36719;&#20214;&#21253;&#26102;&#22312; /etc&#30446;&#24405;&#37324;&#26597;&#25214;&#37197;&#21046;&#25991;&#20214;&#12290;</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <p>
+          &#36825;&#20010;&#36719;&#20214;&#21253;&#27809;&#26377;&#38468;&#24102;&#27979;&#35797;&#31243;&#24207;&#12290;</p>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-less" name="contents-less"></a>6.47.2. 
+          Less &#30340;&#20869;&#23481;        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#23433;&#35013;&#30340;&#31243;&#24207;:</strong>
+              <span class="segbody">less, lessecho, and lesskey</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="less" name="less"></a><span class=
+                    "term"><span class=
+                    "command"><strong>less</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#19968;&#20010;&#25991;&#20214;&#26174;&#31034;&#25110;&#20998;&#39029;&#31243;&#24207;&#65307; &#23427;&#26174;&#31034;&#26576;&#25991;&#20214;&#30340;&#20869;&#23481;&#65292; &#24182;&#21487;&#20197;&#20998;&#21367;&#12289; &#23547;&#25214;&#23383;&#31526;&#20018;&#12289; &#36339;&#36716;&#21040;&#26576;&#19968;&#26631;&#35760;&#12290;</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lessecho" name="lessecho"></a><span class=
+                    "term"><span class=
+                    "command"><strong>lessecho</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#22312; Unix &#31995;&#32479;&#25991;&#20214;&#21517;&#20013;&#65292;&#29992;&#26469;&#25193;&#23637;&#36890;&#37197;&#31526;&#31526;&#65292;&#27604;&#22914; <em>*</em> &#21644; <em>?</em></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="lesskey" name="lesskey"></a><span class=
+                    "term"><span class=
+                    "command"><strong>lesskey</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#20026; <strong>less</strong>&#23450;&#20041;&#25353;&#20581;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="kbd.html" title="Kbd-1.15.1">&#21518;&#36864;</a>
+          <p>
+            Kbd-1.15.1
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="make.html" title="Make-3.81">&#21069;&#36827;</a>
+          <p>
+            Make-3.81
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

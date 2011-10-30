@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      6.14.&nbsp;MPFR-2.4.2
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;6.&nbsp;&#23433;&#35013;&#22522;&#30784;&#31995;&#32479;&#36719;&#20214;
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gmp.html" title="GMP-5.0.0">&#21518;&#36864;</a>
+          <p>
+            GMP-5.0.0
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="file.html" title="File-5.04">&#21069;&#36827;</a>
+          <p>
+            File-5.04
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-mpfr" name="ch-system-mpfr"></a>6.14. MPFR-2.4.2
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+           MPFR &#36719;&#20214;&#21253;&#21253;&#21547;&#22810;&#31934;&#24230;&#25968;&#23398;&#20989;&#25968;&#12290;</p>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">&#39044;&#35745;&#32534;&#35793;&#26102;&#38388;:</strong>
+              <span class="segbody">1.1 SBU &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+            <div class="seg">
+              <strong class="segtitle">&#25152;&#38656;&#30913;&#30424;&#31354;&#38388;:</strong>
+              <span class="segbody">27.1 MB &#21253;&#25324;&#27979;&#35797;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          6.14.1. &#23433;&#35013; MPFR
+        </h2>
+        <p>
+          &#20026;&#32534;&#35793; MPFR &#20570;&#20934;&#22791;&#65306;</p>
+        <pre class="userinput"><kbd class=
+        "command">./configure --prefix=/usr --enable-thread-safe</kbd></pre>
+        <p>
+          &#32534;&#35793;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make</kbd></pre>
+        <div class="admon important">
+          <img alt="[Important]" src="../images/important.png" />
+          <h3>
+            &#37325;&#35201;
+          </h3>
+          <p>
+            &#26412;&#33410;&#30340; MPFR &#27979;&#35797;&#22871;&#20214;&#24456;&#20851;&#38190;&#12290;&#22312;&#20219;&#20309;&#24773;&#20917;&#19979;&#37117;&#19981;&#35201;&#30465;&#30053;&#36825;&#19968;&#27493;&#12290;</p>
+        </div>
+        <p>
+          &#23545;&#32467;&#26524;&#36827;&#34892;&#27979;&#35797;&#65292;&#30830;&#20445; 148 &#20010;&#27979;&#35797;&#20840;&#37096;&#36890;&#36807;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make check</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36825;&#20010;&#36719;&#20214;&#21253;&#65306;</p>
+        <pre class="userinput"><kbd class="command">make install</kbd></pre>
+        <p>
+          &#23433;&#35013;&#36719;&#20214;&#25991;&#26723;&#65306;
+        </p>
+        <pre class="userinput"><kbd class="command">make html
+mkdir -pv /usr/share/doc/mpfr-2.4.2
+find . -name \*.html -type f -exec cp -v \{} /usr/share/doc/mpfr-2.4.2 \;</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-mpfr" name="contents-mpfr"></a>6.14.2.  
+          MPFR &#30340;&#20869;&#23481;        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">Installed Libraries:</strong>
+              <span class="segbody">libmpfr.{a,so}</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            &#31616;&#35201;&#25551;&#36848;
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="libmpfr" name="libmpfr"></a><span class=
+                    "term"><code class="filename">libmpfr</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>&#21253;&#21547;&#22810;&#31934;&#24230;&#25968;&#23398;&#20989;&#25968;</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="gmp.html" title="GMP-5.0.0">&#21518;&#36864;</a>
+          <p>
+            GMP-5.0.0
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="file.html" title="File-5.04">&#21069;&#36827;</a>
+          <p>
+            File-5.04
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter06.html" title=
+          "Chapter&nbsp;6.&nbsp;Installing Basic System Software">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

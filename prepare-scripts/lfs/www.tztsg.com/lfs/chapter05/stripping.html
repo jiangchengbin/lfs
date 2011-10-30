@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.31.&nbsp;Stripping
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;&#26500;&#24314;&#20020;&#26102;&#31995;&#32479; 
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="texinfo.html" title="Texinfo-4.13a">&#21518;&#36864;</a>
+          <p>
+            Texinfo-4.13a
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="changingowner.html" title=
+          "Changing Ownership">&#21069;&#36827;</a>
+          <p>
+            &#25913;&#21464;&#25152;&#26377;&#32773;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-tools-stripping" name="ch-tools-stripping"></a>5.31.
+        &#28165;&#29702;&#31995;&#32479;
+      </h1>
+      <p>
+        &#38500;&#38750; LFS &#20998;&#21306;&#38750;&#24120;&#23567;&#65292;&#21542;&#21017;&#26412;&#31456;&#30340;&#36825;&#20010;&#27493;&#39588;&#26159;&#21487;&#36873;&#30340;&#65292;&#24403;&#28982;&#65292;&#23398;&#20064;&#21738;&#20123;&#26159;&#38750;&#24517;&#35201;&#30340;&#65292;&#21487;&#20197;&#21024;&#38500;&#30340;&#39033;&#30446;&#20063;&#26159;&#26377;&#30410;&#30340;&#12290; &#21040;&#30446;&#21069;&#20026;&#27490;&#24050;&#32463;&#23433;&#35013;&#30340;&#21487;&#25191;&#34892;&#31243;&#24207;&#21644;&#24211;&#25991;&#20214;&#21253;&#21547;&#22823;&#32422; 70 MB &#19981;&#24517;&#35201;&#30340;&#35843;&#35797;&#31526;&#21495;&#65292; &#36816;&#34892;&#19979;&#38754;&#30340;&#21629;&#20196;&#21024;&#38500;&#36825;&#20123;&#31526;&#21495;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">strip --strip-debug /tools/lib/*
+strip --strip-unneeded /tools/{,s}bin/*</kbd></pre>
+      <p>&#19978;&#38754;&#30340;&#21629;&#20196;&#20250;&#36339;&#36807;&#19968;&#20123;&#25991;&#20214;&#65292; &#24182;&#25253;&#21578;&#19981;&#33021;&#35782;&#21035;&#36825;&#20123;&#25991;&#20214;&#26684;&#24335;&#65292; &#20854;&#20013;&#22823;&#22810;&#25968;&#26159;&#33050;&#26412;&#32780;&#19981;&#26159;&#20108;&#36827;&#21046;&#25991;&#20214;&#12290;</p>
+      <p>
+        <em>&#21315;&#19975;&#19981;&#35201;</em>&#22312;&#24211;&#25991;&#20214;&#19978;&#20351;&#29992; 
+        <em class="parameter"><code>--strip-unneeded</code></em>&#12290; &#21542;&#21017;&#20250;&#30772;&#22351;&#20854;&#38745;&#24577;&#29256;&#26412;&#65292; &#36825;&#26679;&#20320;&#19981;&#24471;&#19981;&#21448;&#20174;&#22836;&#24320;&#22987;&#32534;&#35793;&#20840;&#37096;&#30340;&#24037;&#20855;&#38142;&#36719;&#20214;&#21253;&#12290;</p>
+      <p>
+        &#21024;&#38500;&#25991;&#26723;&#36824;&#21487;&#20197;&#33410;&#30465;&#32422; 20 MB &#31354;&#38388;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">rm -rf /tools/{,share}/{info,man}</kbd></pre>
+      <p>
+        &#29616;&#22312;<code class="envar"> $LFS</code> &#19978;&#24212;&#35813;&#33267;&#23569;&#26377; 850 MB &#21097;&#20313;&#31354;&#38388;&#65292;&#36825;&#21487;&#20197;&#29992;&#26469;&#22312;&#19979;&#19968;&#31456;&#32534;&#35793;&#21644;&#23433;&#35013; Glibc &#12290; &#22914;&#26524;&#21487;&#20197;&#32534;&#35793;&#21644;&#23433;&#35013; Glibc   &#65292;&#37027;&#32534;&#35793;&#23433;&#35013;&#20854;&#23427;&#30340;&#36719;&#20214;&#21253;&#20063;&#23601;&#27809;&#26377;&#38382;&#39064;&#20102;&#12290;</p>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="texinfo.html" title="Texinfo-4.13a">&#21518;&#36864;</a>
+          <p>
+            Texinfo-4.13a
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="changingowner.html" title=
+          "Changing Ownership">&#21069;&#36827;</a>
+          <p>
+            &#25913;&#21464;&#25152;&#26377;&#32773;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter05.html" title=
+          "Chapter&nbsp;5.&nbsp;Constructing a Temporary System">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

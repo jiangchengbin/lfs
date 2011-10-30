@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      7.7.&nbsp;Creating the /etc/inputrc File
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="lfs" id="lfs-6.6">
+    <div class="navheader">
+      <h4>
+        Linux From Scratch - Version 6.6
+      </h4>
+      <h3>
+        Chapter&nbsp;7.&nbsp;&#37197;&#32622;&#31995;&#32479;&#21551;&#21160;&#33050;&#26412;</h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="sysklogd.html" title=
+          "Configuring the sysklogd Script">&#21518;&#36864;</a>
+          <p>
+            &#37197;&#32622; sysklogd &#33050;&#26412;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="profile.html" title=
+          "The Bash Shell Startup Files">&#21069;&#36827;</a>
+          <p>
+            Bash Shell &#21551;&#21160;&#25991;&#20214;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-scripts-inputrc" name="ch-scripts-inputrc"></a>7.7.
+        &#21019;&#24314; /etc/inputrc &#25991;&#20214;
+      </h1>
+      <p><code class="filename">inputrc</code> &#25991;&#20214;&#20026;&#29305;&#23450;&#30340;&#24773;&#20917;&#22788;&#29702;&#38190;&#30424;&#26144;&#23556;&#65292; &#36825;&#20010;&#25991;&#20214;&#34987;Bash&#21644;&#22823;&#22810;&#25968;&#20854;&#20182;shell&#20351;&#29992;&#30340; Readline&#65288;&#36755;&#20837;&#20851;&#31995;&#24211;&#65289;&#29992;&#20316;&#21551;&#21160;&#25991;&#20214;&#12290;</p>
+      <p>&#22823;&#22810;&#25968;&#20154;&#24182;&#19981;&#38656;&#35201;&#33258;&#23450;&#20041;&#38190;&#30424;&#26144;&#23556;&#65292;&#25152;&#20197;&#19979;&#38754;&#30340;&#21629;&#20196;&#23558;&#21019;&#24314;&#19968;&#20010;&#36866;&#29992;&#20110;&#25152;&#26377;&#30331;&#38470;&#29992;&#25143;&#30340;&#20840;&#23616; <code class=
+        "filename">/etc/inputrc</code>&#25991;&#20214;&#12290; &#22914;&#26524;&#20320;&#38656;&#35201;&#20026;&#26576;&#20010;&#29992;&#25143;&#35206;&#30422;&#40664;&#35748;&#30340;&#35774;&#32622;&#65292; &#20320;&#21487;&#20197;&#22312;&#35813;&#29992;&#25143;&#30340;&#20027;&#30446;&#24405;&#20013;&#21019;&#24314;&#19968;&#20010;&#21253;&#21547;&#33258;&#23450;&#20041;&#38190;&#30424;&#26144;&#23556;&#30340; <code class="filename">.inputrc</code> &#25991;&#20214;&#12290;</p>
+      <p>&#35201;&#24819;&#20102;&#35299;&#26356;&#22810;&#20851;&#20110;&#22914;&#20309;&#32534;&#36753; <code class=
+        "filename">inputrc</code> &#25991;&#20214;&#30340;&#20449;&#24687;&#65292;&#35831;&#21442;&#32771; <span class=
+        "command"><strong>info bash</strong></span> &#30340; <span class=
+        "emphasis"><em>Readline Init File</em></span>&#36825;&#19968;&#33410;&#12290;<span class=
+        "command"><strong>info readline </strong></span>&#20063;&#26159;&#19968;&#20010;&#22909;&#30340;&#20449;&#24687;&#36164;&#28304;&#12290;</p>
+      <p>&#19979;&#38754;&#26159;&#19968;&#20010;&#22522;&#26412;&#30340;&#20840;&#23616; <code class="filename">inputrc</code>&#25991;&#20214;&#65292;&#37027;&#20123;&#36873;&#39033;&#30340;&#27880;&#37322;&#20063;&#19968;&#36215;&#21253;&#25324;&#22312;&#25991;&#20214;&#37324;&#12290; &#35831;&#27880;&#24847;&#65292; &#27880;&#37322;&#19981;&#33021;&#21644;&#21629;&#20196;&#25918;&#22312;&#21516;&#19968;&#34892;&#37324;&#12290; &#20351;&#29992;&#19979;&#38754;&#30340;&#21629;&#20196;&#24314;&#31435;&#25991;&#20214;&#65306;</p>
+      <pre class="userinput"><kbd class=
+      "command">cat &gt; /etc/inputrc &lt;&lt; "EOF"
+<code class="literal"># Begin /etc/inputrc
+# Modified by Chris Lynn &lt;roryo@roryo.dynup.net&gt;
+
+# Allow the command prompt to wrap to the next line
+set horizontal-scroll-mode Off
+
+# Enable 8bit input
+set meta-flag On
+set input-meta On
+
+# Turns off 8th bit stripping
+set convert-meta Off
+
+# Keep the 8th bit for display
+set output-meta On
+
+# none, visible or audible
+set bell-style none
+
+# All of the following map the escape sequence of the value
+# contained in the 1st argument to the readline specific functions
+"\eOd": backward-word
+"\eOc": forward-word
+
+# for linux console
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# for xterm
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+# for Konsole
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+
+# End /etc/inputrc</code>
+EOF</kbd></pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="sysklogd.html" title=
+          "Configuring the sysklogd Script">&#21518;&#36864;</a>
+          <p>
+            &#37197;&#32622; sysklogd &#33050;&#26412;
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="profile.html" title=
+          "The Bash Shell Startup Files">&#21069;&#36827;</a>
+          <p>
+            Bash Shell &#21551;&#21160;&#25991;&#20214;
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter07.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">&#19978;&#19968;&#32423;</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Linux From Scratch - Version 6.6">&#39318;&#39029;</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
