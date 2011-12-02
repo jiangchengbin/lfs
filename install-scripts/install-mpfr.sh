@@ -7,7 +7,7 @@
 # Information:   installtheMPFRforLFM                           #
 # CreateDate:    2011-09-22                                     #
 # ModifyDate:    2011-12-02                                     #
-# Version:       v1.2                                           #
+# Version:       v1.3                                           #
 #                                                               #
 #################################################################
 app='mpfr'
@@ -22,9 +22,9 @@ check_err="30"
 install_err="21"
 
 # 初始化变量
-[ $src"x" == "x" ] && src='../sources'
-[ $build"x" == "x" ] && build='../build'
-[ $1"x" != "x" ] && ver=$1
+[ "$src" == "" ] && src='../sources'
+[ "$build" == "" ] && build='../build'
+[ "$1" != "" ] && ver=$1
 
 # 打补丁
 patch -Np1 -i ../$src/${app}-${ver}-fixes-1.patch || exit $patch_err_1

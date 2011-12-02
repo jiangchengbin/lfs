@@ -7,7 +7,7 @@
 # Information:   buildthegccforLFM                              #
 # CreateDate:    2011-09-18                                     #
 # ModifyDate:    2011-12-02                                     #
-# Version:       v1.3                                           #
+# Version:       v1.4                                           #
 #                                                               #
 #################################################################
 app='gcc'
@@ -25,9 +25,9 @@ make_err="20"
 install_err="21"
 
 # 初始化变量
-[ $src"x" == "x" ] && src='../sources'
-[ $build"x" == "x" ] && build='../build'
-[ $1"x" != "x" ] && ver=$1
+[ "$src" == "" ] && src='../sources'
+[ "$build" == "" ] && build='../build'
+[ "$1" != "" ] && ver=$1
 [ $2"x" != "x" ] && mpfr=$2
 [ $3"x" != "x" ] && gmp=$3
 [ $4"x" != "x" ] && mpc=$4

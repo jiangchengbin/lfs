@@ -36,6 +36,14 @@ update_script(){
 	
 	# general update
 	general_update $modify_file
+
+	sed -i 's@\$src"x" == "x"@"$src" == ""@' \
+			$modify_file
+	sed -i 's@\$build"x" == "x"@"$build" == ""@' \
+			$modify_file
+	sed -i 's@\$1"x" != "x"@"$1" != ""@' \
+			$modify_file
+
 }
 
 

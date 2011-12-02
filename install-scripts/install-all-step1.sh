@@ -7,7 +7,7 @@
 # Information:   installallpackageforLFM                        #
 # CreateDate:    2011-09-22                                     #
 # ModifyDate:    2011-12-02                                     #
-# Version:       v1.7                                           #
+# Version:       v1.8                                           #
 #                                                               #
 #################################################################
 

@@ -7,7 +7,7 @@
 # Information:   preparebuildenvironmentforLFS                  #
 # CreateDate:    2011-09-20                                     #
 # ModifyDate:    2011-12-02                                     #
-# Version:       v1.1                                           #
+# Version:       v1.2                                           #
 #                                                               #
 #################################################################
 

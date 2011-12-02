@@ -7,7 +7,7 @@
 # Information:   buildtheLinux-3.0.4APIHeadersforLFM            #
 # CreateDate:    2011-09-18                                     #
 # ModifyDate:    2011-12-02                                     #
-# Version:       v1.2                                           #
+# Version:       v1.3                                           #
 #                                                               #
 #################################################################
 app='linux'
@@ -23,9 +23,9 @@ install_err="21"
 other_err="33"
 
 # 初始化变量
-[ $src"x" == "x" ] && src='../sources'
-[ $build"x" == "x" ] && build='../build'
-[ $1"x" != "x" ] && ver=$1
+[ "$src" == "" ] && src='../sources'
+[ "$build" == "" ] && build='../build'
+[ "$1" != "" ] && ver=$1
 
 # 准备源码
 tar -xvf ${src}/${app}-${ver}.tar* -C ${build} 
