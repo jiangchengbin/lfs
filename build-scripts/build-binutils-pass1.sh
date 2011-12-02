@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         build-binutils-pass1.sh                        #
 # Information:   buildtheBinutilsforLFM                         #
 # CreateDate:    2011-09-16                                     #
-# ModifyDate:    2011-09-20                                     #
-# Version:       v1.5                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.6                                           #
 #                                                               #
 #################################################################
 app='binutils'

@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-readline.sh                            #
 # Information:   installReadlineforLFM                          #
 # CreateDate:    2011-09-22                                     #
-# ModifyDate:    2011-09-22                                     #
-# Version:       v1.0                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.1                                           #
 #                                                               #
 #################################################################
 app='readline'

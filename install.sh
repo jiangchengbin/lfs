@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         prepare-build-step1.sh                         #
 # Information:   prepare-buildforLFM                            #
 # CreateDate:    2011-09-18                                     #
-# ModifyDate:    2011-09-29                                     #
-# Version:       v1.8                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.9                                           #
 #                                                               #
 #################################################################
 

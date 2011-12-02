@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-gcc.sh                                 #
 # Information:   installthegccforLFM                            #
 # CreateDate:    2011-09-22                                     #
-# ModifyDate:    2011-09-26                                     #
-# Version:       v1.1                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.2                                           #
 #                                                               #
 #################################################################
 app='gcc'

@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-glibc.sh                               #
 # Information:   installtheglibcforLFM                          #
 # CreateDate:    2011-09-21                                     #
-# ModifyDate:    2011-09-26                                     #
-# Version:       v1.5                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.6                                           #
 #                                                               #
 #################################################################
 app='glibc'

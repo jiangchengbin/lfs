@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-pkg-config.sh                          #
 # Information:   installthePkg-configforLFM                     #
 # CreateDate:    2011-09-22                                     #
-# ModifyDate:    2011-09-22                                     #
-# Version:       v1.2                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.3                                           #
 #                                                               #
 #################################################################
 app='pkg-config'

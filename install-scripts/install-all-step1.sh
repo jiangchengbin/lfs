@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-all.sh                                 #
 # Information:   installallpackageforLFM                        #
 # CreateDate:    2011-09-22                                     #
-# ModifyDate:    2011-09-30                                     #
-# Version:       v1.6                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.7                                           #
 #                                                               #
 #################################################################
 

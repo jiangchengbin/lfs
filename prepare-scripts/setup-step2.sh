@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         setup-step1.sh                                 #
 # Information:   StepUplinuxforLFM                              #
 # CreateDate:    2011-09-18                                     #
-# ModifyDate:    2011-09-19                                     #
-# Version:       v1.2                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.3                                           #
 #                                                               #
 #################################################################
 

@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         build-findutils.sh                             #
 # Information:   buildFindutilsforLFM                           #
 # CreateDate:    2011-09-18                                     #
-# ModifyDate:    2011-09-18                                     #
-# Version:       v1.0                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.1                                           #
 #                                                               #
 #################################################################
 app='findutils'

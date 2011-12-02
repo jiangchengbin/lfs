@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         build-expect.sh                                #
 # Information:   buildexpectforLFM                              #
 # CreateDate:    2011-09-18                                     #
-# ModifyDate:    2011-09-22                                     #
-# Version:       v1.2                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.3                                           #
 #                                                               #
 #################################################################
 app='expect'

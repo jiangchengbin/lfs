@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-vim.sh                                 #
 # Information:   InstallVimforLFM                               #
 # CreateDate:    2011-09-23                                     #
-# ModifyDate:    2011-09-28                                     #
-# Version:       v1.2                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.3                                           #
 #                                                               #
 #################################################################
 app='vim'

@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         prepare-step2.sh                               #
 # Information:   prepare-step2.sh                               #
 # CreateDate:    2011-09-20                                     #
-# ModifyDate:    2011-09-22                                     #
-# Version:       v1.1                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.2                                           #
 #                                                               #
 #################################################################
 

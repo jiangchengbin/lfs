@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         build-gcc-pass1.sh                             #
 # Information:   buildthegccforLFM                              #
 # CreateDate:    2011-09-16                                     #
-# ModifyDate:    2011-09-23                                     #
-# Version:       v1.9                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.10                                          #
 #                                                               #
 #################################################################
 app='gcc'

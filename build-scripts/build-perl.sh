@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         build-perl.sh                                  #
 # Information:   buildPerlforLFM                                #
 # CreateDate:    2011-09-18                                     #
-# ModifyDate:    2011-09-30                                     #
-# Version:       v1.1                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.2                                           #
 #                                                               #
 #################################################################
 app='perl'

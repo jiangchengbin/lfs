@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         build-m4.sh                                    #
 # Information:   buildM4forLFM                                  #
 # CreateDate:    2011-09-22                                     #
-# ModifyDate:    2011-09-30                                     #
-# Version:       v1.2                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.3                                           #
 #                                                               #
 #################################################################
 app='m4'

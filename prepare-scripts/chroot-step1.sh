@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         chroot-step1-step1.sh                          #
 # Information:   buildlinuxforLFM                               #
 # CreateDate:    2011-09-18                                     #
-# ModifyDate:    2011-09-27                                     #
-# Version:       v1.3                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.4                                           #
 #                                                               #
 #################################################################
 

@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-linux-API-Headers.sh                   #
 # Information:   installtheLinux-3.0.4APIHeadersforLFM          #
 # CreateDate:    2011-09-21                                     #
-# ModifyDate:    2011-09-23                                     #
-# Version:       v1.2                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.3                                           #
 #                                                               #
 #################################################################
 app='linux'

@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-diffutils.sh                           #
 # Information:   InstallDiffutilsforLFM                         #
 # CreateDate:    2011-09-23                                     #
-# ModifyDate:    2011-09-30                                     #
-# Version:       v1.1                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.2                                           #
 #                                                               #
 #################################################################
 app='diffutils'

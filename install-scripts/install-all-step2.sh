@@ -2,12 +2,12 @@
 
 #################################################################
 #                                                               #
-# Author:        JoeJiang                                       #
+# Author:        Joe Jiang                                      #
 # Lable:         install-all-step2.sh                           #
 # Information:   installallpackageforLFM                        #
 # CreateDate:    2011-09-26                                     #
-# ModifyDate:    2011-09-26                                     #
-# Version:       v1.0                                           #
+# ModifyDate:    2011-12-02                                     #
+# Version:       v1.1                                           #
 #                                                               #
 #################################################################
 
